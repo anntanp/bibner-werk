@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+**/.DS_Store
+
+# Data — annotation exports contain personal annotator names; processed outputs are reproducible from scripts
+data/annotation/doccano/
+data/processed/
+
+# Large binary data
+*.parquet
+*.pkl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+.pytest_cache/
+
+# Editor
+.vscode/
+*.swp
