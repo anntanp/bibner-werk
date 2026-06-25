@@ -1,4 +1,4 @@
-# WEM Model — Scripts
+# BibNER-Werk — Scripts
 
 All scripts are standalone Python files in `scripts/py/`. Each has a header block: purpose, usage, inputs/outputs, dependencies, assumptions.
 

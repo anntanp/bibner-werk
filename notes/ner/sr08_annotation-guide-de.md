@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-30
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — NER-Annotationsrichtlinien (SR-08)
 
 Begleitdokument zu [sr08_gold-set-composition.md](sr08_gold-set-composition.md).

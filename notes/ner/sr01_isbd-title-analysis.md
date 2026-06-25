@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-20
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # ISBD Punctuation Analysis — DF_DE_TITLES
 
 **Dataset:** `data/DF_DE_TITLES_20240125b.pkl` — 4,477,780 rows × 27 columns

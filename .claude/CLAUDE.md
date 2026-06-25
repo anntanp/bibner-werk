@@ -1,6 +1,6 @@
-# WEM Model — Claude Project Instructions
+# BibNER-Werk — Claude Project Instructions
 
-**WEM** = Work–Expression–Manifestation (FRBR/LRM levels).
+**BibNER-Werk** = Bibliographic NER for FRBR Work-level entities (*Werk* = German for "work", i.e. FRBR Work level).
 NER system for FRBR Work-level entity extraction from historical German bibliographic catalog strings.
 
 ## Task
@@ -26,15 +26,15 @@ Phase 1 scope: Work-level entities (TITLE, OTHER_TITLE, PERSON). E and M levels 
 
 ## Paper
 
-- **Title**: *WEM Model: Bibliographic NER for Historical German Catalogs*
+- **Title**: *BibNER-Werk: Bibliographic NER for Historical German Catalogs*
 - **Venue**: JCDL 2026, ACM sigconf, double-blind
 - **Location**: `paper/jcdl-2026/`
 - **Deadline**: 30 June 2026
-- **Plan**: `~/Documents/claude/notes/project-plans/jcdl-plan-202606.md`
+- **Plan**: `~/Documents/claude/notes/fiz/project-plans/bibner-werk/jcdl-plan-202606.md`
 
 ## GeMeA relationship
 
-WEM is the NER component of GeMeA Phase 0. See `notes/context/gemea-context.md`.
+BibNER-Werk is the NER component of GeMeA Phase 0. See `notes/gemea-context.md`.
 
 ## Available role skills
 

@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-21
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Architecture Decision Record: ISBD Field Rating and Silver Dataset
 
 **Format:** MADR (Markdown Architecture Decision Record)

@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-26
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # Reference Note — HIPE-2022 Extended Overview
 
 **Citation:** Ehrmann, M., Romanello, M., Najem-Meyer, S., Doucet, A., & Clematide, S. (2022). Extended Overview of HIPE-2022: Named Entity Recognition and Linking in Multilingual Historical Documents. *CLEF 2022 Working Notes*, CEUR-WS Vol. 3180, paper-83.

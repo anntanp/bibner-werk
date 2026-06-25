@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-24
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # SR-05 — Trailing Period Abbreviation List
 
 Curated list of German/Latin abbreviation tokens used in [`sr05_validate_trailing_period.py`](../../scripts/sr05_validate_trailing_period.py) to classify a trailing period as `ABBREV` rather than `ISBD_CLOSE`. A title ending with one of these tokens followed by `.` is not an ISBD area-close.

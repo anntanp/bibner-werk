@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-24
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # Zhan et al. (2026) — Assessment of Generative NER in the Era of LLMs
 
 **Citation:** Qi Zhan, Yile Wang, Hui Huang. *Assessment of Generative Named Entity Recognition in the Era of Large Language Models.* arXiv:2601.17898v1, 25 Jan 2026. Shenzhen University.

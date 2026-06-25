@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-06-10
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # SR-08: Doccano Meta Fields (htype + DDB URL)
 
 ## Instance

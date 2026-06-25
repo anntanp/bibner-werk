@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-23
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — ISBD Rule Applicability in DF_DE_TITLES
 
 Summary of which ISBD punctuation rules work reliably in the DDB corpus, which fail, and which require era- or type-specific heuristics. Synthesises findings from SR-01–SR-04 and the field rating run on 4,477,780 records.

@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-23
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Title Length Category Thresholds
 
 **Applies to:** `scripts/analyse_title_lengths.py`, gold set stratification (SR-08), NER evaluation (SR-09)

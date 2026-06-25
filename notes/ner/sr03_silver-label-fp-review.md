@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-23
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Silver Label False-Positive Review (SR-03)
 
 **SR-03** in [ner-bibliographic.md](../ner-bibliographic.md). See also [sr01_isbd-field-rating.md](sr01_isbd-field-rating.md).

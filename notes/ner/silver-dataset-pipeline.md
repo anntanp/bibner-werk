@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-23
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Silver Dataset Pipeline: Summary and General Framework
 
 A synthesis of what has been done to automatically construct a silver NER training dataset from ISBD punctuation rules in 4,477,780 German DDB title strings, including all resolved study/research questions (SRs). The final section extracts a domain-agnostic framework.

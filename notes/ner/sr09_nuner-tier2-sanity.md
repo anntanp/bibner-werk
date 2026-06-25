@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-27
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # SR-09 — NuNER Zero Tier-2 Sanity Check
 
 **Purpose:** Pilot evaluation of NuNER Zero on tier-2 pre-filled records, using ISBD-derived silver spans as pseudo-gold. Confirms whether NuNER Zero produces plausible output on DDB title strings before committing to full gold annotation.

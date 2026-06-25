@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-27
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA NER Pipeline — Presentation Spiel
 
 ## Chain of thought

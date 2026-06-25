@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-04-15
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — NER Pipeline Reprocessing: Status and Open Issues
 
 **Date:** 2026-04-14 — 2026-04-15
@@ -18,7 +26,7 @@
 | SR-11 sample | `sr11_sample_validation.py` — fixed bug (args.source), dc_type corrected in parquet | `sr11_prompt_validation_manual.jsonl` (50 records) | ✅ |
 | Archive | pkl-era outputs → `data/before-parquet/`; `_v2` files → canonical names | — | ✅ |
 | Notes | [notes/project/reprocessing-workflow.md](https://github.com/anntanp/gemea/blob/main/notes/project/reprocessing-workflow.md), [notes/adr/reprocessing-adr.md](https://github.com/anntanp/gemea/blob/main/notes/adr/reprocessing-adr.md), [notes/adr/corpus-source-adr.md](https://github.com/anntanp/gemea/blob/main/notes/adr/corpus-source-adr.md), [notes/reprocess-adr.md](https://github.com/anntanp/gemea/blob/main/notes/reprocess-adr.md), [notes/project/reprocess-before-after.md](https://github.com/anntanp/gemea/blob/main/notes/project/reprocess-before-after.md) | — | ✅ |
-| [notes/ner/ner-bibliographic.md](https://github.com/anntanp/gemea/blob/main/notes/ner/ner-bibliographic.md) | SR-01 §2.1 + SR-11 §2.11 updated | — | ✅ |
+| [notes/ner/ner-bibliographic.md](https://github.com/anntanp/bibner-werk/blob/main/notes/ner/ner-bibliographic.md) | SR-01 §2.1 + SR-11 §2.11 updated | — | ✅ |
 
 ---
 
@@ -48,7 +56,7 @@
 
 ### 2.5 Notes not yet updated ✅
 
-[notes/ner/ner-bibliographic.md](https://github.com/anntanp/gemea/blob/main/notes/ner/ner-bibliographic.md) SR-11 §2.11 — updated with v2 run status and dc_type sample distribution.
+[notes/ner/ner-bibliographic.md](https://github.com/anntanp/bibner-werk/blob/main/notes/ner/ner-bibliographic.md) SR-11 §2.11 — updated with v2 run status and dc_type sample distribution.
 
 ---
 
@@ -72,11 +80,11 @@
 | [scripts/ner/sr01_rate_isbd_fields.py](https://github.com/anntanp/gemea/blob/main/scripts/ner/sr01_rate_isbd_fields.py) | `load_data()`, ROOT fix |
 | [scripts/ner/sr08_corpus_cell_sizes.py](https://github.com/anntanp/gemea/blob/main/scripts/ner/sr08_corpus_cell_sizes.py) | Full rewrite with argparse + `load_data()` |
 | [scripts/ner/sr11_sample_validation.py](https://github.com/anntanp/gemea/blob/main/scripts/ner/sr11_sample_validation.py) | `load_corpus()` parquet support, ROOT fix — reverted all workaround code |
-| [notes/ner/ner-bibliographic.md](https://github.com/anntanp/gemea/blob/main/notes/ner/ner-bibliographic.md) | SR-01 §2.1 v2 numbers added |
+| [notes/ner/ner-bibliographic.md](https://github.com/anntanp/bibner-werk/blob/main/notes/ner/ner-bibliographic.md) | SR-01 §2.1 v2 numbers added |
 | [notes/corpus-analysis/lang-detection.md](https://github.com/anntanp/gemea/blob/main/notes/corpus-analysis/lang-detection.md) | §5.5 Latin justification added |
 | [notes/project/reprocessing-workflow.md](https://github.com/anntanp/gemea/blob/main/notes/project/reprocessing-workflow.md) | New |
 | [notes/adr/reprocessing-adr.md](https://github.com/anntanp/gemea/blob/main/notes/adr/reprocessing-adr.md) | New (ADR-03) |
 | [notes/adr/corpus-source-adr.md](https://github.com/anntanp/gemea/blob/main/notes/adr/corpus-source-adr.md) | New (ADR-02) |
 | [notes/reprocess-adr.md](https://github.com/anntanp/gemea/blob/main/notes/reprocess-adr.md) | New (impact on GND linking + NER) |
 | [notes/project/reprocess-before-after.md](https://github.com/anntanp/gemea/blob/main/notes/project/reprocess-before-after.md) | New |
-| [notes/ner/reprocess-plan-ner.md](https://github.com/anntanp/gemea/blob/main/notes/ner/reprocess-plan-ner.md) | This file |
+| [notes/ner/reprocess-plan-ner.md](https://github.com/anntanp/bibner-werk/blob/main/notes/ner/reprocess-plan-ner.md) | This file |

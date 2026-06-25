@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-21
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — ISBD Field Rating: Spec and Methodology
 
 **Script:** `scripts/rate_isbd_fields.py`

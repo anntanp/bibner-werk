@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-26
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # Architecture Decision Record — NER for Bibliographic Title Extraction
 
 **Status:** In progress — SR-08 annotation pending; SR-09, SR-11 blocked

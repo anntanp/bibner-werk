@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-23
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — DF_DE_TITLES: Source and Title-Length Distribution
 
 **SR-10** in [ner-bibliographic.md](../ner-bibliographic.md). See also [sr10_title-length-thresholds.md](sr10_title-length-thresholds.md).

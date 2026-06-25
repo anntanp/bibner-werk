@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-12
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — NLP Tasks and Retrieval Design
 
 ---

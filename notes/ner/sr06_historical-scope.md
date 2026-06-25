@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-24
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Historical and Latin Title Scope (SR-06)
 
 **SR-06** in [ner-bibliographic.md](../ner-bibliographic.md).

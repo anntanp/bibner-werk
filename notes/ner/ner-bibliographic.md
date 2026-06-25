@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-13
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — NER for Bibliographic Title Extraction
 
 Context: NER is the **fallback** in `link_gnd_works.py` for records without ISBD markers. The primary extractor is the rule-based ISBD parser. NER only runs when that fails.

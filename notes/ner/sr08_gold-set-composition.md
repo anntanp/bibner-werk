@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-24
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Gold Set Composition (SR-08)
 
 **SR-08** in [ner-bibliographic.md](../ner-bibliographic.md).

@@ -1,0 +1,36 @@
+\section{Related Work}
+\label{sec:related}
+
+% TODO (~1 page, 3 subsections)
+%
+% --- Historical NER and multilingual CH collections ---
+%   HIPE-2022 \cite{ehrmann-etal-2023-hipe} — multilingual historical NER shared task;
+%   German track F1 ceiling (strict regime: 0.703--0.794); exact span match as standard protocol.
+%   Note: HIPE entity types (PERSON, LOC, ORG) differ from ours; cite for protocol and ceiling only.
+%   NewsEye, impresso — newspaper NER pipelines; historical German in scope but prose register,
+%   not bibliographic; establishes that historical German NLP is tractable with domain adaptation.
+%   Weakly supervised historical NER \cite{sorbi-etal-2026-weakly} — closest prior work on
+%   silver labeling for historical text; EXPLICIT differentiation required:
+%     domain (newspapers vs.\ ISBD catalog strings), register (prose vs.\ formulaic punctuation),
+%     label set (standard CoNLL types vs.\ bibliographic TITLE/OTHER\_TITLE/PERSON),
+%     silver strategy (rule-based ISBD extraction vs.\ weak supervision).
+%
+% --- Bibliographic and catalog NLP ---
+%   cc2llm \cite{tan-etal-2024-card} — NLP on DDB title strings (NER + extractive QA + LLM);
+%   directly motivates the present work's label set and register analysis; this paper extends
+%   cc2llm's NER baseline into a full silver labeling + fine-tuning pipeline.
+%   MARC-to-FRBR / author disambiguation: brief coverage of catalog NLP approaches that
+%   work at the record level but assume structured fields (not raw title strings).
+%   BookReconciler \cite{miller-etal-2025-bookreconciler} (if space): work-level clustering
+%   from bibliographic identifiers; complementary to NER-based approach.
+%
+% --- Zero-shot and few-shot NER ---
+%   GLiNER \cite{zaratiana-etal-2024-gliner} — span-based encoder; zero-shot OOD competitive
+%   with LLMs 40× larger; multilingual variant (mdeberta-v3-base) used here; free-text label
+%   descriptions enable domain-specific entity types without retraining.
+%   NuNER Zero \cite{bogdanov-etal-2024-nuner} — few-shot pre-training via LLM-annotated data;
+%   zero-shot capability NOT documented in paper (authors' own disclaimer); F1 ≈ 0 confirmed
+%   on our domain — cite as evidence that the task is out-of-distribution for general NER models.
+%   MiNER \cite{batista-etal-2026-miner} (optional, if space): domain-specific NER for
+%   municipal minutes; fine-tuned transformers outperform LLMs on structured administrative text —
+%   parallel finding to ours in a different domain.

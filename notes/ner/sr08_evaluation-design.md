@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-25
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # SR-08 — Evaluation Design Rationale
 
 Companion to [sr08_gold-set-composition.md](sr08_gold-set-composition.md). Documents the reasoning behind evaluation targets, metric choices, and sample size requirements.

@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-23
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Trailing Period Noise (SR-05)
 
 **SR-05** in [ner-bibliographic.md](../ner-bibliographic.md).

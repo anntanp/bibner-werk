@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-23
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 Update ner-bibliographic.md to address SR-10:
 
 Backtracking source of DF_DE_TITLES:

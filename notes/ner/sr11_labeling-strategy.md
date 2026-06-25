@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-24
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # NER Labeling Strategy — Dataset Size and LLM Annotation
 
 **Status:** 🔄 Active — unblocked 2026-03-28 (SR-08 complete, SR-09 resolved)

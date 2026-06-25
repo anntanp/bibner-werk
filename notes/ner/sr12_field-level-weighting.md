@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-24
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # GeMeA — Field-Level Weighting for Silver Tier Assignment (SR-11)
 
 **SR-11** in [ner-bibliographic.md](../ner-bibliographic.md).

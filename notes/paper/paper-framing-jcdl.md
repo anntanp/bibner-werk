@@ -1,6 +1,15 @@
 ---
 title: JCDL 2026 Paper Framing
-date: 2026-05-20
+up: []
+related: []
+created: 2026-05-20T00:00:00
+updates:
+  - 2026-06-24
+in: bibner-werk
+tags:
+  - paper
+  - jcdl
+  - framing
 context: Primary submission: Framing 2 (NER). TPDL cancelled — dual-submission constraints removed.
 ---
 
@@ -108,11 +117,11 @@ The three-layer dispatch architecture (Layer 1: property alignment; Layer 2: hty
 
 ## 2. Framing 2 — NER for historical German bibliographic title strings
 
-**Title**: *WEM Model: Bibliographic NER for Historical German Catalogs*
+**Title**: *BibNER-Werk: Bibliographic NER for Historical German Catalogs*
 
-**Acronym rationale**: WEM = Work–Expression–Manifestation (FRBR/LRM levels); sounds like WEMI; *wem* (German dative "to whom") signals attribution and authorship; Werkmodell echoes the German compound for a model of a Work. Phase 1 evaluates Work-level entities (TITLE, OTHER_TITLE, PERSON); E and M levels are future phases.
+**Name rationale**: BibNER-Werk = Bibliographic NER for FRBR Work-level entities. *Werk* (German for "work") denotes the FRBR/LRM Work level; Phase 1 evaluates Work-level entities (TITLE, OTHER_TITLE, PERSON); E and M levels are future phases. (Formerly WEM — Work–Expression–Manifestation — renamed to avoid overclaiming scope.)
 
-**One-sentence hook**: Standard NER models fail on ISBD-formatted bibliographic catalog strings across three independent dimensions — wrong label set, wrong domain, wrong register — and 92.4% of 9.2M German-language DDB records lack ISBD structural signals; WEM Model delivers an ISBD-guided silver labeling pipeline, a 395-record stratified gold evaluation, and a four-system comparison establishing the zero-shot and fine-tuned performance ceiling for Work-level entity extraction from historical German library catalogs.
+**One-sentence hook**: Standard NER models fail on ISBD-formatted bibliographic catalog strings across three independent dimensions — wrong label set, wrong domain, wrong register — and 92.4% of 9.2M German-language DDB records lack ISBD structural signals; BibNER-Werk delivers an ISBD-guided silver labeling pipeline, a 395-record stratified gold evaluation, and a four-system comparison establishing the zero-shot and fine-tuned performance ceiling for Work-level entity extraction from historical German library catalogs.
 
 ### 2.1 Core argument
 
@@ -128,7 +137,7 @@ This is a **methodology + dataset + evaluation** paper. The claim is: *here is h
 
 | Source | What to take |
 |---|---|
-| `gemea/notes/ner/spiel_ner.md` §0–§8 | Paper §§1–6; chain-of-thought maps directly to section structure |
+| `notes/ner/spiel_ner.md` §0–§8 | Paper §§1–6; chain-of-thought maps directly to section structure |
 | `sr10_de-titles-distribution.md` + `fig_title_lengths.png` | §2 corpus statistics |
 | `sr01_isbd-field-rating.md`, `sr01_isbd-applicability.md`, `sr01_isbd-title-analysis.md` | §3 ISBD background + silver labeling applicability |
 | `silver-dataset-pipeline.md` | §3 silver labeling methodology |
@@ -221,6 +230,176 @@ This is a **methodology + dataset + evaluation** paper. The claim is: *here is h
 | Key risk | Retrieval eval required; pipeline stats alone insufficient | LLM output parsing fragility; annotation must complete on schedule |
 
 **Recommendation**: **Framing 2 is the primary submission.** Gold annotation due 28 May; five-system comparison (NuNER Zero, gliner_multi zero-shot, Qwen2.5-14B zero-shot, Qwen2.5-14B few-shot, gliner_multi fine-tuned) gives per-stratum F1 results with a 40–50% acceptance ceiling. Submission-ready by ~10 June with ~20 days of buffer. Framing 1 is a viable backup but requires a retrieval experiment to clear the JCDL bar; pipeline statistics alone will not pass review.
+
+---
+
+## 5. Acceptance Assessment #1 — 2026-06-10
+
+**Baseline range: 35–45%** (plan's 40–50% is slightly optimistic)
+
+### 5.1 Strengths
+
+- Three failure dimensions argument (wrong label set, wrong domain, wrong register) is original and crisp; JCDL audience will recognise it
+- Scale: 9.21M records; real downstream use in GeMeA
+- Methodology + dataset + evaluation is the contribution type JCDL rewards
+- Dataset release with human-human IAA strengthens reproducibility
+- cc2llm prior work establishes DDB authority and gives reviewers context
+
+### 5.2 Reviewer pushback expected
+
+- **Gold set size (395 records)**: small by NLP standards; stratification + IAA defends it but needs pre-emptive justification in §5
+- **Related Work at 0.75 p** (→ bumped to 1 p after this assessment): thin coverage risks "insufficient positioning" comment; Sorbi et al. 2026 differentiation must be explicit
+- **3 entity types only**: needs crisp one-sentence answer in paper (FRBR Work identification requires exactly these three; E/M levels are future work)
+- **No generalizability beyond DDB/German**: mention Europeana/broader applicability briefly in conclusion
+
+### 5.3 Outcome depends on fine-tuned F1
+
+| Fine-tuned F1 | Likely acceptance range |
+|---|---|
+| ≥ 0.65 | 42–48% |
+| 0.45–0.64 | 35–42% |
+| < 0.45 | 28–35% — needs reframing as "task is hard + here's why" |
+
+### 5.4 Action items from this assessment
+
+- [x] Related Work → 1 page (was 0.75)
+- [ ] Draft §2 early — check if 1 page is actually enough for Sorbi differentiation
+- [ ] Pre-emptive IAA + gold set size justification in §5
+- [ ] One-sentence answer on 3-entity-type scope in §1 or §3
+- [ ] Conclusion: one sentence on generalizability to other national aggregators
+
+---
+
+## 6. Acceptance Assessment #2 — Devil's Advocate — 2026-06-10
+
+**Revised range after devil's advocate: 30–42%**
+
+The framing has real strengths but seven structural vulnerabilities a hostile reviewer will find.
+Each is stated as the attack, then the mitigation.
+
+---
+
+### 6.1 Method is application, not invention
+
+**Attack**: GLiNER fine-tuning on domain-specific data is standard practice. The paper applies
+an existing tool to a new domain. By NLP venue standards this is incremental — the novelty is
+the domain, not the method.
+
+**Mitigation**: JCDL rewards domain contributions. Reframe throughout as "domain expert
+evaluation" — the contribution is the corpus characterisation, label set design, and
+silver strategy, not a new model architecture. Never claim methodological novelty for GLiNER itself.
+
+---
+
+### 6.2 System comparison is too narrow
+
+**Attack**: Three of four systems are GLiNER variants. NuNER Zero is included as a strawman
+(F1 ≈ 0 already confirmed). There is no BIO tagger (XLM-R fine-tuned, deepset/gbert-large),
+no generative baseline (Llama, Qwen), no rule-only baseline. The comparison looks designed
+to favour GLiNER.
+
+**Mitigation**: Add at least one BIO tagger as a fifth system — `deepset/gbert-large`
+fine-tuned on silver is a natural choice and directly comparable. Without it, reviewers will
+ask for it. Qwen2.5-14B (already planned as optional) would also address the generative gap.
+If compute is tight, a BIO tagger is cheaper than an LLM and more defensible to add.
+
+---
+
+### 6.3 "Ceiling" claim is unjustified
+
+**Attack**: The paper claims to "establish the zero-shot and fine-tuned performance ceiling."
+A ceiling requires exhaustive comparison. Excluding LLMs (Qwen deferred) and BIO taggers
+means the claimed ceiling is just the GLiNER family ceiling — a much weaker claim.
+
+**Mitigation**: Replace "ceiling" with "baseline performance characterisation" or
+"zero-shot and fine-tuned baselines" throughout. Reserve "ceiling" language only for the
+fine-tuned model, where the argument is strongest.
+
+---
+
+### 6.4 Scale claim vs. evaluation scope mismatch
+
+**Attack**: The hook is 9.21M records. But the gold evaluation covers 395 records, and the
+silver labeling applies to only 7.56% of the corpus (tier-1 + tier-2). The paper claims
+scale but evaluates on a sliver. A reviewer can write: "The interesting 92.44% (tier-0,
+no ISBD signal) is entirely out of scope."
+
+**Mitigation**: Address this directly in §3 (Corpus and Task): "We focus on the 7.56% of
+records with ISBD structural signal, where silver labeling is tractable. Tier-0 records
+(92.44%) require a different strategy and are left for future work." Frame it as a deliberate
+scope decision, not a limitation. The tier-0 problem becomes the future work hook in §7.
+
+---
+
+### 6.5 Silver labeling is rule-based, not learned
+
+**Attack**: The silver labeling "pipeline" is ISBD regex matching with a confidence tier.
+Sorbi et al. (2026) use actual weak supervision. By comparison, this is simpler and less
+novel — it is domain-specific rule extraction, not a silver labeling method.
+
+**Mitigation**: Own it. Frame the ISBD rules as "operationalised domain knowledge" rather
+than a learned system. The contribution is identifying WHICH rules are reliable enough for
+silver labeling at WHICH confidence tier — that is the expert knowledge contribution.
+Avoid claiming this as a general silver labeling method; it is a domain-specific strategy.
+
+---
+
+### 6.6 "WEM Model" name misleads — only W is implemented
+
+**Attack**: The paper is named "WEM Model" (Work–Expression–Manifestation) but evaluates
+only Work-level entities. A reviewer familiar with FRBR will note this immediately:
+"This is the W Model."
+
+**Mitigation**: Two options:
+- (A) Keep the name, add a footnote in §1: "Phase 1 covers Work-level entities (TITLE,
+  OTHER\_TITLE, PERSON). Expression and Manifestation levels are future phases."
+- (B) Rename to "WEM-W" or "W-Model" for the paper.
+
+Option A is lower risk (name is already established in the project) and the FRBR/LRM audience
+at JCDL will understand phased development. Add the footnote.
+
+---
+
+### 6.7 Fine-tuned results are the make-or-break number
+
+**Attack**: The entire narrative — "silver labeling validates" — depends on fine-tuned F1 > zero-shot.
+If fine-tuned F1 is ≤ zero-shot (possible if silver labels are too noisy), the contribution
+collapses to "here is a task that is hard." That is publishable as a short paper, not a full paper.
+
+**Mitigation**: No mitigation before the results exist. This is a genuine risk.
+Contingency: if fine-tuned F1 disappoints, reframe as a short paper (4 pp) centred on the
+dataset and evaluation protocol; drop the fine-tuning narrative. Accept a lower acceptance ceiling.
+
+---
+
+### 6.8 Summary table
+
+| Vulnerability | Severity | Fix available now |
+|---|---|---|
+| Application, not invention | Medium | Yes — reframe §1 |
+| Narrow system comparison | High | Yes — add gbert/XLM-R BIO baseline |
+| "Ceiling" overclaim | Medium | Yes — change wording |
+| Scale vs. scope mismatch | Medium | Yes — address in §3 |
+| Silver = rule-based | Low–Medium | Yes — reframe §4 |
+| WEM name misleads | Low | Yes — add footnote |
+| Fine-tuned F1 unknown | High | No — wait for A3a/B5 |
+
+### 6.9 Revised acceptance estimate
+
+| Scenario | Range |
+|---|---|
+| Fine-tuned F1 ≥ 0.65 + BIO baseline added | 42–50% |
+| Fine-tuned F1 ≥ 0.65, no BIO baseline | 35–42% |
+| Fine-tuned F1 0.45–0.64 | 30–38% |
+| Fine-tuned F1 < 0.45 | short paper fallback |
+
+### 6.10 Action items from this assessment
+
+- [x] Add XLM-R large fine-tuned BIO tagger as 5th system → added to A5, D3, B5b, wem-eval-plan.md
+- [ ] Replace all "ceiling" language with "baseline characterisation" → §1, §5, abstract
+- [ ] Add tier-0 scope statement to §3 Corpus and Task
+- [ ] Add BibNER-Werk Phase 1 footnote to §1 Introduction
+- [ ] Reframe silver labeling as "domain knowledge operationalisation" → §4
 
 ---
 

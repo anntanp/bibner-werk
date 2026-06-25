@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-26
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # NER Task — Data Tables Index
 
 All data tables produced by scripts for the NER pipeline, ordered by pipeline stage. For tables embedded in notes but not backed by a file, see the table of tables in [sr08_evaluation-design.md](sr08_evaluation-design.md).

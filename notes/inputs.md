@@ -1,4 +1,17 @@
-# WEM Model — Input Inventory
+---
+up: []
+related: []
+created: 2026-06-24T00:00:00
+updates:
+  - 2026-06-24
+in: bibner-werk
+tags:
+  - inputs
+  - data
+  - ner
+---
+
+# BibNER-Werk — Input Inventory
 
 ## Gold annotation set
 
@@ -20,7 +33,7 @@
 
 **Path**: `data/annotation/doccano/label_import.json`
 **Format**: Doccano label configuration JSON
-**Provenance**: Exported from Doccano project for WEM Phase 1
+**Provenance**: Exported from Doccano project for BibNER-Werk Phase 1
 **Labels**: TITLE, OTHER_TITLE, PERSON (Phase 1); TRANSLATOR, PARALLEL_TITLE, SERIES reserved for Phase 2
 
 ---

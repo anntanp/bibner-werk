@@ -1,3 +1,11 @@
+---
+up: 
+related: 
+created: 2026-03-26
+updates: 2026-06-25
+in: bibner-werk
+tags: []
+---
 # SR-08 — TITLE Boundary Curation for Exact Span Match
 
 Companion to [sr08_annotation-guide.md](sr08_annotation-guide.md) and [sr08_evaluation-design.md](sr08_evaluation-design.md).
