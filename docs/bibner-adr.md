@@ -154,6 +154,33 @@ Targets are grounded in benchmark ceilings (OntoNotes WORK_OF_ART: 0.55–0.72; 
 
 ---
 
+### D-11 — IAA metric: Krippendorff's α with nominal distance function
+
+**Decision:** Inter-coder agreement is measured using Krippendorff's α (Krippendorff 1980, 2004a) with the nominal distance function ($d_{ab} = 0$ if $a = b$, else $d_{ab} = 1$).
+
+**Why:** Three reasons, following Artstein and Poesio (2008):
+1. α is defined for any number of coders — it accommodates all three annotators (frankp, gundi, maria) directly, unlike Cohen's κ which is restricted to two.
+2. The nominal distance function is the correct and unambiguous choice for mutually exclusive entity labels (TITLE, OTHER_TITLE, PERSON).
+3. As a single-distribution coefficient, α measures the reliability of the annotation *procedure* rather than the behaviour of individual annotators — the appropriate target for a corpus released as a reusable resource.
+
+Cohen's κ (two coders only) and percentage agreement (no chance correction, biased by category prevalence) were considered and rejected.
+
+**Data (export-20260623-1110):**
+
+| Annotator | Reviewed / 395 |
+|-----------|---------------|
+| frankp    | 394 |
+| gundi     | 395 |
+| maria     | 392 |
+
+Co-reviewed pair counts: frankp/gundi 394, frankp/maria 391, gundi/maria 392.
+Negative judgments (gundi: 130, maria: 98 "no entity" records) are included as valid label-$O$ annotations.
+α is computed on pre-adjudication annotations; reconciliation produces `gold_reconciled.jsonl`.
+
+**Notes:** [bibner-werk-adr.md](../paper/bibner-werk-adr.md) ADR-01 · [iaa-score-walkthrough.md](../../notes/fiz/bibner-werk/iaa-score-walkthrough.md) · Artstein and Poesio (2008) §2.6.1, §3.1
+
+---
+
 ## 3. Open decisions
 
 | Decision | Blocked on | Notes |
