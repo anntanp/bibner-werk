@@ -1,0 +1,74 @@
+[
+  {
+    "doc_id": 1,
+    "llm_suggested_label": [[7, 47, "TITLE"]],
+    "llm_rationale": "No SoR marker (' / ', 'von', 'durch') supports PERSON for 'Bismark' — it reads as the topic of a periodical article, so TITLE covers the remainder after the leading issue-number prefix '16-30, '.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 3,
+    "llm_suggested_label": [[0, 45, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE; a numbered, individually titled sermon is a genuinely titled sub-unit despite gundi's Kapitel flag.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[0, 45, "TITLE"], [48, 93, "OTHER_TITLE"]],
+    "llm_rationale": "Matches the guide's ' : ' subtitle pattern (annotation guide §5.1) exactly; frankp's boundary excludes the trailing space before the colon per the whitespace-trim rule.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 5,
+    "llm_suggested_label": [[0, 345, "TITLE"]],
+    "llm_rationale": "gundi's shorter span excludes the trailing ' ...' truncation marker, consistent with the guide's rule (§5.10) that truncation markers are not part of any span, even though frankp/maria's longer span is the numeric majority.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 6,
+    "llm_suggested_label": [[0, 363, "TITLE"], [366, 382, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's split isolates 'Jm Thon: Kompt her zu mir ...' as a tune cross-reference (OTHER_TITLE) from the main title, and both spans cleanly exclude trailing truncation/typography markers; complexity of this pre-1700 broadside warrants low confidence.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 7,
+    "llm_suggested_label": [[0, 58, "TITLE"], [61, 71, "OTHER_TITLE"]],
+    "llm_rationale": "Matches the guide's ' : ' + volume-number pattern (§5.1/§4 flowchart) exactly; gundi is the only annotator who completed the OTHER_TITLE span the rule calls for.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 9,
+    "llm_suggested_label": [[0, 291, "TITLE"], [296, 409, "PERSON"]],
+    "llm_rationale": "Guide §5.8 explicitly requires merging the full credential + name + role phrase into one PERSON span; frankp's span is the only one that follows this rule completely.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 10,
+    "llm_suggested_label": [[0, 33, "TITLE"], [37, 73, "OTHER_TITLE"]],
+    "llm_rationale": "Guide §3.1 states exactly one TITLE per record, ruling out gundi's two-TITLE split; frankp's trailing period on 'Soldaten.' is ordinary sentence punctuation, not a separator, so it stays in TITLE.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 11,
+    "llm_suggested_label": [[23, 53, "TITLE"], [56, 105, "OTHER_TITLE"], [108, 130, "PERSON"]],
+    "llm_rationale": "Genuinely uncertain: the leading 'Rastegar, Nosratollah,' reads as a duplicate name-heading (per frankp's own comment) rather than a labelable PERSON, and the two bracketed statements are ISBD series statements that don't fit TITLE/OTHER_TITLE/PERSON — recommend close PI review rather than treating this suggestion as settled.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 13,
+    "llm_suggested_label": [[0, 338, "TITLE"], [341, 527, "OTHER_TITLE"]],
+    "llm_rationale": "Text after ' : ' is a full relative clause ('Welche Freytags...'), not a bare date range, so the guide's life-date colon exception does not apply and OTHER_TITLE is correct per the default flowchart rule.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 14,
+    "llm_suggested_label": [[0, 791, "TITLE"]],
+    "llm_rationale": "frankp and gundi agree exactly at offset 791; maria's extra 4 characters are the trailing ' ...' truncation marker, excluded per the same convention applied to doc 5.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 16,
+    "llm_suggested_label": [[0, 20, "TITLE"], [49, 61, "PERSON"]],
+    "llm_rationale": "frankp and maria agree exactly: 'Liturgisches Magazin' is a genuine journal title and '[Hrsg. von G. F. Seiler]' is a standard editor SoR phrase (guide §3.1 PERSON design note explicitly covers editors), despite gundi's Aufsatz flag.",
+    "llm_confidence": "high"
+  }
+]

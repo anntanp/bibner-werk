@@ -2,6 +2,24 @@
 """
 Compute whitespace word-token counts per era from de_titles_tokenized.parquet.
 
+STATUS (2026-07-03): BROKEN, NEVER SUCCESSFULLY RUN — superseded by
+sr10_era_length_summary_v2.py --word-tokens. Kept for history, not for reuse.
+Known issues found during a later veracity check:
+  1. DATA_IN is hardcoded to a path inside this repo
+     (data/processed/de_titles_tokenized.parquet) that has never existed here —
+     the parquet lives in gemea/data/processed/, and this script has no
+     argparse override, violating this README's own "no hardcoded paths"
+     convention. No output CSV was ever produced, confirming it was never run.
+  2. assign_era() assumes `dates` may be a list
+     (`dates_val[0] if isinstance(dates_val, list) else dates_val`); in the
+     actual parquet, `dates` is always a plain str or None, never a list —
+     that branch is dead code based on a mistaken schema assumption.
+  3. No title-regex fallback for unparseable/null `dates` — records that
+     sr10_analyse_title_lengths.py and sr10_era_length_summary_v2.py would
+     recover via a year mentioned in the title text are dropped straight to
+     "unknown" here, so even a fixed version would undercount dated eras
+     relative to the cross-validated numbers in sr10_era_length_summary_v2_words.csv.
+
 Purpose:  Produce per-era median word count (whitespace split) to replace the
           BPE-token median in the workshop slide deck era stratification table.
 Usage:    python scripts/ner/sr10_word_token_era_summary.py

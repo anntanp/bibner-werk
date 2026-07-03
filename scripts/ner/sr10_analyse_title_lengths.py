@@ -250,7 +250,7 @@ def main(data_path: Path, output_dir: Path, suffix: str, word_tokens: bool = Fal
             },
             "year_range": [year_min, year_max],
             "bucket_size": size,
-            "length_thresholds": {"short_max": SHORT_MAX, "medium_max": MEDIUM_MAX},
+            "length_thresholds": {"short_max": short_max, "medium_max": medium_max},
             "overall": {
                 "short": short_n, "medium": medium_n, "long": long_n,
                 "median_all_tokens": median(all_all),

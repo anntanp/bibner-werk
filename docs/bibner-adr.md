@@ -165,6 +165,19 @@ Targets are grounded in benchmark ceilings (OntoNotes WORK_OF_ART: 0.55–0.72; 
 
 Cohen's κ (two coders only) and percentage agreement (no chance correction, biased by category prevalence) were considered and rejected.
 
+**Coefficient comparison (Artstein and Poesio 2008, §2.4–§2.6, §3.1):**
+
+| | S (Bennett 1954) | π (Scott 1955) | κ (Cohen 1960) | α (Krippendorff 1980) |
+|---|---|---|---|---|
+| Chance model | Uniform: all labels equally likely | Pooled: single distribution over all coders | Per-coder marginals: each coder's own distribution | Pooled with unbiased small-sample correction |
+| $c > 2$ coders | Via generalization | Fleiss multi-π (1971) | Davies & Fleiss (1982) | **Native** |
+| Annotator bias | Ignores | Ignores | **Sensitive to** | Ignores |
+| Weighted distances | No | No | κ_w (Cohen 1968) | **Yes** |
+| Missing values | No | No | No | **Yes** |
+| CL convention | Rare | De facto (called "kappa") | Common | Less common |
+
+**Why not κ?** κ incorporates per-coder marginals into $A_e$, discounting disagreements that arise from different coder distributions. A&P note that the common claim that κ "rewards" annotators for distributional disagreement is "unwarranted" (§3.1, p. 571) — what κ actually does is absorb those disagreements into expected agreement rather than counting them against the procedure. For reliability assessment (the typical CL goal: would a different annotator trio following the same guidelines produce the same result?), all disagreements should count — making single-distribution coefficients like π or α the appropriate choice. κ remains informative for validity (trustworthiness of a specific annotator pair), but that is a different question. α is preferred over π because it uses an unbiased estimator of $D_e$ and is numerically equivalent to multi-π as $\mathbf{i}$ or $\mathbf{c}$ grows.
+
 **Data (export-20260623-1110):**
 
 | Annotator | Reviewed / 395 |
