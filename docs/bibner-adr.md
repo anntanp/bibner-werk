@@ -32,6 +32,8 @@ Each record is assigned a **silver tier** by `sr01_rate_isbd_fields.py` based on
 
 `has_dot_dash` (`. -` area separator) is the gating condition for tier-2: it is present in only 1.2% of records, which directly caps tier-2 at 0.1%. Tier-0 is where NER does all the work.
 
+**Note (2026-07-08): the tier-2 count above is what `sr01_rate_isbd_fields.py` itself computes and writes to `sr01_isbd_field_ratings.csv` — it is not the count actually used to select titles for `silver_spans.jsonl`.** `build_silver_spans.py` recomputes tier-2 locally, substituting `f_resp_person` for `f_person` (D-04's tightening), since the ratings CSV predates that amendment. The operative tier-2 count for span selection is **2,384**, not 4,613 — see D-03 below and `A2-silver-spans-script-plan.md` §2.4.
+
 ---
 
 ## 2. Decisions
@@ -54,7 +56,7 @@ Each record is assigned a **silver tier** by `sr01_rate_isbd_fields.py` based on
 
 **Why (SR-02):** ` :` appears in 20.2% of titles; ` /` appears in only 0.8%. Prioritising ` /` would miss 96% of subtitle splits.
 
-**Notes:** [sr01_isbd-field-rating.md](sr01_isbd-field-rating.md) · [sr01_isbd-field-rating-adr.md](sr01_isbd-field-rating-adr.md)
+**Notes:** [sr01_isbd-field-rating.md](../notes/fiz/bibner-werk/ner/sr01_isbd-field-rating.md) · [isbd-field-rating-adr.md](isbd-field-rating-adr.md)
 
 ---
 
@@ -64,7 +66,11 @@ Each record is assigned a **silver tier** by `sr01_rate_isbd_fields.py` based on
 
 **Why (SR-03, SR-05):** FP rates above 15% degrade silver label quality below usefulness. `f_parallel` and `f_edition` were found to fire predominantly on false positives. Trailing `.` adds no detection power beyond `has_dot_dash`.
 
-**Notes:** [sr03_silver-label-fp-review.md](sr03_silver-label-fp-review.md) · [sr05_trailing-period-noise.md](sr05_trailing-period-noise.md)
+**Implementation update (2026-07-08, A2/`build_silver_spans.py`):** this decision's tier-2 criterion is stated in terms of `f_person`, per the original `sr01_rate_isbd_fields.py` implementation (§1 Context table: 4,613 records). D-04's later tightening (`f_resp_person` replacing `f_person`, via FLERT) applies to tier-2 membership too, not just to which spans get a PERSON label — `build_silver_spans.py` recomputes tier-2 from raw flags using `f_resp_person`, since some `f_person=1` records are corporate bodies or editors, not individual-author SoRs, and shouldn't count as tier-2's "richest multi-field training data" under ADR-04's original rationale either. Recomputed tier-2 = **2,384 records** (down from 4,613) — see `A2-silver-spans-script-plan.md` §2.4 for the exact substitution and the full derivation.
+
+**In short**: 4,613 is "how many records have a slash-marked responsibility statement" (stale formula, still what's on disk). 2,384 is "how many of those slash-marked statements are confirmed to actually name a person" (the corrected formula, applying a decision that was made but never propagated upstream).
+
+**Notes:** [sr03_silver-label-fp-review.md](sr03_silver-label-fp-review.md) · [sr05_trailing-period-noise.md](sr05_trailing-period-noise.md) · [A2-silver-spans-script-plan.md](../../notes/fiz/bibner-werk/A2-silver-spans-script-plan.md)
 
 ---
 

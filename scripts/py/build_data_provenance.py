@@ -8,7 +8,7 @@ Usage:
         --export-dir data/annotation/doccano/export-20260623-1110 \
         --silver-spans data/processed/silver_spans.jsonl \
         --parquet-file /Users/mta/Documents/claude/gemea/output/parquet/s2_meta.parquet \
-        --output data/gold/bibner-data-provenance.parquet
+        --output data/provenance/bibner-data-provenance.parquet
 
 Inputs:
     --export-dir: directory of per-annotator Doccano export JSONL files,

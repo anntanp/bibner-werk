@@ -23,6 +23,7 @@ data/eval/
 
 # Large binary data
 *.parquet
+!data/provenance/bibner-data-provenance.parquet
 *.pkl
 
 # Python
