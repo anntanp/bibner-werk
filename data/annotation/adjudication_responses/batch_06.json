@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 83,
+    "llm_suggested_label": [[0, 27, "TITLE"], [32, 53, "PERSON"]],
+    "llm_rationale": "frankp and maria agree exactly on TITLE and the SoR PERSON despite gundi's Aufsatz flag; a genuine short titled work.",
+    "llm_rationale_de": "frankp und maria stimmen exakt bei TITLE und der SoR-PERSON überein, trotz gundis Aufsatz-Markierung; ein echtes, kurzes betiteltes Werk.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 84,
+    "llm_suggested_label": [[0, 20, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the trailing period; short genuinely titled work despite gundi's Abschnitt flag.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen den abschließenden Punkt aus; ein kurzes, echt betiteltes Werk trotz gundis Abschnitt-Markierung.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 86,
+    "llm_suggested_label": [[0, 191, "TITLE"], [195, 353, "OTHER_TITLE"]],
+    "llm_rationale": "Majority (frankp/maria) TITLE boundary excludes the trailing abbreviation period on 'Selb.'; OTHER_TITLE excludes the terminal sentence period at the very end of the string, consistent with the convention applied to docs 23/62/80/84.",
+    "llm_rationale_de": "Die Mehrheit (frankp/maria) schließt bei der TITLE-Grenze den abschließenden Abkürzungspunkt bei 'Selb.' aus; OTHER_TITLE schließt den satzendenden Punkt am äußersten Ende der Zeichenkette aus, im Einklang mit der bei den Dokumenten 23/62/80/84 angewendeten Konvention.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 87,
+    "llm_suggested_label": [[0, 260, "TITLE"]],
+    "llm_rationale": "gundi's boundary is the only one that cleanly excludes both the trailing whitespace and the ' ...' truncation marker; frankp's includes the space, maria's includes the full marker.",
+    "llm_rationale_de": "gundis Grenze ist die einzige, die sowohl den abschließenden Leerraum als auch den ' ...'-Kürzungsmarker sauber ausschließt; frankps Version enthält das Leerzeichen, marias den vollständigen Marker.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 88,
+    "llm_suggested_label": [[0, 22, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE despite gundi's Kapitel flag.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE, trotz gundis Kapitel-Markierung.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 89,
+    "llm_suggested_label": [[0, 21, "TITLE"], [23, 330, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's split at 'Das ist:' follows an explicit guide-cited OTHER_TITLE trigger (guide §3.1); OTHER_TITLE end trimmed of trailing whitespace before the ' ...' truncation marker.",
+    "llm_rationale_de": "gundis Aufteilung bei 'Das ist:' folgt einem ausdrücklich im Leitfaden genannten OTHER_TITLE-Auslöser (Leitfaden §3.1); das OTHER_TITLE-Ende ist von abschließendem Leerraum vor dem ' ...'-Kürzungsmarker bereinigt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 90,
+    "llm_suggested_label": [[0, 9, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on this single-word title despite gundi's Kapitel flag.",
+    "llm_rationale_de": "frankp und maria stimmen exakt bei diesem Einwort-Titel überein, trotz gundis Kapitel-Markierung.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 92,
+    "llm_suggested_label": [[0, 213, "TITLE"]],
+    "llm_rationale": "frankp and maria unanimously include the 'Zweyter Zeitraum.' period-marker within TITLE rather than excluding it as an enumeration prefix (unlike docs 56/66/67/93) — deferring to their actual agreement here rather than forcing the other pattern, since 'Zweyter Zeitraum' reads as a structural epoch division integral to this history text's own title convention.",
+    "llm_rationale_de": "frankp und maria beziehen einstimmig den Absatzmarker 'Zweyter Zeitraum.' in TITLE ein, statt ihn wie bei den Dokumenten 56/66/67/93 als Aufzählungspräfix auszuschließen — hier wird ihrer tatsächlichen Übereinstimmung gefolgt, statt das andere Muster zu erzwingen, da sich 'Zweyter Zeitraum' als strukturelle Epocheneinteilung liest, die fester Bestandteil der eigenen Titelkonvention dieses Geschichtswerks ist.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 93,
+    "llm_suggested_label": [[7, 57, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the leading archival page reference '1v-2v, '.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen den führenden Archiv-Seitenverweis '1v-2v, ' aus.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 96,
+    "llm_suggested_label": [[0, 88, "TITLE"], [91, 164, "OTHER_TITLE"]],
+    "llm_rationale": "maria's split at ' : ' matches the flowchart default over frankp's single merged TITLE; both boundaries are already clean.",
+    "llm_rationale_de": "marias Aufteilung bei ' : ' entspricht der Standardregel des Entscheidungsbaums gegenüber frankps einzelnem zusammengeführten TITLE; beide Grenzen sind bereits sauber.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 99,
+    "llm_suggested_label": [[0, 112, "PERSON"], [135, 541, "TITLE"]],
+    "llm_rationale": "Opens with a ruler's full credential+name+role sequence, the same recurring pre-1700-style pattern as docs 32/36/54/55/68; TITLE end follows gundi's clean boundary, excluding the trailing ' ...' truncation marker and space.",
+    "llm_rationale_de": "Beginnt mit der vollständigen Sequenz aus Titel/Grad + Name + Rolle eines Herrschers, demselben wiederkehrenden vorreformatorischen Muster wie bei den Dokumenten 32/36/54/55/68; das TITLE-Ende folgt gundis sauberer Grenze und schließt den abschließenden ' ...'-Kürzungsmarker sowie das Leerzeichen aus.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 100,
+    "llm_suggested_label": [[0, 13, "PERSON"], [15, 52, "TITLE"], [55, 143, "OTHER_TITLE"], [146, 158, "PERSON"]],
+    "llm_rationale": "maria's split at the internal ' : ' matches the flowchart default over frankp's merged TITLE; leading name-heading included as PERSON per the majority pattern seen in docs 21/24/42/79. The trailing series statement ('Beiträge zur Heimatkunde des Landkreises Augsburg ; 11') is excluded per ADR D-13: series statements are Manifestation-level (ISBD Area 6 / RDA 2.12), not Work-level, regardless of annotator agreement.",
+    "llm_rationale_de": "marias Aufteilung am internen ' : ' entspricht der Standardregel des Entscheidungsbaums gegenüber frankps zusammengeführtem TITLE; der führende Namenskopf wird gemäß dem bei den Dokumenten 21/24/42/79 beobachteten Mehrheitsmuster als PERSON eingeschlossen. Der abschließende Reihenvermerk ('Beiträge zur Heimatkunde des Landkreises Augsburg ; 11') wird gemäß ADR D-13 ausgeschlossen: Reihenvermerke sind Manifestationsebene (ISBD-Bereich 6 / RDA 2.12), keine Werkebene, unabhängig von der Übereinstimmung der Annotatoren.",
+    "llm_confidence": "high"
+  }
+]

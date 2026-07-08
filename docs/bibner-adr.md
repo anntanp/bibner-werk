@@ -2,7 +2,9 @@
 up: 
 related: 
 created: 2026-03-26
-updates: 2026-06-25
+updates:
+  - 2026-06-25
+  - 2026-07-06
 in: bibner-werk
 tags: []
 ---
@@ -72,7 +74,9 @@ Each record is assigned a **silver tier** by `sr01_rate_isbd_fields.py` based on
 
 **Why (SR-04):** 0 true translators found in 100-record sample. EDITOR detection: 0 F1. Only 35% of `f_person` records are true author SoRs; 41% are non-SoR false positives, 19% corporate bodies, 5% editors. The ISBD/RDA agent model requires sub-classification, not a flat TRANSLATOR label.
 
-**Notes:** [sr04_translator-person-disambiguation.md](sr04_translator-person-disambiguation.md)
+**Implementation update (2026-07-06, A2/`build_silver_spans.py`):** the original keyword-list implementation of this sub-classification (`RESP_ORG_RE` matching institutional keywords, falling back to `f_resp_person` by default) measured only 41% PERSON precision against the same SR-04 100-record sample cited above — open-vocabulary person/institution name detection has no fixed keyword list to match against, and the "safe default" masked most non-SoR and corporate false positives as PERSON. Replaced with `flair/ner-german-large` (FLERT — Schweter & Akbik, 2020, document-level contextual embeddings over XLM-R) deciding PERSON vs. ORG directly from its `PER`/`ORG` tags; `f_resp_editor`/`f_resp_family` keyword regexes are unchanged (role qualifiers, not NER categories) and are checked *before* the FLERT tags, since an editor's own name still gets tagged `PER`. Re-verified against the SR-04 sample via `scripts/py/verify_resp_classifier.py`.
+
+**Notes:** [sr04_translator-person-disambiguation.md](sr04_translator-person-disambiguation.md) · [A2-silver-spans-script-plan.md](../../notes/fiz/bibner-werk/A2-silver-spans-script-plan.md)
 
 ---
 
@@ -156,14 +160,21 @@ Targets are grounded in benchmark ceilings (OntoNotes WORK_OF_ART: 0.55–0.72; 
 
 ### D-11 — IAA metric: Krippendorff's α with nominal distance function
 
-**Decision:** Inter-coder agreement is measured using Krippendorff's α (Krippendorff 1980, 2004a) with the nominal distance function ($d_{ab} = 0$ if $a = b$, else $d_{ab} = 1$).
+**Decision:** Inter-coder agreement is measured using Krippendorff's α (Krippendorff 1980, 2004a) with the nominal distance function ($d_{ab} = 0$ if $a = b$, else $d_{ab} = 1$), computed on the pre-adjudication annotations (raw labels before manual resolution).
 
-**Why:** Three reasons, following Artstein and Poesio (2008):
-1. α is defined for any number of coders — it accommodates all three annotators (frankp, gundi, maria) directly, unlike Cohen's κ which is restricted to two.
-2. The nominal distance function is the correct and unambiguous choice for mutually exclusive entity labels (TITLE, OTHER_TITLE, PERSON).
-3. As a single-distribution coefficient, α measures the reliability of the annotation *procedure* rather than the behaviour of individual annotators — the appropriate target for a corpus released as a reusable resource.
+**Why:** Four reasons, following Artstein and Poesio (2008):
+1. α is defined for any number of coders — it accommodates all three annotators (frankp, gundi, maria) directly, unlike Cohen's κ which is restricted to two. "The coefficient α... is an extremely versatile agreement coefficient... It applies to multiple coders, and it allows for different magnitudes of disagreement" (§2.6.1, p. 564).
+2. The nominal distance function is the correct and unambiguous choice for mutually exclusive entity labels (TITLE, OTHER_TITLE, PERSON): "the function for nominal categories... considers all distinct labels equally distant from one another: $d_{ab}=0$ if $a=b$; $1$ if $a \neq b$" (§2.6.1, pp. 566–567).
+3. As a single-distribution coefficient, α measures the reliability of the annotation *procedure* rather than the behaviour of individual annotators — the appropriate target for a corpus released as a reusable resource: "The most appropriate measures of reliability for this purpose are therefore single-distribution coefficients like π and α, which generalize over the individual coders and exclude marginal disagreements from the expected agreement" (§3.1, p. 571); "We agree with the view that K and α are more appropriate, as they abstract away from the bias of specific coders" (§5.2, p. 590).
+4. Near-complete coverage — missing data is negligible: α's formula uses $n_{ik}$ (number of coders assigning item $i$ to category $k$), which naturally handles items annotated by fewer than $c$ coders. With 1–3 missing judgments out of 395 items, the effect on the coefficient is negligible.
 
-Cohen's κ (two coders only) and percentage agreement (no chance correction, biased by category prevalence) were considered and rejected.
+**Alternatives considered:**
+
+| Metric | Reason rejected |
+|---|---|
+| Cohen's κ | Defined for 2 coders only |
+| Fleiss's multi-π | Valid, but α is nearly identical for nominal data and preferred by A&P for reliability studies |
+| Percentage agreement | Does not correct for chance; biased by category distribution (§2.3, p. 558) |
 
 **Coefficient comparison (Artstein and Poesio 2008, §2.4–§2.6, §3.1):**
 
@@ -178,6 +189,8 @@ Cohen's κ (two coders only) and percentage agreement (no chance correction, bia
 
 **Why not κ?** κ incorporates per-coder marginals into $A_e$, discounting disagreements that arise from different coder distributions. A&P note that the common claim that κ "rewards" annotators for distributional disagreement is "unwarranted" (§3.1, p. 571) — what κ actually does is absorb those disagreements into expected agreement rather than counting them against the procedure. For reliability assessment (the typical CL goal: would a different annotator trio following the same guidelines produce the same result?), all disagreements should count — making single-distribution coefficients like π or α the appropriate choice. κ remains informative for validity (trustworthiness of a specific annotator pair), but that is a different question. α is preferred over π because it uses an unbiased estimator of $D_e$ and is numerically equivalent to multi-π as $\mathbf{i}$ or $\mathbf{c}$ grows.
 
+**Caveat:** α with a non-nominal (weighted) distance metric can be difficult to interpret because results vary substantially with the choice of weights (§2.6.1, p. 567). Does not apply here — the nominal distance function is unambiguous for NER labels. Bootstrap confidence intervals are deferred (same point-estimate-over-CI reasoning as D-10); if needed later, follow Krippendorff (2004a, §11.4.2) and Hayes and Krippendorff (2007).
+
 **Data (export-20260623-1110):**
 
 | Annotator | Reviewed / 395 |
@@ -190,7 +203,62 @@ Co-reviewed pair counts: frankp/gundi 394, frankp/maria 391, gundi/maria 392.
 Negative judgments (gundi: 130, maria: 98 "no entity" records) are included as valid label-$O$ annotations.
 α is computed on pre-adjudication annotations; reconciliation produces `gold_reconciled.jsonl`.
 
-**Notes:** [bibner-werk-adr.md](../paper/bibner-werk-adr.md) ADR-01 · [iaa-score-walkthrough.md](../../notes/fiz/bibner-werk/iaa-score-walkthrough.md) · Artstein and Poesio (2008) §2.6.1, §3.1
+α values (ALL + per-label): `data/iaa/sr08_iaa_export-20260623-1110.csv`
+Pairwise α values (ALL + per-label, all pairs): `data/iaa/sr08_iaa_pairwise_export-20260623-1110.csv`
+Raw label assignments backing both: `data/iaa/sr08_iaa_counts_export-20260623-1110.csv`
+
+**Notes:** [inter-annotator-agreement.md](inter-annotator-agreement.md) · [iaa-score-walkthrough.md](../../notes/fiz/bibner-werk/iaa-score-walkthrough.md) · Krippendorff (1980, 2004a); Artstein and Poesio (2008) §2.3, §2.6.1, §3.1, §5.2
+
+---
+
+### D-12 — Span agreement metric: exact-match rate + mean Jaccard, not chance-corrected
+
+**Decision:** Given two annotators agree a label exists on a document (D-11's α measures that), report whether they agree on its *character span* as two plain statistics, computed pairwise, restricted to (pair, doc, label) triples where both annotators marked the label present: exact-match rate (identical character-position sets) and mean Jaccard overlap ($|A \cap B| / |A \cup B|$). Not routed through Krippendorff's α. Two annotators can both mark "TITLE present" while marking different spans (e.g., one includes a trailing person's name in the TITLE span, the other doesn't) — D-11's α cannot see this, since it only measures whether the label was assigned at all.
+
+**Why:** α's expected-disagreement term $D_e$ pools *all* judgments in the corpus and averages distance over every possible pair, which assumes judgments are drawn from one shared, comparable universe. Character offsets in BibNER-Werk are document-local — a span at characters 10–20 in one document has no relationship to characters 10–20 in another — so pooling raw span positions the way $D_e$ requires would measure incidental differences in document length and span position, not real disagreement. Krippendorff's α_U (unitizing alpha, §4.3.2) sidesteps this for a single continuous text stream, which doesn't match BibNER-Werk's 395 independent short catalog strings; Artstein and Poesio (2008, p. 582) note α_U itself has "never been tested in CL," with known unintuitive behavior when one coder's span overlaps two of another's. Exact-match rate and mean Jaccard are the standard, citable way to report span agreement in NER literature instead — simpler than F1 (no precision/recall asymmetry to justify, since both annotators are peers, not gold vs. system) and bounded in [0,1] like α. A&P §10.2–10.3 already recommended reporting overlap alongside α as a sanity check ("reviewers familiar with NER will expect span-level agreement numbers"). A&P §4.4.3 independently demonstrates why a chance-corrected span coefficient is fragile in practice: computing α on the same discourse-antecedent annotations with different (but equally defensible) distance metrics yielded values ranging from 0.122 to 0.998 — the choice of metric, not the underlying agreement, drove the result.
+
+**Alternatives considered:**
+
+| Approach | Reason rejected |
+|---|---|
+| Extend Krippendorff's α with a span distance metric (α_U-style) | $D_e$ pooling is not meaningful across document-local character offsets; no CL precedent (A&P, p. 582) |
+| Gamma γ (Mathet et al. 2015) | Designed for exactly this problem, but rarely used, no standard implementation, hard to cite |
+| Token-level κ (BIO tagging) | Inflates agreement via the prevalence problem — most tokens are O (§3.2, A&P) |
+
+**Caveat:** Not chance-corrected — doesn't distinguish genuine boundary agreement from what overlap would occur by chance, which was the whole point of using α for existence agreement in D-11. Accepted tradeoff: no chance-corrected alternative is both meaningful for document-local spans and citable.
+
+**Results (export-20260623-1110, pairwise, ALL scope pooled across labels):**
+
+| Pair | n_existence_agreed | exact% | mean Jaccard |
+|---|---:|---:|---:|
+| frankp/gundi | 373 | 38.9% | 0.726 |
+| frankp/maria | 388 | 43.8% | 0.737 |
+| gundi/maria | 354 | 50.3% | 0.792 |
+
+gundi/maria has both the best existence-α (−0.018, D-11) and the best span agreement (50.3% exact, 0.792 Jaccard) — consistent at the top end, despite the two metrics being computed from disjoint information (whether a label was assigned vs. where its boundaries fall). The weakest pair differs by metric, though: frankp/maria has the lowest existence-α (−0.201) while frankp/gundi has the lowest span agreement (38.9% exact, 0.726 Jaccard). This points to two distinct failure modes rather than one annotator being uniformly weaker: frankp and maria disagree most on *whether* a label applies at all, while frankp and gundi disagree most on *where* it applies once they've agreed it's present.
+
+**Data:** `data/iaa/sr08_iaa_span_pairwise_export-20260623-1110.csv` (ALL + per-label, all pairs)
+
+**Notes:** [inter-annotator-agreement.md](inter-annotator-agreement.md) §1.7 · [iaa-score-walkthrough.md](../../notes/fiz/bibner-werk/iaa-score-walkthrough.md) §10 · [adr-02-plan.md](../../notes/fiz/bibner-werk/adr-02-plan.md) (design-rationale record) · Artstein and Poesio (2008) §3.2, §4.3.2, §4.4.3
+
+---
+
+### D-13 — Series statements excluded from Round 1 adjudication (Manifestation-level, per D-06)
+
+**Decision:** Bracketed/parenthetical series statements (e.g. `(Sitzungsberichte / Österreichische Akademie der Wissenschaften...; 477)`) encountered during Round 1 gold adjudication are left unlabeled — not `TITLE`, not `OTHER_TITLE` — regardless of how many annotators happened to tag one.
+
+**Why:** A series statement is ISBD Area 6, deliberately separate from Area 1 (title/statement of responsibility); RDA models series membership as a Manifestation-level relationship (RDA 2.12) between this publication and the series, not an attribute of the Work or Expression. D-06 already defers `SERIES` to a later phase alongside `PUBLISHER`, `PLACE`, `YEAR`, `EDITION`, `VOLUME` — this decision applies that existing scope boundary consistently during adjudication, rather than letting per-document annotator agreement (which varied across cases) override it.
+
+**Examples (Round 1, export-20260623-1110):**
+- doc 11: `(Sitzungsberichte / Österreichische Akademie der Wissenschaften, Philosophisch-Historische Klasse ; 477)` and `(Österreichische Akademie der Wissenschaften <Wien> / Veröffentlichungen der Iranischen Kommission ; 20)` — 0 of 3 annotators agreed on a labeling
+- doc 29: `(Quellensammlung für fränkische Geschichte, herausgegeben von dem historischen Vereine zu Bamberg; 3. Band)` — 1 annotator (frankp) labeled it OTHER_TITLE
+- doc 100: `(Beiträge zur Heimatkunde des Landkreises Augsburg ; 11)` — both non-O annotators (frankp, maria) independently agreed on the same OTHER_TITLE span
+
+**Considered and rejected (for now):** tagging these now as a new `SERIES` label, front-loading Manifestation-level data collection the way Phase 2 labels (`TRANSLATOR`, `PARALLEL_TITLE`, `MEDIUM`) were front-loaded per D-06. Rejected because D-06's "annotate in the same pass" reasoning was scoped to Phase 2 (Expression-level) labels only — Manifestation-level labels were deferred outright, not fast-tracked alongside them. Introducing `SERIES` mid-adjudication would also produce an inconsistent gold set: tier-1/tier-2 auto-accepted documents were never reviewed for series statements, since no annotator was ever asked to look for them, so only the tier-3 subset would end up with (partial) `SERIES` coverage. If Manifestation-level annotation is scheduled later, it should be a dedicated pass over all 395 records with its own guide additions, not a retrofit onto the tier-3 subset alone.
+
+**Caveat — a title-of-a-multi-volume-work is not a series statement:** doc 135 (`Lebens-Beschreibungen Der Biblischen Scribenten. [11], Georgii Serpilii, S. Salomo, ...`; `dc_type: Band`) was initially misclassified under this decision and excluded, then corrected. The distinguishing test: a series statement names a generic publishing vehicle that could host any number of otherwise-unrelated works (docs 11, 29, 100's series names would fit equally well on a completely different book on a different topic). A multi-volume work's own collective title does not pass that test — `Lebens-Beschreibungen Der Biblischen Scribenten` refers to nothing except this one encyclopedic project, and "volume 11" is thematically part of *that specific work*, not a work placed inside an unrelated series. The former is `SERIES` (D-13 applies, exclude); the latter is the Work's own `TITLE` (D-13 does not apply), with the volume number excluded the same way other volume/part designators are excluded elsewhere in this corpus.
+
+**Notes:** [adjudication-method.md](adjudication-method.md) (resolution tiers, §2; pipeline, §3) · relates to D-06
 
 ---
 

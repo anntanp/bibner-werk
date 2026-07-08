@@ -1,0 +1,539 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 329,
+    "text": "Die hundertste Predigt aus Zach. XIII. v. 4. 5. 6.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            49,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 331,
+    "text": "Der diener singt. Der herr sey mit euch Und mit seinem geyst.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            60,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 332,
+    "text": "Zeitschrift für Baiern und die angränzenden Länder. 5, [5] = Jg. 2. 1817",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            50,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            51,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            50,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 334,
+    "text": "Zimmerli, Walther Ch., Einmischungen : die sanfte Macht der Philosophie / Walther Ch. Zimmerli : Darmstadt, 1993. - X, 144 S. - (WB-Forum ; 83)",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "PERSON"
+          ],
+          [
+            23,
+            71,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            21,
+            "PERSON"
+          ],
+          [
+            23,
+            36,
+            "TITLE"
+          ],
+          [
+            39,
+            71,
+            "OTHER_TITLE"
+          ],
+          [
+            74,
+            94,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            23,
+            37,
+            "TITLE"
+          ],
+          [
+            39,
+            71,
+            "OTHER_TITLE"
+          ],
+          [
+            74,
+            94,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 335,
+    "text": "Modulhandbuch Master Wirtschaftsingenieurwesen : Studienordnungsversion: 2009",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            46,
+            "TITLE"
+          ],
+          [
+            49,
+            77,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            46,
+            "TITLE"
+          ],
+          [
+            49,
+            77,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            46,
+            "TITLE"
+          ],
+          [
+            49,
+            71,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 336,
+    "text": "Abbildungen zur Naturgeschichte Brasiliens / hrsg. von Maximilian, Prinzen von Wied. - Weimar : Landes-Industrie-Comptoir. - 2. Lfg. 1823",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            43,
+            "TITLE"
+          ],
+          [
+            55,
+            83,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 337,
+    "text": "II. Articulen der Gemeine im Parlament zur Handhabung der Beschuldigung wieder William Laud, Ertzbischoffen zu Cantelbury beschuldiget wird; Ferner des Bischoffs Entschuldigung gegen die vorgehende Artickel : Item seine Leichpredigt, die er selber auff dem Richtplatz hat gethan, genomen aus Hebr. XII. verss. 1. 2. HIngerichtet den 10. Januarii, 1645",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            4,
+            314,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 338,
+    "text": "Modulhandbuch Bachelor Polyvalenter Bachelor mit Lehramtsoption für berufsbildende Schulen - Elektrotechnik, Vertiefung: MA : Studienordnungsversion: 2013",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            90,
+            "TITLE"
+          ],
+          [
+            93,
+            119,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            123,
+            "TITLE"
+          ],
+          [
+            126,
+            154,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            123,
+            "TITLE"
+          ],
+          [
+            126,
+            148,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 339,
+    "text": "Der siebenzehende Punct.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            23,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 340,
+    "text": "Reise in das innere Nordamerica in den Jahren 1832 bis 1834 / von Maximilian, Prinz zu Wied. - Coblenz : Hölscher. - [Bd.] I, 1839 ; [Bd.] II, 1841",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            59,
+            "TITLE"
+          ],
+          [
+            66,
+            91,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 341,
+    "text": "Des H. Königs Davids und aller Gottliebenden Creutzträger Trost im Elend : Aus dem CXIX. Psalm. v. 92. In einer Leich-Sermon Den 12. Martii Anno 1671. Bey der Adelichen Beysetzung Der ... Anna Dorothea von Kersenbruch/ Des ... Liborius von Münchhausen Auff Rinteln und Schwöbber Erbsassen/ auch gewesenen Drosten zu Ertzen und Bückeburg. Nachgelassener Witwen/ Fürgetragen/ erkläret/ und auff Begehren in Druck heraus gegeben",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            73,
+            "TITLE"
+          ],
+          [
+            75,
+            425,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            72,
+            "TITLE"
+          ],
+          [
+            75,
+            425,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            425,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 342,
+    "text": "Über die Notwendigkeit und Möglichkeit einer neuen Ausgabe der hebräischen Bibel : Studien und Erwägungen / von Rudolf Kittel",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            81,
+            "TITLE"
+          ],
+          [
+            83,
+            105,
+            "OTHER_TITLE"
+          ],
+          [
+            112,
+            125,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            80,
+            "TITLE"
+          ],
+          [
+            83,
+            105,
+            "OTHER_TITLE"
+          ],
+          [
+            112,
+            125,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            80,
+            "TITLE"
+          ],
+          [
+            83,
+            105,
+            "OTHER_TITLE"
+          ],
+          [
+            112,
+            125,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

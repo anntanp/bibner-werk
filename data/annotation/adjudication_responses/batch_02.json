@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 17,
+    "llm_suggested_label": [[0, 29, "TITLE"], [62, 102, "OTHER_TITLE"]],
+    "llm_rationale": "Excludes the archival shelfmark and item number ('BSB Mus.ms. 4672 a-2,4 :Nr. 4') between the collection title and the piece title, matching the convention of excluding volume/item numbers from labeled spans.",
+    "llm_rationale_de": "Schließt die Archivsignatur und Stücknummer ('BSB Mus.ms. 4672 a-2,4 :Nr. 4') zwischen dem Sammlungstitel und dem Stücktitel aus, entsprechend der Konvention, Band-/Stücknummern von markierten Spannen auszuschließen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 20,
+    "llm_suggested_label": [[0, 174, "TITLE"], [181, 489, "OTHER_TITLE"]],
+    "llm_rationale": "Majority (gundi/maria) split at ' : ' matches the guide's default flowchart rule; gundi's shorter TITLE boundary excludes the trailing ' ...' truncation marker per the established convention.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) teilt bei ' : ', entsprechend der Standardregel des Leitfaden-Entscheidungsbaums; gundis kürzere TITLE-Grenze schließt den abschließenden ' ...'-Kürzungsmarker gemäß der etablierten Konvention aus.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 21,
+    "llm_suggested_label": [[0, 20, "PERSON"], [22, 88, "TITLE"], [107, 126, "PERSON"]],
+    "llm_rationale": "gundi and maria agree exactly, labeling the leading inverted-name catalog heading as PERSON; note this is inconsistent with doc 11 (batch 1), where a similar leading heading was excluded — this pattern recurs across documents and may warrant a general policy decision rather than a per-doc call.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein und markieren den führenden invertierten Namenskopf der Katalogaufnahme als PERSON; dies ist inkonsistent mit Dokument 11 (Batch 1), wo ein ähnlicher führender Namenskopf ausgeschlossen wurde — dieses Muster tritt dokumentübergreifend wiederholt auf und könnte eine allgemeine Regelentscheidung statt einer Einzelfallentscheidung erfordern.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 22,
+    "llm_suggested_label": [[0, 260, "TITLE"], [272, 299, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's split at the genuine ' : ' separator matches the flowchart default; both her boundaries cleanly exclude the trailing '[et]c.||' abbreviation/typography and the ' ...' truncation marker, unlike maria's single merged span.",
+    "llm_rationale_de": "gundis Aufteilung am echten ' : '-Trennzeichen entspricht der Standardregel des Entscheidungsbaums; beide ihrer Grenzen schließen sauber die abschließende Abkürzung/Typographie '[et]c.||' und den ' ...'-Kürzungsmarker aus, im Gegensatz zu marias einzelner zusammengeführter Spanne.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 23,
+    "llm_suggested_label": [[0, 50, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the trailing sentence-ending period before the volume/issue statement ('5, 5 = Stück 41 - 48. 1758'), which none of the three annotators labeled.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen den abschließenden satzendenden Punkt vor der Band-/Heftangabe ('5, 5 = Stück 41 - 48. 1758') aus, den keiner der drei Annotatoren markiert hat.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 24,
+    "llm_suggested_label": [[0, 15, "PERSON"], [17, 67, "TITLE"], [69, 88, "OTHER_TITLE"], [116, 139, "PERSON"]],
+    "llm_rationale": "All three agree on the leading PERSON heading; majority (gundi/maria) splits TITLE/OTHER_TITLE at the period before 'Gesammelte Aufsätze', with maria's boundary excluding the period itself as the separator; 'Hrsg. u. eingeleitet von' is a standard editor SoR phrase per guide §3.1.",
+    "llm_rationale_de": "Alle drei stimmen bei der führenden PERSON-Kopfzeile überein; die Mehrheit (gundi/maria) teilt TITLE/OTHER_TITLE am Punkt vor 'Gesammelte Aufsätze', wobei marias Grenze den Punkt selbst als Trennzeichen ausschließt; 'Hrsg. u. eingeleitet von' ist eine standardmäßige Herausgeber-Verantwortlichkeitsangabe gemäß Leitfaden §3.1.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 25,
+    "llm_suggested_label": [[0, 12, "PERSON"], [14, 98, "TITLE"], [101, 199, "OTHER_TITLE"], [260, 289, "TRANSLATOR"]],
+    "llm_rationale": "Genuinely titled monograph (translated medical treatise) despite gundi's Aufsatz flag; maria's ' : ' split matches the flowchart default over frankp's single merged TITLE; TRANSLATOR agreed by both labelers via the explicit 'übers. von' keyword. Note: whether to label the leading name-heading as PERSON is inconsistent across docs 11/21/24/25 so far — same cross-cutting issue as doc 21.",
+    "llm_rationale_de": "Echte betitelte Monographie (übersetzte medizinische Abhandlung) trotz gundis Aufsatz-Markierung; marias ' : '-Aufteilung entspricht der Standardregel des Entscheidungsbaums, im Gegensatz zu frankps einzelnem zusammengeführten TITLE; TRANSLATOR wird von beiden Annotatorinnen übereinstimmend über das ausdrückliche Schlüsselwort 'übers. von' vergeben. Hinweis: Ob der führende Namenskopf als PERSON markiert werden soll, ist bislang über die Dokumente 11/21/24/25 hinweg inkonsistent — dasselbe übergreifende Problem wie bei Dokument 21.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 27,
+    "llm_suggested_label": [[0, 36, "TITLE"], [95, 111, "OTHER_TITLE"]],
+    "llm_rationale": "Archival finding-aid structure repeats the collection heading before naming the specific item; recategorizing gundi's second TITLE span ('Göttlicher Wille') as OTHER_TITLE keeps to one TITLE per record (guide §3.1) while still capturing the sub-item title, consistent with doc 17's collection+piece pattern in this same batch.",
+    "llm_rationale_de": "Die Struktur eines Archiv-Findbuchs wiederholt die Sammlungsüberschrift, bevor der konkrete Titel des Einzelstücks genannt wird; gundis zweite TITLE-Spanne ('Göttlicher Wille') wird zu OTHER_TITLE umkategorisiert, um bei einem TITLE pro Datensatz zu bleiben (Leitfaden §3.1), während der Titel des Teilstücks weiterhin erfasst wird — im Einklang mit dem Sammlung-plus-Einzelstück-Muster von Dokument 17 in diesem selben Batch.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 29,
+    "llm_suggested_label": [[0, 68, "TITLE"], [139, 148, "PERSON"]],
+    "llm_rationale": "Only 'C. Höfler' as PERSON is agreed exactly by all three annotators; frankp's own spans overlap internally (PERSON[0:25] inside TITLE[0:60]) and gundi's TITLE starts one character late, so this is a low-confidence best-effort reading (maria's TITLE boundary) rather than a clean resolution — recommend close PI review, and the two ISBD series statements are left unlabeled per the doc-11 precedent.",
+    "llm_rationale_de": "Nur 'C. Höfler' als PERSON wird von allen drei Annotatoren exakt übereinstimmend markiert; frankps eigene Spannen überlappen sich intern (PERSON[0:25] innerhalb von TITLE[0:60]), und gundis TITLE beginnt einen Buchstaben zu spät — daher handelt es sich um eine Lesart mit geringer Konfidenz nach bestem Bemühen (marias TITLE-Grenze) statt um eine saubere Lösung; enge PI-Prüfung wird empfohlen, und die beiden ISBD-Reihenvermerke bleiben gemäß dem Präzedenzfall von Dokument 11 unmarkiert.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 30,
+    "llm_suggested_label": [[0, 21, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE; a short, clean, genuinely titled work despite gundi's Aufsatz flag, same pattern as docs 3/16 in batch 1.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE; ein kurzes, sauberes, echt betiteltes Werk trotz gundis Aufsatz-Markierung, dasselbe Muster wie bei den Dokumenten 3/16 in Batch 1.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 32,
+    "llm_suggested_label": [[0, 133, "PERSON"], [138, 504, "TITLE"]],
+    "llm_rationale": "Opens with a ruler's full credential+name+role sequence, matching the guide's explicit pre-1700 pattern (§4 flowchart: credential+name+role at the start → PERSON, remainder → TITLE) exactly; frankp is the only annotator who applied this structure. TITLE boundary follows gundi's clean end (504), excluding the trailing ' ...' truncation marker; the closing place/date colophon is left unlabeled, consistent with doc 5 (batch 1).",
+    "llm_rationale_de": "Beginnt mit der vollständigen Sequenz aus Titel/Grad + Name + Rolle eines Herrschers, was exakt dem im Leitfaden ausdrücklich beschriebenen vorreformatorischen Muster entspricht (§4 Entscheidungsbaum: Titel/Grad+Name+Rolle am Anfang → PERSON, Rest → TITLE); frankp ist der einzige Annotator, der diese Struktur angewendet hat. Die TITLE-Grenze folgt gundis sauberem Ende (504), das den abschließenden ' ...'-Kürzungsmarker ausschließt; das abschließende Orts-/Datumskolophon bleibt unmarkiert, im Einklang mit Dokument 5 (Batch 1).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 33,
+    "llm_suggested_label": [[0, 351, "TITLE"], [354, 538, "OTHER_TITLE"]],
+    "llm_rationale": "maria's split point sits at the genuine ' : ' separator (the flowchart's canonical OTHER_TITLE trigger), while gundi's split is at a mere sentence-ending period earlier in the text — the explicit colon marker takes precedence over a plausible but non-canonical alternative.",
+    "llm_rationale_de": "marias Trennpunkt liegt am echten ' : '-Trennzeichen (dem kanonischen OTHER_TITLE-Auslöser des Entscheidungsbaums), während gundis Trennung an einem bloßen satzendenden Punkt weiter vorne im Text liegt — das ausdrückliche Doppelpunkt-Zeichen hat Vorrang vor einer plausiblen, aber nicht-kanonischen Alternative.",
+    "llm_confidence": "medium"
+  }
+]

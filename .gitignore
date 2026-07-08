@@ -6,9 +6,20 @@
 .Trashes
 **/.DS_Store
 
-# Data — annotation exports contain personal annotator names; processed outputs are reproducible from scripts
-data/annotation/doccano/
+# Data — annotation exports contain personal annotator names
+data/annotation/doccano/*
+!data/annotation/doccano/README.md
+
+# Data — reproducible from tracked scripts + the (gemea-external) corpus; not tracked directly
 data/processed/
+data/silver/
+data/title-length/
+data/eval/
+
+# data/gold/, data/iaa/, data/adjudication/, data/heuristics/ ARE tracked — they're manually
+# reviewed ground truth (gold labels, IAA scores, adjudication decisions, sr04 true_class), not
+# reproducible from scripts alone (their raw input, the Doccano exports above, is PII-excluded),
+# and contain no PII themselves. See notes/fiz/bibner-werk/data-reorg-plan.md.
 
 # Large binary data
 *.parquet

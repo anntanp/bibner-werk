@@ -1,0 +1,513 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 83,
+    "text": "Sechs neue Schülergespräche von Christoph Hegendorfer",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            27,
+            "TITLE"
+          ],
+          [
+            32,
+            53,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            27,
+            "TITLE"
+          ],
+          [
+            32,
+            53,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 84,
+    "text": "Das Buch der Richter.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 86,
+    "text": "Leichpredigt Vom Christlichen Leben/ und Seligen absterben/ deß Edeln/ Gestrengen und Ehrnvesten Christoffen von Eckersberg/ Fürstl: Durchl: Brand: [et]c. Fürnemen Raths/ und Amptmans zu Selb. : Welcher seliglich in Gott entschlaffen und verschieden/ den 4. Tag Novemb: diß 1603. Jars. Und den 14. hernacher/ in der Pfarrkirchen aldo ... begraben worden.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            191,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            192,
+            "TITLE"
+          ],
+          [
+            195,
+            354,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            191,
+            "TITLE"
+          ],
+          [
+            195,
+            353,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 87,
+    "text": "Unsere freundliche [] Demnach abermals vorgekommen, daß verschiedene Branntwein-Brenner im Fürstenthum Lüneburg, den Branntewein, wider das unterm 5. May 1712. ergangene Verbott, bey gantzen Wagen voll aus einem Amte ins andere von Dorff zu Dorff ... zu fahren ... : Hannover den 23. April 1734.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            261,
+            "TITLE"
+          ]
+        ],
+        "comment": "There seems to be a word missing between \"freundliche\" and \"Demnach\""
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            260,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            264,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 88,
+    "text": "Von zeitlichen Guetern",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            22,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            22,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 89,
+    "text": "Diaskepsis Theologica, Das ist: Christliche Leichpredigt/ In welcher der 42. Psalm bey Volckreicher Versamlung/ als die Erbare und Tugendsame Frau und bekandte Bürgerin Odilia Hornungs/ Des ... Herrn Johann Ackermannes ... Ehegattin/ Nachdem sie den 23. Aprilis ... war eingeschlaffen/ Den 28. eiusdem ... begraben worden/ Erkläret ...",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            321,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ],
+          [
+            23,
+            331,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            335,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 90,
+    "text": "Seidenbau",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            9,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Kein Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            9,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 92,
+    "text": "Zweyter Zeitraum. Von der Zerstörung des westgothischen Reichs in Spanien durch die Araber, und ihrer Oberherrschaft über dieses Land, bis auf die Zeit, da ganz Spanien von einem christlichen Fürsten regiert wurde",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            213,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            213,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 93,
+    "text": "1v-2v, Copia Allerunterthänigsten Intercession-Schreibens ...",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            7,
+            57,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            7,
+            57,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 96,
+    "text": "Daß die Underthanen fleißig in die Predigt und zur Lehr des Catechismi zugehen vermahnet : und wie die / so solchs mutwilliglich versäumen / gestrafft werden sollen",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            164,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            88,
+            "TITLE"
+          ],
+          [
+            91,
+            164,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 99,
+    "text": "Von Gottes Gnaden Wir Carl, Landgraff zu Hessen, Fürst zu Herßfeld, ... Fügen allen und jeden Unsern Unterthanen ... hiemit zu wissen: Nachdem Uns ... angezeigt worden, ... daß die Copulationes ausser Landes, ohngeachtet der auf solches Verbrechen bishero gesetzter Straffe, eine Zeit her allzugemein werden, und das junge Volck, wann die Eltern und andere vorgesetzte Personen in ihre Heyraht nicht willigen, ... zum grösesten Despect Unser Landes-Hoheit, darauf so stracks an Papistische Orthe sich verfügen und daselbsten copuliren lassen ... : Cassel, am 24. Tag Maji Anno 1721.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            112,
+            "PERSON"
+          ],
+          [
+            135,
+            542,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            541,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            544,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 100,
+    "text": "Pötzl, Walter, Lebensbilder zu Bildern aus dem Leben : Biographien von bedeutenden Persönlichkeiten und einfachen Leuten aus fünf Jahrhunderten / Walter Pötzl : Augsburg, 1991. - 272 S. : zahlr. Ill., Kt.. - (Beiträge zur Heimatkunde des Landkreises Augsburg ; 11)",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            15,
+            144,
+            "TITLE"
+          ],
+          [
+            146,
+            158,
+            "PERSON"
+          ],
+          [
+            209,
+            258,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            13,
+            "PERSON"
+          ],
+          [
+            15,
+            52,
+            "TITLE"
+          ],
+          [
+            55,
+            143,
+            "OTHER_TITLE"
+          ],
+          [
+            209,
+            258,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

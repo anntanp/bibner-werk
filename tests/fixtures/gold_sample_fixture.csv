@@ -1,0 +1,21 @@
+obj_id,title,dates,dc_type,silver_tier,era,all_tokens,ddb_link
+OBJ001,Historia von der Wunderbaren Reise,1500,Monografie,0,pre-1700,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ001
+OBJ002,Beschreibung des Königreichs Franckreich,1510,Monografie,0,pre-1700,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ002
+OBJ003,Kurtze Chronik der Stadt Nürnberg,1520,Monografie,1,pre-1700,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ003
+OBJ004,Das Leben und Wirken,1530,Monografie,1,pre-1700,10,https://www.deutsche-digitale-bibliothek.de/item/OBJ004
+OBJ005,Abhandlung über die Naturgeschichte,1540,Monografie,2,pre-1700,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ005
+OBJ006,Historia von der Wunderbaren Reise,1600,Monografie,0,1700-1800,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ006
+OBJ007,Beschreibung des Königreichs Franckreich,1610,Monografie,0,1700-1800,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ007
+OBJ008,Kurtze Chronik der Stadt Nürnberg,1620,Monografie,1,1700-1800,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ008
+OBJ009,Das Leben und Wirken,1630,Monografie,1,1700-1800,10,https://www.deutsche-digitale-bibliothek.de/item/OBJ009
+OBJ010,Abhandlung über die Naturgeschichte,1640,Monografie,2,1700-1800,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ010
+OBJ011,Historia von der Wunderbaren Reise,1700,Monografie,0,19th-c,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ011
+OBJ012,Beschreibung des Königreichs Franckreich,1710,Monografie,0,19th-c,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ012
+OBJ013,Kurtze Chronik der Stadt Nürnberg,1720,Monografie,1,19th-c,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ013
+OBJ014,Das Leben und Wirken,1730,Monografie,1,19th-c,10,https://www.deutsche-digitale-bibliothek.de/item/OBJ014
+OBJ015,Abhandlung über die Naturgeschichte,1740,Monografie,2,19th-c,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ015
+OBJ016,Historia von der Wunderbaren Reise,1800,Monografie,0,modern,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ016
+OBJ017,Beschreibung des Königreichs Franckreich,1810,Monografie,0,modern,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ017
+OBJ018,Kurtze Chronik der Stadt Nürnberg,1820,Monografie,1,modern,11,https://www.deutsche-digitale-bibliothek.de/item/OBJ018
+OBJ019,Das Leben und Wirken,1830,Monografie,1,modern,10,https://www.deutsche-digitale-bibliothek.de/item/OBJ019
+OBJ020,Abhandlung über die Naturgeschichte,1840,Monografie,2,modern,6,https://www.deutsche-digitale-bibliothek.de/item/OBJ020

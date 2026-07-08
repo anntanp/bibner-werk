@@ -1,0 +1,515 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 280,
+    "text": "Pulverprobe :(Vorgelegt in der Sitzung am 18. Mai 1865)",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            11,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            11,
+            "TITLE"
+          ],
+          [
+            13,
+            55,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            11,
+            "TITLE"
+          ],
+          [
+            14,
+            54,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 281,
+    "text": "An den gutherzigen Leser",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            24,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 282,
+    "text": "Die Guten Gedancken eines plötzlich Sterbenden, Mit welchen Bey solennen Leichen-Begängniß Des ... Herrn Georg Christoph Böhmens, Gewesenen ansehnlichen Bürgers, wie auch wohlrenommirten Kauff- und Handelsmannes allhier in Gera, Als derselbe auf das Fest der Heil. Dreyfaltigkeit, war eben der 31. May dieses itztlauffenden 1733. Jahres, nach angehörter Predigt ... todt zur Erden niedersanck, und ... den 3. Junii ... beerdiget wurde, Suchte aus dessen erwehlten Leichen-Text Psalm CXXXII. v. 14. Die ... Leydtragenden ... aufzurichten Ioannes Avenarius, Past. und Superint. des Hochgräfl. Gemeinschafftl. Consistorii Assess. Prim. des Gymnasii Illustris Inspector und Theol. Profess. Publicus",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            496,
+            "TITLE"
+          ],
+          [
+            537,
+            694,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            46,
+            "TITLE"
+          ],
+          [
+            48,
+            536,
+            "OTHER_TITLE"
+          ],
+          [
+            537,
+            554,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            694,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 283,
+    "text": "Theatri Europaei Continuatio III. Das ist: Historischer Chronicken Dritter Theil :In sich begreiffend Eine kurze und warhaffte Beschreibung aller vornehmen, Denck- und Chronickwürdigen Geschichten, so sich hin und wieder in der gantzen Welt, in den beyden Ost- und West-Indien, sonderlich in Europa, in Franckreich, Hispanien, Italien, Groß-Britannien, Dännemarck, Schweden, Polen, Böhmen, Hungarn, Siebenbürgen, Wallachey, Moldau, auch theils Türck- und Barbarey ... In Hoch- und Nieder-Teutschland, allermeist aber im Reich Teutscher Nation ... von Anno 1633. biß 1638. inclusive ... begeben und zugetragen",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            32,
+            "TITLE"
+          ],
+          [
+            43,
+            80,
+            "PARALLEL_TITLE"
+          ],
+          [
+            82,
+            608,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            32,
+            "TITLE"
+          ],
+          [
+            34,
+            80,
+            "TITLE"
+          ],
+          [
+            82,
+            608,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            608,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 284,
+    "text": "Besonderer Inhalt.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            17,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Inhaltsverzeichnis"
+      }
+    }
+  },
+  {
+    "doc_id": 286,
+    "text": "Spiegel oder die Sprüche Salomonis :nach den zehen Geboten Gottes ordentlich alle zusammen gesetzt ...",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ],
+          [
+            36,
+            99,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ],
+          [
+            36,
+            102,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ],
+          [
+            36,
+            99,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 287,
+    "text": "Fingerzeige für so manches eigenartige Verhalten, für so manches plötzliche Verändertsein von Kindern",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            101,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 290,
+    "text": "Ein ander Liedt. ||",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            15,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            16,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 291,
+    "text": "Zwiefache Treue 1. Des mit Gott verbundenen Menschen/ 2. Des gnädig-belohnenden Gottes :Aus dem Spruch Apoc. II, 10. Sey getreu bis an den Todt/ so wil ich dir die Krone des Lebens geben; Bey ansehnlicher Leichbestattung Der ... Frauen Barbaren/ Des ... Hn. Leonhard Laubens/ Bürgers und Wohlbenahmten Handelsmans allhier zu Leipzig gewesenen Ehelichen HausFrau/ welche ... den 17. Maij dieses 1659. Jahrs die Welt gesegnet/ und den 20. eiusd. Christlich in ihr Ruhekämmerlein gebracht worden; In etwas ausgeführet ...",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            115,
+            "TITLE"
+          ],
+          [
+            117,
+            492,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            86,
+            "TITLE"
+          ],
+          [
+            88,
+            518,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            518,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 293,
+    "text": "Die Vorschulfrage in der Bürgerschaft : 2. Beilage zu Nr. 42 der Pädagogischen Reform",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            37,
+            "TITLE"
+          ],
+          [
+            40,
+            85,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 295,
+    "text": "Religions Fried Zwischen der Augspurgischen Confession Verwandten Ständen/ von den Bäpstischen: in dem Passawischen vertrag anno M. D. LII. erstlich bewilligt ...",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            94,
+            "TITLE"
+          ],
+          [
+            96,
+            159,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 296,
+    "text": "Register, Der jenigen Länder, Völcker, Stätt, Oehrter, Flüß, Berg, und anderer Dingen, welche in disem Geographischen Wercklein begriffen seynd ...",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            144,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            147,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

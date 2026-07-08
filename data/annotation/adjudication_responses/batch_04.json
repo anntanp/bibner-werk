@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 51,
+    "llm_suggested_label": [[0, 12, "TITLE"], [15, 60, "OTHER_TITLE"]],
+    "llm_rationale": "Direct precedent from doc 4 (batch 1, identical 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' structure): split at ' : ' per the flowchart default, annotated normally despite the Aufsatz-style scope flag.",
+    "llm_rationale_de": "Direkter Präzedenzfall von Dokument 4 (Batch 1, identische Struktur 'X : N. Beilage zu Nr. Y der Pädagogischen Reform'): Aufteilung bei ' : ' gemäß der Standardregel des Entscheidungsbaums, normal annotiert trotz der aufsatzartigen Geltungsbereich-Markierung.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 53,
+    "llm_suggested_label": [[0, 52, "TITLE"], [55, 83, "OTHER_TITLE"]],
+    "llm_rationale": "Same structure as doc 47 (batch 3, 'Modulhandbuch ... : Studienordnungsversion: YYYY'); gundi's fuller OTHER_TITLE span (including the year) is preferred for the same reason as doc 47 — splitting the label from its value leaves a meaningless fragment.",
+    "llm_rationale_de": "Gleiche Struktur wie Dokument 47 (Batch 3, 'Modulhandbuch ... : Studienordnungsversion: JJJJ'); gundis vollständigere OTHER_TITLE-Spanne (einschließlich des Jahres) wird aus demselben Grund wie bei Dokument 47 bevorzugt — eine Trennung der Bezeichnung von ihrem Wert hinterlässt ein bedeutungsloses Fragment.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 54,
+    "llm_suggested_label": [[0, 105, "PERSON"], [110, 531, "TITLE"]],
+    "llm_rationale": "Opens with a ruler's full credential+name+role sequence, matching the recurring pre-1700-style flowchart pattern (docs 32, 36); TITLE end follows gundi's clean boundary, excluding the trailing ' ...' truncation marker and space.",
+    "llm_rationale_de": "Beginnt mit der vollständigen Sequenz aus Titel/Grad + Name + Rolle eines Herrschers, entsprechend dem wiederkehrenden vorreformatorischen Muster des Entscheidungsbaums (Dokumente 32, 36); das TITLE-Ende folgt gundis sauberer Grenze und schließt den abschließenden ' ...'-Kürzungsmarker sowie das Leerzeichen aus.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 55,
+    "llm_suggested_label": [[0, 147, "PERSON"], [152, 409, "TITLE"]],
+    "llm_rationale": "Same credential-opening pattern as docs 32/36/54; gundi's TITLE start (122) falls mid-credential and doesn't correspond to any sensible boundary, so frankp's split is used, with the PERSON end trimmed of trailing whitespace and the TITLE end following the frankp/gundi-agreed clean boundary that excludes the trailing ' ...' marker.",
+    "llm_rationale_de": "Dasselbe Kopfzeilenmuster wie bei den Dokumenten 32/36/54; gundis TITLE-Anfang (122) liegt mitten im Titel-/Namensteil und entspricht keiner sinnvollen Grenze, daher wird frankps Aufteilung verwendet, wobei das PERSON-Ende von abschließendem Leerraum bereinigt wird und das TITLE-Ende der von frankp/gundi übereinstimmend sauberen Grenze folgt, die den abschließenden ' ...'-Marker ausschließt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 56,
+    "llm_suggested_label": [[12, 28, "TITLE"]],
+    "llm_rationale": "frankp's own comment flags that the chapter enumeration 'is not exactly part of the chapter title'; maria's tighter span excluding '9. Kapitel. ' matches the convention of excluding enumeration/numbering prefixes seen elsewhere in this corpus.",
+    "llm_rationale_de": "frankps eigener Kommentar merkt an, dass die Kapitelzählung 'nicht genau Teil des Kapiteltitels' ist; marias engere Spanne, die '9. Kapitel. ' ausschließt, entspricht der Konvention, Aufzählungs-/Nummerierungspräfixe auszuschließen, wie andernorts im Korpus zu beobachten.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 57,
+    "llm_suggested_label": [[0, 23, "TITLE"], [25, 369, "OTHER_TITLE"]],
+    "llm_rationale": "All three agree on TITLE; frankp and gundi's matching OTHER_TITLE boundary is preferred over maria's 4-character-longer version, which includes a trailing ' ...' truncation marker.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die übereinstimmende OTHER_TITLE-Grenze von frankp und gundi wird gegenüber marias um 4 Zeichen längerer Version bevorzugt, die einen abschließenden ' ...'-Kürzungsmarker enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 58,
+    "llm_suggested_label": [[0, 234, "TITLE"], [236, 363, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's split at the explicit ' :' colon (the flowchart's primary structural marker) is preferred over frankp's split at the first 'oder', which is one of two 'oder's used as ordinary internal conjunctions within this single baroque-style title rather than as a genuine subtitle trigger.",
+    "llm_rationale_de": "gundis Aufteilung am expliziten ' :'-Doppelpunkt (dem primären Strukturmarker des Entscheidungsbaums) wird gegenüber frankps Aufteilung am ersten 'oder' bevorzugt, welches eines von zwei 'oder' ist, die als gewöhnliche interne Konjunktionen innerhalb dieses einzelnen barocken Titels verwendet werden, statt als echter Untertitel-Auslöser.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 61,
+    "llm_suggested_label": [[0, 34, "TITLE"], [41, 119, "PERSON"]],
+    "llm_rationale": "Guide §5.8 requires merging the full credential + name + role phrase into one PERSON span; frankp's fuller span follows this rule (matching the doc 9 precedent from batch 1), while maria's bare-name span does not.",
+    "llm_rationale_de": "Leitfaden §5.8 verlangt, die vollständige Phrase aus Titel/Grad + Name + Rolle zu einer einzigen PERSON-Spanne zusammenzufassen; frankps vollständigere Spanne befolgt diese Regel (entsprechend dem Präzedenzfall von Dokument 9 in Batch 1), marias Spanne mit bloßem Namen hingegen nicht.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 62,
+    "llm_suggested_label": [[0, 16, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the trailing sentence-final period, consistent with the majority treatment of trailing periods elsewhere in this corpus (e.g. doc 23, batch 2).",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen den abschließenden satzendenden Punkt aus, im Einklang mit der mehrheitlichen Behandlung abschließender Punkte andernorts im Korpus (z. B. Dokument 23, Batch 2).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 64,
+    "llm_suggested_label": [[0, 21, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE, a short genuinely titled work despite gundi's Abschnitt flag, matching docs 3/16/30/50.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE, ein kurzes, echt betiteltes Werk trotz gundis Abschnitt-Markierung, im Einklang mit den Dokumenten 3/16/30/50.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 65,
+    "llm_suggested_label": [[0, 201, "TITLE"]],
+    "llm_rationale": "gundi's boundary is the only one that cleanly excludes both the trailing whitespace and the ' ...' truncation marker; frankp's and maria's both include one or the other.",
+    "llm_rationale_de": "gundis Grenze ist die einzige, die sowohl den abschließenden Leerraum als auch den ' ...'-Kürzungsmarker sauber ausschließt; frankps und marias Grenzen enthalten jeweils eines von beidem.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 66,
+    "llm_suggested_label": [[19, 86, "TITLE"]],
+    "llm_rationale": "maria's tighter span excludes the ordinal enumeration word 'Zweytens.' ('Secondly'), consistent with the same enumeration-exclusion convention applied to doc 56 in this batch.",
+    "llm_rationale_de": "marias engere Spanne schließt das Ordnungszahlwort 'Zweytens.' ('Zweitens') aus, im Einklang mit derselben Aufzählungs-Ausschlusskonvention, die bei Dokument 56 in diesem Batch angewendet wurde.",
+    "llm_confidence": "high"
+  }
+]

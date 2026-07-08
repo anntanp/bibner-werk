@@ -12,6 +12,17 @@ Standard NER models fail on ISBD-formatted bibliographic catalog strings across 
 2. **Gold evaluation**: 395-record stratified gold set (by era and ISBD tier)
 3. **Fine-tuned model**: `urchade/gliner_multi-v2.1` trained on silver labels
 
+## Setup
+
+```bash
+cd /Users/mta/Documents/claude/bibner-werk
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pandas pyarrow torch transformers gliner flair
+```
+
+Dedicated venv — does not share or depend on `gemea/.venv`, per the 2026-06-10 project split.
+
 ## Datasets
 
 - `wem-silver`: 689K tier-1 + 7K tier-2 silver-labeled records (CC BY 4.0, pending DDB confirmation)

@@ -2,7 +2,7 @@
 up: 
 related: 
 created: 2026-03-30
-updates: 2026-06-25
+updates: 2026-07-07
 in: bibner-werk
 tags: []
 ---
@@ -24,7 +24,7 @@ Das Korpus umspannt fünf Jahrhunderte deutscher Druckkultur, von frühneuhochde
 | [§2 Arbeitsablauf](#2-arbeitsablauf) | Dateien, Annotationsstatus, empfohlene Reihenfolge — **hier beginnen** |
 | [§3 Label-Definitionen](#3-label-definitionen) | Was TITLE, OTHER_TITLE, PERSON und Phase-2-Labels kennzeichnen |
 | [§4 Entscheidungsdiagramm](#4-entscheidungsdiagramm) | Schritt-für-Schritt-Logik zur Label-Auswahl |
-| [§5 Beispiele](#5-beispiele-nach-titelstruktur) | 10 Arbeitsbeispiele mit DDB-Links, nach Titelstruktur gruppiert |
+| [§5 Beispiele](#5-beispiele-nach-titelstruktur) | 11 Arbeitsbeispiele mit DDB-Links, nach Titelstruktur gruppiert |
 | [§6 Was NICHT zu annotieren ist](#6-was-nicht-zu-annotieren-ist) | Häufige False-Positive-Muster und warum sie keine Entitäten sind |
 | [§7 Spannengrenzen](#7-spannengrenzen) | Technische Regeln für Zeichenpositionen |
 | [§8 Ausgabeformat](#8-ausgabeformat-jsonl) | JSONL-Datensatzschema |
@@ -329,6 +329,27 @@ Handbuch des römischen Privatrechts … Von Theodor Schmalz, D. Königl. Preuss
 > `Von` ist ein Zuschreibungsstichwort — die danach genannte Person ist die PERSON, auch wenn `Von` mitten im String steht. Die PERSON-Spanne beginnt nach `Von `.
 > Die Amtsbezeichnungsphrase (`D. Königl. Preuss. Consistorialrathe und Professor`) in die PERSON-Spanne einschließen.
 > Das ` …` am Ende ist ein Kürzungsmarker — gehört zu keiner Spanne.
+
+---
+
+### 5.11 Wiederholter Autorenname — führende Kopfzeile und SoR-Nennung erhalten beide PERSON
+
+**Eingabe**
+```
+Walter, Helga, Zum Andenken an Deinen Bruder Hans : eine fränkisch-ostpreußische Familie / Helga Walter. - Neustadt an der Aisch, 1992. - 108 S. : zahlr. Ill., Kt.
+```
+**DDB:** https://www.deutsche-digitale-bibliothek.de/item/VBAXL3SSSHHNVB7VWI44N4JFZBPAALQN
+
+**Annotation**
+```json
+[
+  {"label": "PERSON",      "start":  0, "end":  13, "text": "Walter, Helga"},
+  {"label": "TITLE",       "start": 15, "end":  49, "text": "Zum Andenken an Deinen Bruder Hans"},
+  {"label": "OTHER_TITLE", "start": 52, "end":  88, "text": "eine fränkisch-ostpreußische Familie"},
+  {"label": "PERSON",      "start": 91, "end": 103, "text": "Helga Walter"}
+]
+```
+> Der Autorenname erscheint zweimal: als führende invertierte Katalog-Kopfzeile (`Walter, Helga`) und erneut, in natürlicher Reihenfolge, an der SoR-Position nach ` / ` (`Helga Walter`). Beide erhalten eine `PERSON`-Spanne — die SoR-Wiederholung wird nicht übersprungen oder in `OTHER_TITLE` eingeschlossen, nur weil der Name bereits einmal zuvor im String annotiert wurde. Gleiches Muster wie bei Dokument 137 und 262.
 
 ---
 

@@ -1,0 +1,175 @@
+[
+  {
+    "doc_id": 360,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Der X. Grad' ('The 10th Degree', likely a Masonic/guild grade reference) is a bare numbered label with no further descriptive content. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Der X. Grad' (vermutlich ein Verweis auf einen freimaurerischen/zünftigen Grad) ist eine bloße nummerierte Bezeichnung ohne weiteren beschreibenden Inhalt. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 361,
+    "llm_suggested_label": [
+      [
+        0,
+        405,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (gundi/maria) include the 'Unsere [et]c.' opening, matching the identical-opening precedent in docs 124/222; gundi's boundary is the clean one. maria's OTHER_TITLE addition is a closing dateline and address list, excluded per the established dateline convention.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) bezieht die Eröffnung 'Unsere [et]c.' ein, entsprechend dem identischen Eröffnungs-Präzedenzfall in den Dokumenten 124/222; gundis Grenze ist die saubere. marias OTHER_TITLE-Zusatz ist eine abschließende Datumszeile und Adressliste, ausgeschlossen gemäß der etablierten Datumszeilen-Konvention.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 362,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Eingepackte Bücher.' ('Packed books') reads like an inventory/shipping label, not a work title. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Eingepackte Bücher.' liest sich wie ein Inventar-/Versandetikett, kein Werktitel. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 364,
+    "llm_suggested_label": [
+      [
+        0,
+        19,
+        "TITLE"
+      ],
+      [
+        22,
+        134,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly; maria's OTHER_TITLE includes a leading space they exclude.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein; marias OTHER_TITLE enthält ein führendes Leerzeichen, das ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 365,
+    "llm_suggested_label": [
+      [
+        0,
+        95,
+        "TITLE"
+      ],
+      [
+        98,
+        366,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's TITLE boundary is the clean one, excluding a trailing space frankp's includes; OTHER_TITLE trimmed to exclude trailing whitespace and the ' ...' marker present in all three original spans. maria's additional funding-period span ('Bewilligungszeitraum...') is excluded as administrative/imprint metadata.",
+    "llm_rationale_de": "gundis TITLE-Grenze ist die saubere, die ein abschließendes Leerzeichen ausschließt, das frankps Version enthält; OTHER_TITLE ist bereinigt um abschließenden Leerraum und den ' ...'-Marker, der in allen drei ursprünglichen Spannen vorhanden ist. marias zusätzliche Förderzeitraum-Spanne ('Bewilligungszeitraum...') wird als administrative Impressum-Metadaten ausgeschlossen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 366,
+    "llm_suggested_label": [
+      [
+        0,
+        96,
+        "TITLE"
+      ],
+      [
+        99,
+        615,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly; frankp's spans include a trailing space on each that they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps Spannen enthalten jeweils ein abschließendes Leerzeichen, das ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 367,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates, and his span ('Titelseite Appendix Relationis ') literally means 'title page of the Appendix Relationis' — a bibliographic/structural descriptor, not the substantive year-range content that follows it ('- In Jahren 1628, 1629 und 1630 vorgangen'), which his span doesn't even include. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert, und seine Spanne ('Titelseite Appendix Relationis') bedeutet wörtlich 'Titelseite des Appendix Relationis' — ein bibliografischer/struktureller Deskriptor, nicht der substantielle Jahresbereichs-Inhalt, der darauf folgt ('- In Jahren 1628, 1629 und 1630 vorgangen'), den seine Spanne nicht einmal einschließt. O wird empfohlen.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 369,
+    "llm_suggested_label": [
+      [
+        0,
+        135,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly on genuine statistical-report content; gundi's running-number addition ('Lfd. Nr. 6') is excluded per the established convention (docs 175/176/228).",
+    "llm_rationale_de": "frankp und gundi stimmen exakt bei echtem Inhalt eines Statistikberichts überein; gundis Zusatz der laufenden Nummer ('Lfd. Nr. 6') wird gemäß der etablierten Konvention ausgeschlossen (Dokumente 175/176/228).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 370,
+    "llm_suggested_label": [
+      [
+        0,
+        23,
+        "TITLE"
+      ],
+      [
+        24,
+        202,
+        "OTHER_TITLE"
+      ],
+      [
+        205,
+        500,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Unlike the lowercase mid-clause 'oder' kept within TITLE elsewhere (docs 58/81/140/198/241/286), this 'Oder.' is capitalized and period-punctuated — a classic 'Title. Oder. Subtitle' baroque book-title construction functioning as a genuine title-boundary marker, matching gundi's split over frankp/maria's merges.",
+    "llm_rationale_de": "Anders als das kleingeschriebene, satzinterne 'oder', das andernorts innerhalb von TITLE beibehalten wird (Dokumente 58/81/140/198/241/286), ist dieses 'Oder.' großgeschrieben und mit Punkt versehen — eine klassische barocke Titelkonstruktion 'Titel. Oder. Untertitel', die als echter Titelgrenzmarker fungiert, entsprechend gundis Aufteilung gegenüber frankps/marias Zusammenführungen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 371,
+    "llm_suggested_label": [
+      [
+        22,
+        66,
+        "TITLE"
+      ],
+      [
+        69,
+        102,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a specific legal/historical topic (Saxon mining law). The bracketed leading name '[Wagner, Thomas von]:' is left unlabeled, since the brackets mark it as a cataloger-supplied, uncertain attribution rather than a stated authorship heading.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein spezifisches rechtlich-historisches Thema (sächsisches Bergrecht). Der geklammerte führende Name '[Wagner, Thomas von]:' bleibt unmarkiert, da die Klammern ihn als eine vom Katalogisierenden vergebene, unsichere Zuschreibung kennzeichnen, keine ausdrückliche Autorschaftsangabe.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 372,
+    "llm_suggested_label": [
+      [
+        0,
+        57,
+        "TITLE"
+      ],
+      [
+        64,
+        158,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; majority (frankp/maria) OTHER_TITLE excludes the leading ' ...' marker that gundi's includes.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/maria) OTHER_TITLE schließt den führenden ' ...'-Marker aus, den gundis Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 373,
+    "llm_suggested_label": [
+      [
+        0,
+        49,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's boundary excludes the trailing volume number '1' (matching the established volume/part-number exclusion convention) while keeping the natural sentence-ending period on 'Exilio.'.",
+    "llm_rationale_de": "gundis Grenze schließt die abschließende Bandnummer '1' aus (entsprechend der etablierten Band-/Teilnummer-Ausschlusskonvention), während der natürliche satzendende Punkt bei 'Exilio.' beibehalten wird.",
+    "llm_confidence": "high"
+  }
+]

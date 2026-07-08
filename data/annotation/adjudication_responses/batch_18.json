@@ -1,0 +1,202 @@
+[
+  {
+    "doc_id": 264,
+    "llm_suggested_label": [
+      [
+        0,
+        64,
+        "TITLE"
+      ],
+      [
+        67,
+        93,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "gundi's PERSON span correctly starts at 'D.' (the Doctor-abbreviation prefix), unlike frankp's off-by-one span which starts mid-abbreviation; both her boundaries are already clean.",
+    "llm_rationale_de": "gundis PERSON-Spanne beginnt korrekt bei 'D.' (dem Doktor-Abkürzungspräfix), anders als frankps um eins verschobene Spanne, die mitten in der Abkürzung beginnt; beide ihrer Grenzen sind bereits sauber.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 265,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'N. N.' is a placeholder for an unspecified name (Nomen Nominandum), and the whole string is a formulaic letter salutation template ('To the noble... my gracious lord and friend'), not a title identifying any specific person or work. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'N. N.' ist ein Platzhalter für einen nicht näher bestimmten Namen (Nomen Nominandum), und die gesamte Zeichenkette ist eine formelhafte Briefanrede-Vorlage ('An den Edlen... meinen gnädigen Herrn und Freund'), kein Titel, der eine bestimmte Person oder ein Werk bezeichnet. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 266,
+    "llm_suggested_label": [
+      [
+        0,
+        40,
+        "TITLE"
+      ],
+      [
+        43,
+        548,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes a trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 267,
+    "llm_suggested_label": [
+      [
+        0,
+        16,
+        "TITLE"
+      ],
+      [
+        22,
+        64,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is a direct structural match to the established 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' pattern (docs 4, 51, 120), resolved the same way each time — the precedent outweighs the weak vote count here.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies entspricht strukturell direkt dem etablierten Muster 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' (Dokumente 4, 51, 120), jedes Mal auf dieselbe Weise gelöst — der Präzedenzfall überwiegt hier die schwache Stimmenzahl.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 268,
+    "llm_suggested_label": [
+      [
+        0,
+        148,
+        "TITLE"
+      ],
+      [
+        150,
+        159,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes a trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 269,
+    "llm_suggested_label": [
+      [
+        0,
+        42,
+        "TITLE"
+      ],
+      [
+        44,
+        88,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific theological topic ('Of God the Holy Spirit, and our sanctification'), not generic content.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifisches theologisches Thema ('Von Gott dem Heiligen Geist und unserer Heiligung'), kein generischer Inhalt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 272,
+    "llm_suggested_label": [
+      [
+        0,
+        20,
+        "TITLE"
+      ],
+      [
+        23,
+        43,
+        "OTHER_TITLE"
+      ],
+      [
+        48,
+        62,
+        "PERSON"
+      ],
+      [
+        67,
+        84,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "This is a theater playbill; the genre statement ('Lustspiel in 3 Akten') is kept as OTHER_TITLE, trimmed of trailing whitespace, while the two playwrights are split into separate PERSON spans (correcting frankp's truncated 'Leo Walther ' to the full 'Leo Walther Stein'), matching the co-author SoR pattern used elsewhere (e.g. doc 76). The trailing performance-schedule listing (dates, audience assignments) is excluded as programmatic/scheduling metadata, not title content.",
+    "llm_rationale_de": "Dies ist ein Theaterzettel; die Gattungsangabe ('Lustspiel in 3 Akten') wird als OTHER_TITLE beibehalten, bereinigt um abschließenden Leerraum, während die beiden Theaterautoren in separate PERSON-Spannen aufgeteilt werden (frankps abgeschnittenes 'Leo Walther ' wird zum vollständigen 'Leo Walther Stein' korrigiert), entsprechend dem andernorts verwendeten Koautoren-SoR-Muster (z. B. Dokument 76). Die abschließende Aufführungsplan-Auflistung (Termine, Publikumszuordnungen) wird als programmatische/organisatorische Metadaten ausgeschlossen, kein Titelinhalt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 273,
+    "llm_suggested_label": [
+      [
+        0,
+        165,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "No named-ruler credential precedes this proclamation opening, so no PERSON split applies; frankp's boundary is the clean one, excluding trailing comma, whitespace, and the ' ...' marker, while gundi's includes the marker and maria's has an off-by-one start error.",
+    "llm_rationale_de": "Dieser Proklamationseröffnung geht kein benanntes Herrscherprädikat voraus, daher entfällt eine PERSON-Aufteilung; frankps Grenze ist die saubere, die abschließendes Komma, Leerraum und den ' ...'-Marker ausschließt, während gundis Version den Marker enthält und marias einen um eins verschobenen Anfangsfehler hat.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 274,
+    "llm_suggested_label": [
+      [
+        0,
+        70,
+        "TITLE"
+      ],
+      [
+        73,
+        470,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; gundi and maria agree exactly on the full remaining OTHER_TITLE, while frankp's span stops mid-word partway through, an incomplete annotation rather than a genuine boundary disagreement.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; gundi und maria stimmen exakt bei der vollständigen verbleibenden OTHER_TITLE überein, während frankps Spanne mitten im Wort abbricht — eine unvollständige Annotation, keine echte Grenzmeinungsverschiedenheit.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 275,
+    "llm_suggested_label": [
+      [
+        27,
+        202,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); the leading bracketed cataloger's dating note '[Nachtrag, Mitte 15. Jh.:]' is correctly excluded, leaving a specific medieval Low German legal/property record text.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); die führende geklammerte Datierungsanmerkung des Katalogisierenden '[Nachtrag, Mitte 15. Jh.:]' wird korrekt ausgeschlossen, was einen spezifischen mittelniederdeutschen rechtlichen/güterbezogenen Urkundentext übrig lässt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 276,
+    "llm_suggested_label": [
+      [
+        0,
+        267,
+        "TITLE"
+      ],
+      [
+        271,
+        378,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp's spans have an off-by-one start error (cuts off the initial 'C'); between gundi and maria's close values, maria's boundaries are used for both TITLE and OTHER_TITLE, excluding trailing sentence-final periods that gundi's include.",
+    "llm_rationale_de": "frankps Spannen haben einen um eins verschobenen Anfangsfehler (schneidet das anfängliche 'C' ab); zwischen gundis und marias nahe beieinanderliegenden Werten werden marias Grenzen für sowohl TITLE als auch OTHER_TITLE verwendet, unter Ausschluss abschließender satzendender Punkte, die gundis Versionen enthalten.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 278,
+    "llm_suggested_label": [
+      [
+        0,
+        31,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); references a specific named work ('Jugend-Spiegel') by part number, not a generic heading.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); verweist auf ein spezifisches benanntes Werk ('Jugend-Spiegel') nach Teilnummer, keine generische Überschrift.",
+    "llm_confidence": "medium"
+  }
+]

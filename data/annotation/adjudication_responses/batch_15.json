@@ -1,0 +1,243 @@
+[
+  {
+    "doc_id": 220,
+    "llm_suggested_label": [
+      [
+        0,
+        206,
+        "PERSON"
+      ],
+      [
+        208,
+        234,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Guide §5.8 requires merging the full credential + name + role phrase into one PERSON span; frankp's fuller span follows this rule (same as docs 9, 61, 151), while gundi's bare-name span and maria's no-PERSON reading do not. Trailing volume number '3' excluded.",
+    "llm_rationale_de": "Leitfaden §5.8 verlangt, die vollständige Phrase aus Titel/Grad + Name + Rolle zu einer einzigen PERSON-Spanne zusammenzufassen; frankps vollständigere Spanne befolgt diese Regel (wie bei den Dokumenten 9, 61, 151), gundis Spanne mit bloßem Namen und marias Lesart ohne PERSON hingegen nicht. Die abschließende Bandnummer '3' wird ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 221,
+    "llm_suggested_label": [
+      [
+        0,
+        48,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); specific topic ('Concept of a well-organized state calendar'), trailing bracketed ellipsis placeholder excluded.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); spezifisches Thema ('Begriff eines wohleingerichteten Staatskalenders'), der abschließende geklammerte Auslassungsplatzhalter wird ausgeschlossen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 222,
+    "llm_suggested_label": [
+      [
+        0,
+        498,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (gundi/maria) include the 'Unsere [et]c.' opening, matching the identical-opening precedent in doc 124 (batch 8); end boundary uses frankp's own clean value, which already excludes trailing whitespace and the ' ...' truncation marker.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) bezieht die Eröffnung 'Unsere [et]c.' ein, entsprechend dem identischen Eröffnungs-Präzedenzfall in Dokument 124 (Batch 8); die Endgrenze verwendet frankps eigenen sauberen Wert, der bereits abschließenden Leerraum und den ' ...'-Kürzungsmarker ausschließt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 223,
+    "llm_suggested_label": [
+      [
+        0,
+        17,
+        "PERSON"
+      ],
+      [
+        19,
+        80,
+        "TITLE"
+      ],
+      [
+        83,
+        197,
+        "OTHER_TITLE"
+      ],
+      [
+        297,
+        314,
+        "PERSON"
+      ],
+      [
+        316,
+        339,
+        "TITLE"
+      ],
+      [
+        342,
+        372,
+        "OTHER_TITLE"
+      ],
+      [
+        504,
+        521,
+        "PERSON"
+      ],
+      [
+        523,
+        546,
+        "TITLE"
+      ],
+      [
+        549,
+        611,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Explicit multi-work record — frankp's own comment states 'This entry needs to be split. There are at least two titles present' (there are three, semicolon-separated, all by Wolfgang Kessler). gundi is the only annotator who parsed all three works completely and consistently; her full structure is adopted here even though it means three TITLE spans in one record, which deliberately departs from the one-TITLE-per-record rule (guide §3.1) for this genuine multi-work exception, the same kind of structural issue as docs 46/119/210. Recommend the PI treat this as a candidate for splitting into separate records rather than a normal single-record resolution.",
+    "llm_rationale_de": "Ausdrücklicher Mehrwerk-Datensatz — frankps eigener Kommentar besagt 'Dieser Eintrag muss aufgeteilt werden. Es sind mindestens zwei Titel vorhanden' (es sind tatsächlich drei, durch Semikolon getrennt, alle von Wolfgang Kessler). gundi ist die einzige Annotatorin, die alle drei Werke vollständig und konsistent analysiert hat; ihre vollständige Struktur wird hier übernommen, auch wenn dies drei TITLE-Spannen in einem Datensatz bedeutet, was bewusst von der Eins-TITLE-pro-Datensatz-Regel (Leitfaden §3.1) für diese echte Mehrwerk-Ausnahme abweicht, dasselbe strukturelle Problem wie bei den Dokumenten 46/119/210. Es wird empfohlen, dass der PI dies als Kandidat für eine Aufteilung in separate Datensätze behandelt, statt als normale Einzeldatensatz-Lösung.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 224,
+    "llm_suggested_label": [
+      [
+        0,
+        493,
+        "TITLE"
+      ],
+      [
+        495,
+        600,
+        "OTHER_TITLE"
+      ],
+      [
+        601,
+        702,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "frankp's TITLE/PERSON split is the only structurally coherent one — gundi's span starts mid-sentence with no apparent reason, skipping nearly half the string. The gap between frankp's two spans ('zu Trost vnd Lehr aller betrübten... vorgestelt hat', describing the sermon's purpose and delivery) is substantive content rather than mere separator punctuation, so it is added here as OTHER_TITLE rather than left unlabeled as frankp did.",
+    "llm_rationale_de": "frankps Aufteilung in TITLE/PERSON ist die einzige strukturell kohärente — gundis Spanne beginnt ohne ersichtlichen Grund mitten im Satz und überspringt fast die Hälfte der Zeichenkette. Die Lücke zwischen frankps beiden Spannen ('zu Trost vnd Lehr aller betrübten... vorgestelt hat', die Zweck und Vortrag der Predigt beschreibt) ist substantieller Inhalt und keine bloße Trennzeicheninterpunktion, daher wird sie hier als OTHER_TITLE hinzugefügt, statt wie bei frankp unmarkiert zu bleiben.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 225,
+    "llm_suggested_label": [
+      [
+        0,
+        19,
+        "TITLE"
+      ],
+      [
+        21,
+        72,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; majority (frankp/maria) OTHER_TITLE boundary excludes the trailing period that gundi's includes.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/maria) OTHER_TITLE-Grenze schließt den abschließenden Punkt aus, den gundis Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 226,
+    "llm_suggested_label": [
+      [
+        0,
+        59,
+        "TITLE"
+      ],
+      [
+        62,
+        84,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (gundi/maria) TITLE boundary excludes a trailing space that frankp's includes; all three agree on OTHER_TITLE.",
+    "llm_rationale_de": "Die mehrheitliche (gundi/maria) TITLE-Grenze schließt ein abschließendes Leerzeichen aus, das frankps Version enthält; alle drei stimmen bei OTHER_TITLE überein.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 227,
+    "llm_suggested_label": [
+      [
+        0,
+        201,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp's shorter boundary excludes the trailing ' ...' truncation marker that gundi/maria's longer (majority) boundary includes — the truncation-exclusion convention is preferred over the numeric majority here, consistent with how this same pattern has been resolved throughout this corpus.",
+    "llm_rationale_de": "frankps kürzere Grenze schließt den abschließenden ' ...'-Kürzungsmarker aus, den gundis/marias längere (mehrheitliche) Grenze enthält — die Kürzungsausschluss-Konvention wird hier gegenüber der numerischen Mehrheit bevorzugt, im Einklang damit, wie dasselbe Muster im gesamten Korpus gelöst wurde.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 228,
+    "llm_suggested_label": [
+      [
+        0,
+        52,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Direct structural precedent from docs 175/176 (batch 12): frankp/gundi agree on genuine statistical-report content; maria's decline is a factual note about missing volume title, not a claim that no content title exists. Running number 'Lfd. Nr. 29' excluded per convention.",
+    "llm_rationale_de": "Direkter struktureller Präzedenzfall aus den Dokumenten 175/176 (Batch 12): frankp/gundi stimmen bei echtem Inhalt eines Statistikberichts überein; marias Ablehnung ist eine sachliche Anmerkung zum fehlenden Bandtitel, keine Behauptung, dass kein inhaltlicher Titel existiert. Die laufende Nummer 'Lfd. Nr. 29' wird gemäß Konvention ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 229,
+    "llm_suggested_label": [
+      [
+        0,
+        48,
+        "TITLE"
+      ],
+      [
+        51,
+        67,
+        "OTHER_TITLE"
+      ],
+      [
+        74,
+        81,
+        "PERSON"
+      ],
+      [
+        121,
+        145,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree on TITLE/OTHER_TITLE/PERSON; maria's additional PERSON for the foreword's author ('[Max Isidor] Bodenheimer') is kept, trimmed of a leading space, since he is a genuinely distinct contributor, not a repeat of the main author.",
+    "llm_rationale_de": "gundi und maria stimmen bei TITLE/OTHER_TITLE/PERSON überein; marias zusätzliche PERSON für den Autor des Vorworts ('[Max Isidor] Bodenheimer') wird beibehalten, bereinigt um ein führendes Leerzeichen, da er ein echt eigenständiger Beitragender ist, keine Wiederholung des Hauptautors.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 230,
+    "llm_suggested_label": [
+      [
+        0,
+        104,
+        "TITLE"
+      ],
+      [
+        106,
+        432,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's split at the first genuine ' :' is the simplest and most consistent application of the flowchart default among three candidate splits; her boundaries are already clean.",
+    "llm_rationale_de": "gundis Aufteilung am ersten echten ' :' ist die einfachste und konsistenteste Anwendung der Standardregel des Entscheidungsbaums unter drei Kandidatenaufteilungen; ihre Grenzen sind bereits sauber.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 231,
+    "llm_suggested_label": [
+      [
+        0,
+        50,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi declines as Kapitel, maria did not review); specific allegorical/cosmological chapter content ('From the 3rd leaf of the great world, the element of air'), excluding only the trailing period.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi lehnt als Kapitel ab, maria hat nicht geprüft); spezifischer allegorisch-kosmologischer Kapitelinhalt ('Vom dritten Blatt der großen Welt, dem Element der Luft'), wobei nur der abschließende Punkt ausgeschlossen wird.",
+    "llm_confidence": "medium"
+  }
+]

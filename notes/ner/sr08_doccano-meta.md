@@ -97,7 +97,7 @@ curl -s -X POST \
 
 ## Annotator comments (export-20260608-1221)
 
-Data: `data/processed/ner/sr08_comments_export-20260608-1221.csv`
+Data: `data/iaa/sr08_comments_export-20260608-1221.csv`
 
 **Total: 49 comments across 3 annotators**
 

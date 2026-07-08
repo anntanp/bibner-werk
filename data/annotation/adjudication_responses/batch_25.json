@@ -1,0 +1,217 @@
+[
+  {
+    "doc_id": 374,
+    "llm_suggested_label": [
+      [
+        0,
+        59,
+        "TITLE"
+      ],
+      [
+        67,
+        113,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); specific historical content (confirmation of the confraternity of St. Anne) naming a real historical figure, Pope Gregory XIII, with full credential per guide §5.8.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); spezifischer historischer Inhalt (Bestätigung der St.-Anna-Bruderschaft) unter Nennung einer real belegten historischen Person, Papst Gregor XIII., mit vollständigem Titel/Grad gemäß Leitfaden §5.8.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 376,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates a single word ('Einband' = 'binding'), physical-description terminology rather than title content — identical to doc 255. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes Wort ('Einband'), physische Beschreibungsterminologie statt Titelinhalt — identisch mit Dokument 255. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 377,
+    "llm_suggested_label": [
+      [
+        0,
+        184,
+        "TITLE"
+      ],
+      [
+        187,
+        357,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly; frankp's spans stop partway through, an incomplete annotation.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps Spannen brechen auf halbem Weg ab — eine unvollständige Annotation.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 378,
+    "llm_suggested_label": [
+      [
+        0,
+        12,
+        "PERSON"
+      ],
+      [
+        14,
+        80,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a real historical Swedish geography reference work by Erik Tuneld, with leading name-heading per the settled policy.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein echtes historisches schwedisches geografisches Nachschlagewerk von Erik Tuneld, mit führendem Namenskopf gemäß der festgelegten Regel.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 379,
+    "llm_suggested_label": [
+      [
+        32,
+        86,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'Zwei und sechzigster Abschnitt. ' excluded per the established convention rather than labeled OTHER_TITLE as frankp did, leaving a specific historical topic (Germany under Rudolf II, 1576-1612).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'Zwei und sechzigster Abschnitt. ' wird gemäß der etablierten Konvention ausgeschlossen, statt wie bei frankp als OTHER_TITLE markiert, was ein spezifisches historisches Thema übrig lässt (Deutschland unter Rudolf II., 1576-1612).",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 380,
+    "llm_suggested_label": [
+      [
+        0,
+        136,
+        "TITLE"
+      ],
+      [
+        138,
+        288,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's split at the genuine ' :' marker is preferred over frankp's shorter, incomplete spans and maria's full merge; gundi's OTHER_TITLE is the only one that reaches the complete end of the string.",
+    "llm_rationale_de": "gundis Aufteilung am echten ' :'-Zeichen wird gegenüber frankps kürzeren, unvollständigen Spannen und marias vollständiger Zusammenführung bevorzugt; gundis OTHER_TITLE ist die einzige, die das vollständige Ende der Zeichenkette erreicht.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 381,
+    "llm_suggested_label": [
+      [
+        0,
+        77,
+        "PERSON"
+      ],
+      [
+        104,
+        306,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "First-person royal credential, matching the recurring pattern; PERSON extended from frankp's span to include the leading 'Von Gottes Gnaden' formula, consistent with how this phrase is included in every other instance of this pattern in this corpus. TITLE end trimmed to exclude trailing whitespace and the ' ...' marker; the closing dateline is excluded entirely, unlike gundi's OTHER_TITLE which incorrectly includes it.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster; PERSON wird gegenüber frankps Spanne erweitert, um die führende Formel 'Von Gottes Gnaden' einzuschließen, im Einklang damit, wie diese Phrase bei jedem anderen Vorkommen dieses Musters in diesem Korpus einbezogen wird. Das TITLE-Ende ist bereinigt um abschließenden Leerraum und den ' ...'-Marker; die abschließende Datumszeile wird vollständig ausgeschlossen, anders als gundis OTHER_TITLE, die sie fälschlich einbezieht.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 382,
+    "llm_suggested_label": [
+      [
+        0,
+        63,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a specific pedagogical topic, with the parenthetical cross-reference to another periodical issue correctly excluded.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein spezifisches pädagogisches Thema, wobei der Klammerverweis auf ein anderes Zeitschriftenheft korrekt ausgeschlossen wird.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 384,
+    "llm_suggested_label": [
+      [
+        0,
+        129,
+        "TITLE"
+      ],
+      [
+        132,
+        157,
+        "OTHER_TITLE"
+      ],
+      [
+        168,
+        189,
+        "PERSON"
+      ],
+      [
+        201,
+        209,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a real historical memoir (Hans von Schweinichen's chronicle, edited by Büsching) with two legitimate named parties — OTHER_TITLE trimmed of trailing whitespace.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein echtes historisches Memoirenwerk (die Chronik Hans von Schweinichens, herausgegeben von Büsching) mit zwei legitimen benannten Parteien — OTHER_TITLE ist von abschließendem Leerraum bereinigt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 385,
+    "llm_suggested_label": [
+      [
+        0,
+        21,
+        "TITLE"
+      ],
+      [
+        22,
+        358,
+        "OTHER_TITLE"
+      ],
+      [
+        361,
+        684,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp's split at 'Das ist' matches the guide's explicit OTHER_TITLE trigger (§3.1), same as docs 89/138/146/283/318/283, unlike gundi/maria's merge; their continuation (the Leichenpredigt-specific dedication) is kept as a second OTHER_TITLE segment since frankp's annotation simply stops before it.",
+    "llm_rationale_de": "frankps Aufteilung bei 'Das ist' entspricht dem ausdrücklichen OTHER_TITLE-Auslöser des Leitfadens (§3.1), wie bei den Dokumenten 89/138/146/283/318, anders als gundis/marias Zusammenführung; ihre Fortsetzung (die leichenpredigtspezifische Widmung) wird als zweites OTHER_TITLE-Segment beibehalten, da frankps Annotation schlicht davor endet.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 386,
+    "llm_suggested_label": [
+      [
+        0,
+        21,
+        "TITLE"
+      ],
+      [
+        28,
+        59,
+        "PARALLEL_TITLE"
+      ],
+      [
+        61,
+        270,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Direct semantic correspondence between the Latin ('Irenicum Ratisbonense' = peace of Regensburg) and German ('Regenßburgische Friedens-Frewde' = Regensburg peace-joy) supports frankp's PARALLEL_TITLE label, the same reasoning as doc 248, over treating 'Oder' as a plain internal conjunction; gundi's OTHER_TITLE covers the remainder.",
+    "llm_rationale_de": "Die direkte semantische Entsprechung zwischen dem lateinischen ('Irenicum Ratisbonense' = Regensburger Frieden) und dem deutschen Titel ('Regenßburgische Friedens-Frewde') stützt frankps PARALLEL_TITLE-Label, dieselbe Begründung wie bei Dokument 248, gegenüber der Behandlung von 'Oder' als bloße interne Konjunktion; gundis OTHER_TITLE deckt den Rest ab.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 387,
+    "llm_suggested_label": [
+      [
+        0,
+        74,
+        "TITLE"
+      ],
+      [
+        76,
+        86,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and maria agree exactly; gundi's spans include trailing periods they exclude.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein; gundis Spannen enthalten abschließende Punkte, die ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  }
+]

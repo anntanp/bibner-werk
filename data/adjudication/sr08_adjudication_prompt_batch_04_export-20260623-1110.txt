@@ -1,0 +1,531 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 51,
+    "text": "Mitteilungen : 1. Beilage zu Nr. 25 der Pädagogischen Reform",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            60,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            13,
+            "TITLE"
+          ],
+          [
+            15,
+            60,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 53,
+    "text": "Modulhandbuch Bachelor Angewandte Medienwissenschaft : Studienordnungsversion: 2009",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            52,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            52,
+            "TITLE"
+          ],
+          [
+            55,
+            83,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            52,
+            "TITLE"
+          ],
+          [
+            55,
+            77,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 54,
+    "text": "Von Gottes Gnaden, Wir Carl Wilhelm Friderich, Marggraff zu Brandenburg, Herzog in Preussen, zu Schlesien ... Unsern gnädigsten Gruß zuvor ... Ab beygehenden- von Unserm Fürstlichen Consistorio mit Unserer gnädigsten Genehmigung an die gesammte Decanate Unsers Fürstenthums und Lande erlassenden Ausschreiben werdet Ihr breitern Innhalts ersehen, was Wir ... Verehrungs-vollen Danck-Pflicht, in Ruckerinnerung des- vor zwey hundert Jahren am 25. Septembris 1555. erfreulich ... Religions-Friedens, vor ein ... Danck-Fest anzuordnen ... : [Onolzbach den 30. Julii 1755.]",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            105,
+            "PERSON"
+          ],
+          [
+            110,
+            531,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            531,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            535,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 55,
+    "text": "Georg der Dritte, von Gottes Gnaden, König von Großbritannien, Frankreich und Irrland, Beschützer des Glaubens, Herzog zu Braunschweig und Lüneburg ... Da Wir bey den gegenwärtigen Zeit-Umständen zur Sicherstellung Unserer Herzogthümer Bremen und Verden durchaus erforderlich erachten, zur innern Vertheidigung auf die Zeit der Gefahr ein eigenes Corps von etwa 1500 Mann ... ungesäumt errichten ... zu lassen ... : Stade, den 27. Aprill 1795",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            148,
+            "PERSON"
+          ],
+          [
+            152,
+            409,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            122,
+            409,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            413,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 56,
+    "text": "9. Kapitel. Teuflische Rache.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            29,
+            "TITLE"
+          ]
+        ],
+        "comment": "This is probably a chapter from a novel. I kept the chapter enumeration, although it is not exactly part of the chapter title."
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            12,
+            28,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 57,
+    "text": "Marsilianische Historia :Summarischer bericht dessen, so sich mit, ... der Statt Marsilia, inn disem noch wehrenden Krieg, zwischen Heinrico dem IIII. diß namens, Koenig inn Franckreich vnd Nauarra, auch Philippo dem Koenig in Hispania, zugetragen, wie auch endtlich angeregte Stat, auff den 17. tag des monats Februarij, ... durch den Hertzogen von Guysa eingenom[m]en ...",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            23,
+            "TITLE"
+          ],
+          [
+            25,
+            369,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            23,
+            "TITLE"
+          ],
+          [
+            25,
+            369,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            23,
+            "TITLE"
+          ],
+          [
+            25,
+            373,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 58,
+    "text": "Neueröffnete Moralisten-Bibliothec, oder die durch engländische, frantzösische, holländische, deutsche, italiänische, griechische und lateinische Schriften erläuterte geistliche Morale oder Sitten-Lehre nach allen Tugenden und Lastern :nebst denen dahin sich beziehenden Materien zu einem sonderbaren Hülfs-Mittel für alle, so diese Wissenschaft lieben abgefasset, 4. 1715",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ],
+          [
+            36,
+            363,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            234,
+            "TITLE"
+          ],
+          [
+            236,
+            363,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            363,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 61,
+    "text": "Beiträge zur Philosophie der Seele / von C. F. Flemming, der Arzneikunde Doctor, Arzte der Irrenheilanstalt zu Schwerin. - Berlin : Enslin. - Bd. 1 u. 2, 1830",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ],
+          [
+            41,
+            119,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ],
+          [
+            41,
+            55,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 62,
+    "text": "Lob der Gottheit.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            16,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            17,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            16,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 64,
+    "text": "Das Britische Amerika",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 65,
+    "text": "Ob gleich man ab Seiten hiesiger Königlichen Lehn-Cammer wohl gehoffet hätte, es würden die hiesige Vasalli denen beiden Ausschreiben vom 24. Novembr. 1740. und 14. Febr. 1742 ... Folge geleistet haben ... : Urkundlich Hannover, den 8. Aug. 1743.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            202,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            201,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            205,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 66,
+    "text": "550-554, Zweytens. Der Leib und das Blut Christi werden in dem Altarsakrament geopfert.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            9,
+            86,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            19,
+            86,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

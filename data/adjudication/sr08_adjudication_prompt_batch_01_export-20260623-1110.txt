@@ -1,0 +1,602 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 1,
+    "text": "16-30, Deutschlands sittliche Sendung - Bismark",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            7,
+            38,
+            "TITLE"
+          ],
+          [
+            40,
+            47,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            6,
+            47,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 3,
+    "text": "Die hundert und sieben und vierzigste Predigt",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            45,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Kein Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            45,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 4,
+    "text": "Zur Frage der heimatlich gefärbten Aussprache : 1. Beilage zu Nr. 28 der Pädagogischen Reform",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            45,
+            "TITLE"
+          ],
+          [
+            48,
+            93,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            46,
+            "TITLE"
+          ],
+          [
+            48,
+            93,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 5,
+    "text": "Da ad Rescriptum des Forst-Departements E. Hohen General-Directorii an die Königl. General- Accise- und Zoll-Administration vom 11ten hujus vermuthet wird, als wenn einige Zoll-Aemter auf das nach Hamburg für Rechnung der Particulier Kaufleute gehende Nutzholz nicht genau genug attendiren und den Angaben der Kaufleute zu viel Glauben beymessen ... : Berlin, den 20sten Januar 1779.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            349,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            345,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            349,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 6,
+    "text": "Ein Erbermli=||che vñ Erschröckliche newe || Zeittung/ von einẽ Fünff jerigen Kind || so im Stettlein Hohen Elbe/ vnter dem || Herrn Wilhelm Mirskowzky/ geboren || ist worden/ da Gott sein gerechtes Vr=||theil vber dises Kindt gesandt hat/ das || es vom Hellischen Fewer angezündet/|| ... der bœsen Welt zum ab=||schrecken/ vom Fluchen vnd || Füllerey.|| Jm Thon.|| Kompt her zu mir ... ||",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            386,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            363,
+            "TITLE"
+          ],
+          [
+            366,
+            382,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            389,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 7,
+    "text": "Die Zahlungsschwierigkeiten in Hamburg im 2. Halbjahr 1964 : Lfd. Nr. 1",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            59,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            58,
+            "TITLE"
+          ],
+          [
+            61,
+            71,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            58,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 9,
+    "text": "Die selige Verfassung derer, welche des Todes der Gerechten sterben, wurde bey dem öffentlichen Leichenbegängnisse des ... Herrn Johann Conrad Sievers, angesehenen Bürgers, Kauf- und Handelsmanns und Materialisten zu Helmstädt ... den 24 May, 1772 ... in einer Gedächtnißpredigt vorgestellet von D. Johann Friedrich Rehkopf ... der Kirche zu St. Stephan Pastor primarius und der Diöces Generalsuperintendenten",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            291,
+            "TITLE"
+          ],
+          [
+            296,
+            409,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            291,
+            "TITLE"
+          ],
+          [
+            296,
+            323,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            409,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 10,
+    "text": "Wanderungen eines alten Soldaten. 3, Aus Spaniens Bürgerkrieg : 1833-1840",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            33,
+            "TITLE"
+          ],
+          [
+            37,
+            73,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            33,
+            "TITLE"
+          ],
+          [
+            37,
+            61,
+            "TITLE"
+          ],
+          [
+            64,
+            73,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            32,
+            "TITLE"
+          ],
+          [
+            37,
+            73,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 11,
+    "text": "Rastegar, Nosratollah, Uto von Melzer : (1881 - 1961) ; Werk und Nachlaß eines österreichischen Iranisten / N. Rastegar ; W. Slaje. - (Sitzungsberichte / Österreichische Akademie der Wissenschaften, Philosophisch-Historische Klasse ; 477). - (Österreichische Akademie der Wissenschaften <Wien> / Veröffentlichungen der Iranischen Kommission ; 20) : Wien, 1987",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            23,
+            105,
+            "TITLE"
+          ],
+          [
+            108,
+            130,
+            "PERSON"
+          ]
+        ],
+        "comment": "Rastegar Nosratollah is not part of the title. He is one of the authors."
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            21,
+            "PERSON"
+          ],
+          [
+            23,
+            53,
+            "TITLE"
+          ],
+          [
+            56,
+            105,
+            "OTHER_TITLE"
+          ],
+          [
+            108,
+            119,
+            "PERSON"
+          ],
+          [
+            122,
+            130,
+            "PERSON"
+          ],
+          [
+            135,
+            231,
+            "TITLE"
+          ],
+          [
+            296,
+            340,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            23,
+            53,
+            "TITLE"
+          ],
+          [
+            56,
+            105,
+            "OTHER_TITLE"
+          ],
+          [
+            108,
+            130,
+            "PERSON"
+          ],
+          [
+            135,
+            231,
+            "OTHER_TITLE"
+          ],
+          [
+            243,
+            340,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 13,
+    "text": "Christliche Leichpredigt/ Bey dem Begräbnuß der Ehrbarn/ Ehren/ und vieltugentsamen Frawen Dorotheen, Des ... Friderici Balduini, der H. Schrifft Doctoris, bey der löblichen Universitet Wittenberg vornehmen Professoris, der Theologischen Facultet Senioris, auch Pfarrherr/ unnd Superintendenten daselbsten/ Ehelichen geliebten Hauß-Frawen : Welche Freytags den 4, Tag Octobris frühe umb 2. Uhr ... entschlaffen/ und den folgenden XVI. Sontag nach Trinitatis, welcher war der 6. Octobris, in ihr Ruhebetlein ist versetzet worden",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            338,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            338,
+            "TITLE"
+          ],
+          [
+            341,
+            527,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            527,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 14,
+    "text": "Georg der Andere, von Gottes Gnaden König von Groß-Britannien, Franckreich und Irrland, Beschützer des Glaubens, Hertzog zu Braunschw. und Lüneb. ... Uns ist vorkommen daß in verschiedenen Städten Unserer Teutschen Provintzen die böse Gewonheit sey, daß die aus Unsern Collegiis eingehende Rescripta, und Verordnungen nicht an den gantzen Raht gebracht, weniger in Sachen welche in die œconomie und Policey schlagen, in gehörige Deliberation gezogen werden, sondern die Bürgermeistre die Sachen vor sich abthun, und die Antwort entweder selbst verfassen, oder durch die Syndicos und Secretarios verfassen ... Als ordnen und wollen Wir hiemit daß hinkünfftig alle und jede aus Unsern Collegiis an die Magistrate in denen Städten abgehende Rescripta ... im versamleten Raht verlesen ... werden ... : [Geben Hannover den 16. August 1729.]",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            791,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            791,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            795,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 16,
+    "text": "Liturgisches Magazin. Bd. 2, St. 1-2. [Hrsg. von G. F. Seiler]. Erlangen: Palm 1786",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ],
+          [
+            49,
+            61,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ],
+          [
+            49,
+            61,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

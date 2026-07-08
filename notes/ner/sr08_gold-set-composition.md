@@ -2,7 +2,9 @@
 up: 
 related: 
 created: 2026-03-24
-updates: 2026-06-25
+updates:
+  - 2026-06-25
+  - 2026-07-08
 in: bibner-werk
 tags: []
 ---
@@ -91,6 +93,22 @@ CI half-widths are approximate 95% Wilson intervals on a proportion; actual F1 C
 - **Phase 2 labels (TRANSLATOR, PARALLEL_TITLE):** not interpretable at 395 records. CIs of ±15–20 pp make any F1 number uninformative. These labels should be annotated in the same pass (§3.2) to avoid re-annotation, but excluded from Phase 1 evaluation claims.
 
 **Implication for the paper:** limit evaluation claims to Phase 1 labels. Report CIs alongside F1 (bootstrap, 1000 samples). Mention Phase 2 annotation as future evaluation work. If PERSON F1 on the pre-1700 stratum is a primary contribution claim, consider expanding that stratum by 50–100 records (annotating more pre-1700 tier-0 from `sr08_manual_queue.csv`) to bring CI half-width below ±7 pp.
+
+#### 2.4.1 Correction (2026-07-08): measured label prevalence vs. estimate
+
+The CI table above assumed TITLE prevalence ≈100% (~395 instances) as a planning-stage estimate, made before adjudication was complete. Measured from the final adjudicated gold set (`gold_reconciled.jsonl`, via `scripts/py/compute_gold_label_stats.py` → `data/gold/gold_label_stats.csv`):
+
+| label | instances | docs with ≥1 | doc prevalence |
+|---|---|---|---|
+| TITLE | 360 | 331 | 83.8% |
+| OTHER_TITLE | 176 | 151 | 38.2% |
+| PERSON | 130 | 88 | 22.3% |
+| PARALLEL_TITLE | 5 | 5 | 1.3% |
+| TRANSLATOR | 5 | 5 | 1.3% |
+| O_ONLY (no labels at all) | 0 | 63 | 15.9% |
+| TOTAL | 676 | 395 | 100.0% |
+
+**Implication for the Wilson CI estimates above**: 63 docs (15.9%) are O-only — adjudicated as not being an independent Work at all (component-level records; see `docs/adjudication-method.md` §1, "scope disagreement"), contributing zero instances to every label, TITLE included. This contradicts the "~100% TITLE prevalence" planning assumption: true TITLE prevalence is 83.8% (331/395 docs). Since Wilson CI half-width scales ≈1/√n, the effective n for TITLE F1 is closer to 331 than 395, widening the reported ±2–3 pp to roughly ±2.2–3.3 pp. OTHER_TITLE and PERSON prevalence (~40%/~30% above) were also computed against the full 395-doc base rather than the ~332 docs actually eligible to carry a label — recomputed against that eligible base, OTHER_TITLE prevalence is 151/332 ≈ 45.5%, meaningfully higher than the original ~40% estimate, which changes p̂ as well as n in the Wilson formula. These are directional corrections to the planning-stage CI table, not a full rebuild of it — actual F1 CIs for the paper still come from bootstrap resampling on real model predictions (§5.1), not from this proportion-based approximation.
 
 ### 2.5 dc_type composition of the gold set
 

@@ -4,10 +4,11 @@
 # Usage:        python scripts/ner/sr08_ingest_llm_drafts.py \
 #                   --export-dir data/annotation/doccano/export-20260623-1110 \
 #                   --responses-dir data/annotation/adjudication_responses/
-# Inputs:       data/processed/ner/sr08_adjudication_sheet_<export>.jsonl (skeleton, §2.2)
+# Inputs:       data/adjudication/sr08_adjudication_sheet_<export>.jsonl (skeleton, §2.2)
 #               data/annotation/adjudication_responses/*.json (PI's pasted LLM responses)
-# Outputs:      data/processed/ner/sr08_adjudication_sheet_<export>.jsonl (overwritten in
-#               place with llm_suggested_label/llm_rationale/llm_confidence filled)
+# Outputs:      data/adjudication/sr08_adjudication_sheet_<export>.jsonl (overwritten in
+#               place with llm_suggested_label/llm_rationale/llm_rationale_de/llm_confidence
+#               filled)
 #               stdout: docs filled this run, total filled, still-missing doc_ids
 # Dependencies: none (stdlib only)
 # Assumptions:  Runs incrementally — not every tier-3 doc needs a response yet. Hard
@@ -16,6 +17,9 @@
 #               missing/not-yet-drafted docs are reported, not an error. This is a
 #               deliberate deviation from adjudication-plan.md §2.3, which specified
 #               "fail loudly" on any missing doc_id — too strict for incremental batches.
+#               llm_rationale_de (German rationale, for the Doccano Comments block built by
+#               sr08_adjudication_to_doccano.py §2.4) is optional — defaults to None if a
+#               response entry doesn't have it yet, so older batch files don't break.
 
 from __future__ import annotations
 
@@ -81,8 +85,8 @@ def main() -> None:
     )
     parser.add_argument("--export-dir", required=True, type=Path, help="Doccano export directory")
     parser.add_argument(
-        "--output-dir", type=Path, default=BASE / "data/processed/ner",
-        help="Where sr08_adjudication_sheet_<export>.jsonl lives (default: data/processed/ner/)"
+        "--output-dir", type=Path, default=BASE / "data/adjudication",
+        help="Where sr08_adjudication_sheet_<export>.jsonl lives (default: data/adjudication/)"
     )
     parser.add_argument(
         "--responses-dir", type=Path,
@@ -115,6 +119,7 @@ def main() -> None:
         already_filled = rec["llm_suggested_label"] is not None
         rec["llm_suggested_label"] = entry["llm_suggested_label"]
         rec["llm_rationale"]       = entry["llm_rationale"]
+        rec["llm_rationale_de"]    = entry.get("llm_rationale_de")
         rec["llm_confidence"]      = entry["llm_confidence"]
         if not already_filled:
             filled_this_run += 1

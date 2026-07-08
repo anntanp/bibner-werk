@@ -1,0 +1,208 @@
+[
+  {
+    "doc_id": 233,
+    "llm_suggested_label": [
+      [
+        0,
+        89,
+        "TITLE"
+      ],
+      [
+        92,
+        344,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly, with clean boundaries on both sides of the ' :' separator; frankp's spans include a stray leading/trailing space on each.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein, mit sauberen Grenzen auf beiden Seiten des ' :'-Trennzeichens; frankps Spannen enthalten jeweils ein überzähliges führendes/abschließendes Leerzeichen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 234,
+    "llm_suggested_label": [
+      [
+        0,
+        199,
+        "TITLE"
+      ],
+      [
+        202,
+        517,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes one trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 236,
+    "llm_suggested_label": [
+      [
+        0,
+        52,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific letter with a named sender and recipient, not generic content, so kept as a single TITLE per frankp's own reading rather than introducing an unproposed PERSON split for the embedded sender name (which would overlap the enclosing TITLE and requires deciding whether the recipient also warrants a separate PERSON span — a bigger restructuring than this weak-support doc merits).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifischer Brief mit benanntem Absender und Empfänger, kein generischer Inhalt, daher gemäß frankps eigener Lesart als einzelner TITLE beibehalten, statt eine nicht vorgeschlagene PERSON-Aufteilung für den eingebetteten Absendernamen einzuführen (die den umschließenden TITLE überlappen würde und die Entscheidung erfordert, ob auch der Empfänger eine separate PERSON-Spanne verdient — eine größere Umstrukturierung, als dieser schwach unterstützte Datensatz rechtfertigt).",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 238,
+    "llm_suggested_label": [
+      [
+        0,
+        92,
+        "TITLE"
+      ],
+      [
+        95,
+        546,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "TITLE end follows gundi's boundary, including the citation-verse period ('& 8.') as part of the abbreviated reference rather than sentence-final punctuation; OTHER_TITLE end follows frankp's clean boundary, excluding the trailing whitespace and ' ...' marker that gundi/maria's longer version includes.",
+    "llm_rationale_de": "Das TITLE-Ende folgt gundis Grenze und bezieht den Punkt der Versangabe ('& 8.') als Teil des abgekürzten Verweises ein, nicht als satzendende Interpunktion; das OTHER_TITLE-Ende folgt frankps sauberer Grenze und schließt abschließenden Leerraum und den ' ...'-Marker aus, den gundis/marias längere Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 240,
+    "llm_suggested_label": [
+      [
+        0,
+        18,
+        "TITLE"
+      ],
+      [
+        20,
+        68,
+        "OTHER_TITLE"
+      ],
+      [
+        76,
+        89,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree on TITLE and PERSON (bracketed name expansion per guide §5.8); gundi's additional OTHER_TITLE for the bracketed descriptive subtitle is a reasonable completion frankp simply omitted, not a disagreement, similar to doc 166.",
+    "llm_rationale_de": "frankp und gundi stimmen bei TITLE und PERSON überein (geklammerte Namenserweiterung gemäß Leitfaden §5.8); gundis zusätzliche OTHER_TITLE für den geklammerten beschreibenden Untertitel ist eine sinnvolle Ergänzung, die frankp schlicht ausgelassen hat, keine Meinungsverschiedenheit, ähnlich wie bei Dokument 166.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 241,
+    "llm_suggested_label": [
+      [
+        0,
+        268,
+        "TITLE"
+      ],
+      [
+        271,
+        614,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi keeps 'Oder Christliche Leichpredigt...' within TITLE rather than splitting at 'Oder' as frankp did — the same internal-'oder' convention applied consistently in docs 58/81/140/198.",
+    "llm_rationale_de": "gundi behält 'Oder Christliche Leichpredigt...' innerhalb von TITLE bei, statt bei 'Oder' zu teilen wie frankp — dieselbe internes-'oder'-Konvention, konsistent angewendet in den Dokumenten 58/81/140/198.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 243,
+    "llm_suggested_label": [
+      [
+        0,
+        382,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp's boundary is the clean one, excluding trailing comma, whitespace, and the ' ...' truncation marker; gundi's is 5 characters longer (includes the marker) and maria's has an off-by-one start error and also incorrectly includes the closing bracketed signature/dateline '[Signatum ... 1726.]', which is excluded per the established dateline convention.",
+    "llm_rationale_de": "frankps Grenze ist die saubere, die abschließendes Komma, Leerraum und den ' ...'-Kürzungsmarker ausschließt; gundis Version ist 5 Zeichen länger (enthält den Marker) und marias hat einen um eins verschobenen Anfangsfehler und bezieht zudem fälschlich die abschließende geklammerte Signatur/Datumszeile '[Signatum ... 1726.]' ein, die gemäß der etablierten Datumszeilen-Konvention ausgeschlossen wird.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 244,
+    "llm_suggested_label": [
+      [
+        0,
+        128,
+        "TITLE"
+      ],
+      [
+        131,
+        455,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's boundary is preferred over frankp's shorter one (which excludes '&c.') and maria's longer one (trailing space); majority effectively agrees once whitespace is trimmed.",
+    "llm_rationale_de": "gundis Grenze wird gegenüber frankps kürzerer (die '&c.' ausschließt) und marias längerer (abschließendes Leerzeichen) bevorzugt; die Mehrheit stimmt effektiv überein, sobald Leerraum bereinigt ist.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 246,
+    "llm_suggested_label": [
+      [
+        0,
+        50,
+        "TITLE"
+      ],
+      [
+        52,
+        179,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp's own comment expresses genuine uncertainty about whether Johan Alber is this book's author or its subject; gundi's TITLE reading (treating the descriptive opening phrase as subject matter, not a PERSON credential) is the safer default absent clear SoR evidence, similar to the subject-vs-author ambiguity in doc 209.",
+    "llm_rationale_de": "frankps eigener Kommentar drückt echte Unsicherheit aus, ob Johan Alber der Autor oder das Thema dieses Buches ist; gundis TITLE-Lesart (die die beschreibende Eröffnungsphrase als Thema behandelt, keine PERSON-Verantwortlichkeitsangabe) ist die sicherere Standardannahme ohne klaren SoR-Beleg, ähnlich der Thema-versus-Autor-Mehrdeutigkeit in Dokument 209.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 248,
+    "llm_suggested_label": [
+      [
+        0,
+        30,
+        "TITLE"
+      ],
+      [
+        32,
+        72,
+        "PARALLEL_TITLE"
+      ],
+      [
+        74,
+        138,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Unlike the internal-'oder' pattern in docs 58/81/140/198/241 (single-language elaboration), this 'oder' bridges a Latin title to its German equivalent ('Perversa ultimi seculi militia' / 'Kriegs-Belial, Der Soldaten-Teuffel') — closer to a genuine parallel-language restatement, supporting gundi's PARALLEL_TITLE label over treating it as plain OTHER_TITLE.",
+    "llm_rationale_de": "Anders als beim internes-'oder'-Muster in den Dokumenten 58/81/140/198/241 (einsprachige Ausführung) überbrückt dieses 'oder' einen lateinischen Titel und sein deutsches Äquivalent ('Perversa ultimi seculi militia' / 'Kriegs-Belial, Der Soldaten-Teuffel') — näher an einer echten fremdsprachlichen Wiedergabe, was gundis PARALLEL_TITLE-Label gegenüber einer bloßen OTHER_TITLE-Behandlung stützt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 249,
+    "llm_suggested_label": [
+      [
+        0,
+        15,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but 'Die Gartenlaube' is a well-known, specific 19th-century German family magazine — not generic content despite weak vote support; volume/issue reference 'Jg. 1856, Nr. 23' excluded per convention.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch 'Die Gartenlaube' ist eine bekannte, spezifische deutsche Familienzeitschrift des 19. Jahrhunderts — kein generischer Inhalt trotz schwacher Stimmenunterstützung; der Band-/Heftverweis 'Jg. 1856, Nr. 23' wird gemäß Konvention ausgeschlossen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 250,
+    "llm_suggested_label": [
+      [
+        0,
+        246,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "No named-ruler credential precedes the greeting here (unlike docs with 'Wir NAME...' openings), so no PERSON split applies; frankp's boundary is the clean one, excluding trailing whitespace and the ' ...' marker that gundi/maria's exact-matching longer boundary includes.",
+    "llm_rationale_de": "Hier geht der Begrüßung kein benanntes Herrscherprädikat voraus (anders als bei Dokumenten mit 'Wir NAME...'-Eröffnungen), daher entfällt eine PERSON-Aufteilung; frankps Grenze ist die saubere, die abschließenden Leerraum und den ' ...'-Marker ausschließt, den gundis/marias exakt übereinstimmende längere Grenze enthält.",
+    "llm_confidence": "high"
+  }
+]

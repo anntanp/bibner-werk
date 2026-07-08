@@ -23,7 +23,7 @@
 #               python scripts/ner/sr10_era_length_summary_v2.py --word-tokens --tag words
 # Inputs:       gemea/data/processed/de_titles_tokenized.parquet (passed via --data;
 #               stays in gemea per bibner-werk conventions, not copied into this repo)
-# Outputs:      data/processed/ner/sr10_era_length_summary_v2_<tag>.csv
+# Outputs:      data/title-length/sr10_era_length_summary_v2_<tag>.csv
 # Dependencies: pandas, pyarrow
 # Assumptions:  'all_tokens' = xlm-roberta-large SentencePiece BPE piece count (default mode).
 #               Word mode: whitespace split on lowercased 'title', same as
@@ -44,7 +44,7 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_PATH = Path(
     "/Users/mta/Documents/claude/gemea/data/processed/de_titles_tokenized.parquet"
 )
-OUTPUT_DIR = ROOT / "data" / "processed" / "ner"
+OUTPUT_DIR = ROOT / "data" / "title-length"
 
 WORD_SHORT_MAX = 3
 WORD_MEDIUM_MAX = 12

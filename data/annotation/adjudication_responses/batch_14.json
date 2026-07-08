@@ -1,0 +1,167 @@
+[
+  {
+    "doc_id": 207,
+    "llm_suggested_label": [
+      [
+        9,
+        51,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific, dated decree citation ('Decretum Ampliss. Senatus vom 28 Dec. 1770'), excluding the leading archival shelfmark 'B 18. a) '.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); eine spezifische, datierte Erlasszitation ('Decretum Ampliss. Senatus vom 28 Dec. 1770'), unter Ausschluss der führenden Archivsignatur 'B 18. a) '.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 208,
+    "llm_suggested_label": [
+      [
+        11,
+        58,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'Titul. XX. ' excluded, leaving a specific legal topic ('On the proof of a custom by advocates').",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'Titul. XX. ' wird ausgeschlossen, was ein spezifisches rechtliches Thema übrig lässt ('Vom Beweis eines Gewohnheitsrechts durch Anwälte').",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 209,
+    "llm_suggested_label": [
+      [
+        0,
+        63,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's single unsplit TITLE is preferred: 'von dem Bruder Conradt' more likely names the song's subject (a ballad about a friar), not its author — parallel to doc 1 (batch 1), where a bare 'von Name' with no SoR marker was read as topic, not authorship — so frankp's PERSON label is not adopted. gundi's boundary cleanly keeps the word-final period while excluding the trailing '||' typographic marker.",
+    "llm_rationale_de": "gundis einzelner ungeteilter TITLE wird bevorzugt: 'von dem Bruder Conradt' benennt eher das Thema des Liedes (eine Ballade über einen Mönch), nicht dessen Autor — parallel zu Dokument 1 (Batch 1), wo ein bloßes 'von Name' ohne SoR-Marker als Thema, nicht als Autorschaft gelesen wurde — daher wird frankps PERSON-Label nicht übernommen. gundis Grenze behält sauber den wortabschließenden Punkt bei und schließt den abschließenden typografischen Marker '||' aus.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 210,
+    "llm_suggested_label": [
+      [
+        22,
+        35,
+        "TITLE"
+      ],
+      [
+        40,
+        56,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "This record is an explicit collective review ('[Sammelrezension:]') of three separate novels by the same author — a multi-work structural problem like doc 119 (batch 8), with no single clean Work-level title available. Only the first, most cleanly delineated title ('Abendgenossen' by Gustav Schilling) is suggested; the other two novels' information is excluded rather than force-fit. Recommend PI judgment on how to represent a record covering multiple works.",
+    "llm_rationale_de": "Dieser Datensatz ist eine ausdrückliche Sammelrezension ('[Sammelrezension:]') dreier separater Romane desselben Autors — ein Mehrwerk-Strukturproblem wie bei Dokument 119 (Batch 8), ohne einen einzigen sauberen Werkebene-Titel. Nur der erste, am klarsten abgegrenzte Titel ('Abendgenossen' von Gustav Schilling) wird vorgeschlagen; die Informationen zu den beiden anderen Romanen werden ausgeschlossen, statt sie gewaltsam einzupassen. Es wird empfohlen, die Darstellung eines mehrere Werke abdeckenden Datensatzes dem PI zu überlassen.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 211,
+    "llm_suggested_label": [
+      [
+        0,
+        47,
+        "PERSON"
+      ],
+      [
+        98,
+        755,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "First-person royal credential ('Unsern gnädigen Gruß zuvor' = royal we), matching the recurring pattern; the greeting-formula gap between PERSON and TITLE is left unlabeled, as in doc 160. frankp's TITLE end is already clean, excluding trailing whitespace and the ' ...' marker; gundi's OTHER_TITLE addition is a closing dateline+signature, excluded per the established convention (batch 1 doc 5, doc 32, doc 111, doc 183).",
+    "llm_rationale_de": "Königliches Prädikat in erster Person ('Unsern gnädigen Gruß zuvor' = Pluralis Majestatis), entspricht dem wiederkehrenden Muster; die Grußformel-Lücke zwischen PERSON und TITLE bleibt unmarkiert, wie bei Dokument 160. frankps TITLE-Ende ist bereits sauber und schließt abschließenden Leerraum und den ' ...'-Marker aus; gundis OTHER_TITLE-Zusatz ist eine abschließende Datumszeile plus Signatur, ausgeschlossen gemäß der etablierten Konvention (Batch 1 Dokument 5, Dokument 32, Dokument 111, Dokument 183).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 212,
+    "llm_suggested_label": [
+      [
+        0,
+        20,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE despite gundi's Aufsatz flag; stronger (2/3) support than the single-annotator cases elsewhere in this corpus, tipping the balance toward annotating despite some genericness in the phrase itself.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE, trotz gundis Aufsatz-Markierung; stärkere (2/3) Unterstützung als bei den Einzelannotator-Fällen andernorts in diesem Korpus, was die Waage zugunsten einer Annotation neigt, trotz gewisser Generizität der Phrase selbst.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 213,
+    "llm_suggested_label": [
+      [
+        0,
+        197,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "All three propose an unsplit TITLE (no credential-style opening here, unlike docs with first-person royal openings); gundi's boundary is the only one that cleanly excludes both trailing whitespace and the ' ...' truncation marker.",
+    "llm_rationale_de": "Alle drei schlagen einen ungeteilten TITLE vor (hier keine prädikatartige Eröffnung, anders als bei Dokumenten mit königlicher Eröffnung in erster Person); gundis Grenze ist die einzige, die sowohl abschließenden Leerraum als auch den ' ...'-Kürzungsmarker sauber ausschließt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 214,
+    "llm_suggested_label": [
+      [
+        0,
+        35,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly on this biblical quotation (Jeremiah 31:20) as TITLE, despite maria's Abschnitt decline.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein: dieses Bibelzitat (Jeremia 31,20) als TITLE, trotz marias Ablehnung als Abschnitt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 215,
+    "llm_suggested_label": [
+      [
+        0,
+        198,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (gundi/maria) include the 'P.S. 1mum.' prefix rather than excluding it as frankp did — this reads as part of how the fragment identifies itself, not a chapter/volume enumeration; end boundary uses frankp's own clean value, which excludes trailing whitespace and the ' ...' marker that majority's boundary includes.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) bezieht den Präfix 'P.S. 1mum.' ein, statt ihn wie frankp auszuschließen — dies liest sich als Teil der Selbstbezeichnung des Fragments, keine Kapitel-/Bandaufzählung; die Endgrenze verwendet frankps eigenen sauberen Wert, der abschließenden Leerraum und den ' ...'-Marker ausschließt, den die Grenze der Mehrheit enthält.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 217,
+    "llm_suggested_label": [
+      [
+        0,
+        23,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); 'Das 53. Capittel Jesaia' identifies a specific biblical chapter (Isaiah 53), not a generic enumeration — specific enough to annotate despite weak vote support.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); 'Das 53. Capittel Jesaia' bezeichnet ein spezifisches Bibelkapitel (Jesaja 53), keine generische Aufzählung — spezifisch genug für eine Annotation trotz schwacher Stimmenunterstützung.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 218,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Wohlthätigkeitsanstalten' ('Charitable institutions') reads as a generic recurring topic/section heading, similar to docs 174/185/204 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Wohlthätigkeitsanstalten' liest sich als generische, wiederkehrende Themen-/Rubriküberschrift, ähnlich den Dokumenten 174/185/204 — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 219,
+    "llm_suggested_label": [
+      [
+        0,
+        75,
+        "TITLE"
+      ],
+      [
+        78,
+        403,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly; maria's OTHER_TITLE start includes a leading space that theirs excludes.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein; marias OTHER_TITLE-Anfang enthält ein führendes Leerzeichen, das ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  }
+]

@@ -3,72 +3,84 @@
     "doc_id": 1,
     "llm_suggested_label": [[7, 47, "TITLE"]],
     "llm_rationale": "No SoR marker (' / ', 'von', 'durch') supports PERSON for 'Bismark' — it reads as the topic of a periodical article, so TITLE covers the remainder after the leading issue-number prefix '16-30, '.",
+    "llm_rationale_de": "Kein SoR-Marker (' / ', 'von', 'durch') stützt PERSON für 'Bismark' — es liest sich als das Thema eines Zeitschriftenartikels, daher deckt TITLE den Rest nach dem einleitenden Ausgabenummer-Präfix '16-30, ' ab.",
     "llm_confidence": "medium"
   },
   {
     "doc_id": 3,
     "llm_suggested_label": [[0, 45, "TITLE"]],
     "llm_rationale": "frankp and maria agree exactly on the full string as TITLE; a numbered, individually titled sermon is a genuinely titled sub-unit despite gundi's Kapitel flag.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE; eine nummerierte, einzeln betitelte Predigt ist eine echte betitelte Untereinheit, trotz gundis Kapitel-Markierung.",
     "llm_confidence": "high"
   },
   {
     "doc_id": 4,
     "llm_suggested_label": [[0, 45, "TITLE"], [48, 93, "OTHER_TITLE"]],
     "llm_rationale": "Matches the guide's ' : ' subtitle pattern (annotation guide §5.1) exactly; frankp's boundary excludes the trailing space before the colon per the whitespace-trim rule.",
+    "llm_rationale_de": "Entspricht exakt dem ' : '-Untertitelmuster des Leitfadens (Annotationsleitfaden §5.1); frankps Grenze schließt das Leerzeichen vor dem Doppelpunkt gemäß der Whitespace-Trim-Regel aus.",
     "llm_confidence": "high"
   },
   {
     "doc_id": 5,
     "llm_suggested_label": [[0, 345, "TITLE"]],
     "llm_rationale": "gundi's shorter span excludes the trailing ' ...' truncation marker, consistent with the guide's rule (§5.10) that truncation markers are not part of any span, even though frankp/maria's longer span is the numeric majority.",
+    "llm_rationale_de": "gundis kürzere Spanne schließt den abschließenden ' ...'-Kürzungsmarker aus, im Einklang mit der Leitfaden-Regel (§5.10), dass Kürzungsmarker nicht Teil einer Spanne sind — auch wenn frankps/marias längere Spanne die zahlenmäßige Mehrheit darstellt.",
     "llm_confidence": "medium"
   },
   {
     "doc_id": 6,
     "llm_suggested_label": [[0, 363, "TITLE"], [366, 382, "OTHER_TITLE"]],
     "llm_rationale": "gundi's split isolates 'Jm Thon: Kompt her zu mir ...' as a tune cross-reference (OTHER_TITLE) from the main title, and both spans cleanly exclude trailing truncation/typography markers; complexity of this pre-1700 broadside warrants low confidence.",
+    "llm_rationale_de": "gundis Aufteilung isoliert 'Jm Thon: Kompt her zu mir ...' als Melodie-Querverweis (OTHER_TITLE) vom Haupttitel; beide Spannen schließen sauber abschließende Kürzungs-/Typographiemarker aus. Die Komplexität dieses vorreformatorischen Einblattdrucks rechtfertigt geringe Konfidenz.",
     "llm_confidence": "low"
   },
   {
     "doc_id": 7,
     "llm_suggested_label": [[0, 58, "TITLE"], [61, 71, "OTHER_TITLE"]],
     "llm_rationale": "Matches the guide's ' : ' + volume-number pattern (§5.1/§4 flowchart) exactly; gundi is the only annotator who completed the OTHER_TITLE span the rule calls for.",
+    "llm_rationale_de": "Entspricht exakt dem ' : ' + Bandnummer-Muster des Leitfadens (§5.1/§4 Entscheidungsbaum); gundi ist die einzige Annotatorin, die die vom Regelwerk geforderte OTHER_TITLE-Spanne vollständig ausgefüllt hat.",
     "llm_confidence": "high"
   },
   {
     "doc_id": 9,
     "llm_suggested_label": [[0, 291, "TITLE"], [296, 409, "PERSON"]],
     "llm_rationale": "Guide §5.8 explicitly requires merging the full credential + name + role phrase into one PERSON span; frankp's span is the only one that follows this rule completely.",
+    "llm_rationale_de": "Leitfaden §5.8 verlangt ausdrücklich, die vollständige Phrase aus Titel/Grad + Name + Rolle zu einer einzigen PERSON-Spanne zusammenzufassen; frankps Spanne ist die einzige, die diese Regel vollständig befolgt.",
     "llm_confidence": "high"
   },
   {
     "doc_id": 10,
     "llm_suggested_label": [[0, 33, "TITLE"], [37, 73, "OTHER_TITLE"]],
     "llm_rationale": "Guide §3.1 states exactly one TITLE per record, ruling out gundi's two-TITLE split; frankp's trailing period on 'Soldaten.' is ordinary sentence punctuation, not a separator, so it stays in TITLE.",
+    "llm_rationale_de": "Leitfaden §3.1 legt fest, dass genau ein TITLE pro Datensatz zulässig ist, was gundis Aufteilung in zwei TITLE-Spannen ausschließt; frankps abschließender Punkt bei 'Soldaten.' ist gewöhnliche Satzzeichensetzung, kein Trennzeichen, und bleibt daher Teil von TITLE.",
     "llm_confidence": "high"
   },
   {
     "doc_id": 11,
-    "llm_suggested_label": [[23, 53, "TITLE"], [56, 105, "OTHER_TITLE"], [108, 130, "PERSON"]],
-    "llm_rationale": "Genuinely uncertain: the leading 'Rastegar, Nosratollah,' reads as a duplicate name-heading (per frankp's own comment) rather than a labelable PERSON, and the two bracketed statements are ISBD series statements that don't fit TITLE/OTHER_TITLE/PERSON — recommend close PI review rather than treating this suggestion as settled.",
-    "llm_confidence": "low"
+    "llm_suggested_label": [[0, 21, "PERSON"], [23, 53, "TITLE"], [56, 105, "OTHER_TITLE"], [108, 130, "PERSON"]],
+    "llm_rationale": "Leading 'Rastegar, Nosratollah' is now labeled PERSON per the settled policy on leading inverted-name catalog headings (always include); the two bracketed statements remain excluded as ISBD series statements per ADR D-13 (Manifestation-level, not Work-level).",
+    "llm_rationale_de": "Das führende 'Rastegar, Nosratollah' wird nun gemäß der festgelegten Regel zu führenden invertierten Namensköpfen in Katalogaufnahmen (grundsätzlich einschließen) als PERSON markiert; die beiden geklammerten Reihenangaben bleiben gemäß ADR D-13 (Manifestations-, nicht Werkebene) als ISBD-Reihenvermerke ausgeschlossen.",
+    "llm_confidence": "medium"
   },
   {
     "doc_id": 13,
     "llm_suggested_label": [[0, 338, "TITLE"], [341, 527, "OTHER_TITLE"]],
     "llm_rationale": "Text after ' : ' is a full relative clause ('Welche Freytags...'), not a bare date range, so the guide's life-date colon exception does not apply and OTHER_TITLE is correct per the default flowchart rule.",
+    "llm_rationale_de": "Der Text nach ' : ' ist ein vollständiger Relativsatz ('Welche Freytags...'), kein bloßer Datumsbereich; daher greift die Lebensdaten-Doppelpunkt-Ausnahme des Leitfadens nicht, und OTHER_TITLE ist gemäß der Standard-Entscheidungsbaum-Regel korrekt.",
     "llm_confidence": "high"
   },
   {
     "doc_id": 14,
     "llm_suggested_label": [[0, 791, "TITLE"]],
     "llm_rationale": "frankp and gundi agree exactly at offset 791; maria's extra 4 characters are the trailing ' ...' truncation marker, excluded per the same convention applied to doc 5.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt bei Position 791 überein; marias zusätzliche 4 Zeichen sind der abschließende ' ...'-Kürzungsmarker, ausgeschlossen gemäß derselben Konvention wie bei Dokument 5.",
     "llm_confidence": "high"
   },
   {
     "doc_id": 16,
     "llm_suggested_label": [[0, 20, "TITLE"], [49, 61, "PERSON"]],
     "llm_rationale": "frankp and maria agree exactly: 'Liturgisches Magazin' is a genuine journal title and '[Hrsg. von G. F. Seiler]' is a standard editor SoR phrase (guide §3.1 PERSON design note explicitly covers editors), despite gundi's Aufsatz flag.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: 'Liturgisches Magazin' ist ein echter Zeitschriftentitel, und '[Hrsg. von G. F. Seiler]' ist eine standardmäßige Herausgeber-Verantwortlichkeitsangabe (Leitfaden §3.1, Gestaltungshinweis zu PERSON, deckt Herausgeber ausdrücklich ab), trotz gundis Aufsatz-Markierung.",
     "llm_confidence": "high"
   }
 ]

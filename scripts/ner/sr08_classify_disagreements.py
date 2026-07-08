@@ -6,7 +6,7 @@
 #                   --export-dir data/annotation/doccano/export-20260623-1110
 # Inputs:       *.jsonl files in --export-dir (skips dummy.doccano.jsonl, ann.jsonl,
 #               harald.jsonl, *.meta.jsonl, sr08_*)
-# Outputs:      data/processed/ner/sr08_disagreement_classification_<export>.csv
+# Outputs:      data/adjudication/sr08_disagreement_classification_<export>.csv
 #               (doc_id, tier, conflict_type, annotators_reviewed)
 #               stdout: tier counts, cross-checked against adjudication-plan.md §1
 # Dependencies: none (stdlib only)
@@ -181,8 +181,8 @@ def main() -> None:
     )
     parser.add_argument(
         "--output-dir", type=Path,
-        default=BASE / "data/processed/ner",
-        help="Output directory (default: data/processed/ner/)"
+        default=BASE / "data/adjudication",
+        help="Output directory (default: data/adjudication/)"
     )
     args = parser.parse_args()
 

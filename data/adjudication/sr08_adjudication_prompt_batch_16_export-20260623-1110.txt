@@ -1,0 +1,581 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 233,
+    "text": "Wahrer Christen Buße/ und Rewe/ Schild/ und Helm/ Trotz und Frewdigkeit/ Jammer und Elend : Bei des ... Herrn Hans Christophen von Erffa/ uff Sontheimb und Weidhausen/ Fürstl. Sächs. hochwolverordneten Hoff- und Justitien-Raths allhier/ Welcher den 6. Maii Anno 1663 ... verschieden/ und den 18. Eiusdem ... in seine Ruhekammer gebracht worden/",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            90,
+            "TITLE"
+          ],
+          [
+            91,
+            344,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            89,
+            "TITLE"
+          ],
+          [
+            92,
+            344,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            89,
+            "TITLE"
+          ],
+          [
+            92,
+            344,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 234,
+    "text": "Wahre Eigenschafften recht-Gottseeliger Menschen Von Dem Außerkohrnen unter den Kindern Israel/ dem Mann nach dem Hertzen Gottes/ David/ in dem LXIII. Psalm/ vs. 6. 7. 8. 9. gar eigendlich abgebildet : Bey ... Leich-Begängnuß Der ... Fr. Anna Agneß gebohrnen Haußbrandinn/ Des ... Herrn Johann Steinigern/ genand von Schönkirch ... Ministri und Residenten, Hertzliebsten Ehegenossen: Welche den 3. Martii ... entschlaffen/ und den 24. desselben ... in der hiesigen Königl. Hauptkirchen S. Petri ... beygesetzet worden",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            200,
+            "TITLE"
+          ],
+          [
+            202,
+            517,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            199,
+            "TITLE"
+          ],
+          [
+            202,
+            517,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            199,
+            "TITLE"
+          ],
+          [
+            202,
+            517,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 236,
+    "text": "Brief von Carl Friedrich Grimm an Karl Eduard Brauns",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            52,
+            "TITLE"
+          ],
+          [
+            10,
+            30,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 238,
+    "text": "Frommer Hertzen Creutz-Becher und Trost-Spiegel/ Aus dem Buch Hiob Cap. VI. v. 1, 2, 3, & 8. : Bey Christlicher Leich-Begängnüß Der ... Jungfrau Catharin. Elisabeth Pforrin. Des ... Herrn Johan. Georgii Pforrn/ des Raths allhier zu Schmalkalden/ und Kirchen Senioris, und seiner ... Hauß-Ehren/ Frau Anna Marien/ gebornen Keuhlin ... Tochter ... Welche den 17. Martii Anno 1668. ... entschlaffen/ und folgend den 20. eiusdem auff den hiesigen Gottes-Acker in ihr Ruhebettlein beygesetzet worden ... einfältig gewiesen/ und ... zum Druck übergeben ...",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            91,
+            "TITLE"
+          ],
+          [
+            95,
+            546,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            92,
+            "TITLE"
+          ],
+          [
+            95,
+            550,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            550,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 240,
+    "text": "Deutschlands Fauna [in Abbildungen nach der Natur mit Beschreibungen] / von J[acob] Sturm. - [Nürnberg : Verfasser.] - Käfer, Heft XII, 1837 ; Heft XIII, 1838",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ],
+          [
+            76,
+            89,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ],
+          [
+            20,
+            68,
+            "OTHER_TITLE"
+          ],
+          [
+            76,
+            89,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 241,
+    "text": "Memoria Busschiana Oder Christliche Leichpredigt Uber das Sel. Absterben/ Adelichen und Hochwolansehenlichen LeichenBegäng- und Begräbniß Des ... Herrn Philip Sigismunden von dem Bussch auff Ippenburg und Harlinghausen Erbgesessen/ Fürstl. Osnabrügischen ... LandRaths : Welcher vom 20. auff den 21. Decembr. St. nov. 1657. auff dem Adelichen Hauß Haddenhausen plötzlich ... verschieden/ folgenden 13. Decembr. St. Nov. von dannen auß auff sein Adeliche Residentz nacher Ippenburg/ und dann endlich den 3. Febr. An. 1658. nach Essen zu seinem in der Kirch allda habendem Begräbniß ... gefüret und beygesetzt worden",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ],
+          [
+            24,
+            268,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            268,
+            "TITLE"
+          ],
+          [
+            271,
+            614,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            614,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 243,
+    "text": "An Seiten Hoch-Fürstl. Cammer ist man deß Versehens gewesen, es würden die Beamte ... sich der, am 3. Decembr. 1688, und 11. Decembr. 1690 im Druck ergangenen, ... wiederholter Verordnung; nach welcher, wann von gedacht-Hoch-Fürstl. Cammer, entweder zu Herrschafftlichen Gebäuen, oder Unterthanen, auf ihr suppliciren, Bau- oder Brenn-Holz, aus Herrschafftlichen Waldungen abzugeben, ... [Signatum unter hievorgedruckt-Hoch-Fürstl. Cammer-Secret-Insiegel. Onolzbach, den 10. Octobr. 1726.]",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            382,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            387,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            1,
+            489,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 244,
+    "text": "Christliche Leich-Predigt/ Uber den tröstlichen Spruch des Herrn Christi Marc. 10. v. 14. Lasset die Kindlein zu mir kommen/ &c. : Bey angeordneter Begräbnis Johannis Philippi Pfläntzels/ Des ... Philippi Pfläntzels ... Pfarrers und Seelen-Hirten in der Schney ... Söhnleins/ Welches den 30. Maii des 1664. Jahrs ... entschlaffen/ und den 2. folgenden Monats Iunii dem Gottes-Acker daselbsten zu einem Him[m]els-Pfläntzlein eingepflantzet worden/ gehalten",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            123,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            128,
+            "TITLE"
+          ],
+          [
+            131,
+            455,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            129,
+            "TITLE"
+          ],
+          [
+            131,
+            455,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 246,
+    "text": "Der Jesuwidder Procurator Johan Alber zu Ingolstad :Was derselbige guts herfür bringe von der newen Jesuwiddrischen sect ; Antworts weiß gestellet auff des selben Procurators Buch",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            50,
+            "PERSON"
+          ],
+          [
+            52,
+            179,
+            "TITLE"
+          ]
+        ],
+        "comment": "Although Johan Alber was a known critic of the Jesuits, it is not clear whether we are seeing one of his books here. The DDB link shows the precise text on the front page, but it is not clear whether Alber is the author of the book"
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            50,
+            "TITLE"
+          ],
+          [
+            52,
+            179,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            179,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 248,
+    "text": "Perversa ultimi seculi militia :oder Kriegs-Belial, Der Soldaten-Teuffel, Nach Gottes Wort und gemeinem Lauff der letzten Zeit beschrieben",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            30,
+            "TITLE"
+          ],
+          [
+            37,
+            138,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            30,
+            "TITLE"
+          ],
+          [
+            32,
+            72,
+            "PARALLEL_TITLE"
+          ],
+          [
+            74,
+            138,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            72,
+            "TITLE"
+          ],
+          [
+            74,
+            138,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 249,
+    "text": "Die Gartenlaube. Jg. 1856, Nr. 23",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            15,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 250,
+    "text": "Unsern gnädigen und [] Gruß zuvor, Es haben Ihro Hoch-Fürstl. Durchl. ... verwilliget, daß in Dero Landen von einigen Unterthanen das Brandewein brennen wiederum exerciret werden möge, dabey aber ... keine Inländische Frucht ... verbraucht werden ... : Cassel, den 6. Sept. 1720.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            246,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            250,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            250,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

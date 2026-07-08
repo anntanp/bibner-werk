@@ -1,0 +1,1100 @@
+[
+  {
+    "batch": 11,
+    "doc_id": 162,
+    "llm_rationale": "frankp and gundi agree exactly; maria's decline reads as an unreviewed-style comment rather than a considered scope judgment.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein; marias Ablehnung liest sich eher wie ein unrezensiert wirkender Kommentar als ein durchdachtes Geltungsbereichsurteil."
+  },
+  {
+    "batch": 11,
+    "doc_id": 163,
+    "llm_rationale": "Genuine ' = ' marker (guide's explicit PARALLEL_TITLE trigger, unlike the ' :' cases in docs 130/140 where OTHER_TITLE was correct instead); frankp and gundi's majority label is preferred over maria's merge, using gundi's boundary which excludes a trailing space frankp's includes.",
+    "llm_rationale_de": "Echtes ' ='-Zeichen (der ausdrückliche PARALLEL_TITLE-Auslöser des Leitfadens, anders als die ' :'-Fälle in den Dokumenten 130/140, wo stattdessen OTHER_TITLE korrekt war); das mehrheitliche Label von frankp und gundi wird gegenüber marias Zusammenführung bevorzugt, unter Verwendung von gundis Grenze, die ein abschließendes Leerzeichen ausschließt, das frankps Version enthält."
+  },
+  {
+    "batch": 11,
+    "doc_id": 164,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a terse but real title ('Predigten' = 'Sermons') with a full leading author heading. Weak (1/3) support, flagged per the same tension as docs 149/150/155 (batch 10).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein knapper, aber echter Titel ('Predigten') mit einem vollständigen führenden Autorenkopf. Schwache (1/3) Unterstützung, markiert gemäß derselben Spannung wie bei den Dokumenten 149/150/155 (Batch 10)."
+  },
+  {
+    "batch": 11,
+    "doc_id": 165,
+    "llm_rationale": "Only frankp annotates; content is an enumeration ('Die siebend Lection.') plus a terse Latin liturgical fragment ('Sicut in Adam &c') with no substantive descriptive title — weaker content than doc 164 in this same batch, and only 1/3 support. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; der Inhalt ist eine Aufzählung ('Die siebend Lection.') plus ein knappes lateinisches liturgisches Fragment ('Sicut in Adam &c') ohne substantiellen beschreibenden Titel — schwächerer Inhalt als bei Dokument 164 in demselben Batch, und nur 1/3 Unterstützung. O wird empfohlen."
+  },
+  {
+    "batch": 11,
+    "doc_id": 166,
+    "llm_rationale": "frankp and gundi agree exactly, including the bracketed name expansion in PERSON per guide §5.8's credential-merge rule.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein, einschließlich der geklammerten Namenserweiterung in PERSON gemäß der Titel/Grad-Zusammenführungsregel des Leitfadens §5.8."
+  },
+  {
+    "batch": 11,
+    "doc_id": 167,
+    "llm_rationale": "frankp and gundi agree exactly on the full string as TITLE despite maria's Aufsatz decline.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein: die gesamte Zeichenkette als TITLE, trotz marias Ablehnung als Aufsatz."
+  },
+  {
+    "batch": 11,
+    "doc_id": 168,
+    "llm_rationale": "All three agree on TITLE. The parenthetical '(Aus dem Jahresberichte der Schlesischen Gesellschaft für vaterländ. Cultur. 1861. Heft I.)' is excluded as a host-journal citation — an annual report of a general scientific society hosting many unrelated articles each year passes the D-13 generic-container test cleanly (unlike doc 148, where the cataloged item itself was the container).",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein. Der Klammerzusatz '(Aus dem Jahresberichte der Schlesischen Gesellschaft für vaterländ. Cultur. 1861. Heft I.)' wird als Zitat der Trägerzeitschrift ausgeschlossen — ein Jahresbericht einer allgemeinen wissenschaftlichen Gesellschaft, der jährlich viele themenfremde Beiträge beherbergt, besteht den D-13-Test für generische Container eindeutig (anders als bei Dokument 148, wo das katalogisierte Stück selbst der Container war)."
+  },
+  {
+    "batch": 11,
+    "doc_id": 169,
+    "llm_rationale": "gundi's finer split (separate Hebrew-language TITLE and OTHER_TITLE before the German parallel title) is preferred over frankp/maria's merges; her OTHER_TITLE boundary is trimmed to exclude the trailing ' ...' truncation marker before the ' = ' marker; PARALLEL_TITLE follows the genuine ' = ' trigger; final OTHER_TITLE uses frankp's boundary, excluding its own trailing truncation marker.",
+    "llm_rationale_de": "gundis feinere Aufteilung (separate hebräischsprachige TITLE und OTHER_TITLE vor dem deutschen Paralleltitel) wird gegenüber frankps/marias Zusammenführungen bevorzugt; ihre OTHER_TITLE-Grenze ist so beschnitten, dass der abschließende ' ...'-Kürzungsmarker vor dem ' ='-Zeichen ausgeschlossen wird; PARALLEL_TITLE folgt dem echten ' ='-Auslöser; die abschließende OTHER_TITLE verwendet frankps Grenze und schließt ihren eigenen abschließenden Kürzungsmarker aus."
+  },
+  {
+    "batch": 11,
+    "doc_id": 170,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz) — same weak-support tension as doc 164. Structurally improved by splitting out the repeated author mention ('von Johann Conrad Kirschner') as a separate PERSON span, matching the established repeated-name pattern (docs 70/137), rather than leaving it folded into OTHER_TITLE as frankp did.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab) — dieselbe Spannung schwacher Unterstützung wie bei Dokument 164. Strukturell verbessert, indem die wiederholte Autorennennung ('von Johann Conrad Kirschner') als separate PERSON-Spanne herausgelöst wird, entsprechend dem etablierten Muster wiederholter Namensnennung (Dokumente 70/137), statt sie wie bei frankp in OTHER_TITLE eingefaltet zu lassen."
+  },
+  {
+    "batch": 11,
+    "doc_id": 172,
+    "llm_rationale": "maria's comment is explicit and factual, not a genre-based decline: this record is just a newspaper issue number and date with no title anywhere ('nur Heft (ohne Titel) aus Zeitung'). gundi's TITLE span merely labels the issue-number-and-date string itself, which is exactly the guide's 'too fragmentary/generic' exclusion case.",
+    "llm_rationale_de": "marias Kommentar ist ausdrücklich und sachlich, keine gattungsbasierte Ablehnung: Dieser Datensatz ist lediglich eine Zeitungsheftnummer und ein Datum ohne jeglichen Titel ('nur Heft (ohne Titel) aus Zeitung'). gundis TITLE-Spanne markiert lediglich die Heftnummer-und-Datum-Zeichenkette selbst, was genau dem Ausschlusskriterium des Leitfadens für 'zu fragmentarisch/generisch' entspricht."
+  },
+  {
+    "batch": 11,
+    "doc_id": 173,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel), but the content is a genuine technical question ('what reason the hundredweight is calculated at 100 pounds for testing') from what reads like a metallurgy/assaying treatise, matching the enumeration-plus-real-content pattern in docs 56/66/92 where similar weak-vote cases were still annotated.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab), doch der Inhalt ist eine echte fachliche Frage ('aus welchem Grund der Zentner beim Prüfen zu 100 Pfund berechnet wird') aus einem Text, der sich wie eine Metallurgie-/Prüfabhandlung liest, entsprechend dem Muster Aufzählung-plus-echter-Inhalt in den Dokumenten 56/66/92, wo ähnliche schwach unterstützte Fälle dennoch annotiert wurden."
+  },
+  {
+    "batch": 11,
+    "doc_id": 174,
+    "llm_rationale": "Only frankp annotates; 'Aus dem Vereinsleben' ('From club life') reads as a generic recurring newsletter column heading rather than content-specific title — the kind of text that could appear identically across many unrelated issues, similar in spirit to the generic-container test in D-13. Combined with weak (1/3) support, recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Aus dem Vereinsleben' liest sich als generische, wiederkehrende Rubriküberschrift eines Vereinsblatts statt eines inhaltsspezifischen Titels — die Art von Text, die identisch in vielen themenfremden Ausgaben erscheinen könnte, ähnlich im Geiste dem Test für generische Container in D-13. Zusammen mit schwacher (1/3) Unterstützung wird O empfohlen."
+  },
+  {
+    "batch": 12,
+    "doc_id": 175,
+    "llm_rationale": "frankp and gundi agree on genuine content ('Straßenverkehrsunfälle September 1983', a real statistical report title); maria's decline is a factual note about missing journal assignment, not a claim that no title exists (contrast doc 172). Running-number suffix 'Lfd. Nr. 40' excluded per the established volume/issue-number convention.",
+    "llm_rationale_de": "frankp und gundi stimmen bei echtem Inhalt überein ('Straßenverkehrsunfälle September 1983', ein echter Titel eines Statistikberichts); marias Ablehnung ist eine sachliche Anmerkung zur fehlenden Zeitschriftenzuordnung, keine Behauptung, dass kein Titel existiert (im Gegensatz zu Dokument 172). Der laufende Nummernzusatz 'Lfd. Nr. 40' wird gemäß der etablierten Band-/Heftnummern-Konvention ausgeschlossen."
+  },
+  {
+    "batch": 12,
+    "doc_id": 176,
+    "llm_rationale": "Same structure and reasoning as doc 175: frankp/gundi agree on a genuine demographic-report title, running number 'Lfd. Nr. 7' excluded.",
+    "llm_rationale_de": "Dieselbe Struktur und Begründung wie bei Dokument 175: frankp/gundi stimmen bei einem echten Titel eines Bevölkerungsberichts überein, die laufende Nummer 'Lfd. Nr. 7' wird ausgeschlossen."
+  },
+  {
+    "batch": 12,
+    "doc_id": 177,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); TITLE boundary trimmed of frankp's trailing whitespace. Content is a specific periodical/pamphlet title with a clear SoR, not generic — flagged per the established content-vs-vote-count tension, same as several docs in batch 10.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); die TITLE-Grenze ist von frankps abschließendem Leerraum bereinigt. Der Inhalt ist ein spezifischer Zeitschriften-/Flugschriftentitel mit klarer Verantwortlichkeitsangabe, nicht generisch — markiert gemäß der etablierten Spannung zwischen Inhalt und Stimmenzahl, wie bei mehreren Dokumenten in Batch 10."
+  },
+  {
+    "batch": 12,
+    "doc_id": 179,
+    "llm_rationale": "Only frankp annotates a single bare word ('Büchenwerra', likely a place name) with zero surrounding context; only frankp and gundi even reviewed this record. Genuinely ambiguous whether this is a work title or a geographic heading — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes bloßes Wort ('Büchenwerra', vermutlich ein Ortsname) ohne jeglichen umgebenden Kontext; nur frankp und gundi haben diesen Datensatz überhaupt geprüft. Echt mehrdeutig, ob dies ein Werktitel oder eine geografische Überschrift ist — O wird empfohlen."
+  },
+  {
+    "batch": 12,
+    "doc_id": 181,
+    "llm_rationale": "gundi's split at the genuine ' :' marker is preferred over frankp/maria's merges; TITLE and OTHER_TITLE boundaries trimmed to exclude trailing whitespace and the ' ...' truncation marker; frankp and gundi agree exactly on the trailing PERSON span (the sermon's author), which maria's single merged span absorbs instead.",
+    "llm_rationale_de": "gundis Aufteilung am echten ' :'-Zeichen wird gegenüber frankps/marias Zusammenführungen bevorzugt; die Grenzen von TITLE und OTHER_TITLE sind so beschnitten, dass abschließender Leerraum und der ' ...'-Kürzungsmarker ausgeschlossen werden; frankp und gundi stimmen exakt bei der abschließenden PERSON-Spanne überein (der Autor der Predigt), die marias einzelne zusammengeführte Spanne stattdessen absorbiert."
+  },
+  {
+    "batch": 12,
+    "doc_id": 182,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'Der Siebend Grund. ' excluded per the established convention (docs 56/66/93/126/128/150), leaving a specific theological topic as TITLE.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'Der Siebend Grund. ' wird gemäß der etablierten Konvention ausgeschlossen (Dokumente 56/66/93/126/128/150), was ein spezifisches theologisches Thema als TITLE übrig lässt."
+  },
+  {
+    "batch": 12,
+    "doc_id": 183,
+    "llm_rationale": "First-person royal credential, matching the recurring pattern; frankp's PERSON span was already clean. TITLE end trimmed back from frankp's 533 to 520 to exclude the closing dateline ('Gegeben ... Cassel, den 5. Tag Septembris 1710'), consistent with excluding datelines elsewhere (batch 1 doc 5, doc 32, doc 111).",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster; frankps PERSON-Spanne war bereits sauber. Das TITLE-Ende wird von frankps 533 auf 520 zurückgenommen, um die abschließende Datumszeile ('Gegeben ... Cassel, den 5. Tag Septembris 1710') auszuschließen, im Einklang mit dem Ausschluss von Datumszeilen andernorts (Batch 1 Dokument 5, Dokument 32, Dokument 111)."
+  },
+  {
+    "batch": 12,
+    "doc_id": 184,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a complete sermon-topic sentence ('God threatens those who have heard the gospel long'), not a fragment. Weak vote support flagged, but content specificity favors annotating.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein vollständiger Predigtthemensatz ('Gott droht denen, die das Evangelium lange gehört haben'), kein Fragment. Schwache Stimmenunterstützung markiert, doch die inhaltliche Spezifität spricht für eine Annotation."
+  },
+  {
+    "batch": 12,
+    "doc_id": 185,
+    "llm_rationale": "Only frankp annotates; 'Pädagogische Zustände' ('Pedagogical conditions') reads as a generic recurring newsletter/journal section heading, the same pattern as doc 174 (batch 11) — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Pädagogische Zustände' liest sich als generische, wiederkehrende Rubriküberschrift eines Rundbriefs/einer Zeitschrift, dasselbe Muster wie bei Dokument 174 (Batch 11) — O wird empfohlen."
+  },
+  {
+    "batch": 12,
+    "doc_id": 186,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); 'Denkmahl Pauls Sarpi' is a specific historical-biographical work title with a full leading author heading, not generic content. Weak vote support flagged.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); 'Denkmahl Pauls Sarpi' ist ein spezifischer historisch-biografischer Werktitel mit vollständigem führenden Autorenkopf, kein generischer Inhalt. Schwache Stimmenunterstützung markiert."
+  },
+  {
+    "batch": 12,
+    "doc_id": 187,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); this is a chapter-caption from Theuerdank (a well-known early-16th-century epic), describing one specific episode in full — genuinely complete narrative content despite being a chapter subdivision, similar to docs 56/66/92.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); dies ist eine Kapitelüberschrift aus dem Theuerdank (einem bekannten Epos des frühen 16. Jahrhunderts), die eine bestimmte Episode vollständig beschreibt — echt vollständiger erzählerischer Inhalt trotz Kapitelunterteilung, ähnlich den Dokumenten 56/66/92."
+  },
+  {
+    "batch": 12,
+    "doc_id": 188,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a complete, specific academic inaugural-lecture citation (title, program statement, author), not generic content. Weak vote support flagged per the same tension as other docs in this batch.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); eine vollständige, spezifische Zitation einer akademischen Antrittsvorlesung (Titel, Programmerklärung, Autor), kein generischer Inhalt. Schwache Stimmenunterstützung markiert, gemäß derselben Spannung wie bei anderen Dokumenten in diesem Batch."
+  },
+  {
+    "batch": 13,
+    "doc_id": 189,
+    "llm_rationale": "All three agree on TITLE; gundi's fuller OTHER_TITLE boundary (through 'Gehalten', a natural continuation of the same sentence) is preferred over frankp's shorter one and maria's unsplit merge.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; gundis vollständigere OTHER_TITLE-Grenze (bis einschließlich 'Gehalten', einer natürlichen Fortsetzung desselben Satzes) wird gegenüber frankps kürzerer und marias ungeteilter Zusammenführung bevorzugt."
+  },
+  {
+    "batch": 13,
+    "doc_id": 190,
+    "llm_rationale": "Only frankp annotates; 'Folgen schöne Sprüche der lieben Väter ...' ('There follow beautiful sayings of the dear fathers...') is a transitional/structural phrase introducing a list, not a distinctive title in itself — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Folgen schöne Sprüche der lieben Väter ...' ist eine Überleitungs-/Strukturphrase, die eine Liste einleitet, kein eigenständiger unterscheidender Titel — O wird empfohlen."
+  },
+  {
+    "batch": 13,
+    "doc_id": 191,
+    "llm_rationale": "All three agree on treating this as one unsplit TITLE; frankp's boundary is the clean one, excluding trailing whitespace and the ' ...' truncation marker that gundi/maria's include.",
+    "llm_rationale_de": "Alle drei stimmen darin überein, dies als einen ungeteilten TITLE zu behandeln; frankps Grenze ist die saubere, die abschließenden Leerraum und den ' ...'-Kürzungsmarker ausschließt, den gundis/marias Versionen enthalten."
+  },
+  {
+    "batch": 13,
+    "doc_id": 193,
+    "llm_rationale": "Only frankp annotates; content is two cross-referencing enumeration markers ('Twentieth Proof. Against the Nineteenth Reflection...') with no substantive topic beyond the numbering itself — weaker content than the enum-plus-real-topic pattern in docs 56/66/92/126/128/150/173/182/184/187/195/200/203 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; der Inhalt sind zwei aufeinander verweisende Aufzählungsmarker ('Zwanzigster Beweis. Gegen die neunzehnte Betrachtung...') ohne substantielles Thema über die bloße Nummerierung hinaus — schwächerer Inhalt als beim Muster Aufzählung-plus-echtes-Thema in den Dokumenten 56/66/92/126/128/150/173/182/184/187/195/200/203 — O wird empfohlen."
+  },
+  {
+    "batch": 13,
+    "doc_id": 195,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'Vier und zwantzigstes Capitel. ' excluded per the established convention, leaving a specific legal/historical topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'Vier und zwantzigstes Capitel. ' wird gemäß der etablierten Konvention ausgeschlossen, was ein spezifisches rechtlich-historisches Thema übrig lässt."
+  },
+  {
+    "batch": 13,
+    "doc_id": 196,
+    "llm_rationale": "Majority (frankp/gundi) include the trailing period as part of 'genandt.' (word-ending punctuation, not a separator), excluding only the trailing '||' typographic marker.",
+    "llm_rationale_de": "Die Mehrheit (frankp/gundi) bezieht den abschließenden Punkt als Teil von 'genandt.' ein (wortabschließende Interpunktion, kein Trennzeichen), und schließt lediglich den abschließenden typografischen Marker '||' aus."
+  },
+  {
+    "batch": 13,
+    "doc_id": 198,
+    "llm_rationale": "gundi and maria agree on identical boundaries, keeping 'Oder Dreyfacher Hertzens-Trost...' within TITLE (internal 'oder' as conjunction, same reasoning as docs 58/81/140), over frankp's split at 'Oder'.",
+    "llm_rationale_de": "gundi und maria stimmen bei identischen Grenzen überein und behalten 'Oder Dreyfacher Hertzens-Trost...' innerhalb von TITLE bei (internes 'oder' als Konjunktion, dieselbe Begründung wie bei den Dokumenten 58/81/140), gegenüber frankps Aufteilung bei 'Oder'."
+  },
+  {
+    "batch": 13,
+    "doc_id": 200,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'II. ' excluded, leaving a specific educational/philosophical topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'II. ' wird ausgeschlossen, was ein spezifisches pädagogisch-philosophisches Thema übrig lässt."
+  },
+  {
+    "batch": 13,
+    "doc_id": 202,
+    "llm_rationale": "Same corporate-body-in-SoR-position pattern as docs 104/120 (guide §5.2), applied here in its simpler form since there is no second ' : ' — 'Bericht über das Schuljahr ...' flows as one continuous TITLE up to the ' / ' SoR marker, then 'Gymnasium zu Stralsund' is PERSON; leading '1930/31: ' date prefix excluded per convention. None of the three annotators applied this structure.",
+    "llm_rationale_de": "Dasselbe Muster einer Körperschaft in SoR-Position wie bei den Dokumenten 104/120 (Leitfaden §5.2), hier in seiner einfacheren Form angewendet, da kein zweites ' : ' vorhanden ist — 'Bericht über das Schuljahr ...' verläuft als ein durchgehender TITLE bis zum SoR-Marker ' / ', dann ist 'Gymnasium zu Stralsund' PERSON; der führende Datumspräfix '1930/31: ' wird gemäß Konvention ausgeschlossen. Keiner der drei Annotatoren hat diese Struktur angewendet."
+  },
+  {
+    "batch": 13,
+    "doc_id": 203,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a genuine hymn/poem opening line, not a fragment.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); eine echte Anfangszeile eines Kirchenlieds/Gedichts, kein Fragment."
+  },
+  {
+    "batch": 13,
+    "doc_id": 204,
+    "llm_rationale": "Only frankp annotates a single generic structural-section word ('Vorsatz' = 'preface'/'foreword'), the kind of heading that could appear in any book — same pattern as docs 174/185 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes generisches Struktur-Abschnittswort ('Vorsatz'), die Art von Überschrift, die in jedem Buch vorkommen könnte — dasselbe Muster wie bei den Dokumenten 174/185 — O wird empfohlen."
+  },
+  {
+    "batch": 13,
+    "doc_id": 205,
+    "llm_rationale": "frankp and gundi agree closely on span boundaries, but the content itself ('Ein ander Gesang.' = 'Another song.') is a purely structural label indicating 'here is another hymn' without naming which one — content-vacuous despite the 2/3 boundary agreement, similar in spirit to doc 172's issue-stub. Recommend O against the numeric majority.",
+    "llm_rationale_de": "frankp und gundi stimmen bei den Spannengrenzen weitgehend überein, doch der Inhalt selbst ('Ein ander Gesang.') ist ein rein struktureller Hinweis, der 'hier folgt ein weiteres Lied' anzeigt, ohne zu benennen welches — inhaltsleer trotz der 2/3-Grenzenübereinstimmung, ähnlich im Geiste dem Heftstumpf in Dokument 172. O wird entgegen der numerischen Mehrheit empfohlen."
+  },
+  {
+    "batch": 14,
+    "doc_id": 207,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific, dated decree citation ('Decretum Ampliss. Senatus vom 28 Dec. 1770'), excluding the leading archival shelfmark 'B 18. a) '.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); eine spezifische, datierte Erlasszitation ('Decretum Ampliss. Senatus vom 28 Dec. 1770'), unter Ausschluss der führenden Archivsignatur 'B 18. a) '."
+  },
+  {
+    "batch": 14,
+    "doc_id": 208,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'Titul. XX. ' excluded, leaving a specific legal topic ('On the proof of a custom by advocates').",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'Titul. XX. ' wird ausgeschlossen, was ein spezifisches rechtliches Thema übrig lässt ('Vom Beweis eines Gewohnheitsrechts durch Anwälte')."
+  },
+  {
+    "batch": 14,
+    "doc_id": 209,
+    "llm_rationale": "gundi's single unsplit TITLE is preferred: 'von dem Bruder Conradt' more likely names the song's subject (a ballad about a friar), not its author — parallel to doc 1 (batch 1), where a bare 'von Name' with no SoR marker was read as topic, not authorship — so frankp's PERSON label is not adopted. gundi's boundary cleanly keeps the word-final period while excluding the trailing '||' typographic marker.",
+    "llm_rationale_de": "gundis einzelner ungeteilter TITLE wird bevorzugt: 'von dem Bruder Conradt' benennt eher das Thema des Liedes (eine Ballade über einen Mönch), nicht dessen Autor — parallel zu Dokument 1 (Batch 1), wo ein bloßes 'von Name' ohne SoR-Marker als Thema, nicht als Autorschaft gelesen wurde — daher wird frankps PERSON-Label nicht übernommen. gundis Grenze behält sauber den wortabschließenden Punkt bei und schließt den abschließenden typografischen Marker '||' aus."
+  },
+  {
+    "batch": 14,
+    "doc_id": 210,
+    "llm_rationale": "This record is an explicit collective review ('[Sammelrezension:]') of three separate novels by the same author — a multi-work structural problem like doc 119 (batch 8), with no single clean Work-level title available. Only the first, most cleanly delineated title ('Abendgenossen' by Gustav Schilling) is suggested; the other two novels' information is excluded rather than force-fit. Recommend PI judgment on how to represent a record covering multiple works.",
+    "llm_rationale_de": "Dieser Datensatz ist eine ausdrückliche Sammelrezension ('[Sammelrezension:]') dreier separater Romane desselben Autors — ein Mehrwerk-Strukturproblem wie bei Dokument 119 (Batch 8), ohne einen einzigen sauberen Werkebene-Titel. Nur der erste, am klarsten abgegrenzte Titel ('Abendgenossen' von Gustav Schilling) wird vorgeschlagen; die Informationen zu den beiden anderen Romanen werden ausgeschlossen, statt sie gewaltsam einzupassen. Es wird empfohlen, die Darstellung eines mehrere Werke abdeckenden Datensatzes dem PI zu überlassen."
+  },
+  {
+    "batch": 14,
+    "doc_id": 211,
+    "llm_rationale": "First-person royal credential ('Unsern gnädigen Gruß zuvor' = royal we), matching the recurring pattern; the greeting-formula gap between PERSON and TITLE is left unlabeled, as in doc 160. frankp's TITLE end is already clean, excluding trailing whitespace and the ' ...' marker; gundi's OTHER_TITLE addition is a closing dateline+signature, excluded per the established convention (batch 1 doc 5, doc 32, doc 111, doc 183).",
+    "llm_rationale_de": "Königliches Prädikat in erster Person ('Unsern gnädigen Gruß zuvor' = Pluralis Majestatis), entspricht dem wiederkehrenden Muster; die Grußformel-Lücke zwischen PERSON und TITLE bleibt unmarkiert, wie bei Dokument 160. frankps TITLE-Ende ist bereits sauber und schließt abschließenden Leerraum und den ' ...'-Marker aus; gundis OTHER_TITLE-Zusatz ist eine abschließende Datumszeile plus Signatur, ausgeschlossen gemäß der etablierten Konvention (Batch 1 Dokument 5, Dokument 32, Dokument 111, Dokument 183)."
+  },
+  {
+    "batch": 14,
+    "doc_id": 212,
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE despite gundi's Aufsatz flag; stronger (2/3) support than the single-annotator cases elsewhere in this corpus, tipping the balance toward annotating despite some genericness in the phrase itself.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE, trotz gundis Aufsatz-Markierung; stärkere (2/3) Unterstützung als bei den Einzelannotator-Fällen andernorts in diesem Korpus, was die Waage zugunsten einer Annotation neigt, trotz gewisser Generizität der Phrase selbst."
+  },
+  {
+    "batch": 14,
+    "doc_id": 213,
+    "llm_rationale": "All three propose an unsplit TITLE (no credential-style opening here, unlike docs with first-person royal openings); gundi's boundary is the only one that cleanly excludes both trailing whitespace and the ' ...' truncation marker.",
+    "llm_rationale_de": "Alle drei schlagen einen ungeteilten TITLE vor (hier keine prädikatartige Eröffnung, anders als bei Dokumenten mit königlicher Eröffnung in erster Person); gundis Grenze ist die einzige, die sowohl abschließenden Leerraum als auch den ' ...'-Kürzungsmarker sauber ausschließt."
+  },
+  {
+    "batch": 14,
+    "doc_id": 214,
+    "llm_rationale": "frankp and gundi agree exactly on this biblical quotation (Jeremiah 31:20) as TITLE, despite maria's Abschnitt decline.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein: dieses Bibelzitat (Jeremia 31,20) als TITLE, trotz marias Ablehnung als Abschnitt."
+  },
+  {
+    "batch": 14,
+    "doc_id": 215,
+    "llm_rationale": "Majority (gundi/maria) include the 'P.S. 1mum.' prefix rather than excluding it as frankp did — this reads as part of how the fragment identifies itself, not a chapter/volume enumeration; end boundary uses frankp's own clean value, which excludes trailing whitespace and the ' ...' marker that majority's boundary includes.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) bezieht den Präfix 'P.S. 1mum.' ein, statt ihn wie frankp auszuschließen — dies liest sich als Teil der Selbstbezeichnung des Fragments, keine Kapitel-/Bandaufzählung; die Endgrenze verwendet frankps eigenen sauberen Wert, der abschließenden Leerraum und den ' ...'-Marker ausschließt, den die Grenze der Mehrheit enthält."
+  },
+  {
+    "batch": 14,
+    "doc_id": 217,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); 'Das 53. Capittel Jesaia' identifies a specific biblical chapter (Isaiah 53), not a generic enumeration — specific enough to annotate despite weak vote support.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); 'Das 53. Capittel Jesaia' bezeichnet ein spezifisches Bibelkapitel (Jesaja 53), keine generische Aufzählung — spezifisch genug für eine Annotation trotz schwacher Stimmenunterstützung."
+  },
+  {
+    "batch": 14,
+    "doc_id": 218,
+    "llm_rationale": "Only frankp annotates; 'Wohlthätigkeitsanstalten' ('Charitable institutions') reads as a generic recurring topic/section heading, similar to docs 174/185/204 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Wohlthätigkeitsanstalten' liest sich als generische, wiederkehrende Themen-/Rubriküberschrift, ähnlich den Dokumenten 174/185/204 — O wird empfohlen."
+  },
+  {
+    "batch": 14,
+    "doc_id": 219,
+    "llm_rationale": "frankp and gundi agree exactly; maria's OTHER_TITLE start includes a leading space that theirs excludes.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein; marias OTHER_TITLE-Anfang enthält ein führendes Leerzeichen, das ihre Versionen ausschließen."
+  },
+  {
+    "batch": 15,
+    "doc_id": 220,
+    "llm_rationale": "Guide §5.8 requires merging the full credential + name + role phrase into one PERSON span; frankp's fuller span follows this rule (same as docs 9, 61, 151), while gundi's bare-name span and maria's no-PERSON reading do not. Trailing volume number '3' excluded.",
+    "llm_rationale_de": "Leitfaden §5.8 verlangt, die vollständige Phrase aus Titel/Grad + Name + Rolle zu einer einzigen PERSON-Spanne zusammenzufassen; frankps vollständigere Spanne befolgt diese Regel (wie bei den Dokumenten 9, 61, 151), gundis Spanne mit bloßem Namen und marias Lesart ohne PERSON hingegen nicht. Die abschließende Bandnummer '3' wird ausgeschlossen."
+  },
+  {
+    "batch": 15,
+    "doc_id": 221,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); specific topic ('Concept of a well-organized state calendar'), trailing bracketed ellipsis placeholder excluded.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); spezifisches Thema ('Begriff eines wohleingerichteten Staatskalenders'), der abschließende geklammerte Auslassungsplatzhalter wird ausgeschlossen."
+  },
+  {
+    "batch": 15,
+    "doc_id": 222,
+    "llm_rationale": "Majority (gundi/maria) include the 'Unsere [et]c.' opening, matching the identical-opening precedent in doc 124 (batch 8); end boundary uses frankp's own clean value, which already excludes trailing whitespace and the ' ...' truncation marker.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) bezieht die Eröffnung 'Unsere [et]c.' ein, entsprechend dem identischen Eröffnungs-Präzedenzfall in Dokument 124 (Batch 8); die Endgrenze verwendet frankps eigenen sauberen Wert, der bereits abschließenden Leerraum und den ' ...'-Kürzungsmarker ausschließt."
+  },
+  {
+    "batch": 15,
+    "doc_id": 223,
+    "llm_rationale": "Explicit multi-work record — frankp's own comment states 'This entry needs to be split. There are at least two titles present' (there are three, semicolon-separated, all by Wolfgang Kessler). gundi is the only annotator who parsed all three works completely and consistently; her full structure is adopted here even though it means three TITLE spans in one record, which deliberately departs from the one-TITLE-per-record rule (guide §3.1) for this genuine multi-work exception, the same kind of structural issue as docs 46/119/210. Recommend the PI treat this as a candidate for splitting into separate records rather than a normal single-record resolution.",
+    "llm_rationale_de": "Ausdrücklicher Mehrwerk-Datensatz — frankps eigener Kommentar besagt 'Dieser Eintrag muss aufgeteilt werden. Es sind mindestens zwei Titel vorhanden' (es sind tatsächlich drei, durch Semikolon getrennt, alle von Wolfgang Kessler). gundi ist die einzige Annotatorin, die alle drei Werke vollständig und konsistent analysiert hat; ihre vollständige Struktur wird hier übernommen, auch wenn dies drei TITLE-Spannen in einem Datensatz bedeutet, was bewusst von der Eins-TITLE-pro-Datensatz-Regel (Leitfaden §3.1) für diese echte Mehrwerk-Ausnahme abweicht, dasselbe strukturelle Problem wie bei den Dokumenten 46/119/210. Es wird empfohlen, dass der PI dies als Kandidat für eine Aufteilung in separate Datensätze behandelt, statt als normale Einzeldatensatz-Lösung."
+  },
+  {
+    "batch": 15,
+    "doc_id": 224,
+    "llm_rationale": "frankp's TITLE/PERSON split is the only structurally coherent one — gundi's span starts mid-sentence with no apparent reason, skipping nearly half the string. The gap between frankp's two spans ('zu Trost vnd Lehr aller betrübten... vorgestelt hat', describing the sermon's purpose and delivery) is substantive content rather than mere separator punctuation, so it is added here as OTHER_TITLE rather than left unlabeled as frankp did.",
+    "llm_rationale_de": "frankps Aufteilung in TITLE/PERSON ist die einzige strukturell kohärente — gundis Spanne beginnt ohne ersichtlichen Grund mitten im Satz und überspringt fast die Hälfte der Zeichenkette. Die Lücke zwischen frankps beiden Spannen ('zu Trost vnd Lehr aller betrübten... vorgestelt hat', die Zweck und Vortrag der Predigt beschreibt) ist substantieller Inhalt und keine bloße Trennzeicheninterpunktion, daher wird sie hier als OTHER_TITLE hinzugefügt, statt wie bei frankp unmarkiert zu bleiben."
+  },
+  {
+    "batch": 15,
+    "doc_id": 225,
+    "llm_rationale": "All three agree on TITLE; majority (frankp/maria) OTHER_TITLE boundary excludes the trailing period that gundi's includes.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/maria) OTHER_TITLE-Grenze schließt den abschließenden Punkt aus, den gundis Version enthält."
+  },
+  {
+    "batch": 15,
+    "doc_id": 226,
+    "llm_rationale": "Majority (gundi/maria) TITLE boundary excludes a trailing space that frankp's includes; all three agree on OTHER_TITLE.",
+    "llm_rationale_de": "Die mehrheitliche (gundi/maria) TITLE-Grenze schließt ein abschließendes Leerzeichen aus, das frankps Version enthält; alle drei stimmen bei OTHER_TITLE überein."
+  },
+  {
+    "batch": 15,
+    "doc_id": 227,
+    "llm_rationale": "frankp's shorter boundary excludes the trailing ' ...' truncation marker that gundi/maria's longer (majority) boundary includes — the truncation-exclusion convention is preferred over the numeric majority here, consistent with how this same pattern has been resolved throughout this corpus.",
+    "llm_rationale_de": "frankps kürzere Grenze schließt den abschließenden ' ...'-Kürzungsmarker aus, den gundis/marias längere (mehrheitliche) Grenze enthält — die Kürzungsausschluss-Konvention wird hier gegenüber der numerischen Mehrheit bevorzugt, im Einklang damit, wie dasselbe Muster im gesamten Korpus gelöst wurde."
+  },
+  {
+    "batch": 15,
+    "doc_id": 228,
+    "llm_rationale": "Direct structural precedent from docs 175/176 (batch 12): frankp/gundi agree on genuine statistical-report content; maria's decline is a factual note about missing volume title, not a claim that no content title exists. Running number 'Lfd. Nr. 29' excluded per convention.",
+    "llm_rationale_de": "Direkter struktureller Präzedenzfall aus den Dokumenten 175/176 (Batch 12): frankp/gundi stimmen bei echtem Inhalt eines Statistikberichts überein; marias Ablehnung ist eine sachliche Anmerkung zum fehlenden Bandtitel, keine Behauptung, dass kein inhaltlicher Titel existiert. Die laufende Nummer 'Lfd. Nr. 29' wird gemäß Konvention ausgeschlossen."
+  },
+  {
+    "batch": 15,
+    "doc_id": 229,
+    "llm_rationale": "gundi and maria agree on TITLE/OTHER_TITLE/PERSON; maria's additional PERSON for the foreword's author ('[Max Isidor] Bodenheimer') is kept, trimmed of a leading space, since he is a genuinely distinct contributor, not a repeat of the main author.",
+    "llm_rationale_de": "gundi und maria stimmen bei TITLE/OTHER_TITLE/PERSON überein; marias zusätzliche PERSON für den Autor des Vorworts ('[Max Isidor] Bodenheimer') wird beibehalten, bereinigt um ein führendes Leerzeichen, da er ein echt eigenständiger Beitragender ist, keine Wiederholung des Hauptautors."
+  },
+  {
+    "batch": 15,
+    "doc_id": 230,
+    "llm_rationale": "gundi's split at the first genuine ' :' is the simplest and most consistent application of the flowchart default among three candidate splits; her boundaries are already clean.",
+    "llm_rationale_de": "gundis Aufteilung am ersten echten ' :' ist die einfachste und konsistenteste Anwendung der Standardregel des Entscheidungsbaums unter drei Kandidatenaufteilungen; ihre Grenzen sind bereits sauber."
+  },
+  {
+    "batch": 15,
+    "doc_id": 231,
+    "llm_rationale": "Only frankp annotates (gundi declines as Kapitel, maria did not review); specific allegorical/cosmological chapter content ('From the 3rd leaf of the great world, the element of air'), excluding only the trailing period.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi lehnt als Kapitel ab, maria hat nicht geprüft); spezifischer allegorisch-kosmologischer Kapitelinhalt ('Vom dritten Blatt der großen Welt, dem Element der Luft'), wobei nur der abschließende Punkt ausgeschlossen wird."
+  },
+  {
+    "batch": 16,
+    "doc_id": 233,
+    "llm_rationale": "gundi and maria agree exactly, with clean boundaries on both sides of the ' :' separator; frankp's spans include a stray leading/trailing space on each.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein, mit sauberen Grenzen auf beiden Seiten des ' :'-Trennzeichens; frankps Spannen enthalten jeweils ein überzähliges führendes/abschließendes Leerzeichen."
+  },
+  {
+    "batch": 16,
+    "doc_id": 234,
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes one trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen."
+  },
+  {
+    "batch": 16,
+    "doc_id": 236,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific letter with a named sender and recipient, not generic content, so kept as a single TITLE per frankp's own reading rather than introducing an unproposed PERSON split for the embedded sender name (which would overlap the enclosing TITLE and requires deciding whether the recipient also warrants a separate PERSON span — a bigger restructuring than this weak-support doc merits).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifischer Brief mit benanntem Absender und Empfänger, kein generischer Inhalt, daher gemäß frankps eigener Lesart als einzelner TITLE beibehalten, statt eine nicht vorgeschlagene PERSON-Aufteilung für den eingebetteten Absendernamen einzuführen (die den umschließenden TITLE überlappen würde und die Entscheidung erfordert, ob auch der Empfänger eine separate PERSON-Spanne verdient — eine größere Umstrukturierung, als dieser schwach unterstützte Datensatz rechtfertigt)."
+  },
+  {
+    "batch": 16,
+    "doc_id": 238,
+    "llm_rationale": "TITLE end follows gundi's boundary, including the citation-verse period ('& 8.') as part of the abbreviated reference rather than sentence-final punctuation; OTHER_TITLE end follows frankp's clean boundary, excluding the trailing whitespace and ' ...' marker that gundi/maria's longer version includes.",
+    "llm_rationale_de": "Das TITLE-Ende folgt gundis Grenze und bezieht den Punkt der Versangabe ('& 8.') als Teil des abgekürzten Verweises ein, nicht als satzendende Interpunktion; das OTHER_TITLE-Ende folgt frankps sauberer Grenze und schließt abschließenden Leerraum und den ' ...'-Marker aus, den gundis/marias längere Version enthält."
+  },
+  {
+    "batch": 16,
+    "doc_id": 240,
+    "llm_rationale": "frankp and gundi agree on TITLE and PERSON (bracketed name expansion per guide §5.8); gundi's additional OTHER_TITLE for the bracketed descriptive subtitle is a reasonable completion frankp simply omitted, not a disagreement, similar to doc 166.",
+    "llm_rationale_de": "frankp und gundi stimmen bei TITLE und PERSON überein (geklammerte Namenserweiterung gemäß Leitfaden §5.8); gundis zusätzliche OTHER_TITLE für den geklammerten beschreibenden Untertitel ist eine sinnvolle Ergänzung, die frankp schlicht ausgelassen hat, keine Meinungsverschiedenheit, ähnlich wie bei Dokument 166."
+  },
+  {
+    "batch": 16,
+    "doc_id": 241,
+    "llm_rationale": "gundi keeps 'Oder Christliche Leichpredigt...' within TITLE rather than splitting at 'Oder' as frankp did — the same internal-'oder' convention applied consistently in docs 58/81/140/198.",
+    "llm_rationale_de": "gundi behält 'Oder Christliche Leichpredigt...' innerhalb von TITLE bei, statt bei 'Oder' zu teilen wie frankp — dieselbe internes-'oder'-Konvention, konsistent angewendet in den Dokumenten 58/81/140/198."
+  },
+  {
+    "batch": 16,
+    "doc_id": 243,
+    "llm_rationale": "frankp's boundary is the clean one, excluding trailing comma, whitespace, and the ' ...' truncation marker; gundi's is 5 characters longer (includes the marker) and maria's has an off-by-one start error and also incorrectly includes the closing bracketed signature/dateline '[Signatum ... 1726.]', which is excluded per the established dateline convention.",
+    "llm_rationale_de": "frankps Grenze ist die saubere, die abschließendes Komma, Leerraum und den ' ...'-Kürzungsmarker ausschließt; gundis Version ist 5 Zeichen länger (enthält den Marker) und marias hat einen um eins verschobenen Anfangsfehler und bezieht zudem fälschlich die abschließende geklammerte Signatur/Datumszeile '[Signatum ... 1726.]' ein, die gemäß der etablierten Datumszeilen-Konvention ausgeschlossen wird."
+  },
+  {
+    "batch": 16,
+    "doc_id": 244,
+    "llm_rationale": "gundi's boundary is preferred over frankp's shorter one (which excludes '&c.') and maria's longer one (trailing space); majority effectively agrees once whitespace is trimmed.",
+    "llm_rationale_de": "gundis Grenze wird gegenüber frankps kürzerer (die '&c.' ausschließt) und marias längerer (abschließendes Leerzeichen) bevorzugt; die Mehrheit stimmt effektiv überein, sobald Leerraum bereinigt ist."
+  },
+  {
+    "batch": 16,
+    "doc_id": 246,
+    "llm_rationale": "frankp's own comment expresses genuine uncertainty about whether Johan Alber is this book's author or its subject; gundi's TITLE reading (treating the descriptive opening phrase as subject matter, not a PERSON credential) is the safer default absent clear SoR evidence, similar to the subject-vs-author ambiguity in doc 209.",
+    "llm_rationale_de": "frankps eigener Kommentar drückt echte Unsicherheit aus, ob Johan Alber der Autor oder das Thema dieses Buches ist; gundis TITLE-Lesart (die die beschreibende Eröffnungsphrase als Thema behandelt, keine PERSON-Verantwortlichkeitsangabe) ist die sicherere Standardannahme ohne klaren SoR-Beleg, ähnlich der Thema-versus-Autor-Mehrdeutigkeit in Dokument 209."
+  },
+  {
+    "batch": 16,
+    "doc_id": 248,
+    "llm_rationale": "Unlike the internal-'oder' pattern in docs 58/81/140/198/241 (single-language elaboration), this 'oder' bridges a Latin title to its German equivalent ('Perversa ultimi seculi militia' / 'Kriegs-Belial, Der Soldaten-Teuffel') — closer to a genuine parallel-language restatement, supporting gundi's PARALLEL_TITLE label over treating it as plain OTHER_TITLE.",
+    "llm_rationale_de": "Anders als beim internes-'oder'-Muster in den Dokumenten 58/81/140/198/241 (einsprachige Ausführung) überbrückt dieses 'oder' einen lateinischen Titel und sein deutsches Äquivalent ('Perversa ultimi seculi militia' / 'Kriegs-Belial, Der Soldaten-Teuffel') — näher an einer echten fremdsprachlichen Wiedergabe, was gundis PARALLEL_TITLE-Label gegenüber einer bloßen OTHER_TITLE-Behandlung stützt."
+  },
+  {
+    "batch": 16,
+    "doc_id": 249,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but 'Die Gartenlaube' is a well-known, specific 19th-century German family magazine — not generic content despite weak vote support; volume/issue reference 'Jg. 1856, Nr. 23' excluded per convention.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch 'Die Gartenlaube' ist eine bekannte, spezifische deutsche Familienzeitschrift des 19. Jahrhunderts — kein generischer Inhalt trotz schwacher Stimmenunterstützung; der Band-/Heftverweis 'Jg. 1856, Nr. 23' wird gemäß Konvention ausgeschlossen."
+  },
+  {
+    "batch": 16,
+    "doc_id": 250,
+    "llm_rationale": "No named-ruler credential precedes the greeting here (unlike docs with 'Wir NAME...' openings), so no PERSON split applies; frankp's boundary is the clean one, excluding trailing whitespace and the ' ...' marker that gundi/maria's exact-matching longer boundary includes.",
+    "llm_rationale_de": "Hier geht der Begrüßung kein benanntes Herrscherprädikat voraus (anders als bei Dokumenten mit 'Wir NAME...'-Eröffnungen), daher entfällt eine PERSON-Aufteilung; frankps Grenze ist die saubere, die abschließenden Leerraum und den ' ...'-Marker ausschließt, den gundis/marias exakt übereinstimmende längere Grenze enthält."
+  },
+  {
+    "batch": 17,
+    "doc_id": 251,
+    "llm_rationale": "Only frankp annotates; 'Zusammenfassung' ('Summary') is a generic recurring section heading found in nearly any document, same pattern as docs 174/185/204/218/255 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Zusammenfassung' ist eine generische, wiederkehrende Abschnittsüberschrift, die in fast jedem Dokument vorkommen kann, dasselbe Muster wie bei den Dokumenten 174/185/204/218/255 — O wird empfohlen."
+  },
+  {
+    "batch": 17,
+    "doc_id": 252,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'Das VII. Capitel. ' excluded, leaving a specific gardening/agricultural topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'Das VII. Capitel. ' wird ausgeschlossen, was ein spezifisches garten-/landwirtschaftliches Thema übrig lässt."
+  },
+  {
+    "batch": 17,
+    "doc_id": 253,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is a specific, real historical conference report (21st assembly of German natural scientists and physicians, Graz 1843) with two named organizers, each with full credential per guide §5.8 — high content specificity despite weak vote support.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist ein spezifischer, real belegter historischer Tagungsbericht (21. Versammlung deutscher Naturforscher und Ärzte, Graz 1843) mit zwei benannten Organisatoren, jeweils mit vollständigem Titel/Grad gemäß Leitfaden §5.8 — hohe inhaltliche Spezifität trotz schwacher Stimmenunterstützung."
+  },
+  {
+    "batch": 17,
+    "doc_id": 254,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); references a specific test/probation piece rather than generic content, similar to doc 173's specific technical-question pattern.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); verweist auf ein spezifisches Prüf-/Probestück statt auf generischen Inhalt, ähnlich dem Muster der spezifischen Fachfrage in Dokument 173."
+  },
+  {
+    "batch": 17,
+    "doc_id": 255,
+    "llm_rationale": "Only frankp annotates a single word ('Einband' = 'binding') that is standard physical-description terminology, not a work title — reads like a caption for a photo of the book's cover. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes Wort ('Einband'), das eine standardmäßige physische Beschreibungsterminologie ist, kein Werktitel — liest sich wie eine Bildunterschrift zu einem Foto des Bucheinbands. O wird empfohlen."
+  },
+  {
+    "batch": 17,
+    "doc_id": 256,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific historical/political topic ('Struggle over the educational system in Turkestan and reform ideas'), not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifisches historisch-politisches Thema ('Kampf um das Bildungswesen in Turkestan und Reformideen'), nicht generisch."
+  },
+  {
+    "batch": 17,
+    "doc_id": 257,
+    "llm_rationale": "frankp and gundi (the two real reviewers — maria's decline reports a dead DDB link, not a scope judgment) agree on a real, identifiable periodical title ('Europäische Staats-Cantzley'); frankp's OTHER_TITLE boundary is already clean, excluding the trailing period gundi's includes.",
+    "llm_rationale_de": "frankp und gundi (die beiden echten Prüfer — marias Ablehnung meldet einen toten DDB-Link, kein Geltungsbereichsurteil) stimmen bei einem echten, identifizierbaren Zeitschriftentitel überein ('Europäische Staats-Cantzley'); frankps OTHER_TITLE-Grenze ist bereits sauber und schließt den abschließenden Punkt aus, den gundis Version enthält."
+  },
+  {
+    "batch": 17,
+    "doc_id": 258,
+    "llm_rationale": "Same corporate-body-in-SoR pattern as docs 104/120/202 (guide §5.2): TITLE='Bericht', PERSON=the school, OTHER_TITLE=the rest; leading '1913/14: ' date prefix excluded. None of the three annotators applied this full structure, but it is the established resolution for this exact recurring pattern.",
+    "llm_rationale_de": "Dasselbe Muster einer Körperschaft in SoR-Position wie bei den Dokumenten 104/120/202 (Leitfaden §5.2): TITLE='Bericht', PERSON=die Schule, OTHER_TITLE=der Rest; der führende Datumspräfix '1913/14: ' wird ausgeschlossen. Keiner der drei Annotatoren hat diese vollständige Struktur angewendet, doch sie ist die etablierte Lösung für dieses exakt wiederkehrende Muster."
+  },
+  {
+    "batch": 17,
+    "doc_id": 259,
+    "llm_rationale": "Manuscript catalog entry ('Hs 850' = Handschrift 850) listing multiple distinct texts and their authors bound together in one medieval codex — a genuine multi-work record, same category as docs 46/119/210/223. gundi's is the only thorough parse, correctly separating three work titles from six associated authors; her span for the shelfmark itself ('Hs 850') is dropped here, excluded per the archival-reference convention (docs 41/93/207), and the trailing manuscript date '(1460)' is excluded, matching all three annotators' independent choice to leave it unlabeled.",
+    "llm_rationale_de": "Handschriftenkatalogeintrag ('Hs 850') mit mehreren separaten Texten und ihren Autoren, gebunden in einem mittelalterlichen Kodex — ein echter Mehrwerk-Datensatz, dieselbe Kategorie wie die Dokumente 46/119/210/223. gundis Analyse ist die einzige gründliche, die korrekt drei Werktitel von sechs zugehörigen Autoren trennt; ihre Spanne für die Signatur selbst ('Hs 850') wird hier fallengelassen, ausgeschlossen gemäß der Archivverweis-Konvention (Dokumente 41/93/207), und das abschließende Handschriftendatum '(1460)' wird ausgeschlossen, entsprechend der unabhängigen Entscheidung aller drei Annotatoren, es unmarkiert zu lassen."
+  },
+  {
+    "batch": 17,
+    "doc_id": 260,
+    "llm_rationale": "gundi and maria agree exactly, splitting at the ' :' per the flowchart default; frankp's merged version incorrectly extends TITLE across the colon into German subtitle content.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein und teilen bei ' :' gemäß der Standardregel des Entscheidungsbaums; frankps zusammengeführte Version erweitert TITLE fälschlich über den Doppelpunkt hinaus in den deutschen Untertitelinhalt."
+  },
+  {
+    "batch": 17,
+    "doc_id": 261,
+    "llm_rationale": "frankp and gundi both label the string, but it is a bare leaf/page enumeration ('Sechs und zwanzigstes Blatt.' = 'Twenty-sixth leaf.') with no substantive topic beyond the numbering — content-vacuous in the same way as doc 205's 'Ein ander Gesang.', overriding the 2/3 agreement.",
+    "llm_rationale_de": "frankp und gundi markieren beide die Zeichenkette, doch sie ist eine bloße Blatt-/Seitenaufzählung ('Sechs und zwanzigstes Blatt.') ohne substantielles Thema über die Nummerierung hinaus — inhaltsleer auf dieselbe Weise wie 'Ein ander Gesang.' in Dokument 205, was die 2/3-Übereinstimmung außer Kraft setzt."
+  },
+  {
+    "batch": 17,
+    "doc_id": 262,
+    "llm_rationale": "Leading name-heading included as PERSON per the settled policy; maria's repeated-author-name PERSON span is kept, matching the established pattern (docs 70/137); TRANSLATOR is trimmed to exclude a leading space and trailing period that both frankp and maria's original spans included, and is correct per the explicit translation keyword ('Aus dem Englischen von').",
+    "llm_rationale_de": "Der führende Namenskopf wird gemäß der festgelegten Regel als PERSON einbezogen; marias PERSON-Spanne mit wiederholtem Autorennamen wird beibehalten, entsprechend dem etablierten Muster (Dokumente 70/137); TRANSLATOR ist bereinigt um ein führendes Leerzeichen und einen abschließenden Punkt, die sowohl frankps als auch marias ursprüngliche Spannen enthielten, und ist korrekt gemäß dem ausdrücklichen Übersetzungs-Schlüsselwort ('Aus dem Englischen von')."
+  },
+  {
+    "batch": 18,
+    "doc_id": 264,
+    "llm_rationale": "gundi's PERSON span correctly starts at 'D.' (the Doctor-abbreviation prefix), unlike frankp's off-by-one span which starts mid-abbreviation; both her boundaries are already clean.",
+    "llm_rationale_de": "gundis PERSON-Spanne beginnt korrekt bei 'D.' (dem Doktor-Abkürzungspräfix), anders als frankps um eins verschobene Spanne, die mitten in der Abkürzung beginnt; beide ihrer Grenzen sind bereits sauber."
+  },
+  {
+    "batch": 18,
+    "doc_id": 265,
+    "llm_rationale": "Only frankp annotates; 'N. N.' is a placeholder for an unspecified name (Nomen Nominandum), and the whole string is a formulaic letter salutation template ('To the noble... my gracious lord and friend'), not a title identifying any specific person or work. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'N. N.' ist ein Platzhalter für einen nicht näher bestimmten Namen (Nomen Nominandum), und die gesamte Zeichenkette ist eine formelhafte Briefanrede-Vorlage ('An den Edlen... meinen gnädigen Herrn und Freund'), kein Titel, der eine bestimmte Person oder ein Werk bezeichnet. O wird empfohlen."
+  },
+  {
+    "batch": 18,
+    "doc_id": 266,
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes a trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen."
+  },
+  {
+    "batch": 18,
+    "doc_id": 267,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is a direct structural match to the established 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' pattern (docs 4, 51, 120), resolved the same way each time — the precedent outweighs the weak vote count here.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies entspricht strukturell direkt dem etablierten Muster 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' (Dokumente 4, 51, 120), jedes Mal auf dieselbe Weise gelöst — der Präzedenzfall überwiegt hier die schwache Stimmenzahl."
+  },
+  {
+    "batch": 18,
+    "doc_id": 268,
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes a trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen."
+  },
+  {
+    "batch": 18,
+    "doc_id": 269,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific theological topic ('Of God the Holy Spirit, and our sanctification'), not generic content.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifisches theologisches Thema ('Von Gott dem Heiligen Geist und unserer Heiligung'), kein generischer Inhalt."
+  },
+  {
+    "batch": 18,
+    "doc_id": 272,
+    "llm_rationale": "This is a theater playbill; the genre statement ('Lustspiel in 3 Akten') is kept as OTHER_TITLE, trimmed of trailing whitespace, while the two playwrights are split into separate PERSON spans (correcting frankp's truncated 'Leo Walther ' to the full 'Leo Walther Stein'), matching the co-author SoR pattern used elsewhere (e.g. doc 76). The trailing performance-schedule listing (dates, audience assignments) is excluded as programmatic/scheduling metadata, not title content.",
+    "llm_rationale_de": "Dies ist ein Theaterzettel; die Gattungsangabe ('Lustspiel in 3 Akten') wird als OTHER_TITLE beibehalten, bereinigt um abschließenden Leerraum, während die beiden Theaterautoren in separate PERSON-Spannen aufgeteilt werden (frankps abgeschnittenes 'Leo Walther ' wird zum vollständigen 'Leo Walther Stein' korrigiert), entsprechend dem andernorts verwendeten Koautoren-SoR-Muster (z. B. Dokument 76). Die abschließende Aufführungsplan-Auflistung (Termine, Publikumszuordnungen) wird als programmatische/organisatorische Metadaten ausgeschlossen, kein Titelinhalt."
+  },
+  {
+    "batch": 18,
+    "doc_id": 273,
+    "llm_rationale": "No named-ruler credential precedes this proclamation opening, so no PERSON split applies; frankp's boundary is the clean one, excluding trailing comma, whitespace, and the ' ...' marker, while gundi's includes the marker and maria's has an off-by-one start error.",
+    "llm_rationale_de": "Dieser Proklamationseröffnung geht kein benanntes Herrscherprädikat voraus, daher entfällt eine PERSON-Aufteilung; frankps Grenze ist die saubere, die abschließendes Komma, Leerraum und den ' ...'-Marker ausschließt, während gundis Version den Marker enthält und marias einen um eins verschobenen Anfangsfehler hat."
+  },
+  {
+    "batch": 18,
+    "doc_id": 274,
+    "llm_rationale": "All three agree on TITLE; gundi and maria agree exactly on the full remaining OTHER_TITLE, while frankp's span stops mid-word partway through, an incomplete annotation rather than a genuine boundary disagreement.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; gundi und maria stimmen exakt bei der vollständigen verbleibenden OTHER_TITLE überein, während frankps Spanne mitten im Wort abbricht — eine unvollständige Annotation, keine echte Grenzmeinungsverschiedenheit."
+  },
+  {
+    "batch": 18,
+    "doc_id": 275,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); the leading bracketed cataloger's dating note '[Nachtrag, Mitte 15. Jh.:]' is correctly excluded, leaving a specific medieval Low German legal/property record text.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); die führende geklammerte Datierungsanmerkung des Katalogisierenden '[Nachtrag, Mitte 15. Jh.:]' wird korrekt ausgeschlossen, was einen spezifischen mittelniederdeutschen rechtlichen/güterbezogenen Urkundentext übrig lässt."
+  },
+  {
+    "batch": 18,
+    "doc_id": 276,
+    "llm_rationale": "frankp's spans have an off-by-one start error (cuts off the initial 'C'); between gundi and maria's close values, maria's boundaries are used for both TITLE and OTHER_TITLE, excluding trailing sentence-final periods that gundi's include.",
+    "llm_rationale_de": "frankps Spannen haben einen um eins verschobenen Anfangsfehler (schneidet das anfängliche 'C' ab); zwischen gundis und marias nahe beieinanderliegenden Werten werden marias Grenzen für sowohl TITLE als auch OTHER_TITLE verwendet, unter Ausschluss abschließender satzendender Punkte, die gundis Versionen enthalten."
+  },
+  {
+    "batch": 18,
+    "doc_id": 278,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); references a specific named work ('Jugend-Spiegel') by part number, not a generic heading.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); verweist auf ein spezifisches benanntes Werk ('Jugend-Spiegel') nach Teilnummer, keine generische Überschrift."
+  },
+  {
+    "batch": 19,
+    "doc_id": 280,
+    "llm_rationale": "All three agree on TITLE; OTHER_TITLE (a real conference-presentation note) uses maria's boundary, excluding the wrapping parentheses as pure typographic punctuation.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; OTHER_TITLE (ein echter Tagungsvortrags-Hinweis) verwendet marias Grenze und schließt die umschließenden Klammern als rein typografische Interpunktion aus."
+  },
+  {
+    "batch": 19,
+    "doc_id": 281,
+    "llm_rationale": "Only frankp annotates; 'An den gutherzigen Leser' ('To the kind-hearted reader') is a formulaic dedicatory address, the same generic-template pattern as doc 265 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'An den gutherzigen Leser' ist eine formelhafte Widmungsanrede, dasselbe generische Vorlagenmuster wie bei Dokument 265 — O wird empfohlen."
+  },
+  {
+    "batch": 19,
+    "doc_id": 282,
+    "llm_rationale": "gundi is the only one to split TITLE from the relative-clause elaboration that follows ('Mit welchen Bey solennen Leichen-Begängniß...'); frankp's fuller PERSON span (full credential per guide §5.8) is adopted over gundi's bare name.",
+    "llm_rationale_de": "gundi ist die einzige, die TITLE von der folgenden Relativsatz-Ausführung trennt ('Mit welchen Bey solennen Leichen-Begängniß...'); frankps vollständigere PERSON-Spanne (vollständiger Titel/Grad gemäß Leitfaden §5.8) wird gegenüber gundis bloßem Namen übernommen."
+  },
+  {
+    "batch": 19,
+    "doc_id": 283,
+    "llm_rationale": "'Das ist:' is the guide's explicit OTHER_TITLE trigger (§3.1), corrected from frankp's PARALLEL_TITLE label to match the same treatment applied in docs 89/138/146; gundi's second TITLE span is relabeled OTHER_TITLE to keep to one TITLE per record. frankp and gundi agree exactly on the final OTHER_TITLE segment.",
+    "llm_rationale_de": "'Das ist:' ist der ausdrückliche OTHER_TITLE-Auslöser des Leitfadens (§3.1), korrigiert von frankps PARALLEL_TITLE-Label, um dieselbe Behandlung wie in den Dokumenten 89/138/146 anzuwenden; gundis zweite TITLE-Spanne wird zu OTHER_TITLE umbenannt, um bei einem TITLE pro Datensatz zu bleiben. frankp und gundi stimmen exakt beim abschließenden OTHER_TITLE-Segment überein."
+  },
+  {
+    "batch": 19,
+    "doc_id": 284,
+    "llm_rationale": "maria's comment is a factual structural claim, not a genre judgment: this is literally a table-of-contents heading ('Besonderer Inhalt' = 'special contents'), not a work title — the same reasoning that favored maria's comment in doc 172, overriding frankp/gundi's 2/2 agreement.",
+    "llm_rationale_de": "marias Kommentar ist eine sachliche strukturelle Feststellung, kein Gattungsurteil: Dies ist buchstäblich eine Inhaltsverzeichnis-Überschrift ('Besonderer Inhalt'), kein Werktitel — dieselbe Begründung, die marias Kommentar in Dokument 172 favorisierte, setzt sich hier gegen frankps/gundis 2/2-Übereinstimmung durch."
+  },
+  {
+    "batch": 19,
+    "doc_id": 286,
+    "llm_rationale": "All three agree on TITLE (internal 'oder', same convention as docs 58/81/140/198/241); majority (frankp/maria) OTHER_TITLE boundary excludes the trailing ' ...' marker that gundi's includes.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein (internes 'oder', dieselbe Konvention wie bei den Dokumenten 58/81/140/198/241); die mehrheitliche (frankp/maria) OTHER_TITLE-Grenze schließt den abschließenden ' ...'-Marker aus, den gundis Version enthält."
+  },
+  {
+    "batch": 19,
+    "doc_id": 287,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); specific, substantive parenting/educational content, not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); spezifischer, substantieller erziehungs-/pädagogischer Inhalt, nicht generisch."
+  },
+  {
+    "batch": 19,
+    "doc_id": 290,
+    "llm_rationale": "frankp and gundi both label the string, but 'Ein ander Liedt.' ('Another song.') is a content-vacuous structural label, the same pattern as doc 205 — recommend O, overriding the 2-annotator agreement.",
+    "llm_rationale_de": "frankp und gundi markieren beide die Zeichenkette, doch 'Ein ander Liedt.' ist ein inhaltsleerer struktureller Hinweis, dasselbe Muster wie bei Dokument 205 — O wird empfohlen, entgegen der Übereinstimmung der beiden Annotatoren."
+  },
+  {
+    "batch": 19,
+    "doc_id": 291,
+    "llm_rationale": "gundi's split at the ' :' matches the flowchart default over frankp's extension past it into the scripture citation; OTHER_TITLE end trimmed to exclude trailing whitespace and the ' ...' marker that gundi's own longer boundary includes.",
+    "llm_rationale_de": "gundis Aufteilung bei ' :' entspricht der Standardregel des Entscheidungsbaums gegenüber frankps Erweiterung darüber hinaus in das Schriftzitat; das OTHER_TITLE-Ende ist so bereinigt, dass abschließender Leerraum und der ' ...'-Marker ausgeschlossen werden, den gundis eigene längere Grenze enthält."
+  },
+  {
+    "batch": 19,
+    "doc_id": 293,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is the same established 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' pattern as docs 4/51/120/267.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies entspricht demselben etablierten Muster 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' wie bei den Dokumenten 4/51/120/267."
+  },
+  {
+    "batch": 19,
+    "doc_id": 295,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific, historically significant treaty title (the 1552 Peace of Passau), not generic content; OTHER_TITLE end trimmed of trailing whitespace and the ' ...' marker.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifischer, historisch bedeutsamer Vertragstitel (der Passauer Vertrag von 1552), kein generischer Inhalt; das OTHER_TITLE-Ende ist bereinigt um abschließenden Leerraum und den ' ...'-Marker."
+  },
+  {
+    "batch": 19,
+    "doc_id": 296,
+    "llm_rationale": "frankp and gundi both label the string, but 'Register, Der jenigen Länder...' is self-described as a register/index of contents for a geography book, not a titled work in its own right — the same table-of-contents concern as doc 284. Recommend O.",
+    "llm_rationale_de": "frankp und gundi markieren beide die Zeichenkette, doch 'Register, Der jenigen Länder...' bezeichnet sich selbst als Register/Inhaltsverzeichnis eines Geografiebuchs, kein eigenständig betiteltes Werk — dieselbe Inhaltsverzeichnis-Problematik wie bei Dokument 284. O wird empfohlen."
+  },
+  {
+    "batch": 20,
+    "doc_id": 298,
+    "llm_rationale": "gundi's structure treats the bracketed cataloger-supplied descriptive label '[Verordnung Geldleihe u. Handel betr.]' as the record's TITLE (since the decree text itself lacks a proper title) and the formal decree citation as OTHER_TITLE — more coherent than frankp's exclusion of the bracket entirely or maria's unsplit merge.",
+    "llm_rationale_de": "gundis Struktur behandelt die geklammerte, vom Katalogisierenden vergebene beschreibende Bezeichnung '[Verordnung Geldleihe u. Handel betr.]' als TITLE des Datensatzes (da dem Erlasstext selbst ein eigentlicher Titel fehlt) und die formale Erlasszitation als OTHER_TITLE — kohärenter als frankps vollständigen Ausschluss der Klammer oder marias ungeteilte Zusammenführung."
+  },
+  {
+    "batch": 20,
+    "doc_id": 299,
+    "llm_rationale": "frankp and gundi agree on TITLE (internal 'Oder', established convention); frankp's OTHER_TITLE start is correct ('Welchen...'), while gundi's has an off-by-one error cutting off the leading 'W'.",
+    "llm_rationale_de": "frankp und gundi stimmen bei TITLE überein (internes 'Oder', etablierte Konvention); frankps OTHER_TITLE-Anfang ist korrekt ('Welchen...'), während gundis Version einen um eins verschobenen Fehler hat, der das führende 'W' abschneidet."
+  },
+  {
+    "batch": 20,
+    "doc_id": 300,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); 'Achtzehentes Gespräch' reads as a numbered-dialogue heading integral to this book's own structure (like Galileo-style numbered dialogues) rather than a separable chapter enumeration, and the subtitle is a specific astronomical topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); 'Achtzehentes Gespräch' liest sich als nummerierte Dialogüberschrift, die fester Bestandteil der eigenen Struktur dieses Buches ist (wie bei galileischen nummerierten Dialogen), keine abtrennbare Kapitelaufzählung, und der Untertitel ist ein spezifisches astronomisches Thema."
+  },
+  {
+    "batch": 20,
+    "doc_id": 301,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); leading issue number 'No. 39. ' excluded per the established convention, leaving a specific municipal-report title.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); die führende Heftnummer 'No. 39. ' wird gemäß der etablierten Konvention ausgeschlossen, was einen spezifischen Titel eines städtischen Berichts übrig lässt."
+  },
+  {
+    "batch": 20,
+    "doc_id": 304,
+    "llm_rationale": "Same corporate-body-in-SoR pattern as docs 104/120/202/258 (guide §5.2): TITLE='Bericht', PERSON=the school, OTHER_TITLE=the rest; leading date prefix excluded.",
+    "llm_rationale_de": "Dasselbe Muster einer Körperschaft in SoR-Position wie bei den Dokumenten 104/120/202/258 (Leitfaden §5.2): TITLE='Bericht', PERSON=die Schule, OTHER_TITLE=der Rest; der führende Datumspräfix wird ausgeschlossen."
+  },
+  {
+    "batch": 20,
+    "doc_id": 305,
+    "llm_rationale": "Only frankp annotates; 'Aus den Nachbarlandeskirchen' ('From the neighboring regional churches') reads as a generic recurring church-newsletter column heading, same pattern as docs 174/185/305 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Aus den Nachbarlandeskirchen' liest sich als generische, wiederkehrende Rubriküberschrift eines Kirchenrundbriefs, dasselbe Muster wie bei den Dokumenten 174/185/305 — O wird empfohlen."
+  },
+  {
+    "batch": 20,
+    "doc_id": 306,
+    "llm_rationale": "frankp and gundi agree exactly on PERSON (the account's compiler, named via 'Durch mich Johan Alstorffen'); gundi's TITLE/OTHER_TITLE split at a natural clause boundary (before the date/time details) is preferred over frankp's single merged TITLE.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt bei PERSON überein (der Verfasser des Berichts, benannt über 'Durch mich Johan Alstorffen'); gundis Aufteilung in TITLE/OTHER_TITLE an einer natürlichen Satzgrenze (vor den Datums-/Zeitangaben) wird gegenüber frankps einzelnem zusammengeführten TITLE bevorzugt."
+  },
+  {
+    "batch": 20,
+    "doc_id": 307,
+    "llm_rationale": "Leading name-heading included as PERSON per the settled policy; TITLE/OTHER_TITLE agreed by frankp and maria, using maria's clean OTHER_TITLE boundary; maria's repeated-author-name PERSON span is kept, matching the established pattern (docs 70/137/262).",
+    "llm_rationale_de": "Der führende Namenskopf wird gemäß der festgelegten Regel als PERSON einbezogen; TITLE/OTHER_TITLE werden von frankp und maria übereinstimmend vergeben, unter Verwendung von marias sauberer OTHER_TITLE-Grenze; marias PERSON-Spanne mit wiederholtem Autorennamen wird beibehalten, entsprechend dem etablierten Muster (Dokumente 70/137/262)."
+  },
+  {
+    "batch": 20,
+    "doc_id": 308,
+    "llm_rationale": "frankp and maria agree on TITLE and TRANSLATOR (explicit 'übersetzt' keyword); PERSON uses frankp's span, which correctly includes the abbreviation period in 'C.' rather than maria's truncated version.",
+    "llm_rationale_de": "frankp und maria stimmen bei TITLE und TRANSLATOR überein (ausdrückliches Schlüsselwort 'übersetzt'); PERSON verwendet frankps Spanne, die den Abkürzungspunkt in 'C.' korrekt einbezieht, anders als marias verkürzte Version."
+  },
+  {
+    "batch": 20,
+    "doc_id": 309,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); TITLE trimmed of trailing whitespace. The date range after the ' : ' separator ('1829–1849') is added as OTHER_TITLE per the flowchart default, which frankp's original span omitted.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); TITLE ist von abschließendem Leerraum bereinigt. Der Datumsbereich nach dem ' : '-Trennzeichen ('1829–1849') wird gemäß der Standardregel des Entscheidungsbaums als OTHER_TITLE hinzugefügt, was frankps ursprüngliche Spanne ausgelassen hatte."
+  },
+  {
+    "batch": 20,
+    "doc_id": 312,
+    "llm_rationale": "All three agree on TITLE. frankp is the only one to identify 'Hans Sachsen' — a real, historically significant 16th-century poet/playwright credited as the original author of these plays — as a separate PERSON; the surrounding OTHER_TITLE content (gundi's single merged span) is split around it instead, with the second segment's start corrected from frankp's off-by-one (which cut off the leading 'J' of 'Jetzunder').",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein. frankp ist der einzige, der 'Hans Sachsen' — einen real belegten, historisch bedeutsamen Dichter/Dramatiker des 16. Jahrhunderts, dem diese Stücke als ursprünglicher Autor zugeschrieben werden — als separate PERSON identifiziert; der umgebende OTHER_TITLE-Inhalt (gundis einzelne zusammengeführte Spanne) wird stattdessen um sie herum aufgeteilt, wobei der Anfang des zweiten Segments von frankps um-eins-verschobenem Fehler korrigiert wird (der das führende 'J' von 'Jetzunder' abschnitt)."
+  },
+  {
+    "batch": 20,
+    "doc_id": 313,
+    "llm_rationale": "frankp is the only one to separate the compiler's credential ('D. Philip. Hanen, DomPredigers zu Magdeburgk') as PERSON per guide §5.8's merge rule; the descriptive clause continuing after it (which frankp's annotation simply stops before) is added as a further OTHER_TITLE segment, using gundi/maria's boundary trimmed to exclude trailing whitespace and the ' ...' marker; the final OTHER_TITLE segment uses maria's boundary, excluding the trailing sentence period that gundi's includes.",
+    "llm_rationale_de": "frankp ist der einzige, der die Verantwortlichkeitsangabe des Verfassers ('D. Philip. Hanen, DomPredigers zu Magdeburgk') gemäß der Zusammenführungsregel des Leitfadens §5.8 als PERSON abtrennt; die daran anschließende beschreibende Klausel (vor der frankps Annotation schlicht endet) wird als weiteres OTHER_TITLE-Segment hinzugefügt, unter Verwendung von gundis/marias Grenze, bereinigt um abschließenden Leerraum und den ' ...'-Marker; das abschließende OTHER_TITLE-Segment verwendet marias Grenze und schließt den abschließenden Satzpunkt aus, den gundis Version enthält."
+  },
+  {
+    "batch": 21,
+    "doc_id": 314,
+    "llm_rationale": "gundi's shorter TITLE captures a complete grammatical unit ('Christianus, the faithful servant of God'), with the rest as elaboration; frankp's fuller PERSON span (full credential) is preferred per guide §5.8 over gundi's bare name.",
+    "llm_rationale_de": "gundis kürzerer TITLE erfasst eine vollständige grammatikalische Einheit ('Christianus, der treue Diener Gottes'), mit dem Rest als Ausführung; frankps vollständigere PERSON-Spanne (vollständiger Titel/Grad) wird gemäß Leitfaden §5.8 gegenüber gundis bloßem Namen bevorzugt."
+  },
+  {
+    "batch": 21,
+    "doc_id": 317,
+    "llm_rationale": "Collection-plus-volume-2 structure, same pattern as docs 17/27/40/81/118/135; gundi's second TITLE (the volume's own sub-title, 'Josua Redivivus...') is relabeled OTHER_TITLE to keep one TITLE per record; the bracketed cataloger note and volume number between the two main segments are excluded per convention.",
+    "llm_rationale_de": "Sammlung-plus-Band-2-Struktur, dasselbe Muster wie bei den Dokumenten 17/27/40/81/118/135; gundis zweiter TITLE (der eigene Untertitel des Bandes, 'Josua Redivivus...') wird zu OTHER_TITLE umbenannt, um bei einem TITLE pro Datensatz zu bleiben; die geklammerte Katalogisierungsanmerkung und die Bandnummer zwischen den beiden Hauptsegmenten werden gemäß Konvention ausgeschlossen."
+  },
+  {
+    "batch": 21,
+    "doc_id": 318,
+    "llm_rationale": "frankp's split at 'Das ist' matches the guide's explicit OTHER_TITLE trigger (§3.1), same as docs 89/138/146/283, unlike gundi/maria's merge; gundi/maria's fuller continuation (the Leichenpredigt-specific dedication) is added as a second OTHER_TITLE segment since it is real content frankp's shorter annotation simply didn't extend to.",
+    "llm_rationale_de": "frankps Aufteilung bei 'Das ist' entspricht dem ausdrücklichen OTHER_TITLE-Auslöser des Leitfadens (§3.1), wie bei den Dokumenten 89/138/146/283, anders als gundis/marias Zusammenführung; gundis/marias vollständigere Fortsetzung (die leichenpredigtspezifische Widmung) wird als zweites OTHER_TITLE-Segment hinzugefügt, da es sich um echten Inhalt handelt, zu dem frankps kürzere Annotation schlicht nicht vorgedrungen ist."
+  },
+  {
+    "batch": 21,
+    "doc_id": 319,
+    "llm_rationale": "First-person royal credential, matching the recurring pattern; frankp's PERSON+TITLE split is preferred over gundi/maria's merge. maria's OTHER_TITLE addition is a closing dateline ('Geben Cleve...'), excluded per the established convention.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster; frankps Aufteilung in PERSON+TITLE wird gegenüber gundis/marias Zusammenführung bevorzugt. marias OTHER_TITLE-Zusatz ist eine abschließende Datumszeile ('Geben Cleve...'), ausgeschlossen gemäß der etablierten Konvention."
+  },
+  {
+    "batch": 21,
+    "doc_id": 320,
+    "llm_rationale": "frankp and gundi agree exactly on the full string as TITLE; maria's span has an off-by-one start error, cutting off the initial 'H'.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein: die gesamte Zeichenkette als TITLE; marias Spanne hat einen um eins verschobenen Anfangsfehler, der das anfängliche 'H' abschneidet."
+  },
+  {
+    "batch": 21,
+    "doc_id": 321,
+    "llm_rationale": "No credential opening here (third-person narrative); frankp's boundary is the clean one, excluding the trailing ' ...' marker that gundi/maria's exact-matching longer boundary includes.",
+    "llm_rationale_de": "Hier keine prädikatartige Eröffnung (Erzählung in dritter Person); frankps Grenze ist die saubere, die den abschließenden ' ...'-Marker ausschließt, den gundis/marias exakt übereinstimmende längere Grenze enthält."
+  },
+  {
+    "batch": 21,
+    "doc_id": 322,
+    "llm_rationale": "gundi's split at the colon before the numbered provision ('1) daß hier kein Wagen...') is a cleaner structural boundary than frankp's shorter TITLE (just the genre word) and incomplete OTHER_TITLE, or maria's full merge.",
+    "llm_rationale_de": "gundis Aufteilung am Doppelpunkt vor der nummerierten Bestimmung ('1) daß hier kein Wagen...') ist eine sauberere strukturelle Grenze als frankps kürzerer TITLE (nur das Gattungswort) und unvollständige OTHER_TITLE, oder marias vollständige Zusammenführung."
+  },
+  {
+    "batch": 21,
+    "doc_id": 323,
+    "llm_rationale": "gundi and maria agree exactly, keeping the scripture citation ('Auß dem XVI. Psalm Davids') within TITLE as integral to how this funeral-sermon title is framed, rather than splitting it off as frankp did.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein und behalten das Schriftzitat ('Auß dem XVI. Psalm Davids') innerhalb von TITLE bei, als festen Bestandteil der Rahmung dieses Leichenpredigttitels, statt es wie bei frankp abzutrennen."
+  },
+  {
+    "batch": 21,
+    "doc_id": 324,
+    "llm_rationale": "frankp and gundi agree exactly, but 'Zuom Leser ein Vorred' ('To the reader, a foreword') is the same formulaic dedicatory-address pattern declined in docs 265/281 — recommend O despite the 2-annotator agreement.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein, doch 'Zuom Leser ein Vorred' entspricht demselben formelhaften Widmungsanrede-Muster, das in den Dokumenten 265/281 abgelehnt wurde — O wird trotz der Übereinstimmung der beiden Annotatoren empfohlen."
+  },
+  {
+    "batch": 21,
+    "doc_id": 326,
+    "llm_rationale": "gundi's split separates the substantive identifying content (about the deceased) from the closing event-logistics (date, time, place), a more coherent structure than frankp's truncated version or maria's full merge.",
+    "llm_rationale_de": "gundis Aufteilung trennt den substantiellen identifizierenden Inhalt (über die verstorbene Person) von den abschließenden Veranstaltungslogistikangaben (Datum, Uhrzeit, Ort) — eine kohärentere Struktur als frankps abgeschnittene Version oder marias vollständige Zusammenführung."
+  },
+  {
+    "batch": 21,
+    "doc_id": 327,
+    "llm_rationale": "Same structure as docs 47/53; gundi's fuller OTHER_TITLE (including the year) is preferred for the same reason as those docs — splitting the label from its value leaves a meaningless fragment.",
+    "llm_rationale_de": "Dieselbe Struktur wie bei den Dokumenten 47/53; gundis vollständigere OTHER_TITLE (einschließlich des Jahres) wird aus demselben Grund wie bei jenen Dokumenten bevorzugt — eine Trennung der Bezeichnung von ihrem Wert hinterlässt ein bedeutungsloses Fragment."
+  },
+  {
+    "batch": 21,
+    "doc_id": 328,
+    "llm_rationale": "Only frankp annotates a single word ('Buntpapierblatt' = 'colored-paper leaf') that is physical-description terminology, not a work title — same pattern as doc 255's 'Einband'. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes Wort ('Buntpapierblatt'), das eine physische Beschreibungsterminologie ist, kein Werktitel — dasselbe Muster wie 'Einband' in Dokument 255. O wird empfohlen."
+  },
+  {
+    "batch": 22,
+    "doc_id": 329,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); a specific, dated biblical sermon reference (Zachariah 13:4-6), not generic content.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); ein spezifischer, datierter biblischer Predigtverweis (Sacharja 13,4-6), kein generischer Inhalt."
+  },
+  {
+    "batch": 22,
+    "doc_id": 331,
+    "llm_rationale": "Only frankp annotates; 'Der diener singt. Der herr sey mit euch Und mit seinem geyst.' is a standard liturgical call-and-response formula ('The Lord be with you and with thy spirit'), extremely formulaic and not a distinctive title. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Der diener singt. Der herr sey mit euch Und mit seinem geyst.' ist eine standardmäßige liturgische Wechselgesangsformel ('Der Herr sei mit euch und mit deinem Geiste'), äußerst formelhaft und kein unterscheidender Titel. O wird empfohlen."
+  },
+  {
+    "batch": 22,
+    "doc_id": 332,
+    "llm_rationale": "Majority (frankp/maria) exclude the trailing period that gundi's boundary includes.",
+    "llm_rationale_de": "Die Mehrheit (frankp/maria) schließt den abschließenden Punkt aus, den gundis Grenze enthält."
+  },
+  {
+    "batch": 22,
+    "doc_id": 334,
+    "llm_rationale": "gundi and maria agree on splitting TITLE/OTHER_TITLE at the ' : ' and both add the repeated-author PERSON span (established pattern, docs 70/137/262/307); gundi's TITLE boundary is the clean one, excluding maria's trailing space.",
+    "llm_rationale_de": "gundi und maria stimmen darin überein, TITLE/OTHER_TITLE bei ' : ' zu teilen, und beide fügen die PERSON-Spanne mit wiederholtem Autorennamen hinzu (etabliertes Muster, Dokumente 70/137/262/307); gundis TITLE-Grenze ist die saubere, die marias abschließendes Leerzeichen ausschließt."
+  },
+  {
+    "batch": 22,
+    "doc_id": 335,
+    "llm_rationale": "All three agree on TITLE; majority (frankp/gundi) OTHER_TITLE keeps the full 'Studienordnungsversion: 2009', matching the established precedent (docs 47/53/327) over maria's truncated version.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/gundi) OTHER_TITLE behält die vollständige 'Studienordnungsversion: 2009' bei, entsprechend dem etablierten Präzedenzfall (Dokumente 47/53/327), gegenüber marias verkürzter Version."
+  },
+  {
+    "batch": 22,
+    "doc_id": 336,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is a real, well-known scientific work (Prince Maximilian of Wied-Neuwied's 'Abbildungen zur Naturgeschichte Brasiliens') with a named historical author — high specificity despite weak vote support; TITLE trimmed of trailing whitespace.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist ein echtes, bekanntes wissenschaftliches Werk (Prinz Maximilians zu Wied-Neuwieds 'Abbildungen zur Naturgeschichte Brasiliens') mit einem benannten historischen Autor — hohe Spezifität trotz schwacher Stimmenunterstützung; TITLE ist von abschließendem Leerraum bereinigt."
+  },
+  {
+    "batch": 22,
+    "doc_id": 337,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); specific historical content concerning the real 1645 parliamentary proceeding against Archbishop William Laud, not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); spezifischer historischer Inhalt zum realen Parlamentsverfahren von 1645 gegen Erzbischof William Laud, nicht generisch."
+  },
+  {
+    "batch": 22,
+    "doc_id": 338,
+    "llm_rationale": "Majority (gundi/maria) keep the full module-handbook designation as one TITLE rather than splitting at 'Elektrotechnik' as frankp did; OTHER_TITLE follows gundi's fuller version including the year, per the established precedent (docs 47/53/327/335).",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) behält die vollständige Modulhandbuch-Bezeichnung als einen TITLE bei, statt bei 'Elektrotechnik' zu teilen wie frankp; OTHER_TITLE folgt gundis vollständigerer Version einschließlich des Jahres, gemäß dem etablierten Präzedenzfall (Dokumente 47/53/327/335)."
+  },
+  {
+    "batch": 22,
+    "doc_id": 339,
+    "llm_rationale": "Only frankp annotates; 'Der siebenzehende Punct' ('The seventeenth point') is a bare enumeration with no substantive topic following, unlike the enum-plus-real-content docs elsewhere in this corpus. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Der siebenzehende Punct' ist eine bloße Aufzählung ohne nachfolgendes substantielles Thema, anders als bei den Aufzählung-plus-echter-Inhalt-Dokumenten andernorts in diesem Korpus. O wird empfohlen."
+  },
+  {
+    "batch": 22,
+    "doc_id": 340,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is Prince Maximilian zu Wied's real, well-known travel narrative of his North American expedition — high specificity despite weak vote support, same historical figure as doc 336.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist Prinz Maximilians zu Wieds echter, bekannter Reisebericht seiner Nordamerika-Expedition — hohe Spezifität trotz schwacher Stimmenunterstützung, dieselbe historische Persönlichkeit wie bei Dokument 336."
+  },
+  {
+    "batch": 22,
+    "doc_id": 341,
+    "llm_rationale": "gundi's boundary is the clean one, excluding a trailing space frankp's includes; both agree on OTHER_TITLE over maria's unsplit merge.",
+    "llm_rationale_de": "gundis Grenze ist die saubere, die ein abschließendes Leerzeichen ausschließt, das frankps Version enthält; beide stimmen bei OTHER_TITLE überein, gegenüber marias ungeteilter Zusammenführung."
+  },
+  {
+    "batch": 22,
+    "doc_id": 342,
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes a trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen."
+  },
+  {
+    "batch": 23,
+    "doc_id": 343,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'Tit. XLIX. ' excluded, leaving a specific legal topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'Tit. XLIX. ' wird ausgeschlossen, was ein spezifisches rechtliches Thema übrig lässt."
+  },
+  {
+    "batch": 23,
+    "doc_id": 344,
+    "llm_rationale": "Only frankp annotates a single generic word ('Zitat' = 'quote/citation'), structural terminology rather than title content, similar to docs 255/328. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes generisches Wort ('Zitat'), Strukturterminologie statt Titelinhalt, ähnlich den Dokumenten 255/328. O wird empfohlen."
+  },
+  {
+    "batch": 23,
+    "doc_id": 345,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is specific scholarly content (Persian-British diplomatic history), matching the same 'Islamkundliche Untersuchungen' series pattern as doc 307, which was included with high confidence.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist spezifischer wissenschaftlicher Inhalt (persisch-britische Diplomatiegeschichte), entsprechend demselben Reihenmuster 'Islamkundliche Untersuchungen' wie bei Dokument 307, das mit hoher Konfidenz einbezogen wurde."
+  },
+  {
+    "batch": 23,
+    "doc_id": 347,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a real, specific mythology reference work with a named author (bracketed first name expansion per guide §5.8).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein echtes, spezifisches Nachschlagewerk zur Mythologie mit benanntem Autor (geklammerte Vornamenserweiterung gemäß Leitfaden §5.8)."
+  },
+  {
+    "batch": 23,
+    "doc_id": 349,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); specific historical content (Louis XVI's execution and its aftermath), not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); spezifischer historischer Inhalt (die Hinrichtung Ludwigs XVI. und ihre Folgen), nicht generisch."
+  },
+  {
+    "batch": 23,
+    "doc_id": 350,
+    "llm_rationale": "gundi and maria agree exactly, splitting after the first numbered clause; frankp's spans stop partway through, an incomplete annotation rather than a genuine disagreement.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein und teilen nach der ersten nummerierten Klausel; frankps Spannen brechen auf halbem Weg ab — eine unvollständige Annotation, keine echte Meinungsverschiedenheit."
+  },
+  {
+    "batch": 23,
+    "doc_id": 352,
+    "llm_rationale": "Only frankp annotates; 'Total-Einfuhr am Ende jeden Monates:' reads as a recurring statistical-table column heading, not a distinctive title. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Total-Einfuhr am Ende jeden Monates:' liest sich als wiederkehrende Spaltenüberschrift einer Statistiktabelle, kein unterscheidender Titel. O wird empfohlen."
+  },
+  {
+    "batch": 23,
+    "doc_id": 353,
+    "llm_rationale": "All three agree on TITLE; gundi and maria agree exactly on the full OTHER_TITLE, while frankp's span stops partway through, an incomplete annotation.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; gundi und maria stimmen exakt bei der vollständigen OTHER_TITLE überein, während frankps Spanne auf halbem Weg abbricht — eine unvollständige Annotation."
+  },
+  {
+    "batch": 23,
+    "doc_id": 354,
+    "llm_rationale": "First-person royal credential, matching the recurring pattern (docs 32/36/54/55/68/99/107/134/142/143/147/160/183/211/222/319/354); gundi's OTHER_TITLE boundary is preferred over maria's, which incorrectly extends into the closing dateline ('So geschehen Onolzbach... 1731'), excluded per the established convention.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster (Dokumente 32/36/54/55/68/99/107/134/142/143/147/160/183/211/222/319/354); gundis OTHER_TITLE-Grenze wird gegenüber marias bevorzugt, die sich fälschlich in die abschließende Datumszeile ('So geschehen Onolzbach... 1731') erstreckt, ausgeschlossen gemäß der etablierten Konvention."
+  },
+  {
+    "batch": 23,
+    "doc_id": 357,
+    "llm_rationale": "frankp and maria agree exactly on a specific academic lecture title, despite gundi's Aufsatz decline; the parenthetical event note is excluded per convention.",
+    "llm_rationale_de": "frankp und maria stimmen exakt bei einem spezifischen akademischen Vorlesungstitel überein, trotz gundis Ablehnung als Aufsatz; der Klammerhinweis zur Veranstaltung wird gemäß Konvention ausgeschlossen."
+  },
+  {
+    "batch": 23,
+    "doc_id": 358,
+    "llm_rationale": "All three agree on TITLE; majority (frankp/gundi) OTHER_TITLE keeps the full version with the year, per the established precedent (docs 47/53/327/335/338).",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/gundi) OTHER_TITLE behält die vollständige Version einschließlich des Jahres bei, gemäß dem etablierten Präzedenzfall (Dokumente 47/53/327/335/338)."
+  },
+  {
+    "batch": 23,
+    "doc_id": 359,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); leading page-range reference '118-127, ' excluded per the established archival-reference convention, leaving specific devotional narrative content.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der führende Seitenbereichsverweis '118-127, ' wird gemäß der etablierten Archivverweis-Konvention ausgeschlossen, was einen spezifischen erbaulichen Erzählinhalt übrig lässt."
+  },
+  {
+    "batch": 24,
+    "doc_id": 360,
+    "llm_rationale": "Only frankp annotates; 'Der X. Grad' ('The 10th Degree', likely a Masonic/guild grade reference) is a bare numbered label with no further descriptive content. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Der X. Grad' (vermutlich ein Verweis auf einen freimaurerischen/zünftigen Grad) ist eine bloße nummerierte Bezeichnung ohne weiteren beschreibenden Inhalt. O wird empfohlen."
+  },
+  {
+    "batch": 24,
+    "doc_id": 361,
+    "llm_rationale": "Majority (gundi/maria) include the 'Unsere [et]c.' opening, matching the identical-opening precedent in docs 124/222; gundi's boundary is the clean one. maria's OTHER_TITLE addition is a closing dateline and address list, excluded per the established dateline convention.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) bezieht die Eröffnung 'Unsere [et]c.' ein, entsprechend dem identischen Eröffnungs-Präzedenzfall in den Dokumenten 124/222; gundis Grenze ist die saubere. marias OTHER_TITLE-Zusatz ist eine abschließende Datumszeile und Adressliste, ausgeschlossen gemäß der etablierten Datumszeilen-Konvention."
+  },
+  {
+    "batch": 24,
+    "doc_id": 362,
+    "llm_rationale": "Only frankp annotates; 'Eingepackte Bücher.' ('Packed books') reads like an inventory/shipping label, not a work title. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Eingepackte Bücher.' liest sich wie ein Inventar-/Versandetikett, kein Werktitel. O wird empfohlen."
+  },
+  {
+    "batch": 24,
+    "doc_id": 364,
+    "llm_rationale": "frankp and gundi agree exactly; maria's OTHER_TITLE includes a leading space they exclude.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein; marias OTHER_TITLE enthält ein führendes Leerzeichen, das ihre Versionen ausschließen."
+  },
+  {
+    "batch": 24,
+    "doc_id": 365,
+    "llm_rationale": "gundi's TITLE boundary is the clean one, excluding a trailing space frankp's includes; OTHER_TITLE trimmed to exclude trailing whitespace and the ' ...' marker present in all three original spans. maria's additional funding-period span ('Bewilligungszeitraum...') is excluded as administrative/imprint metadata.",
+    "llm_rationale_de": "gundis TITLE-Grenze ist die saubere, die ein abschließendes Leerzeichen ausschließt, das frankps Version enthält; OTHER_TITLE ist bereinigt um abschließenden Leerraum und den ' ...'-Marker, der in allen drei ursprünglichen Spannen vorhanden ist. marias zusätzliche Förderzeitraum-Spanne ('Bewilligungszeitraum...') wird als administrative Impressum-Metadaten ausgeschlossen."
+  },
+  {
+    "batch": 24,
+    "doc_id": 366,
+    "llm_rationale": "gundi and maria agree exactly; frankp's spans include a trailing space on each that they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps Spannen enthalten jeweils ein abschließendes Leerzeichen, das ihre Versionen ausschließen."
+  },
+  {
+    "batch": 24,
+    "doc_id": 367,
+    "llm_rationale": "Only frankp annotates, and his span ('Titelseite Appendix Relationis ') literally means 'title page of the Appendix Relationis' — a bibliographic/structural descriptor, not the substantive year-range content that follows it ('- In Jahren 1628, 1629 und 1630 vorgangen'), which his span doesn't even include. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert, und seine Spanne ('Titelseite Appendix Relationis') bedeutet wörtlich 'Titelseite des Appendix Relationis' — ein bibliografischer/struktureller Deskriptor, nicht der substantielle Jahresbereichs-Inhalt, der darauf folgt ('- In Jahren 1628, 1629 und 1630 vorgangen'), den seine Spanne nicht einmal einschließt. O wird empfohlen."
+  },
+  {
+    "batch": 24,
+    "doc_id": 369,
+    "llm_rationale": "frankp and gundi agree exactly on genuine statistical-report content; gundi's running-number addition ('Lfd. Nr. 6') is excluded per the established convention (docs 175/176/228).",
+    "llm_rationale_de": "frankp und gundi stimmen exakt bei echtem Inhalt eines Statistikberichts überein; gundis Zusatz der laufenden Nummer ('Lfd. Nr. 6') wird gemäß der etablierten Konvention ausgeschlossen (Dokumente 175/176/228)."
+  },
+  {
+    "batch": 24,
+    "doc_id": 370,
+    "llm_rationale": "Unlike the lowercase mid-clause 'oder' kept within TITLE elsewhere (docs 58/81/140/198/241/286), this 'Oder.' is capitalized and period-punctuated — a classic 'Title. Oder. Subtitle' baroque book-title construction functioning as a genuine title-boundary marker, matching gundi's split over frankp/maria's merges.",
+    "llm_rationale_de": "Anders als das kleingeschriebene, satzinterne 'oder', das andernorts innerhalb von TITLE beibehalten wird (Dokumente 58/81/140/198/241/286), ist dieses 'Oder.' großgeschrieben und mit Punkt versehen — eine klassische barocke Titelkonstruktion 'Titel. Oder. Untertitel', die als echter Titelgrenzmarker fungiert, entsprechend gundis Aufteilung gegenüber frankps/marias Zusammenführungen."
+  },
+  {
+    "batch": 24,
+    "doc_id": 371,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a specific legal/historical topic (Saxon mining law). The bracketed leading name '[Wagner, Thomas von]:' is left unlabeled, since the brackets mark it as a cataloger-supplied, uncertain attribution rather than a stated authorship heading.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein spezifisches rechtlich-historisches Thema (sächsisches Bergrecht). Der geklammerte führende Name '[Wagner, Thomas von]:' bleibt unmarkiert, da die Klammern ihn als eine vom Katalogisierenden vergebene, unsichere Zuschreibung kennzeichnen, keine ausdrückliche Autorschaftsangabe."
+  },
+  {
+    "batch": 24,
+    "doc_id": 372,
+    "llm_rationale": "All three agree on TITLE; majority (frankp/maria) OTHER_TITLE excludes the leading ' ...' marker that gundi's includes.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/maria) OTHER_TITLE schließt den führenden ' ...'-Marker aus, den gundis Version enthält."
+  },
+  {
+    "batch": 24,
+    "doc_id": 373,
+    "llm_rationale": "gundi's boundary excludes the trailing volume number '1' (matching the established volume/part-number exclusion convention) while keeping the natural sentence-ending period on 'Exilio.'.",
+    "llm_rationale_de": "gundis Grenze schließt die abschließende Bandnummer '1' aus (entsprechend der etablierten Band-/Teilnummer-Ausschlusskonvention), während der natürliche satzendende Punkt bei 'Exilio.' beibehalten wird."
+  },
+  {
+    "batch": 25,
+    "doc_id": 374,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); specific historical content (confirmation of the confraternity of St. Anne) naming a real historical figure, Pope Gregory XIII, with full credential per guide §5.8.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); spezifischer historischer Inhalt (Bestätigung der St.-Anna-Bruderschaft) unter Nennung einer real belegten historischen Person, Papst Gregor XIII., mit vollständigem Titel/Grad gemäß Leitfaden §5.8."
+  },
+  {
+    "batch": 25,
+    "doc_id": 376,
+    "llm_rationale": "Only frankp annotates a single word ('Einband' = 'binding'), physical-description terminology rather than title content — identical to doc 255. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes Wort ('Einband'), physische Beschreibungsterminologie statt Titelinhalt — identisch mit Dokument 255. O wird empfohlen."
+  },
+  {
+    "batch": 25,
+    "doc_id": 377,
+    "llm_rationale": "gundi and maria agree exactly; frankp's spans stop partway through, an incomplete annotation.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps Spannen brechen auf halbem Weg ab — eine unvollständige Annotation."
+  },
+  {
+    "batch": 25,
+    "doc_id": 378,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a real historical Swedish geography reference work by Erik Tuneld, with leading name-heading per the settled policy.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein echtes historisches schwedisches geografisches Nachschlagewerk von Erik Tuneld, mit führendem Namenskopf gemäß der festgelegten Regel."
+  },
+  {
+    "batch": 25,
+    "doc_id": 379,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'Zwei und sechzigster Abschnitt. ' excluded per the established convention rather than labeled OTHER_TITLE as frankp did, leaving a specific historical topic (Germany under Rudolf II, 1576-1612).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'Zwei und sechzigster Abschnitt. ' wird gemäß der etablierten Konvention ausgeschlossen, statt wie bei frankp als OTHER_TITLE markiert, was ein spezifisches historisches Thema übrig lässt (Deutschland unter Rudolf II., 1576-1612)."
+  },
+  {
+    "batch": 25,
+    "doc_id": 380,
+    "llm_rationale": "gundi's split at the genuine ' :' marker is preferred over frankp's shorter, incomplete spans and maria's full merge; gundi's OTHER_TITLE is the only one that reaches the complete end of the string.",
+    "llm_rationale_de": "gundis Aufteilung am echten ' :'-Zeichen wird gegenüber frankps kürzeren, unvollständigen Spannen und marias vollständiger Zusammenführung bevorzugt; gundis OTHER_TITLE ist die einzige, die das vollständige Ende der Zeichenkette erreicht."
+  },
+  {
+    "batch": 25,
+    "doc_id": 381,
+    "llm_rationale": "First-person royal credential, matching the recurring pattern; PERSON extended from frankp's span to include the leading 'Von Gottes Gnaden' formula, consistent with how this phrase is included in every other instance of this pattern in this corpus. TITLE end trimmed to exclude trailing whitespace and the ' ...' marker; the closing dateline is excluded entirely, unlike gundi's OTHER_TITLE which incorrectly includes it.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster; PERSON wird gegenüber frankps Spanne erweitert, um die führende Formel 'Von Gottes Gnaden' einzuschließen, im Einklang damit, wie diese Phrase bei jedem anderen Vorkommen dieses Musters in diesem Korpus einbezogen wird. Das TITLE-Ende ist bereinigt um abschließenden Leerraum und den ' ...'-Marker; die abschließende Datumszeile wird vollständig ausgeschlossen, anders als gundis OTHER_TITLE, die sie fälschlich einbezieht."
+  },
+  {
+    "batch": 25,
+    "doc_id": 382,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a specific pedagogical topic, with the parenthetical cross-reference to another periodical issue correctly excluded.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein spezifisches pädagogisches Thema, wobei der Klammerverweis auf ein anderes Zeitschriftenheft korrekt ausgeschlossen wird."
+  },
+  {
+    "batch": 25,
+    "doc_id": 384,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a real historical memoir (Hans von Schweinichen's chronicle, edited by Büsching) with two legitimate named parties — OTHER_TITLE trimmed of trailing whitespace.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein echtes historisches Memoirenwerk (die Chronik Hans von Schweinichens, herausgegeben von Büsching) mit zwei legitimen benannten Parteien — OTHER_TITLE ist von abschließendem Leerraum bereinigt."
+  },
+  {
+    "batch": 25,
+    "doc_id": 385,
+    "llm_rationale": "frankp's split at 'Das ist' matches the guide's explicit OTHER_TITLE trigger (§3.1), same as docs 89/138/146/283/318/283, unlike gundi/maria's merge; their continuation (the Leichenpredigt-specific dedication) is kept as a second OTHER_TITLE segment since frankp's annotation simply stops before it.",
+    "llm_rationale_de": "frankps Aufteilung bei 'Das ist' entspricht dem ausdrücklichen OTHER_TITLE-Auslöser des Leitfadens (§3.1), wie bei den Dokumenten 89/138/146/283/318, anders als gundis/marias Zusammenführung; ihre Fortsetzung (die leichenpredigtspezifische Widmung) wird als zweites OTHER_TITLE-Segment beibehalten, da frankps Annotation schlicht davor endet."
+  },
+  {
+    "batch": 25,
+    "doc_id": 386,
+    "llm_rationale": "Direct semantic correspondence between the Latin ('Irenicum Ratisbonense' = peace of Regensburg) and German ('Regenßburgische Friedens-Frewde' = Regensburg peace-joy) supports frankp's PARALLEL_TITLE label, the same reasoning as doc 248, over treating 'Oder' as a plain internal conjunction; gundi's OTHER_TITLE covers the remainder.",
+    "llm_rationale_de": "Die direkte semantische Entsprechung zwischen dem lateinischen ('Irenicum Ratisbonense' = Regensburger Frieden) und dem deutschen Titel ('Regenßburgische Friedens-Frewde') stützt frankps PARALLEL_TITLE-Label, dieselbe Begründung wie bei Dokument 248, gegenüber der Behandlung von 'Oder' als bloße interne Konjunktion; gundis OTHER_TITLE deckt den Rest ab."
+  },
+  {
+    "batch": 25,
+    "doc_id": 387,
+    "llm_rationale": "frankp and maria agree exactly; gundi's spans include trailing periods they exclude.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein; gundis Spannen enthalten abschließende Punkte, die ihre Versionen ausschließen."
+  },
+  {
+    "batch": 26,
+    "doc_id": 388,
+    "llm_rationale": "First-person royal credential (an Archbishop-Elector's titulature), matching the recurring pattern throughout this corpus; frankp's TITLE end is already clean, excluding trailing whitespace, the ' ...' marker, and the ' : ' separator before the closing dateline, which gundi's and maria's longer boundaries incorrectly include.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person (die Titulatur eines Erzbischof-Kurfürsten), entspricht dem im gesamten Korpus wiederkehrenden Muster; frankps TITLE-Ende ist bereits sauber und schließt abschließenden Leerraum, den ' ...'-Marker und das ' : '-Trennzeichen vor der abschließenden Datumszeile aus, die gundis und marias längere Grenzen fälschlich einbeziehen."
+  },
+  {
+    "batch": 26,
+    "doc_id": 391,
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'V. ' excluded per the established convention, leaving a specific administrative/political topic ('The committees of the municipal corporations').",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'V. ' wird gemäß der etablierten Konvention ausgeschlossen, was ein spezifisches administrativ-politisches Thema übrig lässt ('Die Ausschüsse der Gemeindekörperschaften')."
+  },
+  {
+    "batch": 26,
+    "doc_id": 395,
+    "llm_rationale": "Majority (frankp/maria) exclude the trailing period that gundi's boundary includes; a real, specific historical society journal title (Association for Hamburg History).",
+    "llm_rationale_de": "Die Mehrheit (frankp/maria) schließt den abschließenden Punkt aus, den gundis Grenze enthält; ein echter, spezifischer Zeitschriftentitel eines historischen Vereins (Verein für Hamburgische Geschichte)."
+  }
+]

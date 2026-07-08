@@ -2,8 +2,11 @@
 up: "[[sr08-gold-iaa-script-plan]]"
 related:
   - "[[iaa-score-walkthrough]]"
+  - "[[adr-02-plan]]"
+  - "[[iaa-script-update-span]]"
 created: 2026-06-26T00:00:00
-updates: []
+updates:
+  - 2026-07-06
 in: bibner-werk
 tags:
   - iaa
@@ -108,6 +111,35 @@ The per-label α values are the more meaningful metric for this task. Each reduc
 
 ### 1.6 Output files
 
-- `data/processed/ner/sr08_iaa_counts_export-20260623-1110.csv` — one row per label type per annotator per document
-- `data/processed/ner/sr08_iaa_export-20260623-1110.csv` — α per scope (ALL + per label)
-- `data/processed/ner/sr08_iaa_pairwise_export-20260623-1110.csv` — pairwise α for all annotator pairs
+- `data/iaa/sr08_iaa_counts_export-20260623-1110.csv` — one row per label type per annotator per document
+- `data/iaa/sr08_iaa_export-20260623-1110.csv` — α per scope (ALL + per label)
+- `data/iaa/sr08_iaa_pairwise_export-20260623-1110.csv` — pairwise α for all annotator pairs
+- `data/iaa/sr08_iaa_span_pairwise_export-20260623-1110.csv` — pairwise span agreement (ALL + per label)
+
+### 1.7 Span agreement
+
+**Metric**: exact-match rate + mean Jaccard overlap on character-position sets, conditional on existence agreement (ADR-02) — not chance-corrected. See `notes/fiz/bibner-werk/adr-02-plan.md` for why α does not generalize to document-local span offsets.
+
+| Pair | Label | n_existence_agreed | n_exact_match | exact% | mean_jaccard |
+|---|---|---:|---:|---:|---:|
+| frankp/gundi | ALL | 373 | 145 | 38.9% | 0.726 |
+| frankp/gundi | OTHER_TITLE | 80 | 34 | 42.5% | 0.715 |
+| frankp/gundi | PARALLEL_TITLE | 3 | 1 | 33.3% | 0.972 |
+| frankp/gundi | PERSON | 25 | 11 | 44.0% | 0.672 |
+| frankp/gundi | TITLE | 264 | 99 | 37.5% | 0.731 |
+| frankp/gundi | TRANSLATOR | 1 | 0 | 0.0% | 0.944 |
+| frankp/maria | ALL | 388 | 170 | 43.8% | 0.737 |
+| frankp/maria | OTHER_TITLE | 60 | 31 | 51.7% | 0.744 |
+| frankp/maria | PERSON | 31 | 14 | 45.2% | 0.612 |
+| frankp/maria | TITLE | 294 | 122 | 41.5% | 0.746 |
+| frankp/maria | TRANSLATOR | 3 | 3 | 100.0% | 1.000 |
+| gundi/maria | ALL | 354 | 178 | 50.3% | 0.792 |
+| gundi/maria | OTHER_TITLE | 97 | 56 | 57.7% | 0.858 |
+| gundi/maria | PERSON | 12 | 3 | 25.0% | 0.556 |
+| gundi/maria | TITLE | 245 | 119 | 48.6% | 0.778 |
+
+frankp/maria has no PARALLEL_TITLE row: zero (doc, label) triples where both marked it present, so no span comparison exists for that pair on that label.
+
+**Interpretation**: The ranking by `ALL` matches §1.3's pairwise α ranking exactly — gundi/maria has both the least-negative existence α and the best span agreement (50.3% exact match, 0.792 mean Jaccard); frankp/gundi is weakest on both. This is consistent, not circular: existence α and span agreement are computed from disjoint information (whether a label was assigned vs. where its boundaries fall), so the fact that the same pair ordering emerges from both suggests gundi and maria genuinely converged more on the annotation scheme overall, not just on one dimension of it.
+
+TITLE and PARALLEL_TITLE were flagged in §1.5 as the weakest per-label α scores, attributed to "boundary and nesting disagreements" — that prediction is only partly confirmed. TITLE's exact-match rate is middling (37.5–48.6%) with fairly high mean Jaccard (0.73–0.78), meaning annotators usually pick heavily overlapping but not identical spans — consistent with a boundary (not existence) disagreement. PARALLEL_TITLE has too few existence-agreed cases (1–3 per pair) to support any conclusion; its high Jaccard values (0.94–0.97) are not statistically meaningful at that sample size.

@@ -1,0 +1,685 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 133,
+    "text": "Uebersicht des Waaren-Ausganges und der erhobenen Ausgangs-Zölle in sämmtlichen Staaten des Zoll-Vereins nach den Grenzstrecken des Ausganges :für das Jahr, 1864",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            142,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            141,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "Objekt nicht mehr in der DDB  404 Fehler"
+      }
+    }
+  },
+  {
+    "doc_id": 134,
+    "text": "Von Gottes Gnaden Friderich, König von Preußen, Marggraff zu Brandenburg; des Heil. Röm. Reichs Ertz-Cämmerer und Churfürst [et]c. [et]c. Unsern gnädigen Gruß und geneigten Willen zuvor! Würdige, Hochwohlgebohrne, Wohlgebohrne, Veste, Hochgelahrte Räthe, besonders Liebe und Liebe Getreue! Da die meisten Unserer Unterthanen auf dem platten Lande, ja selbst Bürger in denen Städten, wenn ihnen auch die von Uns erlassene Verordnungen in Collateral-Stempel-Sachen publiciret werden, solche, zumahl wegen der Ehegatten, nicht gehörig nachsuchen, beurtheilen und anwenden; So haben Wir ... resolviret, daß die Unter-Gerichte die Unterthanen erinnern sollen, daß dieselben sich bey ihren Richtern über die zu erlegende Stempel-Gebühren belehren lassen, um nicht in Straffe zu verfallen ... : Gegeben zu Berlin, den 3. November 1773.",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            136,
+            "PERSON"
+          ],
+          [
+            139,
+            781,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            786,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            785,
+            "TITLE"
+          ],
+          [
+            788,
+            828,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 135,
+    "text": "Lebens-Beschreibungen Der Biblischen Scribenten. [11], Georgii Serpilii, S. Salomo, Unterschidliche Gedancken, Uber dieses Israelitischen Königs Leben und Regierung, Glücks- und Unglücks-Fälle, Schrifften und Seeligkeit, Zur Continuation Der Biblischen Scribenten",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            47,
+            "TITLE"
+          ],
+          [
+            55,
+            82,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            48,
+            "TITLE"
+          ],
+          [
+            55,
+            71,
+            "PERSON"
+          ],
+          [
+            73,
+            82,
+            "TITLE"
+          ],
+          [
+            84,
+            219,
+            "OTHER_TITLE"
+          ],
+          [
+            221,
+            263,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            47,
+            "OTHER_TITLE"
+          ],
+          [
+            55,
+            82,
+            "PERSON"
+          ],
+          [
+            84,
+            263,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 136,
+    "text": "Entschuldigung.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            14,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "Abschnitt nicht annotiert"
+      }
+    }
+  },
+  {
+    "doc_id": 137,
+    "text": "Moritz, Karl Philipp: Reisen eines Deutschen in Italien in den Jahren 1786 bis 1788 / in Briefen von Karl Philipp Moritz. - Berlin : Maurer Th. 3. - 1793",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            20,
+            "PERSON"
+          ],
+          [
+            22,
+            83,
+            "TITLE"
+          ],
+          [
+            89,
+            120,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            20,
+            "PERSON"
+          ],
+          [
+            22,
+            83,
+            "TITLE"
+          ],
+          [
+            86,
+            96,
+            "OTHER_TITLE"
+          ],
+          [
+            101,
+            120,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "Aufsatz nicht annotiert"
+      }
+    }
+  },
+  {
+    "doc_id": 138,
+    "text": "Visio Apocalyptica, Das ist: Ein Fürbild des Jüngsten Gerichts : Dem H. Evangelisten und Apostel Johanni im Gesicht gezeiget/ Offenb. c. XIV. v. 14. ; Zum Christlichen Ehren-Gedächtniß/ Der Weiland Wol-Edlen und Hoch-Tugendreichen Frawen/ Fr. Richel Dorothea/ gebornen Stöteroggen/ Des Wol-Edlen/ Vesten/ und Hochweisen Herrn H. Hieronymi von Lafferdt/ Wolverdienten Bürgermeisters der Stadt Lüneburg/ und itziger Zeit Directoris, Hertzliebsten Ehegemahlinn S./ Welche den 3. Jun. 1668. Jahrs/ Abends gegen 10. Uhr/ sanfft und selig im HErrn entschlaffen/ Un[d] darauf den 10. desselbigen Monats/ dem Leibe nach/ mit Christlichen Ceremonien in der Herrn von Lafferden Erb-Capelle in S. Joh. Kirche beygesetzet worden. Auff Begehren erkläret/ und heraus gegeben",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ],
+          [
+            20,
+            124,
+            "PARALLEL_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ],
+          [
+            20,
+            148,
+            "OTHER_TITLE"
+          ],
+          [
+            151,
+            460,
+            "OTHER_TITLE"
+          ],
+          [
+            462,
+            717,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            62,
+            "TITLE"
+          ],
+          [
+            65,
+            760,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 140,
+    "text": "Confessio || oder Bekantnus des || Glaubens/ etlicher || Fürsten vnd Stedte/ Vberant=||wort Keiserlicher Maiestat/ auff || dem Reichstag/ gehalten || zu Augspurg/|| Anno 1530.|| Apologia der Confessio/|| mit vleis emendirt.|| ... ||[v.(Philip=||pus Melanthon.||)](aus dem Latin || verdeudschet/|| durch D.|| Justum Jonam.||)",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            9,
+            "TITLE"
+          ],
+          [
+            18,
+            161,
+            "OTHER_TITLE"
+          ],
+          [
+            236,
+            258,
+            "PERSON"
+          ],
+          [
+            303,
+            320,
+            "TRANSLATOR"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            43,
+            "TITLE"
+          ],
+          [
+            45,
+            175,
+            "OTHER_TITLE"
+          ],
+          [
+            178,
+            223,
+            "OTHER_TITLE"
+          ],
+          [
+            236,
+            258,
+            "PERSON"
+          ],
+          [
+            303,
+            321,
+            "TRANSLATOR"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            175,
+            "TITLE"
+          ],
+          [
+            178,
+            222,
+            "OTHER_TITLE"
+          ],
+          [
+            236,
+            258,
+            "PERSON"
+          ],
+          [
+            308,
+            320,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 141,
+    "text": "Genlis, S. F. de: Die Schwanenritter. Bd. 1-4. Eine Kunde der Vorwelt mit Anspielungen auf die Geschichte des Tages. A. d. Franz. [J. L. Gosch] Hamburg: Fauche 1796",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            16,
+            "PERSON"
+          ],
+          [
+            18,
+            36,
+            "TITLE"
+          ],
+          [
+            47,
+            115,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "Aufsatz - nicht annotiert"
+      }
+    }
+  },
+  {
+    "doc_id": 142,
+    "text": "Von Gottes Gnaden/ Johann Friderich/ Marggraff zu Brandenburg/ zu Magdeburg/ in Preüssen/ Stettin/ Pom[m]ern/ der Cassuben und Wenden ... : Demnach Wir im Monat Octobris nechst verwichenen Jahrs/ wegen der allzugroß überhand genommenen excesse und Mißbraüche bey dem Hochzeithalten/ gemessene gnädigste Verordnung ergehen lassen ... ; Signatum ... Onolzbach/ den 22. Februarii 1681",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            133,
+            "PERSON"
+          ],
+          [
+            140,
+            328,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            133,
+            "TITLE"
+          ],
+          [
+            140,
+            328,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            137,
+            "TITLE"
+          ],
+          [
+            140,
+            332,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 143,
+    "text": "Von Gottes Gnaden Wir Friedrich, Landgraf zu Hessen, Fürst zu Hersfeld, Graf zu Catzenellnbogen, Dietz, Ziegenhayn, Nidda, Schaumburg und Hanau ... Fügen hierdurch zu wissen : Obgleich in Unseren Hessischen Landen von je her, sobald ein Freygut vom Gutsherrn nicht mehr selbst gebauet, sondern an einen Bauren auf Besserung ausgethan worden, der Erbbeständer ... seine davon ziehende Besser- oder Oberbesserung versteuret ... ; [Cassell den 2ten Februar 1776.]",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            144,
+            "PERSON"
+          ],
+          [
+            148,
+            421,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            147,
+            "TITLE"
+          ],
+          [
+            148,
+            425,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            173,
+            "TITLE"
+          ],
+          [
+            176,
+            425,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 144,
+    "text": "Münchner neueste Nachrichten :Wirtschaftsblatt, alpine und Sport-Zeitung, Theater- und Kunst-Chronik. 1912, 1912 = Jg. 65, 10",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            28,
+            "TITLE"
+          ],
+          [
+            30,
+            100,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            28,
+            "TITLE"
+          ],
+          [
+            30,
+            101,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            28,
+            "TITLE"
+          ],
+          [
+            30,
+            100,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 146,
+    "text": "Nobilissima Scientia, Das ist/ Die Edelste und Seeligste Wissenschafft/ welche wir müssen lieben und üben/ Aus dem Büchlein Hiobs am XIX. Cap. v. 25. &c. Ich weisz dasz mein Erlöser lebet/ [et]c. : Bey Christ-Adlicher Sepultur Der ... Fr. Sabinen Hedewig Brändin von Lindau/ gebohrner von Waldau/ Des ... Hrn. Jobst Christoph Brandes von Lindau ... Ehe-Liebsten/ Als dieselbe am ... 29. Sept. Anno 1671. ... entschlaffen/ und den 12. Novembr. ... zu dero Ruh-Kämmerlein ... gebracht worden",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ],
+          [
+            22,
+            70,
+            "PARALLEL_TITLE"
+          ],
+          [
+            72,
+            152,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ],
+          [
+            22,
+            105,
+            "OTHER_TITLE"
+          ],
+          [
+            198,
+            361,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            489,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

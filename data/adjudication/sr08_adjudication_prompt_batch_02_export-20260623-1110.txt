@@ -1,0 +1,694 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 17,
+    "text": "Carmina sacra (2. Heft) WoO 7 - BSB Mus.ms. 4672 a-2,4 :Nr. 4 Sederunt principes (Aus dem Kirchenjahr)",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            29,
+            "TITLE"
+          ],
+          [
+            62,
+            81,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            13,
+            "TITLE"
+          ],
+          [
+            56,
+            80,
+            "TITLE"
+          ],
+          [
+            81,
+            102,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            13,
+            "TITLE"
+          ],
+          [
+            62,
+            102,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 20,
+    "text": "Sursum Deorsum! Oder Die alleredelste Sorgfalt Des weyland Durchlauchtigsten Fürsten und Herrn/ Herrn Johann Georgen Des Andern/ Hertzogens zu Sachsen/ Jülich/ Cleve und Berg ... : Aus Höchst-gedachter Ihrer Chur-Fürstl. Durchl. Symbolo und nach Anleitung der Worte Pauli/ Col. III,1. 2. Als Dero am 22. Augusti, Anno 1680. höchst-seeligst verblichener Leichnam ... Am 29. Eiusdem, war der XII. Sonntag nach Trinitatis, In die Kirche Auf dem Schloß Freudenstein zu Freyberg gesetzet worden",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            489,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            174,
+            "TITLE"
+          ],
+          [
+            181,
+            489,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            178,
+            "TITLE"
+          ],
+          [
+            181,
+            489,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 21,
+    "text": "Najmabadi, Seifeddin, Die persischen Handschriften der Universitätsbibliothek Heidelberg / beschrieben von Seyfeddin Najmabadi. - (Universitätsbibliothek <Heidelberg>: Heidelberger Bibliotheksschriften ; 46) : Heidelberg, 1990",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            22,
+            89,
+            "TITLE"
+          ],
+          [
+            107,
+            126,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            20,
+            "PERSON"
+          ],
+          [
+            22,
+            88,
+            "TITLE"
+          ],
+          [
+            107,
+            126,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            20,
+            "PERSON"
+          ],
+          [
+            22,
+            88,
+            "TITLE"
+          ],
+          [
+            107,
+            126,
+            "PERSON"
+          ],
+          [
+            131,
+            201,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 22,
+    "text": "Ain neues lied gemachet durch Pamphilum genge[n]||bach/ zů lob dem al[l]er hochgebornsten/ großmächtigosten. Karolo/ erwölter römisch||en Künig. Künig in Hyspanien/ Vngern/ Granaten/ Napels. [et]c. Ein geborner Ertz||hertzog in Osterreych/ Hertzog von Burgund. [et]c.|| : Ir churfürsten all gemaine. ...",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            259,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            260,
+            "TITLE"
+          ],
+          [
+            272,
+            299,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            303,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 23,
+    "text": "Beyträge zur neuern Staats- und Krieges-Geschichte. 5, 5 = Stück 41 - 48. 1758",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            50,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            51,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            50,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 24,
+    "text": "Mayer, Anton L., Die Liturgie in der europäischen Geistesgeschichte. Gesammelte Aufsätze / Hrsg. u. eingeleitet von Emmanuel v. Severus OSB. - (Unveränderter reprografischer Nachdruck) : Darmstadt, 1971",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            15,
+            "PERSON"
+          ],
+          [
+            17,
+            88,
+            "TITLE"
+          ],
+          [
+            116,
+            139,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            15,
+            "PERSON"
+          ],
+          [
+            17,
+            68,
+            "TITLE"
+          ],
+          [
+            69,
+            88,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            15,
+            "PERSON"
+          ],
+          [
+            17,
+            67,
+            "TITLE"
+          ],
+          [
+            69,
+            88,
+            "OTHER_TITLE"
+          ],
+          [
+            116,
+            139,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 25,
+    "text": "Haye, Thomas: Thomas Hayes ernstliche Warnung vor den gefährlichen Folgen vernachläßigter Katarrhe : nebst einem Unterricht von der Kur der Lungenschwindsucht, des Keuchhustens und der Engbrüstigkeit / nach der 3., Londner verm. Ausg. aus dem Engl. übers. von Christian Friedrich Michaelis. - Leipzig : Hilscher, 1787",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            12,
+            "PERSON"
+          ],
+          [
+            14,
+            199,
+            "TITLE"
+          ],
+          [
+            260,
+            289,
+            "TRANSLATOR"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            14,
+            98,
+            "TITLE"
+          ],
+          [
+            101,
+            199,
+            "OTHER_TITLE"
+          ],
+          [
+            260,
+            289,
+            "TRANSLATOR"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 27,
+    "text": "Nachlass von Max Scheler (1874-1928) – BSB Ana 315. CB.6.16, Max Scheler (1874-1928) Nachlass: Göttlicher Wille - BSB Ana 315.CB.VI.16",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            36,
+            "TITLE"
+          ],
+          [
+            61,
+            72,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            36,
+            "TITLE"
+          ],
+          [
+            61,
+            72,
+            "PERSON"
+          ],
+          [
+            95,
+            111,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            36,
+            "TITLE"
+          ],
+          [
+            61,
+            112,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 29,
+    "text": "Friedrich's von Hohenlohe, Bischof's von Bamberg, Rechtsbuch :(1348). Zum ersten Male herausgegeben und mit einem Commentare begleitet von C. Höfler. (Unter Mitwirkung des historischen Vereins zu Bamberg.) (Quellensammlung für fränkische Geschichte, herausgegeben von dem historischen Vereine zu Bamberg; 3. Band)",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            25,
+            "PERSON"
+          ],
+          [
+            0,
+            60,
+            "TITLE"
+          ],
+          [
+            139,
+            148,
+            "PERSON"
+          ],
+          [
+            207,
+            303,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            1,
+            60,
+            "TITLE"
+          ],
+          [
+            70,
+            134,
+            "OTHER_TITLE"
+          ],
+          [
+            139,
+            148,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            68,
+            "TITLE"
+          ],
+          [
+            139,
+            148,
+            "PERSON"
+          ],
+          [
+            172,
+            203,
+            "PERSON"
+          ],
+          [
+            207,
+            248,
+            "OTHER_TITLE"
+          ],
+          [
+            272,
+            303,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 30,
+    "text": "Der Kampf um Warschau",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Kein Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 32,
+    "text": "Wir Friderich der Dritte/ von Gottes Gnaden/ Marggraff zu Brandenburg/ des Heil. Röm. Reichs Ertz-Cammerer und Churfürst/ in Preussen ... Geben hiermit ... zuvernehmen/ und werden dieselbe sich ohne dem zu erinnern ... was gestalt Unsers in Gott ruhenden Herrn Vaters Gnaden/ aus tragender Lands Väterlicher Vorsorge wegen des verbotenen höchstschädlichen Gold- und Silber-Handels/ dero gnädigstes Edictum unterm dato Potstam den 18. Martii 1685. nachfolgenden Inhalts haben ergehen und publiciren lassen ... : So geschehen in Unserm Haupt-Quartier zu Genappe, den 28 Iulii 7 Augusti 1690.",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            133,
+            "PERSON"
+          ],
+          [
+            138,
+            505,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            504,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            508,
+            "TITLE"
+          ],
+          [
+            511,
+            588,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 33,
+    "text": "Bogenberg/ Unser lieben Frawen Gottshauß/ in deß Durchleuchtigen/ Hochgebornen Fürsten und Herrn/ Herrn Maximiliani/ Pfaltzgrafen bey Rhein/ Hertzog in Obern unnd Nidern Beyrn [et]c. Landt/ Regenspurger Bistumbs gelegen. Was für mercklicher Gnaden und Wunderzeichen/ daselbsten nun etlich Jahr her/ auß Fürbitt Marie der Mutter Gottes geschehen seyndt : Jetzt aber vonn Andächtiger Leut Bitt wegen/ Der Ehrwürdig in Gott Vatter unnd Herr/ Herr Christoff Abbt zu Oberaltäch/ als Oberster Pfarrherr ermelten Gottshauß zu trucken vergunt hat",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            538,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            220,
+            "TITLE"
+          ],
+          [
+            221,
+            538,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            351,
+            "TITLE"
+          ],
+          [
+            354,
+            538,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

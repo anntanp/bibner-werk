@@ -3,12 +3,16 @@
 # Usage:        python scripts/ner/sr08_compute_iaa.py \
 #                   --export-dir data/annotation/doccano/export-20260623-1110
 # Inputs:       *.jsonl files in --export-dir (skips dummy.doccano.jsonl, ann.jsonl, *.meta.jsonl, sr08_*)
-# Outputs:      data/processed/ner/sr08_iaa_counts_<export>.csv    (raw label assignments)
-#               data/processed/ner/sr08_iaa_<export>.csv            (Krippendorff's alpha per scope)
-#               data/processed/ner/sr08_iaa_pairwise_<export>.csv   (pairwise alpha for all annotator pairs)
-#               stdout: annotator coverage, alpha table (overall + per label), pairwise tables, pass/fail
+# Outputs:      data/iaa/sr08_iaa_counts_<export>.csv        (raw label assignments)
+#               data/iaa/sr08_iaa_<export>.csv                (Krippendorff's alpha per scope)
+#               data/iaa/sr08_iaa_pairwise_<export>.csv       (pairwise alpha for all annotator pairs)
+#               data/iaa/sr08_iaa_span_pairwise_<export>.csv  (pairwise span agreement: exact-match %, mean Jaccard)
+#               stdout: annotator coverage, alpha table (overall + per label), pairwise tables, span tables, pass/fail
 # Dependencies: none (stdlib only)
 # Assumptions:  reviewed = label != [] OR Comments != []; empty-label+comment = O assignment
+#               span agreement (ADR-02) is conditional on existence agreement: only (pair, doc,
+#               label) triples where both annotators marked the label are compared for span
+#               overlap; not chance-corrected (see notes/fiz/bibner-werk/adr-02-plan.md)
 
 from __future__ import annotations
 
@@ -67,6 +71,34 @@ def load_data(export_dir: Path) -> dict[str, dict[int, list[str]]]:
         else:
             print(f"  [skip] {path.stem}: 0 reviewed records", file=sys.stderr)
     return data
+
+
+# ── Span loading (ADR-02) ───────────────────────────────────────────────────────
+
+def get_label_spans(record: dict) -> dict[str, set[int]] | None:
+    """Return {label_type: set(char positions covered)} for a reviewed record, or None if
+    unreviewed. Multiple spans of the same label type in one doc are unioned into one
+    position set (a doc with two separate TITLE spans yields one TITLE key covering both).
+    """
+    reviewed = bool(record["label"]) or bool(record.get("Comments"))
+    if not reviewed:
+        return None
+    spans: defaultdict[str, set[int]] = defaultdict(set)
+    for start, end, label in record["label"]:
+        spans[label].update(range(start, end))
+    return dict(spans)
+
+
+def load_annotator_spans(path: Path) -> dict[int, dict[str, set[int]]]:
+    """Return {doc_id: {label_type: char_position_set}} for reviewed records only."""
+    result: dict[int, dict[str, set[int]]] = {}
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            rec = json.loads(line)
+            spans = get_label_spans(rec)
+            if spans is not None:
+                result[rec["id"]] = spans
+    return result
 
 
 # ── n_ik matrix ───────────────────────────────────────────────────────────────
@@ -188,6 +220,82 @@ def compute_pairwise(
     return result
 
 
+# ── Span agreement (ADR-02) ──────────────────────────────────────────────────────
+
+def span_stats(a: set[int], b: set[int]) -> tuple[bool, float]:
+    """Return (exact_match, jaccard) for two char-position sets. Both empty -> (True, 1.0)."""
+    if not a and not b:
+        return True, 1.0
+    exact = a == b
+    union = a | b
+    jaccard = len(a & b) / len(union) if union else 1.0
+    return exact, jaccard
+
+
+def compute_span_agreement(
+    span_data: dict[str, dict[int, dict[str, set[int]]]],
+) -> list[tuple[str, list[dict]]]:
+    """Return span-agreement rows (ALL + per label) for every annotator pair.
+
+    Restricts to (doc, label) where BOTH annotators in the pair marked the label present
+    (existence agreement) -- see ADR-02. A doc where one annotator marked the label and the
+    other didn't is excluded here; that's an existence disagreement, already measured by the
+    per-label alpha in compute_pairwise().
+
+    ALL pools every existence-agreed (doc, label) comparison across all label types for the
+    pair -- computed from the raw counts, not by averaging the per-label percentages, mirroring
+    how the existing alpha ALL scope pools raw n_ik counts rather than averaging per-label alpha.
+    """
+    result = []
+    for a1, a2 in sorted(combinations(sorted(span_data), 2)):
+        pair_name = f"{a1}/{a2}"
+        common_docs = set(span_data[a1]) & set(span_data[a2])
+        labels = {
+            lbl
+            for doc_id in common_docs
+            for lbl in set(span_data[a1][doc_id]) & set(span_data[a2][doc_id])
+        }
+
+        rows: list[dict] = []
+        all_matches = 0
+        all_jaccards: list[float] = []
+
+        for label in sorted(labels):
+            matches = 0
+            jaccards: list[float] = []
+            for doc_id in common_docs:
+                s1 = span_data[a1][doc_id].get(label)
+                s2 = span_data[a2][doc_id].get(label)
+                if s1 is None or s2 is None:
+                    continue  # existence disagreement -- excluded, not a span comparison
+                exact, jac = span_stats(s1, s2)
+                matches += exact
+                jaccards.append(jac)
+            n = len(jaccards)
+            if n == 0:
+                continue
+            rows.append({
+                "label": label,
+                "n_existence_agreed": n,
+                "n_exact_match": matches,
+                "pct_exact_match": matches / n,
+                "mean_jaccard": sum(jaccards) / n,
+            })
+            all_matches += matches
+            all_jaccards.extend(jaccards)
+
+        n_all = len(all_jaccards)
+        all_row = {
+            "label": "ALL",
+            "n_existence_agreed": n_all,
+            "n_exact_match": all_matches,
+            "pct_exact_match": all_matches / n_all if n_all else float("nan"),
+            "mean_jaccard": sum(all_jaccards) / n_all if n_all else float("nan"),
+        }
+        result.append((pair_name, [all_row, *rows]))
+    return result
+
+
 # ── Output ────────────────────────────────────────────────────────────────────
 
 def write_counts_csv(
@@ -230,6 +338,21 @@ def write_pairwise_csv(
     print(f"Pairwise -> {out_path}")
 
 
+def write_span_csv(
+    span_pairwise: list[tuple[str, list[dict]]],
+    out_path: Path,
+) -> None:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fields = ["pair", "label", "n_existence_agreed", "n_exact_match", "pct_exact_match", "mean_jaccard"]
+    with open(out_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        for pair_name, rows in span_pairwise:
+            for r in rows:
+                writer.writerow({"pair": pair_name, **r})
+    print(f"Span    -> {out_path}")
+
+
 def print_pairwise_summary(pairwise: list[tuple[str, list[dict]]]) -> None:
     print("\n-- Pairwise Krippendorff's alpha (nominal) ----------------------")
     for pair_name, rows in pairwise:
@@ -241,6 +364,20 @@ def print_pairwise_summary(pairwise: list[tuple[str, list[dict]]]) -> None:
             print(
                 f"  {r['label']:<16} {r['alpha']:>7.3f}  {r['n_items']:>7}  "
                 f"{r['N_judgments']:>7}  {r['D_o']:>8.4f}  {r['D_e']:>8.4f}{flag}"
+            )
+    print()
+
+
+def print_span_summary(span_pairwise: list[tuple[str, list[dict]]]) -> None:
+    print("\n-- Pairwise span agreement (exact-match, Jaccard) ----------------")
+    for pair_name, rows in span_pairwise:
+        print(f"\n  Pair: {pair_name}")
+        print(f"  {'Label':<16} {'n_exist':>8}  {'n_exact':>8}  {'exact%':>7}  {'jaccard':>7}")
+        print(f"  {'-'*16} {'-'*8}  {'-'*8}  {'-'*7}  {'-'*7}")
+        for r in rows:
+            print(
+                f"  {r['label']:<16} {r['n_existence_agreed']:>8}  {r['n_exact_match']:>8}  "
+                f"{r['pct_exact_match']*100:>6.1f}%  {r['mean_jaccard']:>7.3f}"
             )
     print()
 
@@ -286,8 +423,8 @@ def main() -> None:
     )
     parser.add_argument(
         "--output-dir", type=Path,
-        default=BASE / "data/processed/ner",
-        help="Output directory (default: data/processed/ner/)"
+        default=BASE / "data/iaa",
+        help="Output directory (default: data/iaa/)"
     )
     args = parser.parse_args()
 
@@ -333,6 +470,16 @@ def main() -> None:
     pairwise_path = args.output_dir / f"sr08_iaa_pairwise_{export_stem}.csv"
     write_pairwise_csv(pairwise, pairwise_path)
     print_pairwise_summary(pairwise)
+
+    # ── Span agreement (ADR-02) ────────────────────────────────────────────────
+    span_data = {
+        annotator: load_annotator_spans(export_dir / f"{annotator}.jsonl")
+        for annotator in data
+    }
+    span_pairwise = compute_span_agreement(span_data)
+    span_path = args.output_dir / f"sr08_iaa_span_pairwise_{export_stem}.csv"
+    write_span_csv(span_pairwise, span_path)
+    print_span_summary(span_pairwise)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,439 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 175,
+    "text": "Straßenverkehrsunfälle September 1983 : Lfd. Nr. 40",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            37,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            37,
+            "TITLE"
+          ],
+          [
+            40,
+            51,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Heft ohne Zuordnung zur Zeitschrift"
+      }
+    }
+  },
+  {
+    "doc_id": 176,
+    "text": "Die Bevölkerungsentwicklung in den Bezirken, Ortsämtern und Stadtteilen vom 31. 12. 1962 bis zum 31. 12. 1963 : Lfd. Nr. 7",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            109,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            109,
+            "TITLE"
+          ],
+          [
+            112,
+            122,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Heft ohne Titel und Zuordnung zum Sammelwerk"
+      }
+    }
+  },
+  {
+    "doc_id": 177,
+    "text": "Für Christenthum, Aufklärung und Menschenwohl / von Wilhelm Friedrich Hufnagel. - Erlangen : Palm H. 5.-8. - 1787",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            46,
+            "TITLE"
+          ],
+          [
+            52,
+            78,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 179,
+    "text": "Büchenwerra",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            11,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      }
+    }
+  },
+  {
+    "doc_id": 181,
+    "text": "Christlicher und Einfeltiger Unterricht Von Todtschlage/ Und Trost der jenigen/ denen Gott die ihrigen durch solche trawrige Fälle hinweg nimpt :Auß der Historien des Brudermordes Cains/ Bey ... Leichbegängnus ... Hansen Wächters: Welcher ... 1627. am 7. Aprilis auff dem Felde ... von einem Soldaten ... freventlicher und muthwilliger weise durchstochen und ermordet ... Unter grossem Leyd unnd Klagen gehalten in der Kirchen zu S. Jacob zu Weymar ... Von M. Johanne Hentzelman/ Vinariensi, der Kirchen daselbst Diacono",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            367,
+            "TITLE"
+          ],
+          [
+            457,
+            520,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            144,
+            "TITLE"
+          ],
+          [
+            145,
+            452,
+            "OTHER_TITLE"
+          ],
+          [
+            457,
+            520,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            520,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 182,
+    "text": "Der Siebend Grund. Sprüche der Schrifft von der Rechtfertigung.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            62,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 183,
+    "text": "Von Gottes Gnaden Wir Carl, Landgraff zu Hessen, Fürst zu Herßfeld, Graff zu Catzenelnbogen, Dietz, Ziegenhayn, Nidda und Schaumburg, [et]c. Entbieten Unsern Praesidenten, Cantzlarn ... hiermit zu wissen: Was gestalt Uns verschiedentlich vorkommen, daß bey Unsern Consistoriis und Ehe-Gerichten, von deswegen zum offtern Ehe-Klagen angebracht worden, weil sich der klagende Theil auff seines Gegentheils angebliche Versprechungs-Worte: Ich Wil Dich Nicht Verlassen, zu gründen, und darauß eine Ehe zu erzwingen vermeinet ... Gegeben ... Cassel, den 5. Tag Septembris 1710",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            132,
+            "PERSON"
+          ],
+          [
+            141,
+            533,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            524,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            139,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 184,
+    "text": "Gott trowet denen/ Die das Evangelium lang gehöret haben",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            56,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 185,
+    "text": "Pädagogische Zustände",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 186,
+    "text": "Fabritius, Karl Moritz Eduard: Denkmahl Pauls Sarpi / von Karl Moriz Fabritius. - Leipzig : Fleischer, 1791",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            29,
+            "PERSON"
+          ],
+          [
+            31,
+            51,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 187,
+    "text": "Wie der Tewrdanck auf dem Gemsen Zeid am durchlassen der wynndt erhub und überausz wolt geworffen haben des Er sich aber durch sein schicklichhait enthielt",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            155,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 188,
+    "text": "Einige Beyträge zur allgemeinen Heilmittellehre, als Programm bey Eröffnung seiner Vorlesungen im Sommersemester 1823 / Johann Jacob Hergenröther. - Würzburg, 1823",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            47,
+            "TITLE"
+          ],
+          [
+            53,
+            117,
+            "OTHER_TITLE"
+          ],
+          [
+            120,
+            145,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

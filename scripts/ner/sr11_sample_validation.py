@@ -7,14 +7,14 @@
 #
 # Usage:        python3 scripts/ner/sr11_sample_validation.py
 #                   [--data PATH]       # default: data/processed/de_titles_tokenized.parquet
-#                   [--ratings PATH]    # default: data/processed/ner/sr01_isbd_field_ratings.csv
+#                   [--ratings PATH]    # default: data/processed/sr01_isbd_field_ratings.csv
 #                   [--gold PATH]       # default: data/annotation/sr08_gold_sample.csv
 #                   [--output PATH]     # default: data/annotation/sr11_prompt_validation_manual.jsonl
 #                   [--n INT]           # total records to sample (default: 50)
 #                   [--seed INT]        # random seed (default: 42)
 #
 # Inputs:       data/processed/de_titles_tokenized.parquet  (or pkl)
-#               data/processed/ner/sr01_isbd_field_ratings.csv
+#               data/processed/sr01_isbd_field_ratings.csv
 #               data/annotation/sr08_gold_sample.csv
 # Outputs:      data/annotation/sr11_prompt_validation_manual.jsonl
 #
@@ -44,7 +44,7 @@ def load_corpus(path: Path) -> pd.DataFrame:
 
 ROOT    = Path(__file__).parent.parent.parent
 DATA    = ROOT / "data" / "processed" / "de_titles_tokenized.parquet"
-RATINGS = ROOT / "data" / "processed" / "ner" / "sr01_isbd_field_ratings.csv"
+RATINGS = ROOT / "data" / "processed" / "sr01_isbd_field_ratings.csv"
 GOLD    = ROOT / "data" / "annotation" / "sr08_gold_sample.csv"
 OUTPUT  = ROOT / "data" / "annotation" / "sr11_prompt_validation_manual.jsonl"
 DDB_URL = "https://www.deutsche-digitale-bibliothek.de/item/{}"

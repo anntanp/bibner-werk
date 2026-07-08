@@ -1,0 +1,149 @@
+[
+  {
+    "doc_id": 189,
+    "llm_suggested_label": [
+      [
+        0,
+        13,
+        "TITLE"
+      ],
+      [
+        16,
+        394,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; gundi's fuller OTHER_TITLE boundary (through 'Gehalten', a natural continuation of the same sentence) is preferred over frankp's shorter one and maria's unsplit merge.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; gundis vollständigere OTHER_TITLE-Grenze (bis einschließlich 'Gehalten', einer natürlichen Fortsetzung desselben Satzes) wird gegenüber frankps kürzerer und marias ungeteilter Zusammenführung bevorzugt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 190,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Folgen schöne Sprüche der lieben Väter ...' ('There follow beautiful sayings of the dear fathers...') is a transitional/structural phrase introducing a list, not a distinctive title in itself — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Folgen schöne Sprüche der lieben Väter ...' ist eine Überleitungs-/Strukturphrase, die eine Liste einleitet, kein eigenständiger unterscheidender Titel — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 191,
+    "llm_suggested_label": [
+      [
+        0,
+        628,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on treating this as one unsplit TITLE; frankp's boundary is the clean one, excluding trailing whitespace and the ' ...' truncation marker that gundi/maria's include.",
+    "llm_rationale_de": "Alle drei stimmen darin überein, dies als einen ungeteilten TITLE zu behandeln; frankps Grenze ist die saubere, die abschließenden Leerraum und den ' ...'-Kürzungsmarker ausschließt, den gundis/marias Versionen enthalten.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 193,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; content is two cross-referencing enumeration markers ('Twentieth Proof. Against the Nineteenth Reflection...') with no substantive topic beyond the numbering itself — weaker content than the enum-plus-real-topic pattern in docs 56/66/92/126/128/150/173/182/184/187/195/200/203 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; der Inhalt sind zwei aufeinander verweisende Aufzählungsmarker ('Zwanzigster Beweis. Gegen die neunzehnte Betrachtung...') ohne substantielles Thema über die bloße Nummerierung hinaus — schwächerer Inhalt als beim Muster Aufzählung-plus-echtes-Thema in den Dokumenten 56/66/92/126/128/150/173/182/184/187/195/200/203 — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 195,
+    "llm_suggested_label": [
+      [
+        31,
+        69,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'Vier und zwantzigstes Capitel. ' excluded per the established convention, leaving a specific legal/historical topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'Vier und zwantzigstes Capitel. ' wird gemäß der etablierten Konvention ausgeschlossen, was ein spezifisches rechtlich-historisches Thema übrig lässt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 196,
+    "llm_suggested_label": [
+      [
+        0,
+        96,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (frankp/gundi) include the trailing period as part of 'genandt.' (word-ending punctuation, not a separator), excluding only the trailing '||' typographic marker.",
+    "llm_rationale_de": "Die Mehrheit (frankp/gundi) bezieht den abschließenden Punkt als Teil von 'genandt.' ein (wortabschließende Interpunktion, kein Trennzeichen), und schließt lediglich den abschließenden typografischen Marker '||' aus.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 198,
+    "llm_suggested_label": [
+      [
+        0,
+        105,
+        "TITLE"
+      ],
+      [
+        108,
+        512,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree on identical boundaries, keeping 'Oder Dreyfacher Hertzens-Trost...' within TITLE (internal 'oder' as conjunction, same reasoning as docs 58/81/140), over frankp's split at 'Oder'.",
+    "llm_rationale_de": "gundi und maria stimmen bei identischen Grenzen überein und behalten 'Oder Dreyfacher Hertzens-Trost...' innerhalb von TITLE bei (internes 'oder' als Konjunktion, dieselbe Begründung wie bei den Dokumenten 58/81/140), gegenüber frankps Aufteilung bei 'Oder'.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 200,
+    "llm_suggested_label": [
+      [
+        4,
+        56,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'II. ' excluded, leaving a specific educational/philosophical topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'II. ' wird ausgeschlossen, was ein spezifisches pädagogisch-philosophisches Thema übrig lässt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 202,
+    "llm_suggested_label": [
+      [
+        9,
+        39,
+        "TITLE"
+      ],
+      [
+        42,
+        64,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Same corporate-body-in-SoR-position pattern as docs 104/120 (guide §5.2), applied here in its simpler form since there is no second ' : ' — 'Bericht über das Schuljahr ...' flows as one continuous TITLE up to the ' / ' SoR marker, then 'Gymnasium zu Stralsund' is PERSON; leading '1930/31: ' date prefix excluded per convention. None of the three annotators applied this structure.",
+    "llm_rationale_de": "Dasselbe Muster einer Körperschaft in SoR-Position wie bei den Dokumenten 104/120 (Leitfaden §5.2), hier in seiner einfacheren Form angewendet, da kein zweites ' : ' vorhanden ist — 'Bericht über das Schuljahr ...' verläuft als ein durchgehender TITLE bis zum SoR-Marker ' / ', dann ist 'Gymnasium zu Stralsund' PERSON; der führende Datumspräfix '1930/31: ' wird gemäß Konvention ausgeschlossen. Keiner der drei Annotatoren hat diese Struktur angewendet.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 203,
+    "llm_suggested_label": [
+      [
+        0,
+        49,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a genuine hymn/poem opening line, not a fragment.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); eine echte Anfangszeile eines Kirchenlieds/Gedichts, kein Fragment.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 204,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates a single generic structural-section word ('Vorsatz' = 'preface'/'foreword'), the kind of heading that could appear in any book — same pattern as docs 174/185 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes generisches Struktur-Abschnittswort ('Vorsatz'), die Art von Überschrift, die in jedem Buch vorkommen könnte — dasselbe Muster wie bei den Dokumenten 174/185 — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 205,
+    "llm_suggested_label": [],
+    "llm_rationale": "frankp and gundi agree closely on span boundaries, but the content itself ('Ein ander Gesang.' = 'Another song.') is a purely structural label indicating 'here is another hymn' without naming which one — content-vacuous despite the 2/3 boundary agreement, similar in spirit to doc 172's issue-stub. Recommend O against the numeric majority.",
+    "llm_rationale_de": "frankp und gundi stimmen bei den Spannengrenzen weitgehend überein, doch der Inhalt selbst ('Ein ander Gesang.') ist ein rein struktureller Hinweis, der 'hier folgt ein weiteres Lied' anzeigt, ohne zu benennen welches — inhaltsleer trotz der 2/3-Grenzenübereinstimmung, ähnlich im Geiste dem Heftstumpf in Dokument 172. O wird entgegen der numerischen Mehrheit empfohlen.",
+    "llm_confidence": "medium"
+  }
+]

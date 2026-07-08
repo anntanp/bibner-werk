@@ -1,0 +1,541 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 264,
+    "text": "Von dem stand der kind=||lein so on die tauff vorscheyden [et]c.|| D.Eberhardus || Weydenszee.||",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            63,
+            "TITLE"
+          ],
+          [
+            68,
+            93,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            64,
+            "TITLE"
+          ],
+          [
+            67,
+            93,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            94,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 265,
+    "text": "Dem Edlen Gestrengen und Ehrnvesten N. N. meinem günstigen Herrn und Freunde.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            76,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 266,
+    "text": "Bau-Polizei-Ordnung für die Stadt Berlin : enthaltend Bau-Polizei-Ordnung vom 21. April 1853, Bekanntmachung wegen unrichtig angefertigter Zeichnungen und Situationspläne, vom 14. August 1854 ; Polizei-Verordnung vom 14. September 1855 wegen Sicherstellung der Passage bei Bauten etc. und wegen Benutzung von fliegenden und anderen Gerüsten, Polizei-Verordnungen vom 29. October 1856, vom 23. Januar 1860, vom 12. März 1860, vom 29. Januar 1861, vom 3. Februar 1864, vom 2. August 1864, vom 11. April 1865, vom 4. Mai 1865 und vom 10. Dezember 1865",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            41,
+            "TITLE"
+          ],
+          [
+            43,
+            548,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            40,
+            "TITLE"
+          ],
+          [
+            43,
+            548,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            40,
+            "TITLE"
+          ],
+          [
+            43,
+            548,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 267,
+    "text": "Vereins-Anzeiger : 3. Beilage zu Nr. 40 der Pädagogischen Reform",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            16,
+            "TITLE"
+          ],
+          [
+            22,
+            64,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 268,
+    "text": "Die wunderlichst unerhörtest Legend und Beschreibung des Abgeführten, Quartirten, Gevierten vnd Viereckechten vierhörnigen Hütleins ... der Jesuiten :In Versen",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            149,
+            "TITLE"
+          ],
+          [
+            150,
+            159,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            148,
+            "TITLE"
+          ],
+          [
+            150,
+            159,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            148,
+            "TITLE"
+          ],
+          [
+            150,
+            159,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 269,
+    "text": "Der dritte Theil der Artickel des Glaubens. Von Gott dem H. Geist/ und unserer Heiligung.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            42,
+            "TITLE"
+          ],
+          [
+            44,
+            88,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 272,
+    "text": "Die selige Exzellenz : Lustspiel in 3 Akten von Rudolf Presber und Leo Walther Stein ... ; 61. Vorstellung: Sonnabend, den 11. November 1916, fuer West- und Suedlager, 62. Vorstellung: Sonntag, den 12. November 1916, fuer Nordlager, 63. Vorstellung: Montag, den 13. November 1916, fuer West- und Suedlager",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ],
+          [
+            23,
+            44,
+            "OTHER_TITLE"
+          ],
+          [
+            48,
+            62,
+            "PERSON"
+          ],
+          [
+            67,
+            79,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ],
+          [
+            23,
+            84,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ],
+          [
+            23,
+            305,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 273,
+    "text": "Oohnerachtet den Beamten oft angedeutet worden, und sich schon von selbst verstehet, ihre Holzforderungen jährlich in Zeiten vor dem Eintritt des Wadels einzureichen, ... : Berlin, den 24sten October 1780.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            165,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            170,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            1,
+            170,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 274,
+    "text": "Der tapffer kempffende und ritterlich überwindende und siegende Paulus : In einer kurtzen und Christlichen Leich- und Trost Sermon Als ... Herr Heinrich Kove/ Wolverdienter vieljähriger Amptman .... Welcher Anno 1669. am 3. Septembris ... entschlaffen und folgends den 26 selbiges Monats/ in der Pfarr-Kirchen zu Obsfeld .... beygesetzet worden/ aus den schönen Spruch S. Pauli 2. Tim. 4 Ich habe einen guten Kampff gekämpffet [et]c. Zu betrachten einfeltig vorgestellet",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            70,
+            "TITLE"
+          ],
+          [
+            73,
+            379,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            70,
+            "TITLE"
+          ],
+          [
+            73,
+            470,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            70,
+            "TITLE"
+          ],
+          [
+            73,
+            470,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 275,
+    "text": "[Nachtrag, Mitte 15. Jh.:] Tilemannus Ryke unde Hermannus Waltbach, dy ratismeistere, sint komen [...] eyn eigen in der Merkelynes strasze, genannt czu der wyntrubil, mit alleme rechten, als daz ire was.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            27,
+            202,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 276,
+    "text": "Christliche Leichpredigt und Ehrengedechtnis Der Erbarn ... Frawen Barbaren/ Des ... Herrn Doctoris Valentini Krappens seligen/ des Churf. S. Schöppenstuels zu Leipzig gewesenen Wohlverordneten Senioris und Oberhoffgerichts daselbst Assessoris, nachgelassener Wittben. : Welche den 3. Iunii des ... 1632. Jahrs ... entschlaffen/ und den 8. eiusdem ... zur Erden bestattet worden.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            1,
+            267,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            268,
+            "TITLE"
+          ],
+          [
+            271,
+            379,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            267,
+            "TITLE"
+          ],
+          [
+            271,
+            378,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 278,
+    "text": "Ander Teihl des Jugend-Spiegels.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            31,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

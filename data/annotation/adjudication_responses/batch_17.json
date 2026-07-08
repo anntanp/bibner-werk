@@ -1,0 +1,225 @@
+[
+  {
+    "doc_id": 251,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Zusammenfassung' ('Summary') is a generic recurring section heading found in nearly any document, same pattern as docs 174/185/204/218/255 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Zusammenfassung' ist eine generische, wiederkehrende Abschnittsüberschrift, die in fast jedem Dokument vorkommen kann, dasselbe Muster wie bei den Dokumenten 174/185/204/218/255 — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 252,
+    "llm_suggested_label": [
+      [
+        18,
+        58,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'Das VII. Capitel. ' excluded, leaving a specific gardening/agricultural topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'Das VII. Capitel. ' wird ausgeschlossen, was ein spezifisches garten-/landwirtschaftliches Thema übrig lässt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 253,
+    "llm_suggested_label": [
+      [
+        0,
+        119,
+        "TITLE"
+      ],
+      [
+        161,
+        190,
+        "PERSON"
+      ],
+      [
+        195,
+        225,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is a specific, real historical conference report (21st assembly of German natural scientists and physicians, Graz 1843) with two named organizers, each with full credential per guide §5.8 — high content specificity despite weak vote support.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist ein spezifischer, real belegter historischer Tagungsbericht (21. Versammlung deutscher Naturforscher und Ärzte, Graz 1843) mit zwei benannten Organisatoren, jeweils mit vollständigem Titel/Grad gemäß Leitfaden §5.8 — hohe inhaltliche Spezifität trotz schwacher Stimmenunterstützung.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 254,
+    "llm_suggested_label": [
+      [
+        0,
+        20,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); references a specific test/probation piece rather than generic content, similar to doc 173's specific technical-question pattern.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); verweist auf ein spezifisches Prüf-/Probestück statt auf generischen Inhalt, ähnlich dem Muster der spezifischen Fachfrage in Dokument 173.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 255,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates a single word ('Einband' = 'binding') that is standard physical-description terminology, not a work title — reads like a caption for a photo of the book's cover. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes Wort ('Einband'), das eine standardmäßige physische Beschreibungsterminologie ist, kein Werktitel — liest sich wie eine Bildunterschrift zu einem Foto des Bucheinbands. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 256,
+    "llm_suggested_label": [
+      [
+        0,
+        65,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific historical/political topic ('Struggle over the educational system in Turkestan and reform ideas'), not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifisches historisch-politisches Thema ('Kampf um das Bildungswesen in Turkestan und Reformideen'), nicht generisch.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 257,
+    "llm_suggested_label": [
+      [
+        0,
+        27,
+        "TITLE"
+      ],
+      [
+        29,
+        269,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi (the two real reviewers — maria's decline reports a dead DDB link, not a scope judgment) agree on a real, identifiable periodical title ('Europäische Staats-Cantzley'); frankp's OTHER_TITLE boundary is already clean, excluding the trailing period gundi's includes.",
+    "llm_rationale_de": "frankp und gundi (die beiden echten Prüfer — marias Ablehnung meldet einen toten DDB-Link, kein Geltungsbereichsurteil) stimmen bei einem echten, identifizierbaren Zeitschriftentitel überein ('Europäische Staats-Cantzley'); frankps OTHER_TITLE-Grenze ist bereits sauber und schließt den abschließenden Punkt aus, den gundis Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 258,
+    "llm_suggested_label": [
+      [
+        9,
+        16,
+        "TITLE"
+      ],
+      [
+        19,
+        60,
+        "PERSON"
+      ],
+      [
+        63,
+        83,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Same corporate-body-in-SoR pattern as docs 104/120/202 (guide §5.2): TITLE='Bericht', PERSON=the school, OTHER_TITLE=the rest; leading '1913/14: ' date prefix excluded. None of the three annotators applied this full structure, but it is the established resolution for this exact recurring pattern.",
+    "llm_rationale_de": "Dasselbe Muster einer Körperschaft in SoR-Position wie bei den Dokumenten 104/120/202 (Leitfaden §5.2): TITLE='Bericht', PERSON=die Schule, OTHER_TITLE=der Rest; der führende Datumspräfix '1913/14: ' wird ausgeschlossen. Keiner der drei Annotatoren hat diese vollständige Struktur angewendet, doch sie ist die etablierte Lösung für dieses exakt wiederkehrende Muster.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 259,
+    "llm_suggested_label": [
+      [
+        8,
+        19,
+        "TITLE"
+      ],
+      [
+        22,
+        35,
+        "TITLE"
+      ],
+      [
+        38,
+        66,
+        "TITLE"
+      ],
+      [
+        69,
+        93,
+        "PERSON"
+      ],
+      [
+        96,
+        116,
+        "PERSON"
+      ],
+      [
+        119,
+        134,
+        "PERSON"
+      ],
+      [
+        137,
+        156,
+        "PERSON"
+      ],
+      [
+        159,
+        179,
+        "PERSON"
+      ],
+      [
+        182,
+        196,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Manuscript catalog entry ('Hs 850' = Handschrift 850) listing multiple distinct texts and their authors bound together in one medieval codex — a genuine multi-work record, same category as docs 46/119/210/223. gundi's is the only thorough parse, correctly separating three work titles from six associated authors; her span for the shelfmark itself ('Hs 850') is dropped here, excluded per the archival-reference convention (docs 41/93/207), and the trailing manuscript date '(1460)' is excluded, matching all three annotators' independent choice to leave it unlabeled.",
+    "llm_rationale_de": "Handschriftenkatalogeintrag ('Hs 850') mit mehreren separaten Texten und ihren Autoren, gebunden in einem mittelalterlichen Kodex — ein echter Mehrwerk-Datensatz, dieselbe Kategorie wie die Dokumente 46/119/210/223. gundis Analyse ist die einzige gründliche, die korrekt drei Werktitel von sechs zugehörigen Autoren trennt; ihre Spanne für die Signatur selbst ('Hs 850') wird hier fallengelassen, ausgeschlossen gemäß der Archivverweis-Konvention (Dokumente 41/93/207), und das abschließende Handschriftendatum '(1460)' wird ausgeschlossen, entsprechend der unabhängigen Entscheidung aller drei Annotatoren, es unmarkiert zu lassen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 260,
+    "llm_suggested_label": [
+      [
+        0,
+        15,
+        "TITLE"
+      ],
+      [
+        17,
+        179,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly, splitting at the ' :' per the flowchart default; frankp's merged version incorrectly extends TITLE across the colon into German subtitle content.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein und teilen bei ' :' gemäß der Standardregel des Entscheidungsbaums; frankps zusammengeführte Version erweitert TITLE fälschlich über den Doppelpunkt hinaus in den deutschen Untertitelinhalt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 261,
+    "llm_suggested_label": [],
+    "llm_rationale": "frankp and gundi both label the string, but it is a bare leaf/page enumeration ('Sechs und zwanzigstes Blatt.' = 'Twenty-sixth leaf.') with no substantive topic beyond the numbering — content-vacuous in the same way as doc 205's 'Ein ander Gesang.', overriding the 2/3 agreement.",
+    "llm_rationale_de": "frankp und gundi markieren beide die Zeichenkette, doch sie ist eine bloße Blatt-/Seitenaufzählung ('Sechs und zwanzigstes Blatt.') ohne substantielles Thema über die Nummerierung hinaus — inhaltsleer auf dieselbe Weise wie 'Ein ander Gesang.' in Dokument 205, was die 2/3-Übereinstimmung außer Kraft setzt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 262,
+    "llm_suggested_label": [
+      [
+        0,
+        13,
+        "PERSON"
+      ],
+      [
+        15,
+        64,
+        "TITLE"
+      ],
+      [
+        71,
+        83,
+        "PERSON"
+      ],
+      [
+        108,
+        116,
+        "TRANSLATOR"
+      ]
+    ],
+    "llm_rationale": "Leading name-heading included as PERSON per the settled policy; maria's repeated-author-name PERSON span is kept, matching the established pattern (docs 70/137); TRANSLATOR is trimmed to exclude a leading space and trailing period that both frankp and maria's original spans included, and is correct per the explicit translation keyword ('Aus dem Englischen von').",
+    "llm_rationale_de": "Der führende Namenskopf wird gemäß der festgelegten Regel als PERSON einbezogen; marias PERSON-Spanne mit wiederholtem Autorennamen wird beibehalten, entsprechend dem etablierten Muster (Dokumente 70/137); TRANSLATOR ist bereinigt um ein führendes Leerzeichen und einen abschließenden Punkt, die sowohl frankps als auch marias ursprüngliche Spannen enthielten, und ist korrekt gemäß dem ausdrücklichen Übersetzungs-Schlüsselwort ('Aus dem Englischen von').",
+    "llm_confidence": "medium"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 133,
+    "llm_suggested_label": [[0, 141, "TITLE"]],
+    "llm_rationale": "maria's comment reports a 404/dead DDB link rather than a scope judgment, so only frankp and gundi have real opinions here; gundi's boundary excludes a trailing space that frankp's includes.",
+    "llm_rationale_de": "marias Kommentar meldet einen 404-/toten DDB-Link statt eines Geltungsbereichsurteils, daher liegen nur von frankp und gundi echte Einschätzungen vor; gundis Grenze schließt ein abschließendes Leerzeichen aus, das frankps Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 134,
+    "llm_suggested_label": [[0, 136, "PERSON"], [138, 781, "TITLE"]],
+    "llm_rationale": "First-person royal credential ('Unsern gnädigen Gruß...') matches the recurring pre-1700-style PERSON+TITLE pattern; frankp's own TITLE start (139) was off by one, cutting off the initial 'U' of 'Unsern' — corrected to 138. TITLE end (781) is frankp's own boundary, confirmed clean (excludes trailing whitespace and the ' ...' marker); maria's OTHER_TITLE addition is a 'Gegeben zu Berlin...' dateline, excluded per convention.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person ('Unsern gnädigen Gruß...') entspricht dem wiederkehrenden vorreformatorischen Muster PERSON+TITLE; frankps eigener TITLE-Anfang (139) war um eins verschoben und schnitt das anfängliche 'U' von 'Unsern' ab — korrigiert auf 138. Das TITLE-Ende (781) ist frankps eigene Grenze, bestätigt sauber (schließt abschließenden Leerraum und den ' ...'-Marker aus); marias OTHER_TITLE-Zusatz ist eine Datumszeile ('Gegeben zu Berlin...'), gemäß Konvention ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 135,
+    "llm_suggested_label": [[0, 47, "TITLE"], [55, 71, "PERSON"], [73, 263, "OTHER_TITLE"]],
+    "llm_rationale": "'Lebens-Beschreibungen Der Biblischen Scribenten' is the title of this multi-volume encyclopedic work itself (dc_type: Band confirms this record is one volume of it), not a generic institutional series hosting unrelated content — D-13 does not apply here, unlike docs 11/29/100. Volume marker '[11], ' excluded like other volume/part numbers; gundi's bare-name PERSON span is preferred over frankp/maria's longer version, which incorrectly absorbs 'S. Salomo' (this volume's subject, King Solomon, not part of the author's name); the remainder describing this volume's content is OTHER_TITLE.",
+    "llm_rationale_de": "'Lebens-Beschreibungen Der Biblischen Scribenten' ist der Titel dieses mehrbändigen enzyklopädischen Werks selbst (dc_type: Band bestätigt, dass dieser Datensatz einen Band davon darstellt), kein generischer institutioneller Reihentitel, der themenfremden Inhalt beherbergt — D-13 findet hier keine Anwendung, anders als bei den Dokumenten 11/29/100. Die Bandmarkierung '[11], ' wird wie andere Band-/Teilnummern ausgeschlossen; gundis PERSON-Spanne mit bloßem Namen wird gegenüber frankps/marias längerer Version bevorzugt, die fälschlich 'S. Salomo' einbezieht (das Thema dieses Bandes, König Salomo, nicht Teil des Autorennamens); der übrige, den Inhalt dieses Bandes beschreibende Text ist OTHER_TITLE.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 136,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp proposes annotating a single bare word ('Entschuldigung') with zero further descriptive content; both gundi and maria decline. Weaker support than any other single-word title resolved so far in this corpus (contrast doc 90, where 2/2 non-O annotators agreed) — recommend O.",
+    "llm_rationale_de": "Nur frankp schlägt vor, ein einzelnes bloßes Wort ('Entschuldigung') ohne jeglichen weiteren beschreibenden Inhalt zu annotieren; sowohl gundi als auch maria lehnen ab. Schwächere Unterstützung als bei jedem anderen bisher in diesem Korpus gelösten Einwort-Titel (vgl. Dokument 90, wo 2/2 Nicht-O-Annotatoren übereinstimmten) — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 137,
+    "llm_suggested_label": [[0, 20, "PERSON"], [22, 83, "TITLE"], [86, 96, "OTHER_TITLE"], [101, 120, "PERSON"]],
+    "llm_rationale": "frankp and gundi agree on PERSON+TITLE; gundi's split of the trailing SoR clause into 'in Briefen' (OTHER_TITLE) + a separate repeated-name PERSON span matches the established repeated-author-mention pattern (e.g. doc 70) better than frankp's single merged OTHER_TITLE.",
+    "llm_rationale_de": "frankp und gundi stimmen bei PERSON+TITLE überein; gundis Aufteilung der abschließenden SoR-Klausel in 'in Briefen' (OTHER_TITLE) + eine separate PERSON-Spanne mit wiederholtem Namen entspricht besser dem etablierten Muster wiederholter Autorennennung (z. B. Dokument 70) als frankps einzelne zusammengeführte OTHER_TITLE.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 138,
+    "llm_suggested_label": [[0, 18, "TITLE"], [20, 148, "OTHER_TITLE"], [151, 460, "OTHER_TITLE"]],
+    "llm_rationale": "'Das ist:' is the guide's explicit OTHER_TITLE trigger (§3.1), not PARALLEL_TITLE, so frankp's label is corrected to match gundi's; gundi's longer first-segment boundary (148, through the scripture citation) is preferred over frankp's shorter one (124) as capturing one complete descriptive clause, and her second segment (the funeral dedication) is kept as OTHER_TITLE rather than maria's single all-encompassing span. The trailing publication phrase ('Auff Begehren erkläret...') is left unlabeled, following gundi's own boundary.",
+    "llm_rationale_de": "'Das ist:' ist der ausdrückliche OTHER_TITLE-Auslöser des Leitfadens (§3.1), keine PARALLEL_TITLE, daher wird frankps Label korrigiert, um gundis anzugleichen; gundis längere Grenze des ersten Segments (148, durch das Schriftzitat hindurch) wird gegenüber frankps kürzerer (124) bevorzugt, da sie eine vollständige beschreibende Klausel erfasst, und ihr zweites Segment (die Trauerwidmung) wird als OTHER_TITLE beibehalten statt marias einzelner, alles umfassender Spanne. Die abschließende Publikationsphrase ('Auff Begehren erkläret...') bleibt gemäß gundis eigener Grenze unmarkiert.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 140,
+    "llm_suggested_label": [[0, 43, "TITLE"], [45, 175, "OTHER_TITLE"], [178, 223, "OTHER_TITLE"], [236, 258, "PERSON"], [303, 321, "TRANSLATOR"]],
+    "llm_rationale": "gundi keeps 'Confessio || oder Bekantnus des || Glaubens' as one TITLE (internal 'oder' as conjunction, not subtitle trigger — same reasoning as docs 58/81) and is the only one to fully preserve the two-segment OTHER_TITLE structure; TRANSLATOR is correct per an explicit guide-matching keyword ('aus dem Latin ... verdeudschet' = rendered from Latin into German), unlike maria's PERSON label for the same span.",
+    "llm_rationale_de": "gundi behält 'Confessio || oder Bekantnus des || Glaubens' als einen TITLE bei (internes 'oder' als Konjunktion, kein Untertitel-Auslöser — dieselbe Begründung wie bei den Dokumenten 58/81) und ist die einzige, die die zweisegmentige OTHER_TITLE-Struktur vollständig bewahrt; TRANSLATOR ist korrekt gemäß einem ausdrücklichen, mit dem Leitfaden übereinstimmenden Schlüsselwort ('aus dem Latin ... verdeudschet' = aus dem Lateinischen ins Deutsche übertragen), anders als marias PERSON-Label für dieselbe Spanne.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 141,
+    "llm_suggested_label": [[0, 16, "PERSON"], [18, 36, "TITLE"], [47, 115, "OTHER_TITLE"]],
+    "llm_rationale": "Both gundi and maria decline (2/3, a stronger O-majority than any case annotated so far in this corpus), but the string reads as a complete, well-formed bibliographic citation (author, title, subtitle, publisher, date) rather than a fragment — unlike other majority-declined docs (132, 136) which were genuinely sparse. Genuine tension between vote count and content quality; flagging low confidence rather than resolving it silently either way.",
+    "llm_rationale_de": "Sowohl gundi als auch maria lehnen ab (2/3, eine stärkere O-Mehrheit als bei jedem bisher in diesem Korpus annotierten Fall), doch die Zeichenkette liest sich als vollständige, wohlgeformte bibliographische Zitation (Autor, Titel, Untertitel, Verlag, Datum) statt als Fragment — anders als bei anderen mehrheitlich abgelehnten Dokumenten (132, 136), die echt spärlich waren. Echte Spannung zwischen Stimmenzahl und Inhaltsqualität; geringe Konfidenz wird markiert, statt sie stillschweigend in die eine oder andere Richtung aufzulösen.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 142,
+    "llm_suggested_label": [[0, 133, "PERSON"], [140, 328, "TITLE"]],
+    "llm_rationale": "First-person royal credential, matching the recurring pattern; frankp's original spans are already clean on both ends. gundi's TITLE+OTHER_TITLE reading (same boundaries, different labels) doesn't fit the pattern used everywhere else this credential structure occurs.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster; frankps ursprüngliche Spannen sind an beiden Enden bereits sauber. gundis Lesart TITLE+OTHER_TITLE (dieselben Grenzen, andere Labels) passt nicht zu dem Muster, das überall sonst bei dieser Prädikatsstruktur verwendet wird.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 143,
+    "llm_suggested_label": [[0, 143, "PERSON"], [148, 421, "TITLE"]],
+    "llm_rationale": "Same recurring first-person credential pattern; frankp's PERSON end trimmed by one character (144→143) to exclude a trailing space, TITLE end (421) already clean.",
+    "llm_rationale_de": "Dasselbe wiederkehrende Prädikat-in-erster-Person-Muster; frankps PERSON-Ende um ein Zeichen gekürzt (144→143), um ein abschließendes Leerzeichen auszuschließen, TITLE-Ende (421) bereits sauber.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 144,
+    "llm_suggested_label": [[0, 28, "TITLE"], [30, 100, "OTHER_TITLE"]],
+    "llm_rationale": "All three agree exactly on TITLE; majority (frankp/maria) OTHER_TITLE boundary excludes the trailing period that gundi's includes.",
+    "llm_rationale_de": "Alle drei stimmen exakt bei TITLE überein; die mehrheitliche (frankp/maria) OTHER_TITLE-Grenze schließt den abschließenden Punkt aus, den gundis Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 146,
+    "llm_suggested_label": [[0, 20, "TITLE"], [22, 194, "OTHER_TITLE"], [198, 361, "OTHER_TITLE"]],
+    "llm_rationale": "Reconstruction: TITLE + 'Das ist/' split follows the same guide trigger as doc 138; the first OTHER_TITLE is extended past frankp's boundary (152) through the continuing Job quotation ('Ich weisz dasz mein Erlöser lebet') to the genuine ' : ' separator at 194, since stopping at 152 would arbitrarily cut off part of the same continuous biblical citation; the funeral-dedication clause (gundi's second TITLE span) is relabeled OTHER_TITLE to keep one TITLE per record. Significant reconstruction across a complex three-way conflict — genuinely uncertain.",
+    "llm_rationale_de": "Rekonstruktion: TITLE + Aufteilung bei 'Das ist/' folgt demselben Leitfaden-Auslöser wie Dokument 138; das erste OTHER_TITLE-Segment wird über frankps Grenze (152) hinaus erweitert, durch das fortlaufende Hiob-Zitat ('Ich weisz dasz mein Erlöser lebet') bis zum echten ' : '-Trennzeichen bei 194, da ein Abbruch bei 152 willkürlich einen Teil desselben fortlaufenden biblischen Zitats abschneiden würde; die Trauerwidmungsklausel (gundis zweite TITLE-Spanne) wird zu OTHER_TITLE umbenannt, um bei einem TITLE pro Datensatz zu bleiben. Erhebliche Rekonstruktion über einen komplexen Dreiweg-Konflikt hinweg — echt unsicher.",
+    "llm_confidence": "low"
+  }
+]

@@ -24,7 +24,7 @@ Purpose:  Produce per-era median word count (whitespace split) to replace the
           BPE-token median in the workshop slide deck era stratification table.
 Usage:    python scripts/ner/sr10_word_token_era_summary.py
 Inputs:   data/processed/de_titles_tokenized.parquet
-Outputs:  data/processed/ner/sr10_word_token_era_summary.csv
+Outputs:  data/title-length/sr10_word_token_era_summary.csv
 Dependencies: pandas, pyarrow
 Assumptions:
   - Era assignment uses the first element of the `dates` list column.
@@ -39,7 +39,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_IN  = ROOT / "data" / "processed" / "de_titles_tokenized.parquet"
-DATA_OUT = ROOT / "data" / "processed" / "ner" / "sr10_word_token_era_summary.csv"
+DATA_OUT = ROOT / "data" / "title-length" / "sr10_word_token_era_summary.csv"
 
 
 def assign_era(dates_val) -> str:

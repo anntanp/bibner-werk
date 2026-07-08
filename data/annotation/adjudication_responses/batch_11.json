@@ -1,0 +1,200 @@
+[
+  {
+    "doc_id": 162,
+    "llm_suggested_label": [
+      [
+        0,
+        101,
+        "TITLE"
+      ],
+      [
+        108,
+        123,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly; maria's decline reads as an unreviewed-style comment rather than a considered scope judgment.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein; marias Ablehnung liest sich eher wie ein unrezensiert wirkender Kommentar als ein durchdachtes Geltungsbereichsurteil.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 163,
+    "llm_suggested_label": [
+      [
+        0,
+        30,
+        "TITLE"
+      ],
+      [
+        33,
+        52,
+        "PARALLEL_TITLE"
+      ],
+      [
+        55,
+        123,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Genuine ' = ' marker (guide's explicit PARALLEL_TITLE trigger, unlike the ' :' cases in docs 130/140 where OTHER_TITLE was correct instead); frankp and gundi's majority label is preferred over maria's merge, using gundi's boundary which excludes a trailing space frankp's includes.",
+    "llm_rationale_de": "Echtes ' ='-Zeichen (der ausdrückliche PARALLEL_TITLE-Auslöser des Leitfadens, anders als die ' :'-Fälle in den Dokumenten 130/140, wo stattdessen OTHER_TITLE korrekt war); das mehrheitliche Label von frankp und gundi wird gegenüber marias Zusammenführung bevorzugt, unter Verwendung von gundis Grenze, die ein abschließendes Leerzeichen ausschließt, das frankps Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 164,
+    "llm_suggested_label": [
+      [
+        0,
+        25,
+        "PERSON"
+      ],
+      [
+        27,
+        36,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a terse but real title ('Predigten' = 'Sermons') with a full leading author heading. Weak (1/3) support, flagged per the same tension as docs 149/150/155 (batch 10).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein knapper, aber echter Titel ('Predigten') mit einem vollständigen führenden Autorenkopf. Schwache (1/3) Unterstützung, markiert gemäß derselben Spannung wie bei den Dokumenten 149/150/155 (Batch 10).",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 165,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; content is an enumeration ('Die siebend Lection.') plus a terse Latin liturgical fragment ('Sicut in Adam &c') with no substantive descriptive title — weaker content than doc 164 in this same batch, and only 1/3 support. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; der Inhalt ist eine Aufzählung ('Die siebend Lection.') plus ein knappes lateinisches liturgisches Fragment ('Sicut in Adam &c') ohne substantiellen beschreibenden Titel — schwächerer Inhalt als bei Dokument 164 in demselben Batch, und nur 1/3 Unterstützung. O wird empfohlen.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 166,
+    "llm_suggested_label": [
+      [
+        0,
+        24,
+        "TITLE"
+      ],
+      [
+        27,
+        53,
+        "OTHER_TITLE"
+      ],
+      [
+        60,
+        95,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly, including the bracketed name expansion in PERSON per guide §5.8's credential-merge rule.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein, einschließlich der geklammerten Namenserweiterung in PERSON gemäß der Titel/Grad-Zusammenführungsregel des Leitfadens §5.8.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 167,
+    "llm_suggested_label": [
+      [
+        0,
+        32,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly on the full string as TITLE despite maria's Aufsatz decline.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein: die gesamte Zeichenkette als TITLE, trotz marias Ablehnung als Aufsatz.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 168,
+    "llm_suggested_label": [
+      [
+        0,
+        36,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE. The parenthetical '(Aus dem Jahresberichte der Schlesischen Gesellschaft für vaterländ. Cultur. 1861. Heft I.)' is excluded as a host-journal citation — an annual report of a general scientific society hosting many unrelated articles each year passes the D-13 generic-container test cleanly (unlike doc 148, where the cataloged item itself was the container).",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein. Der Klammerzusatz '(Aus dem Jahresberichte der Schlesischen Gesellschaft für vaterländ. Cultur. 1861. Heft I.)' wird als Zitat der Trägerzeitschrift ausgeschlossen — ein Jahresbericht einer allgemeinen wissenschaftlichen Gesellschaft, der jährlich viele themenfremde Beiträge beherbergt, besteht den D-13-Test für generische Container eindeutig (anders als bei Dokument 148, wo das katalogisierte Stück selbst der Container war).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 169,
+    "llm_suggested_label": [
+      [
+        0,
+        22,
+        "TITLE"
+      ],
+      [
+        24,
+        41,
+        "OTHER_TITLE"
+      ],
+      [
+        48,
+        76,
+        "PARALLEL_TITLE"
+      ],
+      [
+        79,
+        129,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's finer split (separate Hebrew-language TITLE and OTHER_TITLE before the German parallel title) is preferred over frankp/maria's merges; her OTHER_TITLE boundary is trimmed to exclude the trailing ' ...' truncation marker before the ' = ' marker; PARALLEL_TITLE follows the genuine ' = ' trigger; final OTHER_TITLE uses frankp's boundary, excluding its own trailing truncation marker.",
+    "llm_rationale_de": "gundis feinere Aufteilung (separate hebräischsprachige TITLE und OTHER_TITLE vor dem deutschen Paralleltitel) wird gegenüber frankps/marias Zusammenführungen bevorzugt; ihre OTHER_TITLE-Grenze ist so beschnitten, dass der abschließende ' ...'-Kürzungsmarker vor dem ' ='-Zeichen ausgeschlossen wird; PARALLEL_TITLE folgt dem echten ' ='-Auslöser; die abschließende OTHER_TITLE verwendet frankps Grenze und schließt ihren eigenen abschließenden Kürzungsmarker aus.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 170,
+    "llm_suggested_label": [
+      [
+        0,
+        24,
+        "PERSON"
+      ],
+      [
+        26,
+        55,
+        "TITLE"
+      ],
+      [
+        58,
+        97,
+        "OTHER_TITLE"
+      ],
+      [
+        102,
+        125,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz) — same weak-support tension as doc 164. Structurally improved by splitting out the repeated author mention ('von Johann Conrad Kirschner') as a separate PERSON span, matching the established repeated-name pattern (docs 70/137), rather than leaving it folded into OTHER_TITLE as frankp did.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab) — dieselbe Spannung schwacher Unterstützung wie bei Dokument 164. Strukturell verbessert, indem die wiederholte Autorennennung ('von Johann Conrad Kirschner') als separate PERSON-Spanne herausgelöst wird, entsprechend dem etablierten Muster wiederholter Namensnennung (Dokumente 70/137), statt sie wie bei frankp in OTHER_TITLE eingefaltet zu lassen.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 172,
+    "llm_suggested_label": [],
+    "llm_rationale": "maria's comment is explicit and factual, not a genre-based decline: this record is just a newspaper issue number and date with no title anywhere ('nur Heft (ohne Titel) aus Zeitung'). gundi's TITLE span merely labels the issue-number-and-date string itself, which is exactly the guide's 'too fragmentary/generic' exclusion case.",
+    "llm_rationale_de": "marias Kommentar ist ausdrücklich und sachlich, keine gattungsbasierte Ablehnung: Dieser Datensatz ist lediglich eine Zeitungsheftnummer und ein Datum ohne jeglichen Titel ('nur Heft (ohne Titel) aus Zeitung'). gundis TITLE-Spanne markiert lediglich die Heftnummer-und-Datum-Zeichenkette selbst, was genau dem Ausschlusskriterium des Leitfadens für 'zu fragmentarisch/generisch' entspricht.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 173,
+    "llm_suggested_label": [
+      [
+        4,
+        69,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel), but the content is a genuine technical question ('what reason the hundredweight is calculated at 100 pounds for testing') from what reads like a metallurgy/assaying treatise, matching the enumeration-plus-real-content pattern in docs 56/66/92 where similar weak-vote cases were still annotated.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab), doch der Inhalt ist eine echte fachliche Frage ('aus welchem Grund der Zentner beim Prüfen zu 100 Pfund berechnet wird') aus einem Text, der sich wie eine Metallurgie-/Prüfabhandlung liest, entsprechend dem Muster Aufzählung-plus-echter-Inhalt in den Dokumenten 56/66/92, wo ähnliche schwach unterstützte Fälle dennoch annotiert wurden.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 174,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Aus dem Vereinsleben' ('From club life') reads as a generic recurring newsletter column heading rather than content-specific title — the kind of text that could appear identically across many unrelated issues, similar in spirit to the generic-container test in D-13. Combined with weak (1/3) support, recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Aus dem Vereinsleben' liest sich als generische, wiederkehrende Rubriküberschrift eines Vereinsblatts statt eines inhaltsspezifischen Titels — die Art von Text, die identisch in vielen themenfremden Ausgaben erscheinen könnte, ähnlich im Geiste dem Test für generische Container in D-13. Zusammen mit schwacher (1/3) Unterstützung wird O empfohlen.",
+    "llm_confidence": "medium"
+  }
+]

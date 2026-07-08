@@ -1,0 +1,539 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 374,
+    "text": "Confirmation und bestettigung dieser Brüderschafft S. Annae, durch Bäbst: heylig: Gregorium, diß Namens den XIII.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            59,
+            "TITLE"
+          ],
+          [
+            67,
+            113,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 376,
+    "text": "Einband",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            7,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 377,
+    "text": "Christliche Leichpredigt/ Bey dem Begräbnüß Der ... Frawen Margariten, Des ... Herrn Stephani Mauls/ verordneten StadtRichters/ und Rathsverwandten zu Dreßden/ Ehelicher Haußfrawen ... : Welche den Ersten Junij/ war der erste Pfingstfeyertag/ Anno 1628. ... entschlaffen/ und den Fünfften hernach/ in der Kirchen zu S. Sophien ... zur Erden bestattet worden",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            24,
+            "TITLE"
+          ],
+          [
+            26,
+            181,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            184,
+            "TITLE"
+          ],
+          [
+            187,
+            357,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            184,
+            "TITLE"
+          ],
+          [
+            187,
+            357,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 378,
+    "text": "Tuneld, Erik: Geographie öfver konungariket Swerige samt därunder hörande länder / författad af Eric Tuneld ... - 6. Aufl. - Stockholm : Nordström, Bd. 2, D. 6. - 1792 Bis zur 5. Aufl. u.d.T.: Geographie öfwer Sweriges rike",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            12,
+            "PERSON"
+          ],
+          [
+            14,
+            80,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 379,
+    "text": "Zwei und sechzigster Abschnitt. Geschichte Teutschlands unter Rudolph 2, von 1576-1612",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            30,
+            "OTHER_TITLE"
+          ],
+          [
+            32,
+            86,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 380,
+    "text": "Die Glori der Lutherischen Kirch Die Saltzburgische Emigranten, Von Denen Herren Lutheranern zu Augsburg An Ihrem Fridens-Fest Anno 1732 :mit Mund und Feder, Nachgehends Etwas Bessers vorgestellet ... In einer an dem Fest-Tag deß heiligen Bartholomäi Auf Der Dom-Cantzel gehaltenen Predig",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            32,
+            "TITLE"
+          ],
+          [
+            33,
+            196,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            136,
+            "TITLE"
+          ],
+          [
+            138,
+            288,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            288,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 381,
+    "text": "Von Gottes Gnaden Wir, Carl, Herzog zu Braunschweig und Lüneburg [et]c. [et]c. Fügen hiemit zu wissen : Demnach Uns untertänigst vorgebracht worden, daß über die Frage: Ob Kauf Miete breche, und über die zwischen dem Mietsmann und dem Vermieter entstehende Interess-Klagen of weitläufige Processe entstehen ... ; Gegeben in Unserer Stadt Braunschweig, den 25sten Oct. 1760.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            18,
+            77,
+            "PERSON"
+          ],
+          [
+            104,
+            307,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            101,
+            "TITLE"
+          ],
+          [
+            104,
+            373,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            101,
+            "TITLE"
+          ],
+          [
+            0,
+            372,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 382,
+    "text": "Ueber Fortbildung und Kunststreben der Schullehrer in der Musik : (vergl. \"Urania\" 1858, Nr. 12)",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            63,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 384,
+    "text": "Lieben, Lust und Leben der Deutschen des sechzehnten Jahrhunderts, in den Begebenheiten des Schlesischen Ritters von Schweinichen : von ihm selbst aufgesetzt ; Bd. 1 / Hans von Schweinichen; hrsg. von Büsching; gedruckt mit Hülfe des Vereins für Schlesische Geschichte und Alterthümer des . - Breslau : Max, 1820",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            129,
+            "TITLE"
+          ],
+          [
+            132,
+            158,
+            "OTHER_TITLE"
+          ],
+          [
+            168,
+            189,
+            "PERSON"
+          ],
+          [
+            201,
+            209,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 385,
+    "text": "Refrigerium Davidicum Das ist König Davids und aller Vielgejagten Creutz-Hirschen Gottes Hertz-Erquickung. Auß den worten deß Zwey und Vierzigsten Psalms: Wie der Hirsche schreyet nach frischem Wasser/ so schreyet meine Seele/ Gott/ zu dir! Meine Seele dürstet nach Gott/ nach dem Lebendigen Gott/ wenn werd Ich dahin kommen/ daß Ich Gottes Angesicht schawe? : Bey dem ... Leichbegängniß Deß ... H. Johannis Henselii, Deß ältern ... Seelsorgers der Gemeine Gottes zur Peterßwaldaw. Welcher in lauffendem Jahre 1651 den 24. Iulii deß Abends gegen 5 Uhr ... verschieden/ und darauff folgenden 2. tag Augusti ... zur Erde ist bestätiget worden. In dem Pfarrhofe selbigen Ortes geprediget",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ],
+          [
+            22,
+            358,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            358,
+            "TITLE"
+          ],
+          [
+            361,
+            684,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            358,
+            "TITLE"
+          ],
+          [
+            361,
+            684,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 386,
+    "text": "Irenicum Ratisbonense. Oder Regenßburgische Friedens-Frewde :Welche Am 16. Tage deß Weimonats dises lauffenden 1649. Jahres nach den Gott lob im Heiligen Römischen Reich getroffenen Universal-Frieden: Bey allen Evangelischen ... in ... Regenßburg ... ist erwecket worden",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ],
+          [
+            28,
+            59,
+            "PARALLEL_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            59,
+            "TITLE"
+          ],
+          [
+            61,
+            270,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            270,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 387,
+    "text": "Verhandlungen der Zweiten Kammer der Landstände des Großherzogthums Hessen. Protokolle. 1833,7,e, 1833,7,[e] = Beil. ; [5]",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            74,
+            "TITLE"
+          ],
+          [
+            76,
+            86,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            75,
+            "TITLE"
+          ],
+          [
+            76,
+            87,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            74,
+            "TITLE"
+          ],
+          [
+            76,
+            86,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

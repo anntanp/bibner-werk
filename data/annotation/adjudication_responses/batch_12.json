@@ -1,0 +1,181 @@
+[
+  {
+    "doc_id": 175,
+    "llm_suggested_label": [
+      [
+        0,
+        37,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree on genuine content ('Straßenverkehrsunfälle September 1983', a real statistical report title); maria's decline is a factual note about missing journal assignment, not a claim that no title exists (contrast doc 172). Running-number suffix 'Lfd. Nr. 40' excluded per the established volume/issue-number convention.",
+    "llm_rationale_de": "frankp und gundi stimmen bei echtem Inhalt überein ('Straßenverkehrsunfälle September 1983', ein echter Titel eines Statistikberichts); marias Ablehnung ist eine sachliche Anmerkung zur fehlenden Zeitschriftenzuordnung, keine Behauptung, dass kein Titel existiert (im Gegensatz zu Dokument 172). Der laufende Nummernzusatz 'Lfd. Nr. 40' wird gemäß der etablierten Band-/Heftnummern-Konvention ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 176,
+    "llm_suggested_label": [
+      [
+        0,
+        109,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Same structure and reasoning as doc 175: frankp/gundi agree on a genuine demographic-report title, running number 'Lfd. Nr. 7' excluded.",
+    "llm_rationale_de": "Dieselbe Struktur und Begründung wie bei Dokument 175: frankp/gundi stimmen bei einem echten Titel eines Bevölkerungsberichts überein, die laufende Nummer 'Lfd. Nr. 7' wird ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 177,
+    "llm_suggested_label": [
+      [
+        0,
+        45,
+        "TITLE"
+      ],
+      [
+        52,
+        78,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); TITLE boundary trimmed of frankp's trailing whitespace. Content is a specific periodical/pamphlet title with a clear SoR, not generic — flagged per the established content-vs-vote-count tension, same as several docs in batch 10.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); die TITLE-Grenze ist von frankps abschließendem Leerraum bereinigt. Der Inhalt ist ein spezifischer Zeitschriften-/Flugschriftentitel mit klarer Verantwortlichkeitsangabe, nicht generisch — markiert gemäß der etablierten Spannung zwischen Inhalt und Stimmenzahl, wie bei mehreren Dokumenten in Batch 10.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 179,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates a single bare word ('Büchenwerra', likely a place name) with zero surrounding context; only frankp and gundi even reviewed this record. Genuinely ambiguous whether this is a work title or a geographic heading — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes bloßes Wort ('Büchenwerra', vermutlich ein Ortsname) ohne jeglichen umgebenden Kontext; nur frankp und gundi haben diesen Datensatz überhaupt geprüft. Echt mehrdeutig, ob dies ein Werktitel oder eine geografische Überschrift ist — O wird empfohlen.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 181,
+    "llm_suggested_label": [
+      [
+        0,
+        143,
+        "TITLE"
+      ],
+      [
+        145,
+        448,
+        "OTHER_TITLE"
+      ],
+      [
+        457,
+        520,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "gundi's split at the genuine ' :' marker is preferred over frankp/maria's merges; TITLE and OTHER_TITLE boundaries trimmed to exclude trailing whitespace and the ' ...' truncation marker; frankp and gundi agree exactly on the trailing PERSON span (the sermon's author), which maria's single merged span absorbs instead.",
+    "llm_rationale_de": "gundis Aufteilung am echten ' :'-Zeichen wird gegenüber frankps/marias Zusammenführungen bevorzugt; die Grenzen von TITLE und OTHER_TITLE sind so beschnitten, dass abschließender Leerraum und der ' ...'-Kürzungsmarker ausgeschlossen werden; frankp und gundi stimmen exakt bei der abschließenden PERSON-Spanne überein (der Autor der Predigt), die marias einzelne zusammengeführte Spanne stattdessen absorbiert.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 182,
+    "llm_suggested_label": [
+      [
+        19,
+        62,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'Der Siebend Grund. ' excluded per the established convention (docs 56/66/93/126/128/150), leaving a specific theological topic as TITLE.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'Der Siebend Grund. ' wird gemäß der etablierten Konvention ausgeschlossen (Dokumente 56/66/93/126/128/150), was ein spezifisches theologisches Thema als TITLE übrig lässt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 183,
+    "llm_suggested_label": [
+      [
+        0,
+        132,
+        "PERSON"
+      ],
+      [
+        141,
+        520,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "First-person royal credential, matching the recurring pattern; frankp's PERSON span was already clean. TITLE end trimmed back from frankp's 533 to 520 to exclude the closing dateline ('Gegeben ... Cassel, den 5. Tag Septembris 1710'), consistent with excluding datelines elsewhere (batch 1 doc 5, doc 32, doc 111).",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster; frankps PERSON-Spanne war bereits sauber. Das TITLE-Ende wird von frankps 533 auf 520 zurückgenommen, um die abschließende Datumszeile ('Gegeben ... Cassel, den 5. Tag Septembris 1710') auszuschließen, im Einklang mit dem Ausschluss von Datumszeilen andernorts (Batch 1 Dokument 5, Dokument 32, Dokument 111).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 184,
+    "llm_suggested_label": [
+      [
+        0,
+        56,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a complete sermon-topic sentence ('God threatens those who have heard the gospel long'), not a fragment. Weak vote support flagged, but content specificity favors annotating.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein vollständiger Predigtthemensatz ('Gott droht denen, die das Evangelium lange gehört haben'), kein Fragment. Schwache Stimmenunterstützung markiert, doch die inhaltliche Spezifität spricht für eine Annotation.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 185,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Pädagogische Zustände' ('Pedagogical conditions') reads as a generic recurring newsletter/journal section heading, the same pattern as doc 174 (batch 11) — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Pädagogische Zustände' liest sich als generische, wiederkehrende Rubriküberschrift eines Rundbriefs/einer Zeitschrift, dasselbe Muster wie bei Dokument 174 (Batch 11) — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 186,
+    "llm_suggested_label": [
+      [
+        0,
+        29,
+        "PERSON"
+      ],
+      [
+        31,
+        51,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); 'Denkmahl Pauls Sarpi' is a specific historical-biographical work title with a full leading author heading, not generic content. Weak vote support flagged.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); 'Denkmahl Pauls Sarpi' ist ein spezifischer historisch-biografischer Werktitel mit vollständigem führenden Autorenkopf, kein generischer Inhalt. Schwache Stimmenunterstützung markiert.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 187,
+    "llm_suggested_label": [
+      [
+        0,
+        155,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); this is a chapter-caption from Theuerdank (a well-known early-16th-century epic), describing one specific episode in full — genuinely complete narrative content despite being a chapter subdivision, similar to docs 56/66/92.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); dies ist eine Kapitelüberschrift aus dem Theuerdank (einem bekannten Epos des frühen 16. Jahrhunderts), die eine bestimmte Episode vollständig beschreibt — echt vollständiger erzählerischer Inhalt trotz Kapitelunterteilung, ähnlich den Dokumenten 56/66/92.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 188,
+    "llm_suggested_label": [
+      [
+        0,
+        47,
+        "TITLE"
+      ],
+      [
+        53,
+        117,
+        "OTHER_TITLE"
+      ],
+      [
+        120,
+        145,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a complete, specific academic inaugural-lecture citation (title, program statement, author), not generic content. Weak vote support flagged per the same tension as other docs in this batch.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); eine vollständige, spezifische Zitation einer akademischen Antrittsvorlesung (Titel, Programmerklärung, Autor), kein generischer Inhalt. Schwache Stimmenunterstützung markiert, gemäß derselben Spannung wie bei anderen Dokumenten in diesem Batch.",
+    "llm_confidence": "low"
+  }
+]

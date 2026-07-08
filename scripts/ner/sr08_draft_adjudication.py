@@ -3,13 +3,13 @@
 #               manual adjudication drafting, per adjudication-plan.md §2.2/§2.2.1
 # Usage:        python scripts/ner/sr08_draft_adjudication.py \
 #                   --export-dir data/annotation/doccano/export-20260623-1110
-# Inputs:       data/processed/ner/sr08_disagreement_classification_<export>.csv
+# Inputs:       data/adjudication/sr08_disagreement_classification_<export>.csv
 #               (from sr08_classify_disagreements.py — run that first)
 #               *.jsonl files in --export-dir (skips dummy.doccano.jsonl, ann.jsonl,
 #               harald.jsonl, *.meta.jsonl, sr08_*)
-# Outputs:      data/processed/ner/sr08_adjudication_prompt_batch_NN_<export>.txt
+# Outputs:      data/adjudication/sr08_adjudication_prompt_batch_NN_<export>.txt
 #               (one per batch, ~10-15 tier-3 docs each — paste into a Claude chat)
-#               data/processed/ner/sr08_adjudication_sheet_<export>.jsonl
+#               data/adjudication/sr08_adjudication_sheet_<export>.jsonl
 #               (skeleton canonical sheet, one record per tier-3 doc, LLM/PI fields null)
 #               stdout: batch count, doc count, output paths
 # Dependencies: none (stdlib only)
@@ -230,8 +230,8 @@ def main() -> None:
     )
     parser.add_argument(
         "--output-dir", type=Path,
-        default=BASE / "data/processed/ner",
-        help="Output directory (default: data/processed/ner/); also where the "
+        default=BASE / "data/adjudication",
+        help="Output directory (default: data/adjudication/); also where the "
              "sr08_disagreement_classification_<export>.csv input is expected"
     )
     parser.add_argument(

@@ -1,0 +1,573 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 102,
+    "text": "Fortitudo sui victrix :Jetzo aber durch ein offentliches Schau-Spihl vorgestellt von dem Chur-Fürst. Gymnasio der Soc. Jesu, zu Landtshuet im Monath Sept. 1680 = Christliche Starckmüthigkeit in Uberwindung seiner selbsten von einem Christlichen Helden in Mexico geübt",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ],
+          [
+            89,
+            123,
+            "PERSON"
+          ],
+          [
+            162,
+            267,
+            "PARALLEL_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ],
+          [
+            23,
+            159,
+            "OTHER_TITLE"
+          ],
+          [
+            162,
+            267,
+            "PARALLEL_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            267,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 103,
+    "text": "Rezension von : Festschrift für Peter Raue : zum 65. Geburtstag am 4. Februar 2006 / Jacobs, Rainer. - Köln [u.a.] : Heymanns, 2006. - XIX, 920 S.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            16,
+            82,
+            "TITLE"
+          ],
+          [
+            85,
+            99,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            82,
+            "TITLE"
+          ],
+          [
+            85,
+            99,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 104,
+    "text": "1912/13: Bericht / Siebente Realschule Berlin : über die Zeit von Ostern ... bis Ostern ... - 1912/13",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            87,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            9,
+            45,
+            "TITLE"
+          ],
+          [
+            48,
+            91,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            91,
+            "TITLE"
+          ]
+        ],
+        "comment": "M.E. sollte der Titel wie folgt lauten:\nBericht über die Zeit von Ostern 1912 bis Ostern 1913 (Siebente Realschule Berlin ; 22)"
+      }
+    }
+  },
+  {
+    "doc_id": 106,
+    "text": "Der Lxvj. Deus Misereatur|| : Es wolt vnß Gott genedig sein/ vnd seynen segen ge||ben/ ...",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            25,
+            "TITLE"
+          ],
+          [
+            30,
+            85,
+            "PARALLEL_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            27,
+            "TITLE"
+          ],
+          [
+            30,
+            86,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            27,
+            "TITLE"
+          ],
+          [
+            30,
+            85,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 107,
+    "text": "Nachdem Seine Königliche Majestät in Preussen, unser allergnädigster Herr ... resolviret, alle in Dero Landen wegen Contagion und ansteckenden Seuche gegen die Stadt Hamburg gemachte und durch öffentliche Edicta publicirte Verordnungen gäntzlich aufheben ... zu lassen, ... daß ... keine Pässe mehr werden erfordert werden ... : Als haben alle ... Post- und Zoll-Aembter ... sich darnach gehorsamst zu achten ... ; Signatum Berlin, den 7. Augusti 1714",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            8,
+            73,
+            "PERSON"
+          ],
+          [
+            78,
+            408,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            322,
+            "TITLE"
+          ],
+          [
+            329,
+            408,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            326,
+            "TITLE"
+          ],
+          [
+            329,
+            412,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 108,
+    "text": "Neunter Brief. Von Ebendemselben : Am Bord der Pallas, Dover gegenüber, den 26. März 1776",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            32,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            89,
+            "TITLE"
+          ]
+        ],
+        "comment": "für eine korrekte Zuordnung fehlt hier der Erscheinungstitel"
+      }
+    }
+  },
+  {
+    "doc_id": 110,
+    "text": "Leich- und Trostpredigt Bey dem Christlichen Begräbnüß/ des weyland Edlen/ Gestrengen und Ehrnvhesten Hansen von Gohra/ Erbsassen auff Insul/ seligen : Welcher den 28. Septembris ... dieses 1611. Jahrs/ zu Eißleben/ von Gott ... abgefordert/ unnd hernach den 30. eiusdem, auff dem Gotteßacker daselbst ... zur Erden bestattet worden",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            149,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            149,
+            "TITLE"
+          ],
+          [
+            152,
+            332,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            332,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 111,
+    "text": "Ein Woll-Edler Hochweiser Raht dieser Stadt, hat ungerne vernehmen müssen, Gestalt einige junge Leute, zu Zeiten, in den Thee und Coffè Häusern, Wein- Bier und Brandtwein Schencken, mehr als ihnen woll anständig, die edle Zeit im Müssiggang verderben, und darneben bey unzulässigen spielen und starcken Geträncke, viele Gelder consumiren ....; Als hat derselbe Kraft tragenden Obrigkeitlichen Ambts ... zu begegnen ... : Promulgatum Bremen den 25. Aprilis 1701.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            337,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            414,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            418,
+            "TITLE"
+          ],
+          [
+            421,
+            460,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 113,
+    "text": "Jugend-Check zum Entwurf eines Gesetzes zur Stärkung des Rechts des Angeklagten auf Anwesenheit in der Verhandlung (Stand 27.02.2018)",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            115,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            114,
+            "TITLE"
+          ],
+          [
+            115,
+            133,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            114,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 115,
+    "text": "Der fünffte Beweis-Grund ...",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            24,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotaton, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            24,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 117,
+    "text": "Als Die Seelge Himmels-Braut/ Die Edle und Tugendgläntzende Jungfer Dorothea Margaretha/ Des Wol-Edlen/ Vesten und Hochgelahrten Herrn Dieterich Butten/ weiland Sr. Churf. Durchl. zu Brandenburg hochbestallten Geheimten Krieges-Secretarii, Hinterlassene Jungfer Tochter/ Von Ihrem Hertzgeliebten Seelen-Bräutigam Jesu Christo/ Zu der himmlischen Hochzeit-Freude/ Von dieser schnöden Welt am 18. Febr. abgefordert ... setzten folgendes Am Tage des ... Leichbegängniß/ War der Sonntag Esto mihi, als der 2. Martii 1679. da der entseelete Cörper in der Kirchen zu St.Nicolai beygesetzet ward/ Der höchstbetrübten Groß-Frau-Mutter ... zu Trost Die Collegen am Gymnasio zu Berlin",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            588,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            674,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            674,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 118,
+    "text": "Topographia Galliae, Oder Beschreibung vnd Contrafaitung der vornehmbsten, vnd bekantisten Oerter, in dem mächtigen, vnd grossen Königreich Franckreich. 13, Das Land Dauphiné, oder das Delphinat, Anhandlend und fürgestellt",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            151,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            152,
+            "TITLE"
+          ],
+          [
+            157,
+            222,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            151,
+            "TITLE"
+          ],
+          [
+            157,
+            222,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

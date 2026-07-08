@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 119,
+    "llm_suggested_label": [[376, 416, "TITLE"], [428, 438, "PERSON"]],
+    "llm_rationale": "This record is a collective review of two separate works (similar structural issue to doc 46's 3-books comment); frankp's extraction is the only clean TITLE+PERSON pair in the whole string (the 'Nebentitel'/alternate-title mention near the end), while maria's span is effectively the entire unparsed record. Recommend PI judgment on which of the ≥2 works this record should represent, rather than treating this suggestion as settled.",
+    "llm_rationale_de": "Dieser Datensatz ist eine Sammelbesprechung zweier separater Werke (strukturell ähnliches Problem wie der 3-Bände-Kommentar in Dokument 46); frankps Extraktion ist das einzige saubere TITLE+PERSON-Paar in der gesamten Zeichenkette (die 'Nebentitel'-Erwähnung gegen Ende), während marias Spanne im Wesentlichen den gesamten unaufgeschlüsselten Datensatz umfasst. Es wird empfohlen, die Entscheidung, welches der ≥2 Werke dieser Datensatz repräsentieren soll, dem PI zu überlassen, statt diesen Vorschlag als endgültig zu behandeln.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 120,
+    "llm_suggested_label": [[9, 16, "TITLE"], [19, 47, "PERSON"], [50, 82, "OTHER_TITLE"]],
+    "llm_rationale": "Identical structure to doc 104 (batch 7) and the guide's own §5.2 example: corporate body ('Vierzehnte Realschule Berlin') in SoR position is PERSON. maria's own comment independently confirms 'Bericht über das Schuljahr 1913/1914' as the intended title, supporting this reconstruction; leading '1913/14: ' date prefix excluded per convention.",
+    "llm_rationale_de": "Identische Struktur wie Dokument 104 (Batch 7) und das eigene Beispiel §5.2 des Leitfadens: eine Körperschaft ('Vierzehnte Realschule Berlin') in SoR-Position ist PERSON. Marias eigener Kommentar bestätigt unabhängig 'Bericht über das Schuljahr 1913/1914' als den beabsichtigten Titel, was diese Rekonstruktion stützt; das führende Datumspräfix '1913/14: ' wird gemäß Konvention ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 123,
+    "llm_suggested_label": [[0, 34, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE despite gundi's Aufsatz flag.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE, trotz gundis Aufsatz-Markierung.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 124,
+    "llm_suggested_label": [[0, 248, "TITLE"]],
+    "llm_rationale": "Majority (gundi/maria) include the 'Unsere [et]c.' opening rather than excluding it as frankp did; end boundary constructed to exclude both the trailing whitespace and the ' ...' truncation marker, which none of the three annotators' exact spans did cleanly.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) bezieht die Eröffnung 'Unsere [et]c.' ein, statt sie wie frankp auszuschließen; die Endgrenze wurde so konstruiert, dass sowohl der abschließende Leerraum als auch der ' ...'-Kürzungsmarker ausgeschlossen werden, was keine der drei exakten Annotator-Spannen sauber erreicht hat.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 125,
+    "llm_suggested_label": [[0, 18, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the trailing period. Borderline case worth flagging: unlike other enumeration-prefixed docs in this corpus (56, 66, 92, etc.), there is no descriptive content beyond the section-number heading itself ('Zweites Hauptstück' = 'Second Main Section') — genuinely closer to the guide's 'too fragmentary/generic' exclusion criterion than most annotate-anyway cases so far.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen den abschließenden Punkt aus. Grenzfall, der es wert ist, hervorgehoben zu werden: Anders als bei anderen aufzählungspräfigierten Dokumenten in diesem Korpus (56, 66, 92 usw.) gibt es hier keinen beschreibenden Inhalt über die bloße Abschnittsnummer-Überschrift hinaus ('Zweites Hauptstück') — dies liegt echt näher am Ausschlusskriterium des Leitfadens für 'zu fragmentarisch/generisch' als die meisten bisherigen dennoch-annotierten Fälle.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 126,
+    "llm_suggested_label": [[6, 111, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the roman-numeral chapter marker 'XXIV. '; the remainder is a genuine descriptive (recipe/instruction-style) title, unlike doc 125.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen die römische Kapitelziffer 'XXIV. ' aus; der Rest ist ein echter beschreibender (rezept-/anleitungsartiger) Titel, anders als bei Dokument 125.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 127,
+    "llm_suggested_label": [[0, 38, "TITLE"], [56, 70, "OTHER_TITLE"], [73, 138, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's shorter TITLE boundary excludes 'Continuatio I' as a volume/part designator (consistent with excluding such designators elsewhere); frankp's OTHER_TITLE spans are kept but relabeled from PARALLEL_TITLE to OTHER_TITLE for the final clause, since it reads as a nested descriptive elaboration rather than a same-title restatement in another language. Complex mixed-language pre-1700 pamphlet title with only one annotator (frankp) attempting a multi-span parse; genuinely uncertain.",
+    "llm_rationale_de": "gundis kürzere TITLE-Grenze schließt 'Continuatio I' als Band-/Teilbezeichnung aus (im Einklang mit dem Ausschluss solcher Bezeichnungen andernorts); frankps OTHER_TITLE-Spannen werden beibehalten, aber für die abschließende Klausel von PARALLEL_TITLE zu OTHER_TITLE umbenannt, da sie sich als verschachtelte beschreibende Ausführung liest, nicht als gleichlautende Wiedergabe in einer anderen Sprache. Komplexer, mehrsprachiger vorreformatorischer Flugschriftentitel, bei dem nur ein Annotator (frankp) eine Mehrfachspannen-Analyse versucht hat; echt unsicher.",
+    "llm_confidence": "low"
+  },
+  {
+    "doc_id": 128,
+    "llm_suggested_label": [[5, 32, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the roman-numeral marker 'XIV. ' and the trailing bracketed format note '[mit hss. Notentext]' (a physical-format annotation, not title content).",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen die römische Ziffernmarkierung 'XIV. ' sowie den abschließenden geklammerten Formathinweis '[mit hss. Notentext]' aus (eine physische Formatanmerkung, kein Titelinhalt).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 129,
+    "llm_suggested_label": [[0, 98, "TITLE"], [100, 656, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's split at the genuine ' :' marker (no preceding space, consistent pre-1700 style) is preferred over frankp/maria's merged single TITLE; gundi and maria independently agree on the exact same end boundary (656), which is stronger evidence than frankp's lone, shorter value.",
+    "llm_rationale_de": "gundis Aufteilung am echten ' :'-Zeichen (kein vorangehendes Leerzeichen, im Einklang mit dem vorreformatorischen Stil) wird gegenüber frankps/marias zusammengeführtem einzelnen TITLE bevorzugt; gundi und maria stimmen unabhängig voneinander bei exakt derselben Endgrenze (656) überein, was ein stärkerer Beleg ist als frankps einzelner, kürzerer Wert.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 130,
+    "llm_suggested_label": [[0, 58, "TITLE"], [60, 547, "OTHER_TITLE"]],
+    "llm_rationale": "frankp and gundi agree on identical boundaries, differing only on label type (PARALLEL_TITLE vs OTHER_TITLE); the separator here is ' :', which matches the guide's OTHER_TITLE trigger, not the ' = '/' /' PARALLEL_TITLE trigger, so gundi's label is preferred.",
+    "llm_rationale_de": "frankp und gundi stimmen bei identischen Grenzen überein und unterscheiden sich nur im Label-Typ (PARALLEL_TITLE vs. OTHER_TITLE); das Trennzeichen hier ist ' :', was dem OTHER_TITLE-Auslöser des Leitfadens entspricht, nicht dem PARALLEL_TITLE-Auslöser ' = '/' /', daher wird gundis Label bevorzugt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 131,
+    "llm_suggested_label": [[0, 155, "TITLE"], [157, 383, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's TITLE boundary is the clean one, excluding trailing whitespace before the ' :' separator; maria's two PERSON spans ('D. Lautherium', 'Johann Naß') are excluded because the text explicitly frames them as the polemic's targets ('Wider ... gestellet' = 'directed against'), not its responsible author, matching the guide's exclusion of non-author named subjects (§5.9, §6).",
+    "llm_rationale_de": "gundis TITLE-Grenze ist die saubere, die abschließenden Leerraum vor dem ' :'-Trennzeichen ausschließt; marias zwei PERSON-Spannen ('D. Lautherium', 'Johann Naß') werden ausgeschlossen, da der Text sie ausdrücklich als die Zielscheiben der Polemik einordnet ('Wider ... gestellet' = 'gerichtet gegen'), nicht als deren verantwortlichen Autor, entsprechend dem Ausschluss nicht-autorenschaftlicher benannter Subjekte im Leitfaden (§5.9, §6).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 132,
+    "llm_suggested_label": [],
+    "llm_rationale": "Majority (gundi, maria) decline to annotate this as Kapitel content; frankp's candidate span ('Kirchengüter. Ihre Zu- und Abnahme. Kirchenvögte.') is a list of three period-separated topic fragments rather than a single coherent title, closer to a table-of-contents entry than a titled work — recommend O, against frankp's lone dissent.",
+    "llm_rationale_de": "Die Mehrheit (gundi, maria) lehnt es ab, dies als Kapitel-Inhalt zu annotieren; frankps Kandidatenspanne ('Kirchengüter. Ihre Zu- und Abnahme. Kirchenvögte.') ist eine Liste aus drei durch Punkte getrennten Themenfragmenten statt eines einzigen kohärenten Titels, näher an einem Inhaltsverzeichniseintrag als an einem betitelten Werk — O wird empfohlen, entgegen frankps abweichender Einzelmeinung.",
+    "llm_confidence": "medium"
+  }
+]

@@ -4,8 +4,8 @@
 #               with counts derived from the actual corpus.
 # Usage:        python3 scripts/ner/sr08_corpus_cell_sizes.py [--data PATH] [--ratings PATH] [--output PATH]
 # Inputs:       data/processed/de_titles_tokenized.parquet  (or pkl)
-#               data/processed/ner/sr01_isbd_field_ratings.csv
-# Outputs:      data/processed/ner/sr08_corpus_cell_sizes.csv  — era × tier counts and percentages
+#               data/processed/sr01_isbd_field_ratings.csv
+# Outputs:      data/processed/sr08_corpus_cell_sizes.csv  — era × tier counts and percentages
 # Dependencies: pandas, numpy
 # Assumptions:  sr01_isbd_field_ratings.csv has obj_id and silver_tier columns;
 #               era derivation uses same bins as sr08_sample_gold.py
@@ -19,8 +19,8 @@ import numpy as np
 
 ROOT    = Path(__file__).parent.parent
 DATA    = ROOT / "data" / "processed" / "de_titles_tokenized.parquet"
-RATINGS = ROOT / "data" / "processed" / "ner" / "sr01_isbd_field_ratings.csv"
-OUT     = ROOT / "data" / "processed" / "ner" / "sr08_corpus_cell_sizes.csv"
+RATINGS = ROOT / "data" / "processed" / "sr01_isbd_field_ratings.csv"
+OUT     = ROOT / "data" / "processed" / "sr08_corpus_cell_sizes.csv"
 
 
 def load_data(path: Path) -> pd.DataFrame:

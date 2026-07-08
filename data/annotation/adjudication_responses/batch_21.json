@@ -1,0 +1,201 @@
+[
+  {
+    "doc_id": 314,
+    "llm_suggested_label": [
+      [
+        0,
+        35,
+        "TITLE"
+      ],
+      [
+        36,
+        319,
+        "OTHER_TITLE"
+      ],
+      [
+        324,
+        395,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "gundi's shorter TITLE captures a complete grammatical unit ('Christianus, the faithful servant of God'), with the rest as elaboration; frankp's fuller PERSON span (full credential) is preferred per guide §5.8 over gundi's bare name.",
+    "llm_rationale_de": "gundis kürzerer TITLE erfasst eine vollständige grammatikalische Einheit ('Christianus, der treue Diener Gottes'), mit dem Rest als Ausführung; frankps vollständigere PERSON-Spanne (vollständiger Titel/Grad) wird gemäß Leitfaden §5.8 gegenüber gundis bloßem Namen bevorzugt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 317,
+    "llm_suggested_label": [
+      [
+        0,
+        261,
+        "TITLE"
+      ],
+      [
+        372,
+        480,
+        "OTHER_TITLE"
+      ],
+      [
+        483,
+        691,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Collection-plus-volume-2 structure, same pattern as docs 17/27/40/81/118/135; gundi's second TITLE (the volume's own sub-title, 'Josua Redivivus...') is relabeled OTHER_TITLE to keep one TITLE per record; the bracketed cataloger note and volume number between the two main segments are excluded per convention.",
+    "llm_rationale_de": "Sammlung-plus-Band-2-Struktur, dasselbe Muster wie bei den Dokumenten 17/27/40/81/118/135; gundis zweiter TITLE (der eigene Untertitel des Bandes, 'Josua Redivivus...') wird zu OTHER_TITLE umbenannt, um bei einem TITLE pro Datensatz zu bleiben; die geklammerte Katalogisierungsanmerkung und die Bandnummer zwischen den beiden Hauptsegmenten werden gemäß Konvention ausgeschlossen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 318,
+    "llm_suggested_label": [
+      [
+        0,
+        46,
+        "TITLE"
+      ],
+      [
+        47,
+        168,
+        "OTHER_TITLE"
+      ],
+      [
+        172,
+        645,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp's split at 'Das ist' matches the guide's explicit OTHER_TITLE trigger (§3.1), same as docs 89/138/146/283, unlike gundi/maria's merge; gundi/maria's fuller continuation (the Leichenpredigt-specific dedication) is added as a second OTHER_TITLE segment since it is real content frankp's shorter annotation simply didn't extend to.",
+    "llm_rationale_de": "frankps Aufteilung bei 'Das ist' entspricht dem ausdrücklichen OTHER_TITLE-Auslöser des Leitfadens (§3.1), wie bei den Dokumenten 89/138/146/283, anders als gundis/marias Zusammenführung; gundis/marias vollständigere Fortsetzung (die leichenpredigtspezifische Widmung) wird als zweites OTHER_TITLE-Segment hinzugefügt, da es sich um echten Inhalt handelt, zu dem frankps kürzere Annotation schlicht nicht vorgedrungen ist.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 319,
+    "llm_suggested_label": [
+      [
+        0,
+        72,
+        "PERSON"
+      ],
+      [
+        77,
+        203,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "First-person royal credential, matching the recurring pattern; frankp's PERSON+TITLE split is preferred over gundi/maria's merge. maria's OTHER_TITLE addition is a closing dateline ('Geben Cleve...'), excluded per the established convention.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster; frankps Aufteilung in PERSON+TITLE wird gegenüber gundis/marias Zusammenführung bevorzugt. marias OTHER_TITLE-Zusatz ist eine abschließende Datumszeile ('Geben Cleve...'), ausgeschlossen gemäß der etablierten Konvention.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 320,
+    "llm_suggested_label": [
+      [
+        0,
+        167,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly on the full string as TITLE; maria's span has an off-by-one start error, cutting off the initial 'H'.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein: die gesamte Zeichenkette als TITLE; marias Spanne hat einen um eins verschobenen Anfangsfehler, der das anfängliche 'H' abschneidet.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 321,
+    "llm_suggested_label": [
+      [
+        0,
+        612,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "No credential opening here (third-person narrative); frankp's boundary is the clean one, excluding the trailing ' ...' marker that gundi/maria's exact-matching longer boundary includes.",
+    "llm_rationale_de": "Hier keine prädikatartige Eröffnung (Erzählung in dritter Person); frankps Grenze ist die saubere, die den abschließenden ' ...'-Marker ausschließt, den gundis/marias exakt übereinstimmende längere Grenze enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 322,
+    "llm_suggested_label": [
+      [
+        0,
+        107,
+        "TITLE"
+      ],
+      [
+        109,
+        222,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's split at the colon before the numbered provision ('1) daß hier kein Wagen...') is a cleaner structural boundary than frankp's shorter TITLE (just the genre word) and incomplete OTHER_TITLE, or maria's full merge.",
+    "llm_rationale_de": "gundis Aufteilung am Doppelpunkt vor der nummerierten Bestimmung ('1) daß hier kein Wagen...') ist eine sauberere strukturelle Grenze als frankps kürzerer TITLE (nur das Gattungswort) und unvollständige OTHER_TITLE, oder marias vollständige Zusammenführung.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 323,
+    "llm_suggested_label": [
+      [
+        0,
+        58,
+        "TITLE"
+      ],
+      [
+        61,
+        387,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly, keeping the scripture citation ('Auß dem XVI. Psalm Davids') within TITLE as integral to how this funeral-sermon title is framed, rather than splitting it off as frankp did.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein und behalten das Schriftzitat ('Auß dem XVI. Psalm Davids') innerhalb von TITLE bei, als festen Bestandteil der Rahmung dieses Leichenpredigttitels, statt es wie bei frankp abzutrennen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 324,
+    "llm_suggested_label": [],
+    "llm_rationale": "frankp and gundi agree exactly, but 'Zuom Leser ein Vorred' ('To the reader, a foreword') is the same formulaic dedicatory-address pattern declined in docs 265/281 — recommend O despite the 2-annotator agreement.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt überein, doch 'Zuom Leser ein Vorred' entspricht demselben formelhaften Widmungsanrede-Muster, das in den Dokumenten 265/281 abgelehnt wurde — O wird trotz der Übereinstimmung der beiden Annotatoren empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 326,
+    "llm_suggested_label": [
+      [
+        0,
+        286,
+        "TITLE"
+      ],
+      [
+        288,
+        374,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's split separates the substantive identifying content (about the deceased) from the closing event-logistics (date, time, place), a more coherent structure than frankp's truncated version or maria's full merge.",
+    "llm_rationale_de": "gundis Aufteilung trennt den substantiellen identifizierenden Inhalt (über die verstorbene Person) von den abschließenden Veranstaltungslogistikangaben (Datum, Uhrzeit, Ort) — eine kohärentere Struktur als frankps abgeschnittene Version oder marias vollständige Zusammenführung.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 327,
+    "llm_suggested_label": [
+      [
+        0,
+        46,
+        "TITLE"
+      ],
+      [
+        49,
+        78,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Same structure as docs 47/53; gundi's fuller OTHER_TITLE (including the year) is preferred for the same reason as those docs — splitting the label from its value leaves a meaningless fragment.",
+    "llm_rationale_de": "Dieselbe Struktur wie bei den Dokumenten 47/53; gundis vollständigere OTHER_TITLE (einschließlich des Jahres) wird aus demselben Grund wie bei jenen Dokumenten bevorzugt — eine Trennung der Bezeichnung von ihrem Wert hinterlässt ein bedeutungsloses Fragment.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 328,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates a single word ('Buntpapierblatt' = 'colored-paper leaf') that is physical-description terminology, not a work title — same pattern as doc 255's 'Einband'. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes Wort ('Buntpapierblatt'), das eine physische Beschreibungsterminologie ist, kein Werktitel — dasselbe Muster wie 'Einband' in Dokument 255. O wird empfohlen.",
+    "llm_confidence": "medium"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 67,
+    "llm_suggested_label": [[18, 290, "TITLE"]],
+    "llm_rationale": "maria's span excludes the chapter enumeration prefix 'Das VII. Capitel.', consistent with the enumeration-exclusion convention (docs 56, 66); the remaining descriptive title is genuine content despite gundi's Kapitel flag.",
+    "llm_rationale_de": "marias Spanne schließt den Kapitelzählungspräfix 'Das VII. Capitel.' aus, im Einklang mit der Ausschlusskonvention für Aufzählungen (Dokumente 56, 66); der verbleibende beschreibende Titel ist echter Inhalt trotz gundis Kapitel-Markierung.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 68,
+    "llm_suggested_label": [[0, 217, "PERSON"], [230, 533, "TITLE"]],
+    "llm_rationale": "Opens with a ruler's full credential+name+role sequence, the same recurring pre-1700-style pattern as docs 32/36/54/55; TITLE end follows gundi's clean boundary, excluding the trailing ' ...' truncation marker and space.",
+    "llm_rationale_de": "Beginnt mit der vollständigen Sequenz aus Titel/Grad + Name + Rolle eines Herrschers, demselben wiederkehrenden vorreformatorischen Muster wie bei den Dokumenten 32/36/54/55; das TITLE-Ende folgt gundis sauberer Grenze und schließt den abschließenden ' ...'-Kürzungsmarker sowie das Leerzeichen aus.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 70,
+    "llm_suggested_label": [[0, 13, "PERSON"], [15, 49, "TITLE"], [52, 88, "OTHER_TITLE"]],
+    "llm_rationale": "Splits at the genuine ' : ' separator per the flowchart default; frankp's TITLE start includes a stray leading space (fixed here), and OTHER_TITLE stops cleanly before the repeated '/ Helga Walter' SoR mention rather than merging into it as maria's original span did.",
+    "llm_rationale_de": "Teilt am echten ' : '-Trennzeichen gemäß der Standardregel des Entscheidungsbaums; frankps TITLE-Anfang enthält ein überzähliges führendes Leerzeichen (hier korrigiert), und OTHER_TITLE endet sauber vor der wiederholten SoR-Nennung '/ Helga Walter', statt sich damit zu vermischen wie in marias ursprünglicher Spanne.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 71,
+    "llm_suggested_label": [[0, 76, "TITLE"], [79, 109, "OTHER_TITLE"]],
+    "llm_rationale": "maria's split at ' : ' matches the flowchart default; 'Ende des Vereinsjahres 1912/13' is a genuine qualifying subtitle, not just volume metadata.",
+    "llm_rationale_de": "marias Aufteilung bei ' : ' entspricht der Standardregel des Entscheidungsbaums; 'Ende des Vereinsjahres 1912/13' ist ein echter qualifizierender Untertitel, keine bloße Bandangabe.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 72,
+    "llm_suggested_label": [[0, 68, "TITLE"], [71, 92, "OTHER_TITLE"], [99, 113, "PERSON"]],
+    "llm_rationale": "maria's OTHER_TITLE ('Inauguraldissertation', a genre statement after ' : ') completes what frankp's structure omitted; both agree on TITLE and the SoR PERSON.",
+    "llm_rationale_de": "marias OTHER_TITLE ('Inauguraldissertation', eine Gattungsangabe nach ' : ') vervollständigt, was frankps Struktur ausgelassen hat; beide stimmen bei TITLE und der SoR-PERSON überein.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 73,
+    "llm_suggested_label": [[0, 54, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE; neither annotator treats 'D. Martini Lutheri' as a separate PERSON, reading the whole phrase as one title unit.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE; keine der beiden Annotatorinnen behandelt 'D. Martini Lutheri' als separate PERSON, sondern liest die gesamte Phrase als eine Titeleinheit.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 74,
+    "llm_suggested_label": [[0, 22, "TITLE"], [25, 135, "OTHER_TITLE"]],
+    "llm_rationale": "maria's split at ' : ' matches the flowchart default over frankp's merged single TITLE; frankp's PERSON span ('Weimar : Verlag des geograph. Instituts') is excluded as a mislabel — it is publisher/imprint information, not a named person or corporate SoR.",
+    "llm_rationale_de": "marias Aufteilung bei ' : ' entspricht der Standardregel des Entscheidungsbaums gegenüber frankps zusammengeführtem einzelnen TITLE; frankps PERSON-Spanne ('Weimar : Verlag des geograph. Instituts') wird als Fehlmarkierung ausgeschlossen — es handelt sich um Verlags-/Impressumsangaben, keine benannte Person oder körperschaftliche Verantwortlichkeitsangabe.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 76,
+    "llm_suggested_label": [[0, 58, "TITLE"], [65, 179, "PERSON"], [192, 236, "PERSON"]],
+    "llm_rationale": "maria's TITLE boundary excludes a trailing space before ' / '; guide §5.8 requires merging full credential + name + role into one PERSON span for each of the two co-authors, matching frankp's fuller spans over maria's bare-name versions (same rule as docs 9, 61).",
+    "llm_rationale_de": "marias TITLE-Grenze schließt ein abschließendes Leerzeichen vor ' / ' aus; Leitfaden §5.8 verlangt, die vollständige Phrase aus Titel/Grad + Name + Rolle für jeden der beiden Koautoren zu einer PERSON-Spanne zusammenzufassen, entsprechend frankps vollständigeren Spannen gegenüber marias Versionen mit bloßem Namen (dieselbe Regel wie bei den Dokumenten 9, 61).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 78,
+    "llm_suggested_label": [[0, 89, "TITLE"], [91, 105, "OTHER_TITLE"], [129, 155, "PERSON"], [164, 210, "PERSON"]],
+    "llm_rationale": "maria's TITLE boundary correctly keeps the bracketed conference identifier '<1999, Lauenburg>' inside TITLE (guide §5.7 precedent for bracketed context), unlike frankp's which drops it; her PERSON[0:155] span is a clear overlap bug (fully overlaps her own TITLE) and is disregarded; both organizing bodies are PERSON per the corporate-body SoR convention, agreed by frankp and maria.",
+    "llm_rationale_de": "marias TITLE-Grenze behält den geklammerten Konferenzbezeichner '<1999, Lauenburg>' korrekt innerhalb von TITLE (Präzedenzfall Leitfaden §5.7 für geklammerten Kontext), im Gegensatz zu frankps Spanne, die ihn fallen lässt; ihre PERSON[0:155]-Spanne ist ein klarer Überlappungsfehler (überlappt vollständig ihren eigenen TITLE) und wird verworfen; beide organisierenden Körperschaften sind gemäß der Körperschafts-SoR-Konvention PERSON, worin frankp und maria übereinstimmen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 79,
+    "llm_suggested_label": [[0, 17, "PERSON"], [19, 147, "TITLE"], [154, 170, "PERSON"]],
+    "llm_rationale": "gundi and maria agree on labeling the leading inverted-name heading as PERSON (majority); all three agree on TITLE; frankp and gundi agree on the trailing SoR PERSON. maria's OTHER_TITLE (an ISBD series statement, 'Recht - Technik - Wirtschaft ; 11') is excluded per the doc 11/29 precedent.",
+    "llm_rationale_de": "gundi und maria stimmen darin überein, den führenden invertierten Namenskopf als PERSON zu markieren (Mehrheit); alle drei stimmen bei TITLE überein; frankp und gundi stimmen bei der abschließenden SoR-PERSON überein. marias OTHER_TITLE (ein ISBD-Reihenvermerk, 'Recht - Technik - Wirtschaft ; 11') wird gemäß dem Präzedenzfall der Dokumente 11/29 ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 80,
+    "llm_suggested_label": [[0, 23, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, excluding the trailing period; short genuinely titled work despite gundi's Abschnitt flag, matching docs 3/16/30/50/64.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen den abschließenden Punkt aus; ein kurzes, echt betiteltes Werk trotz gundis Abschnitt-Markierung, im Einklang mit den Dokumenten 3/16/30/50/64.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 81,
+    "llm_suggested_label": [[0, 94, "TITLE"], [96, 121, "OTHER_TITLE"], [127, 145, "OTHER_TITLE"], [148, 182, "OTHER_TITLE"]],
+    "llm_rationale": "gundi and maria agree on splitting only at the explicit ':' colon rather than at the internal 'oder' (same reasoning as doc 58); maria's OTHER_TITLE for the volume-range fragment ('39, Von Kirg bis Kleib') is preferred over gundi's second TITLE span, keeping to one TITLE per record (guide §3.1).",
+    "llm_rationale_de": "gundi und maria stimmen darin überein, nur am expliziten ':'-Doppelpunkt zu teilen statt am internen 'oder' (dieselbe Begründung wie bei Dokument 58); marias OTHER_TITLE für das Bandbereichs-Fragment ('39, Von Kirg bis Kleib') wird gegenüber gundis zweiter TITLE-Spanne bevorzugt, um bei einem TITLE pro Datensatz zu bleiben (Leitfaden §3.1).",
+    "llm_confidence": "high"
+  }
+]

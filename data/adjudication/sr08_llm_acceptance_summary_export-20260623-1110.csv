@@ -1,0 +1,8 @@
+dimension,value,accepted_verbatim,accepted_boundary_edit,overridden,total,override_pct
+overall,all,190,21,92,303,30.4
+conflict_type,scope,87,5,50,142,35.2
+conflict_type,boundary,90,12,36,138,26.1
+conflict_type,three_way,13,4,6,23,26.1
+llm_confidence,high,111,12,29,152,19.1
+llm_confidence,medium,66,9,55,130,42.3
+llm_confidence,low,13,0,8,21,38.1

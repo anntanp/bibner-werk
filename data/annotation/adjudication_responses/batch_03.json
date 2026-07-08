@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 34,
+    "llm_suggested_label": [[0, 291, "TITLE"], [298, 325, "OTHER_TITLE"]],
+    "llm_rationale": "Majority (gundi/maria) treats the descriptive paragraph as TITLE and the closing 'Decretum...' clause as OTHER_TITLE after ' : '; boundary excludes the trailing ' ...' truncation marker per the established convention, correcting an error in my own first pass where I mistakenly kept the marker in.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) behandelt den beschreibenden Absatz als TITLE und die abschließende 'Decretum...'-Klausel nach ' : ' als OTHER_TITLE; die Grenze schließt den abschließenden ' ...'-Kürzungsmarker gemäß der etablierten Konvention aus und korrigiert damit einen Fehler in meinem ersten Durchgang, in dem ich den Marker versehentlich beibehalten hatte.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 35,
+    "llm_suggested_label": [[0, 152, "TITLE"], [159, 180, "PERSON"]],
+    "llm_rationale": "frankp and maria agree exactly on the TITLE + SoR PERSON; maria's additional 'von A bis B' OTHER_TITLE fragment is excluded as an incomplete, non-title imprint/volume-range fragment, not a genuine subtitle.",
+    "llm_rationale_de": "frankp und maria stimmen exakt bei TITLE + SoR-PERSON überein; marias zusätzliches OTHER_TITLE-Fragment 'von A bis B' wird als unvollständiges, nicht zum Titel gehörendes Impressum-/Bandbereichs-Fragment ausgeschlossen, kein echter Untertitel.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 36,
+    "llm_suggested_label": [[0, 149, "PERSON"], [154, 389, "TITLE"]],
+    "llm_rationale": "Opens with a ruler's full credential+name+role sequence, matching the guide's pre-1700-style flowchart pattern exactly (as in doc 32, batch 2); TITLE boundary excludes the trailing ' ...' truncation marker and space, following frankp's original clean boundary.",
+    "llm_rationale_de": "Beginnt mit der vollständigen Sequenz aus Titel/Grad + Name + Rolle eines Herrschers, was exakt dem vorreformatorischen Muster des Leitfaden-Entscheidungsbaums entspricht (wie bei Dokument 32, Batch 2); die TITLE-Grenze schließt den abschließenden ' ...'-Kürzungsmarker und das Leerzeichen aus, gemäß frankps ursprünglich sauberer Grenze.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 40,
+    "llm_suggested_label": [[0, 49, "TITLE"], [56, 85, "OTHER_TITLE"], [88, 99, "OTHER_TITLE"]],
+    "llm_rationale": "frankp and maria agree on the merged main TITLE; gundi's alternative second-TITLE split is recategorized as OTHER_TITLE to keep to one TITLE per record (guide §3.1) while still capturing both trailing descriptive segments as separate OTHER_TITLE spans (which the guide does not restrict to one).",
+    "llm_rationale_de": "frankp und maria stimmen beim zusammengeführten Haupt-TITLE überein; gundis alternative Aufteilung in einen zweiten TITLE wird zu OTHER_TITLE umkategorisiert, um bei einem TITLE pro Datensatz zu bleiben (Leitfaden §3.1), während beide abschließenden beschreibenden Segmente weiterhin als separate OTHER_TITLE-Spannen erfasst werden (worauf der Leitfaden keine Eins-Beschränkung anwendet).",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 41,
+    "llm_suggested_label": [[20, 41, "PERSON"], [43, 84, "TITLE"]],
+    "llm_rationale": "frankp and maria agree on PERSON and on the TITLE start; maria's tighter TITLE end excludes 'Erster Teil' as a volume/part designator, consistent with the convention of excluding such designators elsewhere in this corpus.",
+    "llm_rationale_de": "frankp und maria stimmen bei PERSON und beim TITLE-Anfang überein; marias engeres TITLE-Ende schließt 'Erster Teil' als Band-/Teilbezeichnung aus, im Einklang mit der Konvention, solche Bezeichnungen andernorts im Korpus auszuschließen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 42,
+    "llm_suggested_label": [[0, 22, "PERSON"], [24, 129, "TITLE"]],
+    "llm_rationale": "frankp and maria agree closely; maria's TITLE end excludes a trailing space before the SoR ' / ', matching the whitespace-trim rule (guide §7).",
+    "llm_rationale_de": "frankp und maria stimmen weitgehend überein; marias TITLE-Ende schließt ein abschließendes Leerzeichen vor der SoR ' / ' aus, gemäß der Whitespace-Trim-Regel (Leitfaden §7).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 44,
+    "llm_suggested_label": [[0, 43, "PERSON"], [45, 130, "TITLE"], [236, 256, "PERSON"]],
+    "llm_rationale": "frankp and maria agree on the leading PERSON heading and TITLE; for the trailing name, frankp's PERSON is preferred over maria's TRANSLATOR because the text credits this person with 'Anmerkungen, Zusätzen und Vorrede' (notes/additions/preface) — an editorial role, not translation, and no translation keyword (per guide §3.2) attaches to this name directly.",
+    "llm_rationale_de": "frankp und maria stimmen bei der führenden PERSON-Kopfzeile und beim TITLE überein; beim abschließenden Namen wird frankps PERSON gegenüber marias TRANSLATOR bevorzugt, da der Text dieser Person 'Anmerkungen, Zusätzen und Vorrede' zuschreibt — eine redaktionelle Rolle, keine Übersetzung, und kein Übersetzungs-Schlüsselwort (gemäß Leitfaden §3.2) ist direkt mit diesem Namen verbunden.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 45,
+    "llm_suggested_label": [[0, 12, "PERSON"], [14, 51, "TITLE"]],
+    "llm_rationale": "maria's TITLE boundary excludes the trailing edition statement ('Ausg. 3-4.'), consistent with the convention of excluding volume/edition designators from TITLE seen throughout this corpus.",
+    "llm_rationale_de": "marias TITLE-Grenze schließt die abschließende Auflagenangabe ('Ausg. 3-4.') aus, im Einklang mit der Konvention, Band-/Auflagenbezeichnungen aus TITLE auszuschließen, wie im gesamten Korpus zu beobachten.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 46,
+    "llm_suggested_label": [[0, 39, "TITLE"], [46, 74, "PERSON"]],
+    "llm_rationale": "maria's PERSON span is bracket-balanced ('[Johann Wolfgang von] Goethe'); frankp's is off by one, missing the opening bracket. frankp's own comment flags that this record covers 3 bound volumes that ideally belong in separate entries — his additional 'Erster/Zweiter/Dritter Theil' TITLE spans are volume/part designators for that structural issue, not additional work titles, so they are excluded here (consistent with excluding volume designators elsewhere).",
+    "llm_rationale_de": "marias PERSON-Spanne ist klammernbalanciert ('[Johann Wolfgang von] Goethe'); frankps Spanne ist um eins verschoben und lässt die öffnende Klammer aus. frankps eigener Kommentar merkt an, dass dieser Datensatz 3 gebundene Bände umfasst, die idealerweise in getrennte Einträge gehören — seine zusätzlichen TITLE-Spannen 'Erster/Zweiter/Dritter Theil' sind Band-/Teilbezeichnungen für dieses strukturelle Problem, keine zusätzlichen Werktitel, und werden daher hier ausgeschlossen (im Einklang mit dem Ausschluss von Bandbezeichnungen andernorts).",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 47,
+    "llm_suggested_label": [[0, 37, "TITLE"], [40, 68, "OTHER_TITLE"]],
+    "llm_rationale": "gundi's fuller OTHER_TITLE span ('Studienordnungsversion: 2014') is preferred over maria's truncated version, since splitting the label from its value would leave a meaningless fragment; the full phrase reads as a coherent subtitle-like descriptor of this handbook's edition.",
+    "llm_rationale_de": "gundis vollständigere OTHER_TITLE-Spanne ('Studienordnungsversion: 2014') wird gegenüber marias verkürzter Version bevorzugt, da eine Trennung der Bezeichnung von ihrem Wert ein bedeutungsloses Fragment hinterlassen würde; die vollständige Phrase liest sich als kohärente, untertitelartige Beschreibung der Fassung dieses Handbuchs.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 48,
+    "llm_suggested_label": [[0, 135, "TITLE"], [142, 499, "OTHER_TITLE"]],
+    "llm_rationale": "Majority splits at ' : ' per the flowchart default; TITLE boundary follows gundi's original clean end, excluding the trailing ' ...' truncation marker (corrected from an initial misreading where maria's longer boundary, which includes the marker, was mistakenly preferred).",
+    "llm_rationale_de": "Die Mehrheit teilt bei ' : ' gemäß der Standardregel des Entscheidungsbaums; die TITLE-Grenze folgt gundis ursprünglich sauberem Ende und schließt den abschließenden ' ...'-Kürzungsmarker aus (korrigiert gegenüber einer anfänglichen Fehllesung, bei der marias längere, den Marker enthaltende Grenze fälschlich bevorzugt wurde).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 50,
+    "llm_suggested_label": [[0, 26, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly on the full string as TITLE, a short genuinely titled work despite gundi's Abschnitt flag, matching the pattern in docs 3/16/30.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE, ein kurzes, echt betiteltes Werk trotz gundis Abschnitt-Markierung, im Einklang mit dem Muster der Dokumente 3/16/30.",
+    "llm_confidence": "high"
+  }
+]

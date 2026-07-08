@@ -1,0 +1,196 @@
+[
+  {
+    "doc_id": 343,
+    "llm_suggested_label": [
+      [
+        11,
+        111,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); enumeration prefix 'Tit. XLIX. ' excluded, leaving a specific legal topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der Aufzählungspräfix 'Tit. XLIX. ' wird ausgeschlossen, was ein spezifisches rechtliches Thema übrig lässt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 344,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates a single generic word ('Zitat' = 'quote/citation'), structural terminology rather than title content, similar to docs 255/328. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert ein einzelnes generisches Wort ('Zitat'), Strukturterminologie statt Titelinhalt, ähnlich den Dokumenten 255/328. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 345,
+    "llm_suggested_label": [
+      [
+        0,
+        13,
+        "PERSON"
+      ],
+      [
+        15,
+        156,
+        "TITLE"
+      ],
+      [
+        159,
+        250,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is specific scholarly content (Persian-British diplomatic history), matching the same 'Islamkundliche Untersuchungen' series pattern as doc 307, which was included with high confidence.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist spezifischer wissenschaftlicher Inhalt (persisch-britische Diplomatiegeschichte), entsprechend demselben Reihenmuster 'Islamkundliche Untersuchungen' wie bei Dokument 307, das mit hoher Konfidenz einbezogen wurde.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 347,
+    "llm_suggested_label": [
+      [
+        0,
+        54,
+        "TITLE"
+      ],
+      [
+        61,
+        82,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); a real, specific mythology reference work with a named author (bracketed first name expansion per guide §5.8).",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); ein echtes, spezifisches Nachschlagewerk zur Mythologie mit benanntem Autor (geklammerte Vornamenserweiterung gemäß Leitfaden §5.8).",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 349,
+    "llm_suggested_label": [
+      [
+        0,
+        137,
+        "TITLE"
+      ],
+      [
+        140,
+        248,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); specific historical content (Louis XVI's execution and its aftermath), not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); spezifischer historischer Inhalt (die Hinrichtung Ludwigs XVI. und ihre Folgen), nicht generisch.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 350,
+    "llm_suggested_label": [
+      [
+        0,
+        127,
+        "TITLE"
+      ],
+      [
+        129,
+        566,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly, splitting after the first numbered clause; frankp's spans stop partway through, an incomplete annotation rather than a genuine disagreement.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein und teilen nach der ersten nummerierten Klausel; frankps Spannen brechen auf halbem Weg ab — eine unvollständige Annotation, keine echte Meinungsverschiedenheit.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 352,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Total-Einfuhr am Ende jeden Monates:' reads as a recurring statistical-table column heading, not a distinctive title. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Total-Einfuhr am Ende jeden Monates:' liest sich als wiederkehrende Spaltenüberschrift einer Statistiktabelle, kein unterscheidender Titel. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 353,
+    "llm_suggested_label": [
+      [
+        0,
+        158,
+        "TITLE"
+      ],
+      [
+        161,
+        580,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; gundi and maria agree exactly on the full OTHER_TITLE, while frankp's span stops partway through, an incomplete annotation.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; gundi und maria stimmen exakt bei der vollständigen OTHER_TITLE überein, während frankps Spanne auf halbem Weg abbricht — eine unvollständige Annotation.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 354,
+    "llm_suggested_label": [
+      [
+        0,
+        71,
+        "PERSON"
+      ],
+      [
+        77,
+        449,
+        "TITLE"
+      ],
+      [
+        451,
+        514,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "First-person royal credential, matching the recurring pattern (docs 32/36/54/55/68/99/107/134/142/143/147/160/183/211/222/319/354); gundi's OTHER_TITLE boundary is preferred over maria's, which incorrectly extends into the closing dateline ('So geschehen Onolzbach... 1731'), excluded per the established convention.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person, entspricht dem wiederkehrenden Muster (Dokumente 32/36/54/55/68/99/107/134/142/143/147/160/183/211/222/319/354); gundis OTHER_TITLE-Grenze wird gegenüber marias bevorzugt, die sich fälschlich in die abschließende Datumszeile ('So geschehen Onolzbach... 1731') erstreckt, ausgeschlossen gemäß der etablierten Konvention.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 357,
+    "llm_suggested_label": [
+      [
+        0,
+        27,
+        "TITLE"
+      ],
+      [
+        30,
+        75,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and maria agree exactly on a specific academic lecture title, despite gundi's Aufsatz decline; the parenthetical event note is excluded per convention.",
+    "llm_rationale_de": "frankp und maria stimmen exakt bei einem spezifischen akademischen Vorlesungstitel überein, trotz gundis Ablehnung als Aufsatz; der Klammerhinweis zur Veranstaltung wird gemäß Konvention ausgeschlossen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 358,
+    "llm_suggested_label": [
+      [
+        0,
+        62,
+        "TITLE"
+      ],
+      [
+        65,
+        93,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; majority (frankp/gundi) OTHER_TITLE keeps the full version with the year, per the established precedent (docs 47/53/327/335/338).",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/gundi) OTHER_TITLE behält die vollständige Version einschließlich des Jahres bei, gemäß dem etablierten Präzedenzfall (Dokumente 47/53/327/335/338).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 359,
+    "llm_suggested_label": [
+      [
+        9,
+        136,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); leading page-range reference '118-127, ' excluded per the established archival-reference convention, leaving specific devotional narrative content.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); der führende Seitenbereichsverweis '118-127, ' wird gemäß der etablierten Archivverweis-Konvention ausgeschlossen, was einen spezifischen erbaulichen Erzählinhalt übrig lässt.",
+    "llm_confidence": "medium"
+  }
+]

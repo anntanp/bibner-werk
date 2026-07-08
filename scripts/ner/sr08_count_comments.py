@@ -3,7 +3,7 @@
 # Usage:        python scripts/ner/sr08_count_comments.py \
 #                   --export-dir data/annotation/doccano/export-20260608-1221
 # Inputs:       all *.jsonl files in --export-dir (skips dummy.doccano.jsonl, ann.jsonl)
-# Outputs:      data/processed/ner/sr08_comments_<export>.csv  (one row per comment)
+# Outputs:      data/iaa/sr08_comments_<export>.csv  (one row per comment)
 #               stdout summary
 # Dependencies: none (stdlib only)
 # Assumptions:  Filename stem = annotator name; Comments field is a list of strings
@@ -56,7 +56,7 @@ def main() -> None:
 
     # Write CSV
     export_name = export_dir.name
-    out_path = BASE / f"data/processed/ner/sr08_comments_{export_name}.csv"
+    out_path = BASE / f"data/iaa/sr08_comments_{export_name}.csv"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["annotator", "doc_id", "text", "comment"])

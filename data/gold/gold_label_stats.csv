@@ -1,0 +1,8 @@
+label,instance_count,docs_with_label,total_docs,doc_prevalence_pct
+OTHER_TITLE,176,151,395,38.2
+PARALLEL_TITLE,5,5,395,1.3
+PERSON,130,88,395,22.3
+TITLE,360,331,395,83.8
+TRANSLATOR,5,5,395,1.3
+O_ONLY,0,63,395,15.9
+TOTAL,676,395,395,100.0

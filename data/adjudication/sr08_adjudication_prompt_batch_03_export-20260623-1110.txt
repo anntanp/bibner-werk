@@ -1,0 +1,609 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 34,
+    "text": "Bekannt genug sind leider! die entsetzlichen Auftritte, welche sich neuester Tagen, besonders aber am Abend des 25. vorigen Monats, in den Mauren hiesiger Reichsstadt, die von Jahrhunderten her für ganz Deutschland ein Beyspiel bürgerlicher Ruhe und Zufriedenheit gewesen ist, ereignet haben ... : Decretum im gebottenen Rath, den 1. Merz 1794.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            298,
+            325,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            291,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            295,
+            "TITLE"
+          ],
+          [
+            298,
+            325,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 35,
+    "text": "Gallerie aller juridischen Autoren von der ältesten bis auf die jetztige Zeit mit ihren vorzüglichsten Schriften nach alphabetischer Ordnung aufgestellt / von Johann Heinrich Stepf . - Leipzig : Lauffer, 1820. - 1. Band von A bis B",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            152,
+            "TITLE"
+          ],
+          [
+            159,
+            180,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            152,
+            "TITLE"
+          ],
+          [
+            159,
+            180,
+            "PERSON"
+          ],
+          [
+            220,
+            231,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 36,
+    "text": "Georg der Dritte, von Gottes Gnaden König von Groß-Britannien, Franckreich und Irrland, Beschützer des Glaubens, Hertzog zu Braunschweig und Lüneburg ... Wir vernehmen mißfälligst, daß an theils Orten in Unser Grafschaft Hoya noch ein und andere durch die Policey-Gesetze längst verbothene Unordnungen sowohl bey denen Hochzeiten als Sterbfällen und Leichen auf den Dörfern vorgehen sollen ... : [Geben Hannover den 11ten Aug. 1773.]",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            149,
+            "PERSON"
+          ],
+          [
+            154,
+            389,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            390,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            393,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 40,
+    "text": "Gesammelte Werke :Schriften, Verkündigung, Briefe. 3,6, Bad Boller Briefe 1852 - 1880 : Anmerkungen",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            49,
+            "TITLE"
+          ],
+          [
+            56,
+            99,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            16,
+            "TITLE"
+          ],
+          [
+            18,
+            49,
+            "OTHER_TITLE"
+          ],
+          [
+            56,
+            85,
+            "TITLE"
+          ],
+          [
+            88,
+            99,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            49,
+            "TITLE"
+          ],
+          [
+            56,
+            86,
+            "OTHER_TITLE"
+          ],
+          [
+            88,
+            99,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 41,
+    "text": "718-720 [Rezension] Gabrielsson, Johannes, Über die Quellen des Clemens Alexandrinus. Erster Teil",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            20,
+            41,
+            "PERSON"
+          ],
+          [
+            43,
+            97,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Kein Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            20,
+            41,
+            "PERSON"
+          ],
+          [
+            43,
+            84,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 42,
+    "text": "Schmerler, Johann Adam: Sophrons Lehren der Weisheit und Tugend für seine erwachsene Tochter oder Versuch einer Frauenzimmermoral / von Johann Adam Schmerler Rector an der gemeindlichen Schule in Fürth. - Erlangen : Palm, 1791",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            22,
+            "PERSON"
+          ],
+          [
+            24,
+            130,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            22,
+            "PERSON"
+          ],
+          [
+            24,
+            129,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 44,
+    "text": "Sainte-Pallaye, Jean Baptiste de LaCurne de: Das Ritterwesen des Mittelalters nach seiner politischen und militärischen Verfassung / Aus dem Französischen des Herrn de la Curne de Sainte-Palaye mit Anmerkungen, Zusätzen und Vorrede von Johann Ludwig Klüber. - Nürnberg : Grattenauer Bd. 3. - 1791",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            43,
+            "PERSON"
+          ],
+          [
+            45,
+            130,
+            "TITLE"
+          ],
+          [
+            236,
+            256,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            43,
+            "PERSON"
+          ],
+          [
+            45,
+            130,
+            "TITLE"
+          ],
+          [
+            236,
+            256,
+            "TRANSLATOR"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 45,
+    "text": "Heppe, J. C.: Abbildung und Beschreibung der Fische. Ausg. 3-4. Nürnberg: Winterschmidt 1789",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            12,
+            "PERSON"
+          ],
+          [
+            14,
+            62,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            12,
+            "PERSON"
+          ],
+          [
+            14,
+            51,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 46,
+    "text": "Aus Meinem Leben, Dichtung und Wahrheit / von [Johann Wolfgang von] Goethe. - Erster Theil. - Tübingen, 1811 ; Zweiter Theil. - Do., 1812 ; Dritter Theil. - Tübingen, 1814",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            39,
+            "TITLE"
+          ],
+          [
+            47,
+            74,
+            "PERSON"
+          ],
+          [
+            78,
+            90,
+            "TITLE"
+          ],
+          [
+            111,
+            124,
+            "TITLE"
+          ],
+          [
+            140,
+            153,
+            "TITLE"
+          ]
+        ],
+        "comment": "This item consists of 3 books which need to be divided into 3 entries"
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            39,
+            "TITLE"
+          ],
+          [
+            46,
+            74,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 47,
+    "text": "Modulhandbuch Master Medienwirtschaft : Studienordnungsversion: 2014",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            37,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            37,
+            "TITLE"
+          ],
+          [
+            40,
+            68,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            37,
+            "TITLE"
+          ],
+          [
+            40,
+            62,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 48,
+    "text": "Eine kurtze einfeltige doch Christliche Leichpredigt uber den kurtzen Spruch des H. und gedültigen Hiobs aus seinem Buch am 14. Capitel ... : Bey dem Begräbnüs Des Edlen Tugentsamen zarten Rößleins Annaemariae Des ... Johan Friedrichs von Oppen ... Und der Edlen Tugendreichen Jungfrawen/ Hedwigen/ beider Adelichen Eheleuten liebes zartes Töchterlein ... welches den 1. Martii allhier zu Friederßdorff an den Masern gestorben/ und den 6. Martii ist ... begraben worden ihres alters im 4. Jahr/ etc.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            499,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            135,
+            "TITLE"
+          ],
+          [
+            142,
+            499,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            139,
+            "TITLE"
+          ],
+          [
+            142,
+            499,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 50,
+    "text": "Vom heil. Geists-Hospitale",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            26,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            26,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

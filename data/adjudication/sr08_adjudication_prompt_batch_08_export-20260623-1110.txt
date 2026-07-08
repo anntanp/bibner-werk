@@ -1,0 +1,524 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 119,
+    "text": "[Sammelrezension zweier Ausgaben von theologischen Aufsätzen] Rezensiert werden: 1. [Derschau, C. F. v.]: Kleine theologische Aufsätze eines Layen. Hrsg. von J. C. Jani. Stendal: Franzen & Grosse 1792 2. [Derschau, C. F. v.]: Fortsetzung der kleinen theologischen Aufsätze eines Layen. Stendal: Franzen & Grosse 1796 Abweichende Verlagsangabe: Oldenburg: Stalling Nebentitel: Kleine theologische Aufsätze eines Layen. Hrsg. von J. C. Jani. Bd. 2.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            376,
+            416,
+            "TITLE"
+          ],
+          [
+            428,
+            438,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            1,
+            446,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 120,
+    "text": "1913/14: Bericht / Vierzehnte Realschule Berlin : über das Schuljahr ... - 1913/14",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            9,
+            82,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            9,
+            47,
+            "TITLE"
+          ],
+          [
+            50,
+            72,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            82,
+            "TITLE"
+          ]
+        ],
+        "comment": "auch hier wäre m.E. der Titel \"Bericht über das Schuljahr 1913/1914\" ..."
+      }
+    }
+  },
+  {
+    "doc_id": 123,
+    "text": "Das Wesen des Religionsunterrichts",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            34,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 124,
+    "text": "Unsere [et]c. Es ist auf vorgepflogene Communication mit der Landschaft des Fürstenthums Lüneburg beliebet worden, die Tranck- oder Bier-Steuer, welche mit Ausgang Junii dieses Jahres zu Ende gehen würde, annoch Sechs Jahre ... continuiren zu lassen ... Hannover den 6ten Januarii 1773.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            14,
+            250,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            253,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            254,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 125,
+    "text": "Zweites Hauptstück.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            18,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 126,
+    "text": "XXIV. Eine Röhren zu zurichten/ auß welcher Wasser und Wein/ auch in solcher menge/ als man verlanget/ fliesset.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            6,
+            111,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            6,
+            111,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 127,
+    "text": "Variorum discursuum Bohemicorum Nervus :Continuatio I ; Hussiten Glock ; Discurs, ob die Evangelischen böhm. Stände vertilgt werden können",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            53,
+            "TITLE"
+          ],
+          [
+            56,
+            70,
+            "OTHER_TITLE"
+          ],
+          [
+            73,
+            138,
+            "PARALLEL_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            38,
+            "TITLE"
+          ],
+          [
+            56,
+            70,
+            "TITLE"
+          ],
+          [
+            73,
+            138,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            138,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 128,
+    "text": "XIV. Lobt des Herren werten Nam' [mit hss. Notentext]",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            5,
+            32,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            5,
+            32,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 129,
+    "text": "Erster Versuch einer erläuterten Geschlechts-Geschichte Der ältesten Anherrn des Bairischen Hauses :Womit zugleich ein den 28 Merz 1776 in der Fürstlichen Schule zu Zweybrücken zu begehendes Gedächtnis und Dankfest eine Handlung der traurigsten Pflicht gegen den Weyland Durchleuchtigsten Herzogen und gnädigsten Herrn Herrn Christian den IIII Pfalzgraven bey Rhein und Herzogen in Baiern und der frölichsten dankvollsten Ehrfurcht gegen den nunmehrigen Vater des Vaterlands und Beschützer der Musen den Durchleuchtigsten Herzogen und gnädigsten Herrn Herrn Karl August Christian, Pfalzgraven bey Rhein Herzogen in Baiern Jülich Klev und Berg [et]c. [et]c.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            642,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            98,
+            "TITLE"
+          ],
+          [
+            100,
+            656,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            656,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 130,
+    "text": "Iustus Electoralis Saxonicus Fasciculo Viventium Involutus :Fünff Christliche Klag und TrostPredigten/ uber den Tödtlichen hochbekümmerten Abschied/ des Weiland: Durchlauchtigsten ... Herrn Christiani deß Andern/ Hertzogen zu Sachsen/ ... des Heiligen Römischen Reichs Ertzmarschaln und Churfürsten/ ... Alß S. Churf. G. in der Schloßkirchen zu Dreßden nieder/ auch folgends zu Freibergk in der DomKirchen/ beygesetzt worden/ auß den vierten Capitel des Buchs der Weißheit/ und den fünff und zwantzigsten Capitel/ des ersten Buchs Samuelis/ gethan",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            58,
+            "TITLE"
+          ],
+          [
+            60,
+            547,
+            "PARALLEL_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            58,
+            "TITLE"
+          ],
+          [
+            60,
+            547,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            547,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 131,
+    "text": "Widerruff Das die Münch vnd Pfaffen im Hertzogthumb Bayern, wider das Zeugnuß jres Gewissens vnd die geoffenbarte Warheit Bäpstisch sein und bleiben wöllen :In wölchem gehandelt würt, von den fürnembsten und allen Menschen nötigsten Artickeln vnserer Christlichen Religion, Nämlich von vergebung der Sünden, vnd vergwissung vnser Seligkeit, allein durch den einigen verdienst Christi ; Wider D. Lautherium vnd Frater Johann Naß gestellet",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            156,
+            "TITLE"
+          ],
+          [
+            157,
+            383,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            155,
+            "TITLE"
+          ],
+          [
+            157,
+            383,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            383,
+            "TITLE"
+          ],
+          [
+            392,
+            405,
+            "PERSON"
+          ],
+          [
+            416,
+            427,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 132,
+    "text": "Vierzehntes Kapitel. Kirchengüter. Ihre Zu- und Abnahme. Kirchenvögte.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            21,
+            69,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "Kapitel nicht annotiert"
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

@@ -1,0 +1,464 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 207,
+    "text": "B 18. a) Decretum Ampliss. Senatus vom 28 Dec. 1770.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            9,
+            51,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 208,
+    "text": "Titul. XX. Von dem Beweiß einer Gewohnheit durch Advocaten.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            11,
+            58,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 209,
+    "text": "Ein schœn new || Lied/ von dem Bruder || Conradt/ Geist=||lich.||",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            21,
+            "TITLE"
+          ],
+          [
+            31,
+            62,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            63,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            13,
+            "TITLE"
+          ],
+          [
+            16,
+            63,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 210,
+    "text": "[Sammelrezension:] 1) Abendgenossen von Gustav Schilling. Erster Theil. 263 S. Zweyter Theil. 208 S. Zweyte verbesserte Auflage. Dresden bey Arnold. 1814. 8. --- 2) Irrlichter von Demselben. Erster Theil. 166 S. Zweyter Theil. 184 S. Dritter Theil. 204 S. Ebendaselbst. 1813. 8. --- 3) Das Orakel, oder drey Tage aus Magdalenens Leben. Von Demselben. 163 S. Ebendaselbst. 1814. 8.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            19,
+            349,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Aufsatz"
+      }
+    }
+  },
+  {
+    "doc_id": 211,
+    "text": "Von Gottes Gnaden Friderich, König von Preussen, [et]c. [et]c. [et]c. Unsern gnädigen Gruß zuvor. Würdiger, Wohlgebohrner, Veste und Hochgelahrte Räthe, Liebe Getreue! Da unter den, wegen unbefugter Schriftstellerey, Aufwieglung der Unterthanen und dabey verübten groben Plackereyen, nach Unserer Allerhöchsten Cabinets-Ordre vom 8. August c. zur Untersuchung und Strafe gezogenen Personen sich öfters Leute befinden, welche nach ausgestandener Strafzeit, weil sie aus Unwissenheit oder Faulheit sich auf andere erlaubte Art in der Welt nicht fort zu bringen wissen, zu diesem verbothenen Metier abermals greifen, und solchergestalt die Absicht der Strafen in Ansehung ihrer vereiteln; so haben wir unterm 14. hujus Allerhöchst Selbst festzusetzen geruhet ... : Gegeben Berlin, den 23sten October 1780. Auf Sr. Königl. Majestät allergnädigsten Special-Befehl",
+    "conflict_type": "three_way",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            47,
+            "PERSON"
+          ],
+          [
+            98,
+            755,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            760,
+            "TITLE"
+          ],
+          [
+            762,
+            858,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            858,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 212,
+    "text": "Musikalische Anzeige",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            20,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 213,
+    "text": "Da sicherm Vernehmen nach von fremden heimlichen Werbern das schädliche Werbungstreiben und das heimliche Recrutentransportiren durch hiesige Herzogthümer nach Cuxhafen ... fortgesetzet werden soll ... : Stade, den 14. Aug. 1798",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            198,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            197,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            201,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 214,
+    "text": "Ist nicht Ephraim mein thewrer Sohn",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            35,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            35,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Abschnitt"
+      }
+    }
+  },
+  {
+    "doc_id": 215,
+    "text": "P.S. 1mum. Auch [et]c. ist an dem, daß, da Commissarien und Beamte von denen diesen oder jenen Unterthanen betroffenen Unglücks-Fällen nicht allemal de propria scientia ein Zeugniß zu geben vermögen ... : Hannover, den 15. Junii 1745 ; An alle Land-Commissarien und Beamte im Fürstenthum Lüneburg",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            11,
+            198,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            202,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            202,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 217,
+    "text": "Das 53. Capittel Jesaia",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            23,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 218,
+    "text": "Wohlthätigkeitsanstalten.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            24,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [],
+        "comment": "nicht annotiert, da Kapitel"
+      }
+    }
+  },
+  {
+    "doc_id": 219,
+    "text": "Wahre Erzählung vom Ursprung der Vier Brüder-Säule in der Capornschen Heyde : nach Anleitung der vom vormaligen Doctor der Königsbergschen Academie Cölestinus Kowalewsky den 15. März im Jahr 1738 ... hievon bekannt gemachten Nachricht ... hat die Königl. Ostpreußische Krieges- und Domainen-Cammer zum Denkmal dieser Geschichte die verfallene Vier Brüder-Säule ... im Jahr 1784. wieder aufrichten lassen",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            75,
+            "TITLE"
+          ],
+          [
+            78,
+            403,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            75,
+            "TITLE"
+          ],
+          [
+            78,
+            403,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            75,
+            "TITLE"
+          ],
+          [
+            77,
+            403,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

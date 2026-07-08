@@ -1,0 +1,597 @@
+You are adjudicating disagreements between three human annotators (frankp, gundi, maria)
+who independently labeled named-entity spans in German bibliographic title strings
+(BibNER-Werk gold set, JCDL 2026). Draft a SUGGESTED resolution for each document below —
+the PI makes the final call in Doccano, so flag uncertainty rather than forcing a
+confident-sounding answer.
+
+## Label definitions
+- TITLE: main work title. Exactly one per record. If no subtitle separator is present,
+  TITLE may extend through what would otherwise be a subtitle.
+- OTHER_TITLE: subtitle/alternative title elaborating TITLE (after " : ", "Das ist:", "oder", ...).
+- PERSON: named responsible person (author, editor, corporate body) + all credentials,
+  degrees, and role phrases that form one naming unit with the name.
+- PARALLEL_TITLE: title restated in a second language (after " = " or " / " + non-German text).
+- TRANSLATOR: named translator, only with an explicit translation keyword
+  ("übersetzt", "Übers.", "ins Deutsche übertragen").
+- MEDIUM: musical performance instrumentation only ("für Klavier", "op. 12").
+
+## Scope question (no blanket rule)
+Some documents are chapters, sections, or articles (Kapitel/Abschnitt/Aufsatz) rather than
+full works. gundi and maria have been marking many of these O ("kein Werk"); frankp has been
+annotating them normally. There is no fixed rule for this batch — judge each string on its
+own terms: does it name a genuinely titled sub-unit (annotate normally), or is it too
+fragmentary/generic to support a TITLE span (return O)? Do not decide from the htype label
+alone — read the actual title string.
+
+## Span rules
+- Offsets are character positions, 0-indexed, end-exclusive. text[start:end] must equal
+  the labeled substring exactly.
+- No overlapping or nested spans.
+- Separating punctuation between spans (" / ", " : ", ", ") belongs to neither span.
+
+## Conflict types (for context only — do not let this bias the answer)
+- "scope": disagreement over whether this document should be annotated at all.
+- "boundary": annotators agree an entity is present but disagree on exact offsets.
+- "three_way": no majority — three different readings of the string.
+
+## Documents
+[
+  {
+    "doc_id": 67,
+    "text": "Das VII. Capitel. Von Aussen-Wercken in specie, das ist/ von allerhand Ravelinen/ halben Monden/ Contraguarden, Tenaillen, Horn- und Corn-Wercken/ sowohl nach der courantesten Holländischen und Französischen Manier/ als auch nach den heut-tägigen Verbesserungen unterschiedlicher Ingenieurs.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            290,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um ein Kapitel handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            18,
+            290,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 68,
+    "text": "Wir, Friedrich August, von Gottes Gnaden, König in Pohlen, Groß-Hertzog in Litthauen, Reussen, Preussen, Mazovien, Samogitien, Kyovien, Vollhinien, Podolien, Podlachien, Liefland, Smolensco, Severien und Zchernicovien, [et]c. ... Entbiethen allen und jeden ... Unsern Gruß ... und es wird ihnen allerseits erinnerlich seyn, wasgestalt zu Abstellung derer unzuläßlichen frembden Werbungen unterm 12. Mart. 1718. 4. Mart. 1719. ... derer Deserteurs, ingleichen wieder Auffkauffung ihrer Montur, Pferde ... Mandate ... publiciret worden ... : So geschehen und geben zu Hubertusburg, den 17. Octobr. Anno 1736.",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            217,
+            "PERSON"
+          ],
+          [
+            230,
+            533,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            533,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            537,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 70,
+    "text": "Walter, Helga, Zum Andenken an Deinen Bruder Hans : eine fränkisch-ostpreußische Familie / Helga Walter. - Neustadt an der Aisch, 1992. - 108 S. : zahlr. Ill., Kt. : zahlr. Ill., Kt.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            13,
+            "PERSON"
+          ],
+          [
+            15,
+            88,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            13,
+            "PERSON"
+          ],
+          [
+            14,
+            49,
+            "TITLE"
+          ],
+          [
+            52,
+            89,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 71,
+    "text": "Mitglieder-Verzeichnis des \"Preußischen Vereins für das mittlere Schulwesen\" : Ende des Vereinsjahres 1912/13",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            109,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            76,
+            "TITLE"
+          ],
+          [
+            79,
+            109,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 72,
+    "text": "Geognostische Beschreibung des Kaiserstuhls bei Freiburg im Breisgau : Inauguraldissertation / von Otto Eisenlohr.Mit einer illuminirten Karte. - Karlsruhe : im Verlag der Chr. Fr. Müller'schen Hofbuchhandlung., 1829",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            68,
+            "TITLE"
+          ],
+          [
+            99,
+            113,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            68,
+            "TITLE"
+          ],
+          [
+            71,
+            93,
+            "OTHER_TITLE"
+          ],
+          [
+            99,
+            113,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 73,
+    "text": "Warnunge D. Martini Lutheri/ an seine lieben Teutschen.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            54,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            54,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 74,
+    "text": "Charte von Teutschland : Nach den durch den Pressburger Frieden vom 26. Decbr. 1805 bestimmten Besitzungen der Reichsfürsten und Stände, entworfen im Ianuar 1806. - [Ca. 1:4.100.000]. - Weimar : Verlag des geograph. Instituts, 1806. - Nullmeridian: Ferro. - Maßstab in graph. Form (Geographische Meilen)",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            161,
+            "TITLE"
+          ],
+          [
+            186,
+            225,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            22,
+            "TITLE"
+          ],
+          [
+            25,
+            135,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 76,
+    "text": "Physikalisch-statistische Beschreibung des Fichtelgebirges / von Dr. August Goldfuß, Lehrer and der Friedr. Alex. Univers., Adjunct des Directoriums der k. L. Akademien der Naturf. u.s.w. und D. Gustav Bischoff, Lehrer an derselben Univ. - Nürnberg : Stein. - Th. 1-2, 1817",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            59,
+            "TITLE"
+          ],
+          [
+            65,
+            179,
+            "PERSON"
+          ],
+          [
+            192,
+            236,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            58,
+            "TITLE"
+          ],
+          [
+            69,
+            83,
+            "PERSON"
+          ],
+          [
+            192,
+            210,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 78,
+    "text": "Arbeitsfeld Menschenrechte: Menschenrechtsschutz als berufliche Aufgabe <1999, Lauenburg>: Seminarbericht / veranstaltet von der Friedrich-Naumann-Stiftung und dem Deutschen Komitee des World University Service vom 5. - 7. Februar 1999",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            72,
+            "TITLE"
+          ],
+          [
+            129,
+            155,
+            "PERSON"
+          ],
+          [
+            164,
+            210,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Kein Annotation, da es sich hier um einen Aufsatz handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            89,
+            "TITLE"
+          ],
+          [
+            0,
+            155,
+            "PERSON"
+          ],
+          [
+            91,
+            106,
+            "OTHER_TITLE"
+          ],
+          [
+            164,
+            210,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 79,
+    "text": "Brinkmann, Werner, Die Verbraucherorganisationen in der Bundesrepublik Deutschland und ihre Tätigkeit bei der überbetrieblichen technischen Normung / von Werner Brinkmann. - (Recht - Technik - Wirtschaft ; 11) : Köln [u.a.], 1976",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            19,
+            147,
+            "TITLE"
+          ],
+          [
+            154,
+            170,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            17,
+            "PERSON"
+          ],
+          [
+            19,
+            147,
+            "TITLE"
+          ],
+          [
+            154,
+            170,
+            "PERSON"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            17,
+            "PERSON"
+          ],
+          [
+            19,
+            147,
+            "TITLE"
+          ],
+          [
+            175,
+            203,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 80,
+    "text": "Gemeine Circul-Rechnung.",
+    "conflict_type": "scope",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            23,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [],
+        "comment": "Keine Annotation, da es sich hier um einen Abschnitt handelt."
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            23,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  },
+  {
+    "doc_id": 81,
+    "text": "Oeconomische Encyclopädie, oder allgemeines System der Staats- Stadt- Haus- u. Landwirthschaft :in alphabetischer Ordnung. 39, Von Kirg bis Kleib : Nebst 4 Kupfertafeln auf 3/4 Bogen",
+    "conflict_type": "boundary",
+    "annotations": {
+      "frankp": {
+        "spans": [
+          [
+            0,
+            121,
+            "TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "gundi": {
+        "spans": [
+          [
+            0,
+            94,
+            "TITLE"
+          ],
+          [
+            96,
+            121,
+            "OTHER_TITLE"
+          ],
+          [
+            127,
+            145,
+            "TITLE"
+          ],
+          [
+            148,
+            182,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      },
+      "maria": {
+        "spans": [
+          [
+            0,
+            94,
+            "TITLE"
+          ],
+          [
+            96,
+            121,
+            "OTHER_TITLE"
+          ],
+          [
+            127,
+            145,
+            "OTHER_TITLE"
+          ],
+          [
+            148,
+            182,
+            "OTHER_TITLE"
+          ]
+        ],
+        "comment": null
+      }
+    }
+  }
+]
+
+## Output format
+Return ONLY a JSON array, one object per doc_id, no other text:
+[
+  {
+    "doc_id": 4,
+    "llm_suggested_label": [[7, 38, "TITLE"]],
+    "llm_rationale": "One sentence, naming the specific rule applied.",
+    "llm_confidence": "high"
+  }
+]
+
+Self-check before returning:
+- Every doc_id from the input appears exactly once in the output.
+- For every span: text[start:end] equals the labeled substring exactly.
+- No overlapping spans within a document.
+- llm_confidence is "high", "medium", or "low" — use "low" for anything genuinely
+  ambiguous rather than guessing confidently.

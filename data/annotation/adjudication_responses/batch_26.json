@@ -1,0 +1,46 @@
+[
+  {
+    "doc_id": 388,
+    "llm_suggested_label": [
+      [
+        0,
+        124,
+        "PERSON"
+      ],
+      [
+        129,
+        449,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "First-person royal credential (an Archbishop-Elector's titulature), matching the recurring pattern throughout this corpus; frankp's TITLE end is already clean, excluding trailing whitespace, the ' ...' marker, and the ' : ' separator before the closing dateline, which gundi's and maria's longer boundaries incorrectly include.",
+    "llm_rationale_de": "Königliches Prädikat in erster Person (die Titulatur eines Erzbischof-Kurfürsten), entspricht dem im gesamten Korpus wiederkehrenden Muster; frankps TITLE-Ende ist bereits sauber und schließt abschließenden Leerraum, den ' ...'-Marker und das ' : '-Trennzeichen vor der abschließenden Datumszeile aus, die gundis und marias längere Grenzen fälschlich einbeziehen.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 391,
+    "llm_suggested_label": [
+      [
+        3,
+        48,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); enumeration prefix 'V. ' excluded per the established convention, leaving a specific administrative/political topic ('The committees of the municipal corporations').",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); der Aufzählungspräfix 'V. ' wird gemäß der etablierten Konvention ausgeschlossen, was ein spezifisches administrativ-politisches Thema übrig lässt ('Die Ausschüsse der Gemeindekörperschaften').",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 395,
+    "llm_suggested_label": [
+      [
+        0,
+        52,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (frankp/maria) exclude the trailing period that gundi's boundary includes; a real, specific historical society journal title (Association for Hamburg History).",
+    "llm_rationale_de": "Die Mehrheit (frankp/maria) schließt den abschließenden Punkt aus, den gundis Grenze enthält; ein echter, spezifischer Zeitschriftentitel eines historischen Vereins (Verein für Hamburgische Geschichte).",
+    "llm_confidence": "high"
+  }
+]

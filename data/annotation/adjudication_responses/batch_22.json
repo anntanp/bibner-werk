@@ -1,0 +1,196 @@
+[
+  {
+    "doc_id": 329,
+    "llm_suggested_label": [
+      [
+        0,
+        49,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); a specific, dated biblical sermon reference (Zachariah 13:4-6), not generic content.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); ein spezifischer, datierter biblischer Predigtverweis (Sacharja 13,4-6), kein generischer Inhalt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 331,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Der diener singt. Der herr sey mit euch Und mit seinem geyst.' is a standard liturgical call-and-response formula ('The Lord be with you and with thy spirit'), extremely formulaic and not a distinctive title. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Der diener singt. Der herr sey mit euch Und mit seinem geyst.' ist eine standardmäßige liturgische Wechselgesangsformel ('Der Herr sei mit euch und mit deinem Geiste'), äußerst formelhaft und kein unterscheidender Titel. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 332,
+    "llm_suggested_label": [
+      [
+        0,
+        50,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (frankp/maria) exclude the trailing period that gundi's boundary includes.",
+    "llm_rationale_de": "Die Mehrheit (frankp/maria) schließt den abschließenden Punkt aus, den gundis Grenze enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 334,
+    "llm_suggested_label": [
+      [
+        0,
+        21,
+        "PERSON"
+      ],
+      [
+        23,
+        36,
+        "TITLE"
+      ],
+      [
+        39,
+        71,
+        "OTHER_TITLE"
+      ],
+      [
+        74,
+        94,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree on splitting TITLE/OTHER_TITLE at the ' : ' and both add the repeated-author PERSON span (established pattern, docs 70/137/262/307); gundi's TITLE boundary is the clean one, excluding maria's trailing space.",
+    "llm_rationale_de": "gundi und maria stimmen darin überein, TITLE/OTHER_TITLE bei ' : ' zu teilen, und beide fügen die PERSON-Spanne mit wiederholtem Autorennamen hinzu (etabliertes Muster, Dokumente 70/137/262/307); gundis TITLE-Grenze ist die saubere, die marias abschließendes Leerzeichen ausschließt.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 335,
+    "llm_suggested_label": [
+      [
+        0,
+        46,
+        "TITLE"
+      ],
+      [
+        49,
+        77,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; majority (frankp/gundi) OTHER_TITLE keeps the full 'Studienordnungsversion: 2009', matching the established precedent (docs 47/53/327) over maria's truncated version.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; die mehrheitliche (frankp/gundi) OTHER_TITLE behält die vollständige 'Studienordnungsversion: 2009' bei, entsprechend dem etablierten Präzedenzfall (Dokumente 47/53/327), gegenüber marias verkürzter Version.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 336,
+    "llm_suggested_label": [
+      [
+        0,
+        42,
+        "TITLE"
+      ],
+      [
+        55,
+        83,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is a real, well-known scientific work (Prince Maximilian of Wied-Neuwied's 'Abbildungen zur Naturgeschichte Brasiliens') with a named historical author — high specificity despite weak vote support; TITLE trimmed of trailing whitespace.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist ein echtes, bekanntes wissenschaftliches Werk (Prinz Maximilians zu Wied-Neuwieds 'Abbildungen zur Naturgeschichte Brasiliens') mit einem benannten historischen Autor — hohe Spezifität trotz schwacher Stimmenunterstützung; TITLE ist von abschließendem Leerraum bereinigt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 337,
+    "llm_suggested_label": [
+      [
+        4,
+        314,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); specific historical content concerning the real 1645 parliamentary proceeding against Archbishop William Laud, not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); spezifischer historischer Inhalt zum realen Parlamentsverfahren von 1645 gegen Erzbischof William Laud, nicht generisch.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 338,
+    "llm_suggested_label": [
+      [
+        0,
+        123,
+        "TITLE"
+      ],
+      [
+        126,
+        154,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Majority (gundi/maria) keep the full module-handbook designation as one TITLE rather than splitting at 'Elektrotechnik' as frankp did; OTHER_TITLE follows gundi's fuller version including the year, per the established precedent (docs 47/53/327/335).",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) behält die vollständige Modulhandbuch-Bezeichnung als einen TITLE bei, statt bei 'Elektrotechnik' zu teilen wie frankp; OTHER_TITLE folgt gundis vollständigerer Version einschließlich des Jahres, gemäß dem etablierten Präzedenzfall (Dokumente 47/53/327/335).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 339,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Der siebenzehende Punct' ('The seventeenth point') is a bare enumeration with no substantive topic following, unlike the enum-plus-real-content docs elsewhere in this corpus. Recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Der siebenzehende Punct' ist eine bloße Aufzählung ohne nachfolgendes substantielles Thema, anders als bei den Aufzählung-plus-echter-Inhalt-Dokumenten andernorts in diesem Korpus. O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 340,
+    "llm_suggested_label": [
+      [
+        0,
+        59,
+        "TITLE"
+      ],
+      [
+        66,
+        91,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is Prince Maximilian zu Wied's real, well-known travel narrative of his North American expedition — high specificity despite weak vote support, same historical figure as doc 336.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies ist Prinz Maximilians zu Wieds echter, bekannter Reisebericht seiner Nordamerika-Expedition — hohe Spezifität trotz schwacher Stimmenunterstützung, dieselbe historische Persönlichkeit wie bei Dokument 336.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 341,
+    "llm_suggested_label": [
+      [
+        0,
+        72,
+        "TITLE"
+      ],
+      [
+        75,
+        425,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's boundary is the clean one, excluding a trailing space frankp's includes; both agree on OTHER_TITLE over maria's unsplit merge.",
+    "llm_rationale_de": "gundis Grenze ist die saubere, die ein abschließendes Leerzeichen ausschließt, das frankps Version enthält; beide stimmen bei OTHER_TITLE überein, gegenüber marias ungeteilter Zusammenführung.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 342,
+    "llm_suggested_label": [
+      [
+        0,
+        80,
+        "TITLE"
+      ],
+      [
+        83,
+        105,
+        "OTHER_TITLE"
+      ],
+      [
+        112,
+        125,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "gundi and maria agree exactly; frankp's TITLE includes a trailing space they exclude.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein; frankps TITLE enthält ein abschließendes Leerzeichen, das ihre Versionen ausschließen.",
+    "llm_confidence": "high"
+  }
+]

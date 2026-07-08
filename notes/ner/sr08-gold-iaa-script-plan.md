@@ -144,7 +144,7 @@ For label L (e.g. TITLE):
 ```bash
 python scripts/ner/sr08_compute_iaa.py \
     --export-dir data/annotation/doccano/export-20260623-1110 \
-    [--output-dir DIR]    # default: data/processed/ner/
+    [--output-dir DIR]    # default: data/iaa/
 ```
 
 ## 6. Outputs
@@ -179,7 +179,7 @@ One row per label type per annotator per document (types are deduplicated — tw
 - `BASE = Path(__file__).resolve().parents[2]`
 - `SKIP_NAMES = {"dummy.doccano.jsonl", "ann.jsonl"}`, `SKIP_SUFFIXES = (".meta.jsonl",)`, `SKIP_PREFIXES = ("sr08_",)`
 - stdlib only — no pandas, no seqeval
-- `--export-dir` required (no hardcoded default); `--output-dir` defaults to `BASE / "data/processed/ner/"`
+- `--export-dir` required (no hardcoded default); `--output-dir` defaults to `BASE / "data/iaa/"`
 - `out_path.parent.mkdir(parents=True, exist_ok=True)` before writing
 - All writes go to `--output-dir` only; never write to `--export-dir` or any `.jsonl` file
 
@@ -191,8 +191,8 @@ One row per label type per annotator per document (types are deduplicated — tw
 # Usage:        python scripts/ner/sr08_compute_iaa.py \
 #                   --export-dir data/annotation/doccano/export-20260623-1110
 # Inputs:       *.jsonl files in --export-dir (skips dummy.doccano.jsonl, ann.jsonl, *.meta.jsonl, sr08_*)
-# Outputs:      data/processed/ner/sr08_iaa_counts_<export>.csv  (raw label assignments)
-#               data/processed/ner/sr08_iaa_<export>.csv          (Krippendorff's α per scope)
+# Outputs:      data/iaa/sr08_iaa_counts_<export>.csv  (raw label assignments)
+#               data/iaa/sr08_iaa_<export>.csv          (Krippendorff's α per scope)
 #               stdout: annotator coverage, α table (overall + per label), pass/fail
 # Dependencies: none (stdlib only)
 # Assumptions:  reviewed = label != [] OR Comments != []; empty-label+comment = O assignment
@@ -210,8 +210,8 @@ python scripts/ner/sr08_compute_iaa.py \
 Both output files must exist before proceeding:
 
 ```bash
-ls data/processed/ner/sr08_iaa_counts_export-20260623-1110.csv
-ls data/processed/ner/sr08_iaa_export-20260623-1110.csv
+ls data/iaa/sr08_iaa_counts_export-20260623-1110.csv
+ls data/iaa/sr08_iaa_export-20260623-1110.csv
 ```
 
 ### 8.2 Counts CSV — spot-check a known document
@@ -224,7 +224,7 @@ Doc id=1 (`"16-30, Deutschlands sittliche Sendung - Bismark"`) has known annotat
 ```bash
 python3 -c "
 import csv
-rows = [r for r in csv.DictReader(open('data/processed/ner/sr08_iaa_counts_export-20260623-1110.csv'))
+rows = [r for r in csv.DictReader(open('data/iaa/sr08_iaa_counts_export-20260623-1110.csv'))
         if r['doc_id'] == '1']
 for r in rows: print(r)
 "
@@ -266,7 +266,7 @@ print("perfect agreement: PASS")
 ```bash
 python3 -c "
 import csv
-rows = list(csv.DictReader(open('data/processed/ner/sr08_iaa_export-20260623-1110.csv')))
+rows = list(csv.DictReader(open('data/iaa/sr08_iaa_export-20260623-1110.csv')))
 labels = [r['label'] for r in rows]
 assert 'ALL' in labels, 'missing ALL row'
 for r in rows:

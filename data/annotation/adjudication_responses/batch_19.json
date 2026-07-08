@@ -1,0 +1,179 @@
+[
+  {
+    "doc_id": 280,
+    "llm_suggested_label": [
+      [
+        0,
+        11,
+        "TITLE"
+      ],
+      [
+        14,
+        54,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE; OTHER_TITLE (a real conference-presentation note) uses maria's boundary, excluding the wrapping parentheses as pure typographic punctuation.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein; OTHER_TITLE (ein echter Tagungsvortrags-Hinweis) verwendet marias Grenze und schließt die umschließenden Klammern als rein typografische Interpunktion aus.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 281,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'An den gutherzigen Leser' ('To the kind-hearted reader') is a formulaic dedicatory address, the same generic-template pattern as doc 265 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'An den gutherzigen Leser' ist eine formelhafte Widmungsanrede, dasselbe generische Vorlagenmuster wie bei Dokument 265 — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 282,
+    "llm_suggested_label": [
+      [
+        0,
+        46,
+        "TITLE"
+      ],
+      [
+        48,
+        536,
+        "OTHER_TITLE"
+      ],
+      [
+        537,
+        694,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "gundi is the only one to split TITLE from the relative-clause elaboration that follows ('Mit welchen Bey solennen Leichen-Begängniß...'); frankp's fuller PERSON span (full credential per guide §5.8) is adopted over gundi's bare name.",
+    "llm_rationale_de": "gundi ist die einzige, die TITLE von der folgenden Relativsatz-Ausführung trennt ('Mit welchen Bey solennen Leichen-Begängniß...'); frankps vollständigere PERSON-Spanne (vollständiger Titel/Grad gemäß Leitfaden §5.8) wird gegenüber gundis bloßem Namen übernommen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 283,
+    "llm_suggested_label": [
+      [
+        0,
+        32,
+        "TITLE"
+      ],
+      [
+        34,
+        80,
+        "OTHER_TITLE"
+      ],
+      [
+        82,
+        608,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "'Das ist:' is the guide's explicit OTHER_TITLE trigger (§3.1), corrected from frankp's PARALLEL_TITLE label to match the same treatment applied in docs 89/138/146; gundi's second TITLE span is relabeled OTHER_TITLE to keep to one TITLE per record. frankp and gundi agree exactly on the final OTHER_TITLE segment.",
+    "llm_rationale_de": "'Das ist:' ist der ausdrückliche OTHER_TITLE-Auslöser des Leitfadens (§3.1), korrigiert von frankps PARALLEL_TITLE-Label, um dieselbe Behandlung wie in den Dokumenten 89/138/146 anzuwenden; gundis zweite TITLE-Spanne wird zu OTHER_TITLE umbenannt, um bei einem TITLE pro Datensatz zu bleiben. frankp und gundi stimmen exakt beim abschließenden OTHER_TITLE-Segment überein.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 284,
+    "llm_suggested_label": [],
+    "llm_rationale": "maria's comment is a factual structural claim, not a genre judgment: this is literally a table-of-contents heading ('Besonderer Inhalt' = 'special contents'), not a work title — the same reasoning that favored maria's comment in doc 172, overriding frankp/gundi's 2/2 agreement.",
+    "llm_rationale_de": "marias Kommentar ist eine sachliche strukturelle Feststellung, kein Gattungsurteil: Dies ist buchstäblich eine Inhaltsverzeichnis-Überschrift ('Besonderer Inhalt'), kein Werktitel — dieselbe Begründung, die marias Kommentar in Dokument 172 favorisierte, setzt sich hier gegen frankps/gundis 2/2-Übereinstimmung durch.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 286,
+    "llm_suggested_label": [
+      [
+        0,
+        34,
+        "TITLE"
+      ],
+      [
+        36,
+        98,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE (internal 'oder', same convention as docs 58/81/140/198/241); majority (frankp/maria) OTHER_TITLE boundary excludes the trailing ' ...' marker that gundi's includes.",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein (internes 'oder', dieselbe Konvention wie bei den Dokumenten 58/81/140/198/241); die mehrheitliche (frankp/maria) OTHER_TITLE-Grenze schließt den abschließenden ' ...'-Marker aus, den gundis Version enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 287,
+    "llm_suggested_label": [
+      [
+        0,
+        101,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz); specific, substantive parenting/educational content, not generic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab); spezifischer, substantieller erziehungs-/pädagogischer Inhalt, nicht generisch.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 290,
+    "llm_suggested_label": [],
+    "llm_rationale": "frankp and gundi both label the string, but 'Ein ander Liedt.' ('Another song.') is a content-vacuous structural label, the same pattern as doc 205 — recommend O, overriding the 2-annotator agreement.",
+    "llm_rationale_de": "frankp und gundi markieren beide die Zeichenkette, doch 'Ein ander Liedt.' ist ein inhaltsleerer struktureller Hinweis, dasselbe Muster wie bei Dokument 205 — O wird empfohlen, entgegen der Übereinstimmung der beiden Annotatoren.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 291,
+    "llm_suggested_label": [
+      [
+        0,
+        86,
+        "TITLE"
+      ],
+      [
+        88,
+        514,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's split at the ' :' matches the flowchart default over frankp's extension past it into the scripture citation; OTHER_TITLE end trimmed to exclude trailing whitespace and the ' ...' marker that gundi's own longer boundary includes.",
+    "llm_rationale_de": "gundis Aufteilung bei ' :' entspricht der Standardregel des Entscheidungsbaums gegenüber frankps Erweiterung darüber hinaus in das Schriftzitat; das OTHER_TITLE-Ende ist so bereinigt, dass abschließender Leerraum und der ' ...'-Marker ausgeschlossen werden, den gundis eigene längere Grenze enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 293,
+    "llm_suggested_label": [
+      [
+        0,
+        37,
+        "TITLE"
+      ],
+      [
+        40,
+        85,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Aufsatz), but this is the same established 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' pattern as docs 4/51/120/267.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Aufsatz ab), doch dies entspricht demselben etablierten Muster 'X : N. Beilage zu Nr. Y der Pädagogischen Reform' wie bei den Dokumenten 4/51/120/267.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 295,
+    "llm_suggested_label": [
+      [
+        0,
+        94,
+        "TITLE"
+      ],
+      [
+        96,
+        158,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Abschnitt); a specific, historically significant treaty title (the 1552 Peace of Passau), not generic content; OTHER_TITLE end trimmed of trailing whitespace and the ' ...' marker.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Abschnitt ab); ein spezifischer, historisch bedeutsamer Vertragstitel (der Passauer Vertrag von 1552), kein generischer Inhalt; das OTHER_TITLE-Ende ist bereinigt um abschließenden Leerraum und den ' ...'-Marker.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 296,
+    "llm_suggested_label": [],
+    "llm_rationale": "frankp and gundi both label the string, but 'Register, Der jenigen Länder...' is self-described as a register/index of contents for a geography book, not a titled work in its own right — the same table-of-contents concern as doc 284. Recommend O.",
+    "llm_rationale_de": "frankp und gundi markieren beide die Zeichenkette, doch 'Register, Der jenigen Länder...' bezeichnet sich selbst als Register/Inhaltsverzeichnis eines Geografiebuchs, kein eigenständig betiteltes Werk — dieselbe Inhaltsverzeichnis-Problematik wie bei Dokument 284. O wird empfohlen.",
+    "llm_confidence": "medium"
+  }
+]

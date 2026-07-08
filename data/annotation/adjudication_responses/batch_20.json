@@ -1,0 +1,252 @@
+[
+  {
+    "doc_id": 298,
+    "llm_suggested_label": [
+      [
+        0,
+        38,
+        "TITLE"
+      ],
+      [
+        41,
+        116,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "gundi's structure treats the bracketed cataloger-supplied descriptive label '[Verordnung Geldleihe u. Handel betr.]' as the record's TITLE (since the decree text itself lacks a proper title) and the formal decree citation as OTHER_TITLE — more coherent than frankp's exclusion of the bracket entirely or maria's unsplit merge.",
+    "llm_rationale_de": "gundis Struktur behandelt die geklammerte, vom Katalogisierenden vergebene beschreibende Bezeichnung '[Verordnung Geldleihe u. Handel betr.]' als TITLE des Datensatzes (da dem Erlasstext selbst ein eigentlicher Titel fehlt) und die formale Erlasszitation als OTHER_TITLE — kohärenter als frankps vollständigen Ausschluss der Klammer oder marias ungeteilte Zusammenführung.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 299,
+    "llm_suggested_label": [
+      [
+        0,
+        35,
+        "TITLE"
+      ],
+      [
+        38,
+        562,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree on TITLE (internal 'Oder', established convention); frankp's OTHER_TITLE start is correct ('Welchen...'), while gundi's has an off-by-one error cutting off the leading 'W'.",
+    "llm_rationale_de": "frankp und gundi stimmen bei TITLE überein (internes 'Oder', etablierte Konvention); frankps OTHER_TITLE-Anfang ist korrekt ('Welchen...'), während gundis Version einen um eins verschobenen Fehler hat, der das führende 'W' abschneidet.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 300,
+    "llm_suggested_label": [
+      [
+        0,
+        21,
+        "TITLE"
+      ],
+      [
+        23,
+        123,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); 'Achtzehentes Gespräch' reads as a numbered-dialogue heading integral to this book's own structure (like Galileo-style numbered dialogues) rather than a separable chapter enumeration, and the subtitle is a specific astronomical topic.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); 'Achtzehentes Gespräch' liest sich als nummerierte Dialogüberschrift, die fester Bestandteil der eigenen Struktur dieses Buches ist (wie bei galileischen nummerierten Dialogen), keine abtrennbare Kapitelaufzählung, und der Untertitel ist ein spezifisches astronomisches Thema.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 301,
+    "llm_suggested_label": [
+      [
+        8,
+        94,
+        "TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); leading issue number 'No. 39. ' excluded per the established convention, leaving a specific municipal-report title.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); die führende Heftnummer 'No. 39. ' wird gemäß der etablierten Konvention ausgeschlossen, was einen spezifischen Titel eines städtischen Berichts übrig lässt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 304,
+    "llm_suggested_label": [
+      [
+        9,
+        16,
+        "TITLE"
+      ],
+      [
+        19,
+        57,
+        "PERSON"
+      ],
+      [
+        60,
+        118,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Same corporate-body-in-SoR pattern as docs 104/120/202/258 (guide §5.2): TITLE='Bericht', PERSON=the school, OTHER_TITLE=the rest; leading date prefix excluded.",
+    "llm_rationale_de": "Dasselbe Muster einer Körperschaft in SoR-Position wie bei den Dokumenten 104/120/202/258 (Leitfaden §5.2): TITLE='Bericht', PERSON=die Schule, OTHER_TITLE=der Rest; der führende Datumspräfix wird ausgeschlossen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 305,
+    "llm_suggested_label": [],
+    "llm_rationale": "Only frankp annotates; 'Aus den Nachbarlandeskirchen' ('From the neighboring regional churches') reads as a generic recurring church-newsletter column heading, same pattern as docs 174/185/305 — recommend O.",
+    "llm_rationale_de": "Nur frankp annotiert; 'Aus den Nachbarlandeskirchen' liest sich als generische, wiederkehrende Rubriküberschrift eines Kirchenrundbriefs, dasselbe Muster wie bei den Dokumenten 174/185/305 — O wird empfohlen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 306,
+    "llm_suggested_label": [
+      [
+        0,
+        172,
+        "TITLE"
+      ],
+      [
+        173,
+        244,
+        "OTHER_TITLE"
+      ],
+      [
+        258,
+        274,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "frankp and gundi agree exactly on PERSON (the account's compiler, named via 'Durch mich Johan Alstorffen'); gundi's TITLE/OTHER_TITLE split at a natural clause boundary (before the date/time details) is preferred over frankp's single merged TITLE.",
+    "llm_rationale_de": "frankp und gundi stimmen exakt bei PERSON überein (der Verfasser des Berichts, benannt über 'Durch mich Johan Alstorffen'); gundis Aufteilung in TITLE/OTHER_TITLE an einer natürlichen Satzgrenze (vor den Datums-/Zeitangaben) wird gegenüber frankps einzelnem zusammengeführten TITLE bevorzugt.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 307,
+    "llm_suggested_label": [
+      [
+        0,
+        15,
+        "PERSON"
+      ],
+      [
+        18,
+        66,
+        "TITLE"
+      ],
+      [
+        69,
+        128,
+        "OTHER_TITLE"
+      ],
+      [
+        131,
+        149,
+        "PERSON"
+      ]
+    ],
+    "llm_rationale": "Leading name-heading included as PERSON per the settled policy; TITLE/OTHER_TITLE agreed by frankp and maria, using maria's clean OTHER_TITLE boundary; maria's repeated-author-name PERSON span is kept, matching the established pattern (docs 70/137/262).",
+    "llm_rationale_de": "Der führende Namenskopf wird gemäß der festgelegten Regel als PERSON einbezogen; TITLE/OTHER_TITLE werden von frankp und maria übereinstimmend vergeben, unter Verwendung von marias sauberer OTHER_TITLE-Grenze; marias PERSON-Spanne mit wiederholtem Autorennamen wird beibehalten, entsprechend dem etablierten Muster (Dokumente 70/137/262).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 308,
+    "llm_suggested_label": [
+      [
+        0,
+        11,
+        "PERSON"
+      ],
+      [
+        13,
+        97,
+        "TITLE"
+      ],
+      [
+        169,
+        188,
+        "TRANSLATOR"
+      ]
+    ],
+    "llm_rationale": "frankp and maria agree on TITLE and TRANSLATOR (explicit 'übersetzt' keyword); PERSON uses frankp's span, which correctly includes the abbreviation period in 'C.' rather than maria's truncated version.",
+    "llm_rationale_de": "frankp und maria stimmen bei TITLE und TRANSLATOR überein (ausdrückliches Schlüsselwort 'übersetzt'); PERSON verwendet frankps Spanne, die den Abkürzungspunkt in 'C.' korrekt einbezieht, anders als marias verkürzte Version.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 309,
+    "llm_suggested_label": [
+      [
+        0,
+        16,
+        "TITLE"
+      ],
+      [
+        19,
+        28,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "Only frankp annotates (gundi/maria decline as Kapitel); TITLE trimmed of trailing whitespace. The date range after the ' : ' separator ('1829–1849') is added as OTHER_TITLE per the flowchart default, which frankp's original span omitted.",
+    "llm_rationale_de": "Nur frankp annotiert (gundi/maria lehnen als Kapitel ab); TITLE ist von abschließendem Leerraum bereinigt. Der Datumsbereich nach dem ' : '-Trennzeichen ('1829–1849') wird gemäß der Standardregel des Entscheidungsbaums als OTHER_TITLE hinzugefügt, was frankps ursprüngliche Spanne ausgelassen hatte.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 312,
+    "llm_suggested_label": [
+      [
+        0,
+        54,
+        "TITLE"
+      ],
+      [
+        57,
+        94,
+        "OTHER_TITLE"
+      ],
+      [
+        95,
+        107,
+        "PERSON"
+      ],
+      [
+        109,
+        481,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "All three agree on TITLE. frankp is the only one to identify 'Hans Sachsen' — a real, historically significant 16th-century poet/playwright credited as the original author of these plays — as a separate PERSON; the surrounding OTHER_TITLE content (gundi's single merged span) is split around it instead, with the second segment's start corrected from frankp's off-by-one (which cut off the leading 'J' of 'Jetzunder').",
+    "llm_rationale_de": "Alle drei stimmen bei TITLE überein. frankp ist der einzige, der 'Hans Sachsen' — einen real belegten, historisch bedeutsamen Dichter/Dramatiker des 16. Jahrhunderts, dem diese Stücke als ursprünglicher Autor zugeschrieben werden — als separate PERSON identifiziert; der umgebende OTHER_TITLE-Inhalt (gundis einzelne zusammengeführte Spanne) wird stattdessen um sie herum aufgeteilt, wobei der Anfang des zweiten Segments von frankps um-eins-verschobenem Fehler korrigiert wird (der das führende 'J' von 'Jetzunder' abschnitt).",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 313,
+    "llm_suggested_label": [
+      [
+        0,
+        74,
+        "TITLE"
+      ],
+      [
+        76,
+        118,
+        "OTHER_TITLE"
+      ],
+      [
+        119,
+        163,
+        "PERSON"
+      ],
+      [
+        165,
+        289,
+        "OTHER_TITLE"
+      ],
+      [
+        296,
+        499,
+        "OTHER_TITLE"
+      ]
+    ],
+    "llm_rationale": "frankp is the only one to separate the compiler's credential ('D. Philip. Hanen, DomPredigers zu Magdeburgk') as PERSON per guide §5.8's merge rule; the descriptive clause continuing after it (which frankp's annotation simply stops before) is added as a further OTHER_TITLE segment, using gundi/maria's boundary trimmed to exclude trailing whitespace and the ' ...' marker; the final OTHER_TITLE segment uses maria's boundary, excluding the trailing sentence period that gundi's includes.",
+    "llm_rationale_de": "frankp ist der einzige, der die Verantwortlichkeitsangabe des Verfassers ('D. Philip. Hanen, DomPredigers zu Magdeburgk') gemäß der Zusammenführungsregel des Leitfadens §5.8 als PERSON abtrennt; die daran anschließende beschreibende Klausel (vor der frankps Annotation schlicht endet) wird als weiteres OTHER_TITLE-Segment hinzugefügt, unter Verwendung von gundis/marias Grenze, bereinigt um abschließenden Leerraum und den ' ...'-Marker; das abschließende OTHER_TITLE-Segment verwendet marias Grenze und schließt den abschließenden Satzpunkt aus, den gundis Version enthält.",
+    "llm_confidence": "medium"
+  }
+]

@@ -2,7 +2,7 @@
 up: 
 related: 
 created: 2026-03-24
-updates: 2026-06-25
+updates: 2026-07-07
 in: bibner-werk
 tags: []
 ---
@@ -24,7 +24,7 @@ The corpus spans five centuries of German print culture, from 16th-century Early
 | [§2 Workflow](#2-workflow) | Files, annotation status, suggested order — **start here** |
 | [§3 Label definitions](#3-label-definitions) | What TITLE, OTHER_TITLE, PERSON and Phase 2 labels mark |
 | [§4 Decision flowchart](#4-decision-flowchart) | Step-by-step logic for choosing labels |
-| [§5 Examples](#5-examples-by-title-structure) | 10 worked examples with DDB links, grouped by title structure |
+| [§5 Examples](#5-examples-by-title-structure) | 11 worked examples with DDB links, grouped by title structure |
 | [§6 What NOT to label](#6-what-not-to-label) | Frequent false-positive patterns and why they are not entities |
 | [§7 Span boundary rules](#7-span-boundary-rules) | Technical rules for character offsets |
 | [§8 Output format](#8-output-format-jsonl) | JSONL record schema |
@@ -329,6 +329,27 @@ Handbuch des römischen Privatrechts … Von Theodor Schmalz, D. Königl. Preuss
 > `Von` is an attribution keyword — the named person following it is the PERSON even when mid-string. The PERSON span starts after `Von `.
 > Include the credential phrase (`D. Königl. Preuss. Consistorialrathe und Professor`) in the PERSON span.
 > The ` …` at the end is a truncation marker — not part of any span.
+
+---
+
+### 5.11 Repeated author name — leading heading and SoR mention both get PERSON
+
+**Input**
+```
+Walter, Helga, Zum Andenken an Deinen Bruder Hans : eine fränkisch-ostpreußische Familie / Helga Walter. - Neustadt an der Aisch, 1992. - 108 S. : zahlr. Ill., Kt.
+```
+**DDB:** https://www.deutsche-digitale-bibliothek.de/item/VBAXL3SSSHHNVB7VWI44N4JFZBPAALQN
+
+**Annotation**
+```json
+[
+  {"label": "PERSON",      "start":  0, "end":  13, "text": "Walter, Helga"},
+  {"label": "TITLE",       "start": 15, "end":  49, "text": "Zum Andenken an Deinen Bruder Hans"},
+  {"label": "OTHER_TITLE", "start": 52, "end":  88, "text": "eine fränkisch-ostpreußische Familie"},
+  {"label": "PERSON",      "start": 91, "end": 103, "text": "Helga Walter"}
+]
+```
+> The author's name appears twice: as the leading inverted catalog heading (`Walter, Helga`) and again, in natural order, at the SoR position after ` / ` (`Helga Walter`). Both get a `PERSON` span — the SoR repetition is not skipped or folded into `OTHER_TITLE` just because the name was already labeled once earlier in the string. Same pattern as docs 137 and 262.
 
 ---
 

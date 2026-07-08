@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": 102,
+    "llm_suggested_label": [[0, 21, "TITLE"], [23, 88, "OTHER_TITLE"], [89, 123, "PERSON"], [125, 159, "OTHER_TITLE"], [162, 267, "PARALLEL_TITLE"]],
+    "llm_rationale": "Reconstructed from all three annotators: TITLE and the unanimous PARALLEL_TITLE (after ' = ') are agreed; frankp's PERSON correctly isolates the performing Jesuit institution as a corporate-body SoR within the descriptive clause gundi treats as one undivided OTHER_TITLE, so the clause is split around it instead.",
+    "llm_rationale_de": "Aus allen drei Annotatoren rekonstruiert: TITLE und die einstimmige PARALLEL_TITLE (nach ' = ') sind vereinbart; frankps PERSON isoliert korrekt die aufführende Jesuiteninstitution als körperschaftliche Verantwortlichkeitsangabe innerhalb der beschreibenden Klausel, die gundi als ungeteilte OTHER_TITLE behandelt, weshalb die Klausel stattdessen um sie herum aufgeteilt wird.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 103,
+    "llm_suggested_label": [[16, 82, "TITLE"], [85, 99, "PERSON"]],
+    "llm_rationale": "frankp's TITLE boundary excludes the review-genre prefix 'Rezension von : ', consistent with excluding genre/status markers elsewhere (e.g. doc 41's '[Rezension]'); both agree on the reviewer's PERSON span.",
+    "llm_rationale_de": "frankps TITLE-Grenze schließt das Rezensionsgattungspräfix 'Rezension von : ' aus, im Einklang mit dem Ausschluss von Gattungs-/Statusmarkern andernorts (z. B. das '[Rezension]' in Dokument 41); beide stimmen bei der PERSON-Spanne des Rezensenten überein.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 104,
+    "llm_suggested_label": [[9, 16, "TITLE"], [19, 45, "PERSON"], [48, 101, "OTHER_TITLE"]],
+    "llm_rationale": "Matches the guide's own worked example (§5.2, 'Jahrbuch / Deutsche Shakespeare-Gesellschaft') exactly: a corporate body in SoR position is PERSON. None of the three annotators applied this fully, but maria's comment ('Bericht ... (Siebente Realschule Berlin ; 22)') independently recognizes the school as a separate entity from the title, supporting this reconstruction; leading '1912/13: ' date prefix excluded per the convention applied to similar leading date/issue prefixes elsewhere.",
+    "llm_rationale_de": "Entspricht exakt dem eigenen Anschauungsbeispiel des Leitfadens (§5.2, 'Jahrbuch / Deutsche Shakespeare-Gesellschaft'): eine Körperschaft in SoR-Position ist PERSON. Keiner der drei Annotatoren hat dies vollständig angewendet, aber marias Kommentar ('Bericht ... (Siebente Realschule Berlin ; 22)') erkennt die Schule unabhängig als eigenständige Entität getrennt vom Titel — dies stützt diese Rekonstruktion; das führende Datumspräfix '1912/13: ' wird gemäß der Konvention für ähnliche führende Datums-/Heftpräfixe andernorts ausgeschlossen.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 106,
+    "llm_suggested_label": [[0, 27, "TITLE"], [30, 85, "OTHER_TITLE"]],
+    "llm_rationale": "Majority (gundi/maria) label the German verse rendering as OTHER_TITLE rather than PARALLEL_TITLE, since it is introduced by ' : ' and is a paraphrase, not a direct restatement via ' = ' or ' /' (guide's PARALLEL_TITLE trigger); maria's OTHER_TITLE end is the clean boundary, excluding a trailing archaic punctuation mark that gundi's longer span includes.",
+    "llm_rationale_de": "Die Mehrheit (gundi/maria) markiert die deutsche Versfassung als OTHER_TITLE statt als PARALLEL_TITLE, da sie mit ' : ' eingeleitet wird und eine Paraphrase ist, keine direkte Wiedergabe über ' = ' oder ' /' (der PARALLEL_TITLE-Auslöser des Leitfadens); marias OTHER_TITLE-Ende ist die saubere Grenze, die ein abschließendes archaisches Satzzeichen ausschließt, das gundis längere Spanne enthält.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 107,
+    "llm_suggested_label": [[0, 322, "TITLE"], [329, 408, "OTHER_TITLE"]],
+    "llm_rationale": "Unlike docs 32/36/54/55/68/99, this opens in third person ('Nachdem Seine Königliche Majestät ... resolviret') describing the ruler's action rather than the ruler speaking in first person — not the credential-before-title pattern, so frankp's PERSON+TITLE split over-applies that convention here. gundi's majority-aligned TITLE/OTHER_TITLE split at the genuine internal ' : ' is preferred, with both boundaries trimmed to exclude trailing ' ...' truncation markers.",
+    "llm_rationale_de": "Anders als bei den Dokumenten 32/36/54/55/68/99 beginnt dieser Text in dritter Person ('Nachdem Seine Königliche Majestät ... resolviret') und beschreibt die Handlung des Herrschers, statt dass der Herrscher in erster Person spricht — nicht das Muster Titel/Grad-vor-Titel, weshalb frankps Aufteilung in PERSON+TITLE diese Konvention hier zu weit anwendet. gundis mehrheitlich übereinstimmende Aufteilung in TITLE/OTHER_TITLE am echten internen ' : ' wird bevorzugt, wobei beide Grenzen so beschnitten sind, dass abschließende ' ...'-Kürzungsmarker ausgeschlossen werden.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 108,
+    "llm_suggested_label": [[0, 32, "TITLE"]],
+    "llm_rationale": "frankp's shorter span excludes the closing dateline ('Am Bord der Pallas, Dover gegenüber, den 26. März 1776'), consistent with excluding imprint/dateline material elsewhere; maria's comment flags that the actual publication title is missing from this record altogether, a structural gap beyond what span labeling can fix.",
+    "llm_rationale_de": "frankps kürzere Spanne schließt die abschließende Datumszeile ('Am Bord der Pallas, Dover gegenüber, den 26. März 1776') aus, im Einklang mit dem Ausschluss von Impressum-/Datumszeilen-Material andernorts; marias Kommentar merkt an, dass der eigentliche Publikationstitel in diesem Datensatz gänzlich fehlt — eine strukturelle Lücke, die über Span-Markierung hinausgeht.",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 110,
+    "llm_suggested_label": [[0, 149, "TITLE"], [152, 332, "OTHER_TITLE"]],
+    "llm_rationale": "frankp and gundi agree on the clean TITLE boundary; gundi's split at the genuine ' : ' matches the flowchart default over maria's single merged TITLE.",
+    "llm_rationale_de": "frankp und gundi stimmen bei der sauberen TITLE-Grenze überein; gundis Aufteilung am echten ' : ' entspricht der Standardregel des Entscheidungsbaums gegenüber marias einzelnem zusammengeführten TITLE.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 111,
+    "llm_suggested_label": [[0, 414, "TITLE"]],
+    "llm_rationale": "gundi's boundary cleanly excludes the trailing ' ...' truncation marker; maria's OTHER_TITLE addition ('Promulgatum Bremen den 25. Aprilis 1701.') is excluded as a promulgation dateline, consistent with excluding imprint/dateline material elsewhere (e.g. batch 1 doc 5, doc 32).",
+    "llm_rationale_de": "gundis Grenze schließt sauber den abschließenden ' ...'-Kürzungsmarker aus; marias OTHER_TITLE-Zusatz ('Promulgatum Bremen den 25. Aprilis 1701.') wird als Promulgationsdatumszeile ausgeschlossen, im Einklang mit dem Ausschluss von Impressum-/Datumszeilen-Material andernorts (z. B. Batch 1 Dokument 5, Dokument 32).",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 113,
+    "llm_suggested_label": [[0, 114, "TITLE"]],
+    "llm_rationale": "maria's exclusion of the bracketed revision-date stamp '(Stand 27.02.2018)' is preferred over gundi's OTHER_TITLE labeling of it — this is administrative status metadata, not subject-identifying content (unlike the bracketed life-dates kept in TITLE per guide §5.7).",
+    "llm_rationale_de": "marias Ausschluss des geklammerten Revisionsdatum-Stempels '(Stand 27.02.2018)' wird gegenüber gundis OTHER_TITLE-Markierung bevorzugt — dies sind administrative Statusmetadaten, kein themenidentifizierender Inhalt (anders als die in TITLE beibehaltenen geklammerten Lebensdaten gemäß Leitfaden §5.7).",
+    "llm_confidence": "medium"
+  },
+  {
+    "doc_id": 115,
+    "llm_suggested_label": [[0, 24, "TITLE"]],
+    "llm_rationale": "frankp and maria agree exactly, both excluding the trailing ' ...'; the remaining text is a complete, if terse, title fragment.",
+    "llm_rationale_de": "frankp und maria stimmen exakt überein und schließen beide das abschließende ' ...' aus; der verbleibende Text ist ein vollständiges, wenn auch knappes Titelfragment.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 117,
+    "llm_suggested_label": [[0, 674, "TITLE"]],
+    "llm_rationale": "gundi and maria agree exactly on the full string as TITLE, the majority reading.",
+    "llm_rationale_de": "gundi und maria stimmen exakt überein: die gesamte Zeichenkette als TITLE, die mehrheitliche Lesart.",
+    "llm_confidence": "high"
+  },
+  {
+    "doc_id": 118,
+    "llm_suggested_label": [[0, 151, "TITLE"], [157, 222, "OTHER_TITLE"]],
+    "llm_rationale": "maria's OTHER_TITLE for the volume-specific piece is preferred over gundi's second TITLE span, keeping to one TITLE per record (guide §3.1); direct precedent from docs 17/27/40/81's collection-plus-piece structure.",
+    "llm_rationale_de": "marias OTHER_TITLE für das bandspezifische Einzelstück wird gegenüber gundis zweiter TITLE-Spanne bevorzugt, um bei einem TITLE pro Datensatz zu bleiben (Leitfaden §3.1); direkter Präzedenzfall aus der Sammlung-plus-Einzelstück-Struktur der Dokumente 17/27/40/81.",
+    "llm_confidence": "high"
+  }
+]
