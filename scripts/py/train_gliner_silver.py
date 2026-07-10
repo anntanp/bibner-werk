@@ -263,6 +263,18 @@ def main() -> None:
         focal_loss_gamma=args.focal_loss_gamma,
         seed=seed,
         max_steps=5 if args.dry_run else -1,
+        # Dev split (era x silver_tier-stratified) exists for best-epoch checkpoint selection
+        # (see module docstring) — without these four, eval_dataset above is computed but never
+        # used, and save_pretrained() below just saves whatever epoch happened to run last.
+        # No compute_metrics is wired in, so eval_loss is the only metric available; matches the
+        # dev split's stated purpose (checkpoint selection) without conflating it with the
+        # span-F1 evaluation eval_ner_gold.py does separately against held-out gold.
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        load_best_model_at_end=True,
+        metric_for_best_model="eval_loss",
+        greater_is_better=False,
+        save_total_limit=1,
     )
 
     trainer = Trainer(
