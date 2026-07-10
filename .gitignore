@@ -38,3 +38,6 @@ dist/
 # Editor
 .vscode/
 *.swp
+
+# Claude Code local config
+.claude/
