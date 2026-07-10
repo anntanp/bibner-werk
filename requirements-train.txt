@@ -1,0 +1,17 @@
+# Minimal deps for scripts/py/train_gliner_silver.py and train_xlmr_silver.py (once built).
+# Scoped intentionally — do NOT `pip freeze` the local dev .venv onto the server, it carries many
+# unrelated packages (flair, bioc, gdown, boto3, Wikipedia-API, ...) from earlier NER study-record
+# scripts. See notes/fiz/bibner-werk/A5-finetuning-script-plan.md §8c.
+#
+# torch is deliberately NOT pinned here — install separately, matched to the server's CUDA driver
+# (A100: default `pip install torch` is fine; see §8c for the V100S/CUDA-11.6 fallback path).
+
+gliner==0.2.26
+transformers==4.57.6
+accelerate==1.10.1
+sentencepiece==0.2.1
+scikit-learn==1.6.1
+pandas==2.3.3
+pyarrow==21.0.0
+numpy==2.0.2
+tqdm==4.68.3

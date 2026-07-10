@@ -442,7 +442,15 @@ def sample_tier1(df: pd.DataFrame, sample_size: int, mode: str, seed: int) -> pd
 
 
 def build_records(df: pd.DataFrame) -> list[dict]:
-    """Assemble Doccano-schema records: {"id", "text", "label": [[start,end,LABEL],...]}."""
+    """Assemble Doccano-schema records: {"id", "text", "label": [[start,end,LABEL],...],
+    "silver_tier", "era"}.
+
+    silver_tier (1 or 2) and era are included so downstream consumers (e.g. A5's
+    fine-tuning scripts, which need both for era x silver_tier-stratified splits)
+    can use them directly without re-deriving — df already carries both columns
+    from recompute_silver_tier()/era_join(), they just weren't being written out
+    before.
+    """
     records = []
     for row in df.itertuples():
         spans = extract_spans(
@@ -452,6 +460,8 @@ def build_records(df: pd.DataFrame) -> list[dict]:
             "id": row.obj_id,
             "text": row.title,
             "label": [[s, e, label] for s, e, label in spans],
+            "silver_tier": int(row.silver_tier),
+            "era": row.era,
         })
     return records
 

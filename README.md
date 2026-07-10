@@ -25,8 +25,8 @@ Dedicated venv — does not share or depend on `gemea/.venv`, per the 2026-06-10
 
 ## Datasets
 
-- `wem-silver`: 689K tier-1 + 7K tier-2 silver-labeled records (CC BY 4.0, pending DDB confirmation)
-- `wem-gold`: 395-record manually annotated gold set
+- `data/silver/silver_spans.jsonl`: 49,999 tier-1 + 2,384 tier-2 silver-labeled records (52,383 total)
+- `data/annotation/doccano/export-20260623-1110/`: 395-record gold set (per-annotator exports; adjudicated version at `data/annotation/doccano/adjucated-20260707-1557.jsonl`)
 
 ## Related
 

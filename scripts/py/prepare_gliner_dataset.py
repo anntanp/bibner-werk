@@ -52,8 +52,15 @@ def read_jsonl(path: Path) -> Iterator[dict[str, object]]:
                 yield json.loads(stripped)
 
 
+PASSTHROUGH_FIELDS = ("silver_tier", "era")
+
+
 def to_gliner_example(
-    record_id: object, text: str, char_spans: list[CharSpan], splitter: WordsSplitter
+    record_id: object,
+    text: str,
+    char_spans: list[CharSpan],
+    splitter: WordsSplitter,
+    passthrough: dict[str, object] | None = None,
 ) -> tuple[dict[str, object] | None, dict[str, object] | None]:
     """Convert one Doccano-schema record to GLiNER's word-indexed format.
 
@@ -63,6 +70,12 @@ def to_gliner_example(
         char_spans: Char-offset spans as (start, end, label) — end exclusive,
             matching Doccano's convention (same as build_silver_spans.py output).
         splitter: A GLiNER WordsSplitter instance, reused across calls.
+        passthrough: Fields to copy verbatim into the output (e.g. silver_tier,
+            era), not used by the conversion itself. Empty/absent for gold
+            records (they don't carry these fields); populated for silver
+            records built by build_silver_spans.py. Keys with a None value are
+            omitted from the output entirely rather than written as null, so
+            gold-derived GLiNER datasets don't gain spurious keys.
 
     Returns:
         (example, misaligned_report): example is None if any span fails to
@@ -85,7 +98,11 @@ def to_gliner_example(
 
     if bad_spans:
         return None, {"id": record_id, "text": text, "bad_spans": bad_spans}
-    return {"id": record_id, "tokenized_text": words, "ner": ner}, None
+    example: dict[str, object] = {"id": record_id, "tokenized_text": words, "ner": ner}
+    for key, value in (passthrough or {}).items():
+        if value is not None:
+            example[key] = value
+    return example, None
 
 
 def convert(
@@ -106,7 +123,10 @@ def convert(
     for i, rec in enumerate(read_jsonl(input_path)):
         record_id = rec.get("id", i)
         char_spans = [(s, e, label) for s, e, label in rec["label"]]  # type: ignore[union-attr]
-        example, bad = to_gliner_example(record_id, rec["text"], char_spans, splitter)  # type: ignore[arg-type]
+        passthrough = {k: rec.get(k) for k in PASSTHROUGH_FIELDS}
+        example, bad = to_gliner_example(
+            record_id, rec["text"], char_spans, splitter, passthrough  # type: ignore[arg-type]
+        )
         if bad is not None:
             misaligned.append(bad)
             continue
