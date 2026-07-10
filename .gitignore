@@ -10,16 +10,20 @@
 data/annotation/doccano/*
 !data/annotation/doccano/README.md
 
-# Data — reproducible from tracked scripts + the (gemea-external) corpus; not tracked directly
-data/processed/
-data/silver/
-data/title-length/
-data/eval/
-
-# data/gold/, data/iaa/, data/adjudication/, data/heuristics/ ARE tracked — they're manually
-# reviewed ground truth (gold labels, IAA scores, adjudication decisions, sr04 true_class), not
-# reproducible from scripts alone (their raw input, the Doccano exports above, is PII-excluded),
-# and contain no PII themselves. See notes/fiz/bibner-werk/data-reorg-plan.md.
+# data/processed/, data/silver/, data/title-length/, data/eval/, data/gold/, data/iaa/,
+# data/adjudication/, data/heuristics/ are ALL tracked. The former group was previously ignored as
+# "reproducible from tracked scripts," but that's true only in principle — regenerating
+# data/silver/silver_spans.jsonl (2026-07-10) took ~64 min (FLERT sub-classification over ~34K
+# statement-of-responsibility segments) and needs two large external files (a 1.3GB ratings CSV +
+# a 1.3GB parquet) that live in the separate gemea project, not in this repo — so "reproducible"
+# silently also meant "have gemea's output directory available," not guaranteed by cloning this
+# repo alone. Not worth the regeneration cost or the external dependency for files this size
+# (silver_spans.jsonl + gliner_dataset_silver.jsonl together are ~32MB) — tracked directly instead.
+# data/gold/, data/iaa/, data/adjudication/, data/heuristics/ were always tracked: manually reviewed
+# ground truth (gold labels, IAA scores, adjudication decisions, sr04 true_class), not reproducible
+# from scripts alone (their raw input, the Doccano exports below, is PII-excluded), and contain no
+# PII themselves. See notes/fiz/bibner-werk/data-reorg-plan.md (historical — describes the original
+# split, superseded 2026-07-10 for the four now-tracked directories).
 
 # Large binary data
 *.parquet
