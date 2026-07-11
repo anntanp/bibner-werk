@@ -62,6 +62,15 @@ if [ "${#RERUN[@]}" -eq 0 ]; then
   exit 0
 fi
 
+# Any fold in RERUN has no trustworthy checkpoint by definition (that's the criterion above), so its
+# output dir may still hold stale checkpoint-N/ subdirs from save_strategy="epoch" on the killed/crashed
+# attempt — clear it before relaunching rather than risk a fresh run's own checkpoint-N colliding with
+# (or being mistaken for) the old one. Never touches folds NOT in RERUN.
+for i in "${RERUN[@]}"; do
+  rm -rf "models/gliner_fold${i}"
+done
+echo "$(date): cleared stale output dirs for: ${RERUN[*]}"
+
 printf '%s\n' "${RERUN[@]}" | xargs -P "$CONCURRENCY" -I{} bash -c \
   'time python3 scripts/py/train_gliner_silver.py --fold-index {} 2>&1 | tee "fold{}_full.log"'
 
