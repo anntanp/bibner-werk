@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # Purpose:      Qualitative spot-check of a trained BIO checkpoint (train_xlmr_silver.py's output)
-#               against gold BIO tags on N sampled dev-split records — a quick sanity check on
-#               whether a model's predictions look right, complementing the loss-curve numbers
-#               alone. Written after A5-finetuning-xlmr-workflow.md §6.2 flagged fold-0's unusually
-#               low train/eval loss (0.00462/0.00442) as worth a deliberate look before firing the
-#               remaining k-fold replicates on the same recipe. This is a manual qualitative read,
-#               not a formal metric — that's B6 (not yet built), which evaluates against held-out
-#               *gold* folds rather than the silver dev split used here.
+#               against SILVER BIO tags (not the human-adjudicated gold set — see Assumptions) on N
+#               sampled dev-split records — a quick sanity check on whether a model's predictions
+#               look right, complementing the loss-curve numbers alone. Written after
+#               A5-finetuning-xlmr-workflow.md §6.2 flagged fold-0's unusually low train/eval loss
+#               (0.00462/0.00442) as worth a deliberate look before firing the remaining k-fold
+#               replicates on the same recipe. This is a manual qualitative read, not a formal
+#               metric — that's B6 (not yet built), which evaluates against held-out *gold* folds.
 # Usage:        python3 scripts/py/spotcheck_xlmr_predictions.py --checkpoint models/xlmr_fold0
 #                   [--bio-data PATH] [--n-samples INT] [--sample-seed INT]
 #                   [--dev-fraction FLOAT] [--dev-split-seed INT] [--max-length INT] [--device STR]
@@ -14,13 +14,21 @@
 #                   train_xlmr_silver.py trains on)
 #               A checkpoint dir saved by train_xlmr_silver.py (model + tokenizer via
 #                   save_pretrained)
-# Outputs:      Printed word-by-word gold-vs-predicted comparison to stdout, one block per sampled
+# Outputs:      Printed word-by-word silver-vs-predicted comparison to stdout, one block per sampled
 #                   record, plus an aggregate mismatch-rate summary — no file output; redirect if a
 #                   saved copy is wanted (e.g. `> spotcheck_fold0.txt`)
 # Dependencies: torch, transformers
-# Assumptions:  Reproduces the exact dev split train_xlmr_silver.py used at training time
-#                   (--dev-fraction/--dev-split-seed must match what that run actually used —
-#                   defaults are 0.1/42 for both scripts) by importing read_jsonl/
+# Assumptions:  **The reference tags here are SILVER (ISBD-heuristic-derived), not the true
+#                   395-record human-adjudicated GOLD set (data/gold/gold_reconciled.jsonl) — those
+#                   are disjoint datasets.** A "mismatch" against silver means the model disagrees
+#                   with the heuristic labeling pipeline, which is not automatically the same as
+#                   disagreeing with bibliographic ground truth; the silver heuristic itself can be
+#                   wrong on hard cases (see A5-xlmr-spotcheck.md for a worked example). Only B6's
+#                   eval against gold folds measures correctness against actual ground truth — this
+#                   script is a fast qualitative read of self-consistency with the training signal,
+#                   not a substitute for that. Reproduces the exact dev split train_xlmr_silver.py
+#                   used at training time (--dev-fraction/--dev-split-seed must match what that run
+#                   actually used — defaults are 0.1/42 for both scripts) by importing read_jsonl/
 #                   stratified_dev_split/ID2LABEL directly from train_xlmr_silver.py rather than
 #                   reimplementing them — a deliberate exception to the "standalone scripts"
 #                   convention (scripts/README.md), since correctness here depends on bit-for-bit
@@ -28,10 +36,6 @@
 #                   verify_resp_classifier.py's import of build_silver_spans.py). Predictions use
 #                   the same "label only the first subword" word-alignment convention as training
 #                   (tokenizer.word_ids()) — the inverse direction of tokenize_and_align_labels().
-#                   Mismatches against *silver* tags may reflect silver-labeling noise (ISBD
-#                   extraction imperfections baked into the training data itself), not necessarily
-#                   model error — only eval against *gold* (B6) can distinguish the two; this script
-#                   is a fast qualitative read, not a substitute for that.
 from __future__ import annotations
 
 import argparse
@@ -68,7 +72,7 @@ def align_word_predictions(word_ids: list[int | None], pred_ids: list[int]) -> l
     """First-subword-only alignment, the inverse of tokenize_and_align_labels()'s label assignment.
 
     Mirrors the training-time convention (first token occurrence per word_ids() value), so
-    predictions are compared against gold tags at the same word-level granularity.
+    predictions are compared against silver tags at the same word-level granularity.
     """
     num_words = max((w for w in word_ids if w is not None), default=-1) + 1
     tags = ["O"] * num_words
@@ -82,19 +86,23 @@ def align_word_predictions(word_ids: list[int | None], pred_ids: list[int]) -> l
 
 
 def format_comparison(
-    record_id: object, words: list[str], gold_tags: list[str], pred_tags: list[str]
+    record_id: object, words: list[str], silver_tags: list[str], pred_tags: list[str]
 ) -> tuple[str, int]:
-    """Render one record's word-by-word gold-vs-predicted comparison.
+    """Render one record's word-by-word silver-vs-predicted comparison.
+
+    Labeled "silver=", not "gold=" — these reference tags come from the ISBD-heuristic
+    silver-labeling pipeline (bio_dataset_silver.jsonl), not the human-adjudicated gold set. A
+    mismatch means disagreement with the training signal, not necessarily with ground truth.
 
     Returns:
         (report_text, mismatch_count).
     """
     lines = [f"{'=' * 80}", f"id: {record_id}"]
     mismatches = 0
-    for word, gold, pred in zip(words, gold_tags, pred_tags):
-        flag = "" if gold == pred else "  <-- MISMATCH"
+    for word, silver, pred in zip(words, silver_tags, pred_tags):
+        flag = "" if silver == pred else "  <-- MISMATCH"
         mismatches += bool(flag)
-        lines.append(f"{word:30s} gold={gold:16s} pred={pred:16s}{flag}")
+        lines.append(f"{word:30s} silver={silver:16s} pred={pred:16s}{flag}")
     lines.append(f"-> {mismatches}/{len(words)} word-level mismatches")
     return "\n".join(lines), mismatches
 
@@ -123,8 +131,8 @@ def predict_word_tags(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Spot-check a train_xlmr_silver.py checkpoint's predictions against gold BIO "
-        "tags on sampled dev-split records."
+        description="Spot-check a train_xlmr_silver.py checkpoint's predictions against SILVER "
+        "(not gold) BIO tags on sampled dev-split records."
     )
     parser.add_argument("--checkpoint", type=Path, required=True, help="e.g. models/xlmr_fold0")
     parser.add_argument("--bio-data", type=Path, default=DEFAULT_BIO_DATA)
