@@ -1,0 +1,2372 @@
+{
+  "1": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "2": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "3": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "4": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "5": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "6": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "7": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "8": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "9": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "10": {
+    "fold": 9,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "11": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "12": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "13": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "14": {
+    "fold": 4,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "15": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "16": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "17": {
+    "fold": 4,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "18": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "19": {
+    "fold": 2,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "20": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "21": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "22": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "23": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "24": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "25": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "26": {
+    "fold": 5,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "27": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "28": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "29": {
+    "fold": 3,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "30": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "31": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "32": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "33": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "34": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "35": {
+    "fold": 5,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "36": {
+    "fold": 7,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "37": {
+    "fold": 2,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "38": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "39": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "40": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "41": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "42": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "43": {
+    "fold": 6,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "44": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "45": {
+    "fold": 6,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "46": {
+    "fold": 1,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "47": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "48": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "49": {
+    "fold": 2,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "50": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "51": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "52": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "53": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "54": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "55": {
+    "fold": 9,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "56": {
+    "fold": 8,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "57": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "58": {
+    "fold": 6,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "59": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "60": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "61": {
+    "fold": 3,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "62": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "63": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "64": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "65": {
+    "fold": 3,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "66": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "67": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "68": {
+    "fold": 1,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "69": {
+    "fold": 9,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "70": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "71": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "72": {
+    "fold": 8,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "73": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "74": {
+    "fold": 4,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "75": {
+    "fold": 9,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "76": {
+    "fold": 7,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "77": {
+    "fold": 2,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "78": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "79": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "80": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "81": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "82": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "83": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "84": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "85": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "86": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "87": {
+    "fold": 8,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "88": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "89": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "90": {
+    "fold": 6,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "91": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "92": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "93": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "94": {
+    "fold": 7,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "95": {
+    "fold": 2,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "96": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "97": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "98": {
+    "fold": 7,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "99": {
+    "fold": 4,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "100": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "101": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "102": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "103": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "104": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "105": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "106": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "107": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "108": {
+    "fold": 0,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "109": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "110": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "111": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "112": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "113": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "114": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "115": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "116": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "117": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "118": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "119": {
+    "fold": 5,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "120": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "121": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "122": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "123": {
+    "fold": 4,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "124": {
+    "fold": 8,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "125": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "126": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "127": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "128": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "129": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "130": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "131": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "132": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "133": {
+    "fold": 4,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "134": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "135": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "136": {
+    "fold": 5,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "137": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "138": {
+    "fold": 1,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "139": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "140": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "141": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "142": {
+    "fold": 4,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "143": {
+    "fold": 2,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "144": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "145": {
+    "fold": 8,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "146": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "147": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "148": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "149": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "150": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "151": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "152": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "153": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "154": {
+    "fold": 2,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "155": {
+    "fold": 8,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "156": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "157": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "158": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "159": {
+    "fold": 2,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "160": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "161": {
+    "fold": 3,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "162": {
+    "fold": 0,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "163": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "164": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "165": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "166": {
+    "fold": 7,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "167": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "168": {
+    "fold": 0,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "169": {
+    "fold": 7,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "170": {
+    "fold": 6,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "171": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "172": {
+    "fold": 9,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "173": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "174": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "175": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "176": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "177": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "178": {
+    "fold": 6,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "179": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "180": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "181": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "182": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "183": {
+    "fold": 6,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "184": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "185": {
+    "fold": 4,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "186": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "187": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "188": {
+    "fold": 6,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "189": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "190": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "191": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "192": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "193": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "194": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "195": {
+    "fold": 6,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "196": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "197": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "198": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "199": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "200": {
+    "fold": 0,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "201": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "202": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "203": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "204": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "205": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "206": {
+    "fold": 9,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "207": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "208": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "209": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "210": {
+    "fold": 1,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "211": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "212": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "213": {
+    "fold": 5,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "214": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "215": {
+    "fold": 7,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "216": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "217": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "218": {
+    "fold": 3,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "219": {
+    "fold": 8,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "220": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "221": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "222": {
+    "fold": 1,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "223": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "224": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "225": {
+    "fold": 8,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "226": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "227": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "228": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "229": {
+    "fold": 5,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "230": {
+    "fold": 1,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "231": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "232": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "233": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "234": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "235": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "236": {
+    "fold": 1,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "237": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "238": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "239": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "240": {
+    "fold": 9,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "241": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "242": {
+    "fold": 3,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "243": {
+    "fold": 3,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "244": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "245": {
+    "fold": 9,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "246": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "247": {
+    "fold": 5,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "248": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "249": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "250": {
+    "fold": 6,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "251": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "252": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "253": {
+    "fold": 6,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "254": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "255": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "256": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "257": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "258": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "259": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "260": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "261": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "262": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "263": {
+    "fold": 0,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "264": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "265": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "266": {
+    "fold": 1,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "267": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "268": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "269": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "270": {
+    "fold": 8,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "271": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "272": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "273": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "274": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "275": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "276": {
+    "fold": 5,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "277": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "278": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "279": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "280": {
+    "fold": 7,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "281": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "282": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "283": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "284": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "285": {
+    "fold": 1,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "286": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "287": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "288": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "289": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "290": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "291": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "292": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "293": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "294": {
+    "fold": 6,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "295": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "296": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "297": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "298": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "299": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "300": {
+    "fold": 3,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "301": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "302": {
+    "fold": 2,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "303": {
+    "fold": 7,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "304": {
+    "fold": 0,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "305": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "306": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "307": {
+    "fold": 4,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "308": {
+    "fold": 6,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "309": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "310": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "311": {
+    "fold": 0,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "312": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "313": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "314": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "315": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "316": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "317": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "318": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "319": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "320": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "321": {
+    "fold": 0,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "322": {
+    "fold": 9,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "323": {
+    "fold": 2,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "324": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "325": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "326": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "327": {
+    "fold": 7,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "328": {
+    "fold": 1,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "329": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "330": {
+    "fold": 3,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "331": {
+    "fold": 8,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "332": {
+    "fold": 8,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "333": {
+    "fold": 5,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "334": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "335": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "336": {
+    "fold": 2,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "337": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "338": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "339": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "340": {
+    "fold": 5,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "341": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "342": {
+    "fold": 8,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "343": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "344": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "345": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "346": {
+    "fold": 0,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "347": {
+    "fold": 4,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "348": {
+    "fold": 4,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "349": {
+    "fold": 3,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "350": {
+    "fold": 9,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "351": {
+    "fold": 5,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "352": {
+    "fold": 1,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "353": {
+    "fold": 5,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "354": {
+    "fold": 0,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "355": {
+    "fold": 8,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "356": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "357": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "358": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "359": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "360": {
+    "fold": 6,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "361": {
+    "fold": 3,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "362": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "363": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "364": {
+    "fold": 2,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "365": {
+    "fold": 1,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "366": {
+    "fold": 4,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "367": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "368": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "369": {
+    "fold": 6,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "370": {
+    "fold": 3,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "371": {
+    "fold": 4,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "372": {
+    "fold": 2,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "373": {
+    "fold": 1,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "374": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "375": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "376": {
+    "fold": 6,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "377": {
+    "fold": 4,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "378": {
+    "fold": 2,
+    "era": "1700-1800",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "379": {
+    "fold": 0,
+    "era": "19th-c",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "380": {
+    "fold": 7,
+    "era": "1700-1800",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "381": {
+    "fold": 7,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "382": {
+    "fold": 3,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "383": {
+    "fold": 9,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "384": {
+    "fold": 9,
+    "era": "19th-c",
+    "silver_tier": "2",
+    "flagged_small_cell": true
+  },
+  "385": {
+    "fold": 7,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "386": {
+    "fold": 5,
+    "era": "pre-1700",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "387": {
+    "fold": 6,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "388": {
+    "fold": 6,
+    "era": "unknown",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "389": {
+    "fold": 9,
+    "era": "modern",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "390": {
+    "fold": 0,
+    "era": "1700-1800",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "391": {
+    "fold": 3,
+    "era": "modern",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "392": {
+    "fold": 0,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  },
+  "393": {
+    "fold": 0,
+    "era": "pre-1700",
+    "silver_tier": "0",
+    "flagged_small_cell": false
+  },
+  "394": {
+    "fold": 1,
+    "era": "unknown",
+    "silver_tier": "0",
+    "flagged_small_cell": true
+  },
+  "395": {
+    "fold": 6,
+    "era": "19th-c",
+    "silver_tier": "1",
+    "flagged_small_cell": true
+  }
+}
