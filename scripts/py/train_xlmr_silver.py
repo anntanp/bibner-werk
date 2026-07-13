@@ -18,7 +18,7 @@
 #                   [--epochs INT] [--learning-rate FLOAT] [--batch-size INT]
 #                   [--warmup-ratio FLOAT] [--weight-decay FLOAT]
 #                   [--focal-gamma FLOAT] [--class-weights {auto,none}]
-#                   [--output-dir PATH] [--dry-run]
+#                   [--train-size INT] [--output-dir PATH] [--dry-run] [--fresh-start]
 # Inputs:       data/silver/bio_dataset_silver.jsonl (word-level BIO schema:
 #                   {"id","tokens","tags","silver_tier","era"} — produced by
 #                   prepare_bio_dataset.py from data/silver/silver_spans.jsonl;
@@ -28,7 +28,11 @@
 #               data/provenance/bibner-data-provenance.parquet (leakage guard,
 #                   gold obj_id resolution)
 # Outputs:      models/xlmr_fold{fold-index}/ (HF Trainer checkpoint, via
-#                   save_pretrained, tokenizer included)
+#                   save_pretrained, tokenizer included, plus a run_config.json
+#                   sidecar for resume-compatibility checks); models/xlmr_n{train-size}_
+#                   fold{fold-index}/ instead when --train-size is set (data-scaling
+#                   sweep, see A5-finetuning-scaling-sweep-plan.md) — no collision
+#                   with the unsuffixed full-pool checkpoints
 # Dependencies: transformers, torch, sentencepiece, pyarrow, scikit-learn
 # Assumptions:  Word-level BIO tags are aligned to XLM-R subwords via the
 #                   standard "label only the first subword" HF convention
@@ -48,12 +52,23 @@
 #                   token-classification starting points, NOT tuned for this
 #                   dataset — same "flagged default, not a verified value"
 #                   posture as train_gliner_silver.py, pending PI approval
-#                   (A5-finetuning-script-plan.md §0).
+#                   (A5-finetuning-script-plan.md §0). Designed for unattended
+#                   multi-hour operation (A5-finetuning-scaling-sweep-plan.md):
+#                   run_preflight_checks() fails fast on missing inputs, an
+#                   unwritable output dir, low disk, or >1 visible CUDA device
+#                   before any expensive work starts; a killed/interrupted run
+#                   resumes automatically from its last epoch checkpoint if
+#                   run_config.json matches this invocation, otherwise raises
+#                   rather than silently mixing mismatched runs (--fresh-start
+#                   is the escape hatch to discard a stale directory).
 from __future__ import annotations
 
 import argparse
 import json
 import logging
+import os
+import re
+import shutil
 from collections import Counter
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
@@ -74,6 +89,68 @@ DEFAULT_OUTPUT_ROOT = ROOT / "models"
 BIO_TAGS = ["O", "B-TITLE", "I-TITLE", "B-OTHER_TITLE", "I-OTHER_TITLE", "B-PERSON", "I-PERSON"]
 LABEL2ID = {tag: i for i, tag in enumerate(BIO_TAGS)}
 ID2LABEL = {i: tag for tag, i in LABEL2ID.items()}
+
+
+def run_preflight_checks(
+    input_paths: list[Path], output_dir: Path, require_gpu: bool, min_free_disk_gb: float = 5.0
+) -> None:
+    """Fail fast, before any expensive work, on conditions that would otherwise only
+    surface hours into an unattended multi-run sweep (A5-finetuning-scaling-sweep-plan.md
+    checklist §0/§1): a missing/unreadable input file, an unwritable checkpoint
+    location, too little free disk space for a checkpoint save, or more than one
+    CUDA device visible — the exact silent-DataParallel-hang class of bug found
+    in A5-finetuning-xlmr-workflow.md §5.2 item 0. Raises immediately with a
+    specific fix, rather than letting the failure surface as an opaque crash (or
+    hang) partway through an unattended run. min_free_disk_gb is a per-job
+    safety margin only — the orchestration script is responsible for tracking
+    cumulative disk use across an entire multi-run sweep.
+    """
+    missing = [p for p in input_paths if not p.is_file()]
+    if missing:
+        raise FileNotFoundError(
+            f"Preflight failed: input file(s) not found: {missing}. Check --bio-data, --gold, "
+            "--provenance paths before launching an unattended run."
+        )
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    sentinel = output_dir / f".preflight_write_check_{os.getpid()}"
+    try:
+        sentinel.write_text("ok")
+        sentinel.unlink()
+    except OSError as e:
+        raise OSError(
+            f"Preflight failed: {output_dir} is not writable ({e}). Fix permissions before launching "
+            "an unattended run — a save failure hours in is much more expensive to notice."
+        ) from e
+
+    free_gb = shutil.disk_usage(output_dir).free / (1024**3)
+    if free_gb < min_free_disk_gb:
+        raise OSError(
+            f"Preflight failed: only {free_gb:.1f}GB free at {output_dir}, below the "
+            f"{min_free_disk_gb}GB per-job minimum. An unattended sweep can fill disk silently "
+            "mid-run otherwise — free up space or adjust --min-free-disk-gb if this is a false alarm."
+        )
+
+    if require_gpu:
+        import torch
+        if not torch.cuda.is_available():
+            raise RuntimeError(
+                "Preflight failed: --dry-run not set but no CUDA device is visible. Check "
+                "CUDA_VISIBLE_DEVICES and the environment before launching an unattended run."
+            )
+        n_visible = torch.cuda.device_count()
+        if n_visible != 1:
+            raise RuntimeError(
+                f"Preflight failed: {n_visible} CUDA devices visible, expected exactly 1. Every job "
+                "must pin CUDA_VISIBLE_DEVICES to a single card — an unpinned multi-GPU process caused "
+                "a silent DataParallel hang before (A5-finetuning-xlmr-workflow.md §5.2 item 0). Set "
+                "CUDA_VISIBLE_DEVICES=<n> explicitly before launching."
+            )
+
+    logging.info(
+        "Preflight checks passed (%d input file(s) found, %.1fGB free at %s, GPU check: %s).",
+        len(input_paths), free_gb, output_dir, "passed" if require_gpu else "skipped (--dry-run)",
+    )
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -165,6 +242,53 @@ def stratified_dev_split(
     return train, dev
 
 
+def subsample_train_records(
+    records: list[dict[str, Any]], train_size: int, seed: int
+) -> list[dict[str, Any]]:
+    """Draw an era x silver_tier-stratified subsample of exactly `train_size` records.
+
+    For the data-scaling sweep (A5-finetuning-scaling-sweep-plan.md): every
+    --fold-index run at a given --train-size must train on the *same* N
+    records (only the model-init/data-order seed should vary across folds),
+    so callers pass args.seed_base here, not the per-fold seed. Same
+    stratify-key / fallback-chain shape as stratified_dev_split (era x
+    silver_tier, then era-only, then unstratified) — reuses train_test_split's
+    train_size= to draw the subsample directly rather than hand-rolling
+    groupby math for a one-shot draw.
+    """
+    if train_size >= len(records):
+        logging.info(
+            "Requested --train-size %d >= available %d train records; keeping all.",
+            train_size, len(records),
+        )
+        return records
+
+    keys = [f"{r.get('era')}_{r.get('silver_tier')}" for r in records]
+    subsample: list[dict[str, Any]]
+    try:
+        subsample, _ = train_test_split(records, train_size=train_size, random_state=seed, stratify=keys)
+        logging.info(
+            "Train subsample: era x silver_tier-stratified, %d of %d records.", len(subsample), len(records)
+        )
+        return subsample
+    except ValueError as e:
+        logging.warning("era x silver_tier stratification failed (%s); falling back to era-only.", e)
+
+    era_keys = [str(r.get("era")) for r in records]
+    try:
+        subsample, _ = train_test_split(records, train_size=train_size, random_state=seed, stratify=era_keys)
+        logging.info(
+            "Train subsample: era-only-stratified (fallback), %d of %d records.", len(subsample), len(records)
+        )
+        return subsample
+    except ValueError as e:
+        logging.warning("era-only stratification also failed (%s); falling back to unstratified.", e)
+
+    subsample, _ = train_test_split(records, train_size=train_size, random_state=seed)
+    logging.info("Train subsample: unstratified (fallback), %d of %d records.", len(subsample), len(records))
+    return subsample
+
+
 def compute_class_weights(train_records: list[dict[str, Any]]) -> list[float]:
     """Inverse-sqrt-frequency weight per BIO tag, normalized to mean 1.0.
 
@@ -217,6 +341,68 @@ def tokenize_and_align_labels(
     }
 
 
+RUN_CONFIG_FILENAME = "run_config.json"
+CHECKPOINT_DIR_RE = re.compile(r"^checkpoint-(\d+)$")
+
+
+def find_last_checkpoint(output_dir: Path) -> Path | None:
+    """Return the highest-numbered checkpoint-N subdir under output_dir, or None if absent.
+
+    Reimplemented locally rather than transformers.trainer_utils.get_last_checkpoint
+    so this stays torch/transformers-free and unit-testable, matching this file's
+    existing deferred-import posture (module Assumptions).
+    """
+    if not output_dir.is_dir():
+        return None
+    candidates = [
+        (int(match.group(1)), child)
+        for child in output_dir.iterdir()
+        if child.is_dir() and (match := CHECKPOINT_DIR_RE.match(child.name))
+    ]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda pair: pair[0])[1]
+
+
+def write_run_config(output_dir: Path, config: dict[str, Any]) -> None:
+    """Write this run's key hyperparameters as a sidecar for future resume-compatibility checks."""
+    (output_dir / RUN_CONFIG_FILENAME).write_text(json.dumps(config, indent=2, sort_keys=True))
+
+
+def check_resumable(output_dir: Path, config: dict[str, Any]) -> Path | None:
+    """Return the checkpoint to resume from, or None if output_dir has nothing to resume.
+
+    For an unattended multi-hour sweep (A5-finetuning-scaling-sweep-plan.md), a job killed
+    partway through must be able to continue from its last epoch checkpoint rather than
+    restart from scratch. But resuming into a *mismatched* run (different --train-size,
+    different hyperparameters — e.g. output_dir accidentally reused, or leftover from a
+    differently-configured previous attempt) would silently corrupt the run, worse than
+    just restarting — so a checkpoint is only trusted if its run_config.json sidecar
+    matches this invocation exactly. Raises rather than guesses if there's a checkpoint
+    but no matching (or no) sidecar; --fresh-start is the escape hatch to discard it.
+    """
+    last_checkpoint = find_last_checkpoint(output_dir)
+    if last_checkpoint is None:
+        return None
+
+    config_path = output_dir / RUN_CONFIG_FILENAME
+    if not config_path.is_file():
+        raise RuntimeError(
+            f"Preflight failed: {output_dir} has a checkpoint ({last_checkpoint}) but no "
+            f"{RUN_CONFIG_FILENAME} to verify it matches this invocation. Refusing to resume into "
+            "an unverifiable run — pass --fresh-start to discard it and start clean."
+        )
+    saved_config = json.loads(config_path.read_text())
+    if saved_config != config:
+        raise RuntimeError(
+            f"Preflight failed: {output_dir}'s checkpoint was trained with different arguments than "
+            f"this invocation (saved: {saved_config}; current: {config}). Refusing to resume a "
+            "mismatched run — pass --fresh-start to discard it and start clean."
+        )
+    logging.info("Found resumable checkpoint at %s (run_config matches).", last_checkpoint)
+    return last_checkpoint
+
+
 def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
 
@@ -256,15 +442,55 @@ def main() -> None:
     parser.add_argument("--class-weights", choices=["auto", "none"], default="auto",
                         help="auto: per-BIO-tag inverse-sqrt-frequency weights from the training "
                              "split (§3.1); none: plain (unweighted) focal loss")
+    parser.add_argument("--train-size", type=int, default=None,
+                        help="Subsample the train split (post dev-split) to this many records, "
+                             "era x silver_tier-stratified with random_state=seed_base (not "
+                             "seed_base+fold_index, so every fold at a given size trains on the "
+                             "same N records). Omit for the full pool (default). See "
+                             "A5-finetuning-scaling-sweep-plan.md")
     parser.add_argument("--output-dir", type=Path, default=None,
-                        help="Default: models/xlmr_fold{fold-index}/")
+                        help="Default: models/xlmr_fold{fold-index}/, or "
+                             "models/xlmr_n{train-size}_fold{fold-index}/ if --train-size is set")
     parser.add_argument("--dry-run", action="store_true",
                         help="Train on a ~50-record subset for a fast smoke test, mirroring "
                              "train_gliner_silver.py's --dry-run, per A5-finetuning-script-plan.md §7")
+    parser.add_argument("--fresh-start", action="store_true",
+                        help="Wipe --output-dir before training instead of resuming from any "
+                             "checkpoint found there. Use to recover from a stale/mismatched "
+                             "interrupted run; otherwise a checkpoint with a matching run_config.json "
+                             "is resumed from automatically — required for unattended multi-hour runs, "
+                             "see A5-finetuning-scaling-sweep-plan.md")
     args = parser.parse_args()
 
-    output_dir = args.output_dir or (DEFAULT_OUTPUT_ROOT / f"xlmr_fold{args.fold_index}")
+    if args.output_dir:
+        output_dir = args.output_dir
+    elif args.train_size is not None:
+        output_dir = DEFAULT_OUTPUT_ROOT / f"xlmr_n{args.train_size}_fold{args.fold_index}"
+    else:
+        output_dir = DEFAULT_OUTPUT_ROOT / f"xlmr_fold{args.fold_index}"
     seed = args.seed_base + args.fold_index
+
+    if args.fresh_start and output_dir.exists():
+        logging.info("--fresh-start: removing existing %s before training.", output_dir)
+        shutil.rmtree(output_dir)
+
+    run_preflight_checks(
+        input_paths=[args.bio_data, args.gold, args.provenance],
+        output_dir=output_dir,
+        require_gpu=not args.dry_run,
+    )
+
+    run_config = {
+        "fold_index": args.fold_index, "seed_base": args.seed_base, "model_name": args.model_name,
+        "precision": args.precision, "dev_fraction": args.dev_fraction,
+        "dev_split_seed": args.dev_split_seed, "max_length": args.max_length, "epochs": args.epochs,
+        "learning_rate": args.learning_rate, "batch_size": args.batch_size,
+        "warmup_ratio": args.warmup_ratio, "weight_decay": args.weight_decay,
+        "focal_gamma": args.focal_gamma, "class_weights": args.class_weights,
+        "train_size": args.train_size,
+    }
+    resume_checkpoint = check_resumable(output_dir, run_config)
+    write_run_config(output_dir, run_config)
 
     logging.info("Loading BIO data from %s", args.bio_data)
     bio_records = read_jsonl(args.bio_data)
@@ -272,6 +498,9 @@ def main() -> None:
     leakage_guard(bio_records, args.gold, args.provenance)
 
     train_records, dev_records = stratified_dev_split(bio_records, args.dev_fraction, args.dev_split_seed)
+
+    if args.train_size is not None:
+        train_records = subsample_train_records(train_records, args.train_size, args.seed_base)
 
     if args.dry_run:
         train_records = train_records[:50]
@@ -382,7 +611,7 @@ def main() -> None:
         class_weights=class_weights,
         gamma=args.focal_gamma,
     )
-    trainer.train()
+    trainer.train(resume_from_checkpoint=str(resume_checkpoint) if resume_checkpoint else None)
 
     output_dir.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(str(output_dir))
