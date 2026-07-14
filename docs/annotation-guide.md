@@ -97,6 +97,7 @@ Annotate these in the same pass to avoid re-annotation when Phase 2 evaluation i
 | `TRANSLATOR` | Named translator | Only when a translation keyword is present: `übersetzt`, `Übers.`, `transl.`, `traduit par`, `ins Deutsche übertragen` |
 | `PARALLEL_TITLE` | Title restated in a second language | After ` = ` or after ` / ` followed by a non-German title string |
 | `MEDIUM` | Performance instrumentation (music only) | `für Klavier`, `für gemischten Chor und Orchester`, `op. 12` |
+| `TITULATURE` | The established system of titles, or the specific set of titles, honors, and names held by a person, ruler, or institution — rank, office, or academic/professional title abbreviation attached to a `PERSON` span, split out rather than merged into it. Leading and/or trailing; position is not part of the label (recoverable from offsets). Excludes determiners (`der`, `die`, `des`, ...; AjMC guidelines §Date) and excludes intitulatio legitimation formulas (`von Gottes Gnaden`) — see §6. | `König von Preußen`, `Landgraff zu Hessen`, `D.`, `Prof.`, `Superint.` |
 
 ---
 
@@ -287,7 +288,9 @@ David Beuthers, Gewesenen Churfürstl. Sächsischen Probation-Meisters zu Dreßd
 > TITLE begins at the first substantive noun phrase that names the work (`Zwey rare Chymische Tractate`). The separating `, ` (comma-space) between PERSON and TITLE is not included in either span.
 > If a ` :` follows, label any subtitle content after it as OTHER_TITLE.
 >
-> **Why credential and name are merged into one PERSON span (design note):** A `PERSON_DESIGNATION` label splitting the bare name (`David Beuthers`) from the credential phrase was considered and deferred to Phase 2. Three reasons: (1) the pre-name degree abbreviations (`D.`, `M.`, `Lic.`) are fused with the name by German academic convention and the boundary is genuinely ambiguous; (2) standard BIO sequence labeling handles two adjacent spans at an uncertain boundary worse than one merged span; (3) for GND linking, name extraction from a merged PERSON span can be done in post-processing by stripping known degree prefixes and cutting at the first role-noun (`Professoris`, `Pfarrers`, `Pastoris`, `Meisters`). When Phase 2 annotation is scheduled, `PERSON_DESIGNATION` should cover both pre-name degrees and post-name role/location phrases, with the bare first-name + surname as the PERSON core.
+> **Why credential and name are merged into one PERSON span in Phase 1 (design note):** splitting the bare name (`David Beuthers`) from the credential phrase was considered and deferred to Phase 2. Three reasons: (1) the pre-name degree abbreviations (`D.`, `M.`, `Lic.`) are fused with the name by German academic convention and the boundary is genuinely ambiguous; (2) standard BIO sequence labeling handles two adjacent spans at an uncertain boundary worse than one merged span; (3) for GND linking, name extraction from a merged PERSON span can be done in post-processing by stripping known degree prefixes and cutting at the first role-noun (`Professoris`, `Pfarrers`, `Pastoris`, `Meisters`).
+>
+> **Update (B7, 2026-07-14):** this Phase 2 split has since been specified and named — `TITULATURE` (§3.2), not the earlier placeholder `PERSON_DESIGNATION`. Under Phase 2, this example splits as PERSON `David Beuthers`, TITULATURE `Gewesenen Churfürstl. Sächsischen Probation-Meisters zu Dreßden, und Philosophi Adepti`. See `notes/fiz/bibner-werk/B7-person-honorific-gold-trim.md` for the full worked decision record (16 records reviewed, definition, edge cases, AjMC cross-reference).
 
 ---
 
@@ -371,6 +374,7 @@ These patterns appear frequently and must not receive any label:
 | Embedded Latin phrases | `Anno MDXLVI`, `In nomine Dei` | Part of the enclosing TITLE or PERSON span |
 | `durch` / `von` without translation keyword | `durch Johann Schmidt` | Label PERSON (author/editor), not TRANSLATOR |
 | Leichenpredigt deceased | `Bey der Begräbnis … Maria Dorothea Müllers` | Subject of the sermon, not the author |
+| Intitulatio legitimation formula | `von Gottes Gnaden`, `Von Gotts gnaden`, royal `Wir`/`Unser` | Diplomatics *Gottesgnadenformel* — asserts authority, is not itself a title; excluded from both PERSON and TITULATURE (Phase 2). See B7-person-honorific-gold-trim.md. |
 
 ---
 
@@ -385,6 +389,8 @@ These patterns appear frequently and must not receive any label:
 5. **Contiguous substrings only.** No gap spans — `start` to `end` must cover a single uninterrupted substring.
 6. **Include the full naming unit in PERSON.** Degree abbreviation + first name + surname + role phrase + location phrase form one span: `D. Johann Gerhard, Professoris zu Jena` → one PERSON span, not three.
 7. **Separating punctuation between spans is not included in either span.** The ` / `, ` : `, `, ` between TITLE and PERSON or OTHER_TITLE belongs to neither.
+8. **(Phase 2) Determiners are excluded from `TITULATURE` spans.** `der`, `die`, `das`, `des`, `dem`, `den` are not annotated as part of the entity when they lead the span; a genitive `des`/`der` embedded mid-phrase to link an internal noun construction (e.g. `Ertz-Cammerer des Heil. Röm. Reichs`) is not a leading determiner and stays in. Convention follows AjMC classics-domain NER guidelines (`references/ajmc-ne-annotation-guidelines_18032020.pdf`, Date section), generalized here to `TITULATURE`. Worked example: `Des Ritters Carl von Linné` → PERSON `Carl von Linné`, TITULATURE `Ritters` (not `Des Ritters`).
+9. **(Phase 2) A `PERSON` span may pair with a leading and/or trailing `TITULATURE` span, or none.** Position is not encoded in the label — it's recoverable from offsets. Naming epithets that are customarily part of how a person is named (e.g. `der Dritte` in `Georg der Dritte`) stay inside `PERSON`, not `TITULATURE` — this follows AjMC's epithet/title distinction (their example: `Ajax Télamonide` stays inside the person entity). A record may contain more than one `PERSON`+`TITULATURE` pair when multiple people are jointly named (e.g. co-rulers, joint authors each with their own credentials).
 
 ---
 

@@ -1,0 +1,2 @@
+max_len,splitter_type,total_records,records_truncated,pct_records_truncated,max_tokens,median_tokens
+384,whitespace,395,0,0.0,153,27

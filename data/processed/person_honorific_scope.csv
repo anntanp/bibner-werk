@@ -1,0 +1,126 @@
+doc_id,span_text,span_len,has_honorific_marker,suggested_core_name
+100,"Pötzl, Walter",13,False,"Pötzl, Walter"
+100,Walter Pötzl,12,False,Walter Pötzl
+102,Chur-Fürst. Gymnasio der Soc. Jesu,34,False,Chur-Fürst. Gymnasio der Soc. Jesu
+103,"Jacobs, Rainer",14,False,"Jacobs, Rainer"
+11,N. Rastegar,11,False,N. Rastegar
+11,"Rastegar, Nosratollah",21,False,"Rastegar, Nosratollah"
+11,W. Slaje,8,False,W. Slaje
+119,J. C. Jani,10,False,J. C. Jani
+134,"Von Gottes Gnaden Friderich, König von Preußen, Marggraff zu Brandenburg; des Heil. Röm. Reichs Ertz-Cämmerer und Churfürst [et]c. [et]c",136,True,
+137,"Moritz, Karl Philipp",20,False,"Moritz, Karl Philipp"
+140,Philip=||pus Melanthon,22,False,Philip=||pus Melanthon
+141,A. d. Franz,11,False,A. d. Franz
+141,"Genlis, S. F. de",16,False,"Genlis, S. F. de"
+141,J. L. Gosch,11,False,J. L. Gosch
+142,Von Gottes Gnaden/ Johann Friderich/ Marggraff zu Brandenburg/ zu Magdeburg/ in Preüssen/ Stettin/ Pom[m]ern/ der Cassuben und Wenden,133,True,
+143,"Von Gottes Gnaden Wir Friedrich, Landgraf zu Hessen, Fürst zu Hersfeld, Graf zu Catzenellnbogen, Dietz, Ziegenhayn, Nidda, Schaumburg und Hanau",143,True,
+147,"Vnser von Gotts gnaden Johans Friedrichen Hertzogen zu Sachssen vnd Churfürsten etc. Burggrauen zu Magdeburg Vnd Philipsen Landgrauen zu Hessen, Grauen zu CatzenElnbogen",169,True,Vnser von Gotts gnaden Johans Friedrichen
+148,P. Stockmeier,13,False,P. Stockmeier
+148,W. Dürig,8,False,W. Dürig
+148,W. Gessel,9,False,W. Gessel
+148,W.Ziegler,9,False,W.Ziegler
+151,Des Ritters Carl von Linné Königlich Schwedischen Leibarztes,60,True,Des
+152,"Gockerell, Nina",15,False,"Gockerell, Nina"
+152,Nina Gockerell,14,False,Nina Gockerell
+152,Werner Neumeister,17,False,Werner Neumeister
+155,Prof. [Ernst Friedrich] Glocker,31,False,Prof. [Ernst Friedrich] Glocker
+16,G. F. Seiler,12,False,G. F. Seiler
+160,"Von Gottes Gnaden Carl, Herzog zu Würtemberg und Teck",53,True,
+162,Andreas Mühlich,15,False,Andreas Mühlich
+164,"Ernesti, Günther Gottlieb",25,False,"Ernesti, Günther Gottlieb"
+164,G. G. Ernesti,13,False,G. G. Ernesti
+166,C[arl Friedrich Alexander] Hartmann,35,False,C[arl Friedrich Alexander] Hartmann
+170,"Kirschner, Johann Conrad",24,False,"Kirschner, Johann Conrad"
+177,Wilhelm Friedrich Hufnagel,26,False,Wilhelm Friedrich Hufnagel
+181,M. Johanne Hentzelman,21,False,M. Johanne Hentzelman
+183,"Von Gottes Gnaden Wir Carl, Landgraff zu Hessen, Fürst zu Herßfeld, Graff zu Catzenelnbogen, Dietz, Ziegenhayn, Nidda und Schaumburg",132,True,
+186,"Fabritius, Karl Moritz Eduard",29,False,"Fabritius, Karl Moritz Eduard"
+186,Karl Moriz Fabritius,20,False,Karl Moriz Fabritius
+188,Johann Jacob Hergenröther,25,False,Johann Jacob Hergenröther
+21,"Najmabadi, Seifeddin",20,False,"Najmabadi, Seifeddin"
+21,Seyfeddin Najmabadi,19,False,Seyfeddin Najmabadi
+210,Gustav Schilling,16,False,Gustav Schilling
+211,"Von Gottes Gnaden Friderich, König von Preussen",47,True,
+216,Christian Felix Weiße,21,False,Christian Felix Weiße
+220,"D. Franz Dominicus Häberlins, Herzogl. Braunschweig-Lüneburg. Geheimen-Justitz-Raths, ersten Lehrers der Rechte, des Teutschen Staats-Rechtes und der Geschichte auf der Julius-Carls-Universität zu Helmstedt",206,True,D. Franz Dominicus Häberlins
+223,Bettina Lutze,13,False,Bettina Lutze
+223,Günter Wiegand,14,False,Günter Wiegand
+223,"Kessler, Wolfgang",17,False,"Kessler, Wolfgang"
+223,Wolfgang Kessler,16,False,Wolfgang Kessler
+224,"Der Ehrwürdige P. F. Andreas von S. Theresia Barfüssiger Carmeliter, vnd Ordinari-Prediger zu München",101,False,"Der Ehrwürdige P. F. Andreas von S. Theresia Barfüssiger Carmeliter, vnd Ordinari-Prediger zu München"
+229,M. Hess,7,False,M. Hess
+229,[Max Isidor] Bodenheimer,24,False,[Max Isidor] Bodenheimer
+24,Emmanuel v. Severus OSB,23,False,Emmanuel v. Severus OSB
+24,"Mayer, Anton L.",15,False,"Mayer, Anton L."
+240,J[acob] Sturm,13,False,J[acob] Sturm
+25,"Haye, Thomas",12,False,"Haye, Thomas"
+253,"A. Schrötter, Prof. der Chemie",30,False,"A. Schrötter, Prof. der Chemie"
+253,"Dr. L. Langer, Prof. der Med.",29,False,"Dr. L. Langer, Prof. der Med."
+259,Heinrich Seuse,14,False,Heinrich Seuse
+259,Heinrich von Friemar,20,False,Heinrich von Friemar
+259,Honorius Augustodunensis,24,False,Honorius Augustodunensis
+259,Humbertus de Romanis,20,False,Humbertus de Romanis
+259,Johannes Tauler,15,False,Johannes Tauler
+259,Marquard von Lindau,19,False,Marquard von Lindau
+262,"Coxe, William",13,False,"Coxe, William"
+262,William Coxe,12,False,William Coxe
+264,D.Eberhardus || Weydenszee,26,False,D.Eberhardus || Weydenszee
+272,Leo Walther Stein,17,False,Leo Walther Stein
+272,Rudolf Presber,14,False,Rudolf Presber
+275,Hermannus Waltbach,18,False,Hermannus Waltbach
+275,Tilemannus Ryke,15,False,Tilemannus Ryke
+282,"Ioannes Avenarius, Past. und Superint. des Hochgräfl. Gemeinschafftl. Consistorii Assess. Prim. des Gymnasii Illustris Inspector und Theol. Profess. Publicus",157,True,Ioannes Avenarius
+29,C. Höfler,9,False,C. Höfler
+306,Johan Alstorffen,16,False,Johan Alstorffen
+307,"Keçik, Mehmet Ş.",16,False,"Keçik, Mehmet Ş."
+307,Mehmet Şefik Keçik,18,False,Mehmet Şefik Keçik
+308,"Stedman, C.",11,False,"Stedman, C."
+312,Hans Sachsen,12,False,Hans Sachsen
+313,"D. Philip. Hanen, DomPredigers zu Magdeburgk",44,False,"D. Philip. Hanen, DomPredigers zu Magdeburgk"
+314,"M. Christophoro Heinsio, Past. und Superintend. zu Neustand an der Orla",71,True,M. Christophoro Heinsio
+319,"Von Gottes Gnaden Friedrich, König zu Preussen, Marggraf zu Brandenburg",71,True,
+32,Friderich der Dritte/ von Gottes Gnaden/ Marggraff zu Brandenburg/ des Heil. Röm. Reichs Ertz-Cammerer und Churfürst/ in Preussen,129,True,Friderich der Dritte/
+334,Walther Ch. Zimmerli,20,False,Walther Ch. Zimmerli
+334,"Zimmerli, Walther Ch.",21,False,"Zimmerli, Walther Ch."
+336,"Maximilian, Prinzen von Wied",28,False,"Maximilian, Prinzen von Wied"
+340,"Maximilian, Prinz zu Wied",25,False,"Maximilian, Prinz zu Wied"
+342,Rudolf Kittel,13,False,Rudolf Kittel
+345,"Ekbal, Kamran",13,False,"Ekbal, Kamran"
+345,Kamran Ekbal,12,False,Kamran Ekbal
+347,Dr. W[ilhelm] Vollmer,21,False,Dr. W[ilhelm] Vollmer
+35,Johann Heinrich Stepf,21,False,Johann Heinrich Stepf
+351,Von Gottes gnaden Wilhelm Landgraff zu Hessen/ Fürst zu Herßfeld/ Graff zu Catzenelnbogen,89,True,
+354,"Von Gottes Gnaden, Wir Carl Wilhelm Friederich, Marggraf zu Brandenburg",71,True,
+36,"Georg der Dritte, von Gottes Gnaden König von Groß-Britannien, Franckreich und Irrland, Beschützer des Glaubens, Hertzog zu Braunschweig und Lüneburg",149,True,Georg der Dritte
+366,Heiligen Matriarchin Rahell,27,False,Heiligen Matriarchin Rahell
+370,Curdt Ludowig von Schenings Lüdike von Schenings,48,False,Curdt Ludowig von Schenings Lüdike von Schenings
+371,"Wagner, Thomas von",18,False,"Wagner, Thomas von"
+374,"Bäbst: heylig: Gregorium, diß Namens den XIII.",46,False,"Bäbst: heylig: Gregorium, diß Namens den XIII."
+378,Eric Tuneld,11,False,Eric Tuneld
+378,"Tuneld, Erik",12,False,"Tuneld, Erik"
+381,"Von Gottes Gnaden Wir, Carl, Herzog zu Braunschweig und Lüneburg [et]c. [et]c",77,True,
+384,Büsching,8,False,Büsching
+384,Hans von Schweinichen,21,False,Hans von Schweinichen
+384,Vereins für Schlesische Geschichte und Alterthümer des . - Breslau,66,False,Vereins für Schlesische Geschichte und Alterthümer des . - Breslau
+388,"Von Gottes Gnaden Maximilian Friderich, Erzbischof zu Cölln, des heiligen Röm. Reichs durch Italien Erzcanzler und Churfürst",124,True,
+41,"Gabrielsson, Johannes",21,False,"Gabrielsson, Johannes"
+42,Johann Adam Schmerler,21,False,Johann Adam Schmerler
+42,"Schmerler, Johann Adam",22,False,"Schmerler, Johann Adam"
+44,"Sainte-Pallaye, Jean Baptiste de LaCurne de",43,False,"Sainte-Pallaye, Jean Baptiste de LaCurne de"
+45,"Heppe, J. C.",12,False,"Heppe, J. C."
+46,Johann Wolfgang von] Goethe,27,False,Johann Wolfgang von] Goethe
+54,"Von Gottes Gnaden, Wir Carl Wilhelm Friderich, Marggraff zu Brandenburg, Herzog in Preussen, zu Schlesien",105,True,
+55,"Georg der Dritte, von Gottes Gnaden, König von Großbritannien, Frankreich und Irrland, Beschützer des Glaubens, Herzog zu Braunschweig und Lüneburg",147,True,Georg der Dritte
+61,C. F. Flemming,14,False,C. F. Flemming
+68,"Friedrich August, von Gottes Gnaden, König in Pohlen, Groß-Hertzog in Litthauen, Reussen, Preussen, Mazovien, Samogitien, Kyovien, Vollhinien, Podolien, Podlachien, Liefland, Smolensco, Severien und Zchernicovien, [et]c",219,True,Friedrich August
+70,Helga Walter,12,False,Helga Walter
+70,"Walter, Helga",13,False,"Walter, Helga"
+72,Otto Eisenlohr,14,False,Otto Eisenlohr
+76,D. Gustav Bischoff,18,True,D. Gustav
+76,Dr. August Goldfuß,18,False,Dr. August Goldfuß
+79,"Brinkmann, Werner",17,False,"Brinkmann, Werner"
+79,Werner Brinkmann,16,False,Werner Brinkmann
+83,Christoph Hegendorfer,21,False,Christoph Hegendorfer
+9,D. Johann Friedrich Rehkopf,27,False,D. Johann Friedrich Rehkopf
+99,"Von Gottes Gnaden Wir Carl, Landgraff zu Hessen, Fürst zu Herßfeld",66,True,

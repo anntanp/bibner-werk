@@ -6,7 +6,7 @@
 #               labeling bias (Pattern A, A5-finetuning-xlmr-spotcheck.md §4) means
 #               silver-dev eval_loss alone can't answer "is silver good enough,"
 #               only gold-eval can. See A5-finetuning-scaling-sweep-plan.md.
-# Usage:        python3 scripts/py/generate_gliner_predictions.py --fold-index 0
+# Usage:        python3 scripts/py/b6_generate_gliner_predictions.py --fold-index 0
 #                   [--checkpoint-dir PATH] [--gold PATH] [--folds PATH]
 #                   [--threshold FLOAT] [--output PATH]
 #               Run once per fold (0..9) against models/gliner_fold{i}/, matching the
