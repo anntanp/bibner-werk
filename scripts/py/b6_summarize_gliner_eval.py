@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
-# Purpose:      Summarize B6's eval_summary.csv (GLiNER fine-tuned vs. gold) into a
-#               weighted-by-support F1 per label, plus a flag list of near-zero cells —
+# Purpose:      Summarize eval_ner_gold.py's eval_summary.csv into a support-weighted
+#               F1 per label for one system, plus a flag list of near-zero cells —
 #               the numbers needed to decide whether current silver is good enough to
 #               proceed with the data-scaling sweep, or bad enough to prioritize
 #               A2-silver-spans-revision-plan.md first. See B6-gliner-eval.md.
+#               Originally B6-only (fine-tuned GLiNER); eval_summary.csv now also
+#               carries B3's gliner_zero rows in the same file (2026-07-14), so
+#               --system was added to filter explicitly -- without it, rows from
+#               different systems would silently average together into a
+#               meaningless number. Default stays "gliner" so existing B6 callers
+#               are unaffected.
 # Usage:        python3 scripts/py/b6_summarize_gliner_eval.py
-#                   [--eval-summary PATH] [--near-zero-threshold FLOAT] [--output PATH]
+#                   [--eval-summary PATH] [--system STR] [--near-zero-threshold FLOAT]
+#                   [--output PATH]
 # Inputs:       data/eval/eval_summary.csv (eval_ner_gold.py aggregate output)
-# Outputs:      data/processed/b6_gliner_eval_weighted_summary.csv
-#                   (label, weighted_f1, n_gold_spans, plus an OVERALL row)
+# Outputs:      data/processed/b6_gliner_eval_weighted_summary.csv by default
+#                   (label, weighted_f1, n_gold_spans, plus an OVERALL row); pass
+#                   --output explicitly when summarizing a non-default --system to
+#                   avoid overwriting another system's summary
 # Dependencies: none (stdlib csv only)
 # Assumptions:  Only TITLE/OTHER_TITLE/PERSON are in this project's Phase 1 label scope
 #               (30-corpus.tex Table labelset); PARALLEL_TITLE/TRANSLATOR rows in
@@ -20,11 +29,13 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_EVAL_SUMMARY = ROOT / "data" / "eval" / "eval_summary.csv"
 DEFAULT_OUTPUT = ROOT / "data" / "processed" / "b6_gliner_eval_weighted_summary.csv"
+DEFAULT_SYSTEM = "gliner"
 
 CORE_LABELS = ("TITLE", "OTHER_TITLE", "PERSON")
 
@@ -65,13 +76,22 @@ def out_of_scope_labels(rows: list[dict[str, str]]) -> list[dict[str, str]]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Summarize B6 GLiNER-vs-gold eval_summary.csv.")
+    parser = argparse.ArgumentParser(description="Summarize a system's GLiNER-vs-gold eval_summary.csv rows.")
     parser.add_argument("--eval-summary", type=Path, default=DEFAULT_EVAL_SUMMARY)
+    parser.add_argument("--system", type=str, default=DEFAULT_SYSTEM,
+                         help="eval_summary.csv 'system' column value to filter on "
+                              "(default: %(default)s, e.g. also 'gliner_zero')")
     parser.add_argument("--near-zero-threshold", type=float, default=0.06)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
 
-    rows = load_rows(args.eval_summary)
+    all_rows = load_rows(args.eval_summary)
+    rows = [r for r in all_rows if r["system"] == args.system]
+    if not rows:
+        known_systems = sorted({r["system"] for r in all_rows})
+        sys.exit(f"b6_summarize_gliner_eval.py: no rows for --system {args.system!r} in "
+                  f"{args.eval_summary} (systems present: {known_systems})")
+
     weighted = weighted_f1_by_label(rows)
     near_zero = near_zero_cells(rows, args.near_zero_threshold)
     out_of_scope = out_of_scope_labels(rows)

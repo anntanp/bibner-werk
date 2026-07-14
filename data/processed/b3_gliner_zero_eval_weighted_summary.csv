@@ -1,0 +1,5 @@
+label,weighted_f1,n_gold_spans
+TITLE,0.0392,360
+OTHER_TITLE,0.0,176
+PERSON,0.3386,130
+OVERALL,0.0873,666
