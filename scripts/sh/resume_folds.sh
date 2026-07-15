@@ -18,11 +18,12 @@
 #                     for an 80GB A100 with ~19GB already claimed by another
 #                     tenant's job; recompute for a different GPU/tenancy
 #                     situation, see the incident writeup above)
-# Inputs:       fold{i}_full.log for i in 0..k-1, in the repo root (produced
-#                 by a prior `train_gliner_silver.py --fold-index i | tee
-#                 fold{i}_full.log` run)
-# Outputs:      fold{i}_full.log for every relaunched fold (overwritten);
-#                 models/gliner_fold{i}/ checkpoints (via train_gliner_silver.py)
+# Inputs:       data/logs/fold{i}_full.log for i in 0..k-1 (produced by a
+#                 prior `train_gliner_silver.py --fold-index i | tee
+#                 data/logs/fold{i}_full.log` run)
+# Outputs:      data/logs/fold{i}_full.log for every relaunched fold
+#                 (overwritten); models/gliner_fold{i}/ checkpoints (via
+#                 train_gliner_silver.py)
 # Dependencies: pgrep, xargs, python3, scripts/py/train_gliner_silver.py
 # Assumptions:  Run from the repo root (paths below are relative to it). Only
 #               waits on and checks for the current user's own
@@ -47,9 +48,11 @@ while pgrep -u "$USER" -f train_gliner_silver.py > /dev/null; do
 done
 echo "$(date): GPU clear of your training jobs."
 
+mkdir -p data/logs
+
 RERUN=()
 for i in $(seq 0 $((FOLD_COUNT - 1))); do
-  log="fold${i}_full.log"
+  log="data/logs/fold${i}_full.log"
   if ! grep -q "Saved checkpoint" "$log" 2>/dev/null \
      || [ "$(grep -c "Skipping batch due to CUDA OOM" "$log" 2>/dev/null || true)" -gt 0 ]; then
     RERUN+=("$i")
@@ -72,6 +75,6 @@ done
 echo "$(date): cleared stale output dirs for: ${RERUN[*]}"
 
 printf '%s\n' "${RERUN[@]}" | xargs -P "$CONCURRENCY" -I{} bash -c \
-  'time python3 scripts/py/train_gliner_silver.py --fold-index {} 2>&1 | tee "fold{}_full.log"'
+  'time python3 scripts/py/train_gliner_silver.py --fold-index {} 2>&1 | tee "data/logs/fold{}_full.log"'
 
 echo "$(date): resume run complete."

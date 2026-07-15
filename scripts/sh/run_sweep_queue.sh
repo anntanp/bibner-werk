@@ -9,7 +9,7 @@
 #               not on anything in this script.
 # Usage:        CUDA_VISIBLE_DEVICES=<n> ./scripts/sh/run_sweep_queue.sh <precision> <queue_file> <log_file>
 #               e.g. CUDA_VISIBLE_DEVICES=0 ./scripts/sh/run_sweep_queue.sh bf16 \
-#                    data/eval/sweep_queue_gpu0.csv data/eval/sweep_status_gpu0.log
+#                    data/eval/sweep_queue_gpu0.csv data/logs/sweep_status_gpu0.log
 # Inputs:       queue_file: CSV, one job per line, "model,train_size,fold_index"
 #                   (model is "xlmr" or "gliner")
 # Outputs:      log_file: one line per job, "TIMESTAMP MODEL SIZE FOLD STATUS"

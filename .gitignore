@@ -25,6 +25,9 @@ data/annotation/doccano/*
 # PII themselves. See notes/fiz/bibner-werk/data-reorg-plan.md (historical — describes the original
 # split, superseded 2026-07-10 for the four now-tracked directories).
 
+# Runtime logs
+data/logs/
+
 # Large binary data
 *.parquet
 !data/provenance/bibner-data-provenance.parquet
