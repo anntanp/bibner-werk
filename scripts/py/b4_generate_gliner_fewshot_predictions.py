@@ -8,9 +8,10 @@
 #               string it was given, so returned entity labels are remapped to the bare
 #               TITLE/OTHER_TITLE/PERSON form before writing predictions (§4.2 -- do not skip
 #               this, it is silent if wrong).
-# Usage:        python3 scripts/py/b4_generate_gliner_fewshot_predictions.py --k-shot {1,3,5}
+# Usage:        python3 scripts/py/b4_generate_gliner_fewshot_predictions.py --k-shot K
 #                   [--model STR] [--gold PATH] [--silver-spans PATH] [--examples-seed INT]
 #                   [--threshold FLOAT] [--output PATH] [--examples-output PATH]
+#               K must be one of 1, 3, 5 -- run once per value (see plan §5 for a loop example).
 # Inputs:       data/gold/gold_reconciled.jsonl, data/silver/silver_spans.jsonl
 # Outputs:      data/eval/predictions_gliner_fewshot_k{K}.jsonl
 #                   ({"id": doc_id, "spans": [[start, end, bare_label], ...]})
