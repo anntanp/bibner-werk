@@ -1,0 +1,2 @@
+model_name,max_length,total_records,records_truncated,pct_records_truncated,max_subword_len,total_entities,entities_dropped,pct_entities_dropped
+xlm-roberta-large,256,52383,314,0.599,820,91791,379,0.413

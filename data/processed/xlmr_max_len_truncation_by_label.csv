@@ -1,0 +1,4 @@
+label,entities_total,entities_dropped,pct_dropped
+OTHER_TITLE,36375,250,0.687
+PERSON,3033,6,0.198
+TITLE,52383,123,0.235
