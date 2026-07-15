@@ -7,7 +7,7 @@
 # Usage:        python scripts/ner/sr08_build_blind_sample.py \
 #                   --sheet data/adjudication/sr08_adjudication_sheet_export-20260623-1110.jsonl \
 #                   --acceptance-csv data/adjudication/sr08_llm_acceptance_export-20260623-1110.csv \
-#                   --htype-csv ~/Documents/claude/gemea/data/schema/ddbedm-htype.csv \
+#                   --htype-csv /path/to/gemea/data/schema/ddbedm-htype.csv \
 #                   --n-per-stratum 6 --seed 42
 # Inputs:       --sheet: tier-3 canonical sheet (doc_id, text, conflict_type,
 #                   annotations, comments, llm_confidence)
@@ -20,7 +20,7 @@
 #                   data/annotation/sr08_gold_sample.csv)
 #               --htype-csv (htype code/label lookup; lives in gemea, not this repo,
 #                   so no hardcoded default — pass explicitly, e.g.
-#                   ~/Documents/claude/gemea/data/schema/ddbedm-htype.csv)
+#                   /path/to/gemea/data/schema/ddbedm-htype.csv)
 # Outputs:      data/adjudication/sr08_blind_sample_import_<export>.jsonl — Doccano
 #                   import file: {text, label: [], Comments: [neutral marker line,
 #                   then one line per reviewing annotator], meta: {htype, url}}.
@@ -168,7 +168,7 @@ def main() -> None:
                          help="Gold sample CSV for htype/url meta (default: data/annotation/sr08_gold_sample.csv)")
     parser.add_argument("--htype-csv", required=True, type=Path,
                          help="htype code/label lookup CSV (lives in gemea, e.g. "
-                              "~/Documents/claude/gemea/data/schema/ddbedm-htype.csv)")
+                              "/path/to/gemea/data/schema/ddbedm-htype.csv)")
     parser.add_argument("--output-dir", type=Path, default=BASE / "data/adjudication",
                          help="Output directory (default: data/adjudication/)")
     args = parser.parse_args()

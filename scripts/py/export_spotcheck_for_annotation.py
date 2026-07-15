@@ -13,9 +13,9 @@
 #                   train_xlmr_silver.py used)
 #               data/silver/silver_spans.jsonl (char-offset text/spans, for the original
 #                   un-tokenized sentence)
-#               ~/Documents/claude/gemea/data/out/s2/s2_meta.parquet (DDB metadata, for dc_type ->
+#               /path/to/gemea/data/out/s2/s2_meta.parquet (DDB metadata, for dc_type ->
 #                   htype derivation; lives in the separate gemea project, not bibner-werk)
-#               ~/Documents/claude/gemea/data/schema/ddbedm-htype.csv (dc_type -> htype code lookup)
+#               /path/to/gemea/data/schema/ddbedm-htype.csv (dc_type -> htype code lookup)
 # Outputs:      data/annotation/doccano/spotcheck_xlmr_fold0_import.jsonl (Doccano import schema:
 #                   {"id", "text", "meta": {"htype", "url"}, "label": [], "Comments": []} — label
 #                   deliberately empty, not pre-filled with silver or predicted spans)

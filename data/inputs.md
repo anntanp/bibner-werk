@@ -66,7 +66,7 @@ tags:
 
 ## DDB parquet (upstream — stays in gemea)
 
-**Path**: `~/Documents/claude/gemea/data/` (do not copy; pass as CLI argument)
+**Path**: `/path/to/gemea/data/` (do not copy; pass as CLI argument)
 **Format**: Parquet; schema in `gemea/data/schema/parquet_schema.json`
 **Size**: 9,213,339 records (9.21M)
 **Key fields**: `id`, `title` (raw title string), `tier` (0/1/2), `era`, `dc_type`, `sparte`, `mt`

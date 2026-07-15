@@ -29,7 +29,7 @@ WEM output (predicted TITLE / OTHER_TITLE / PERSON spans) feeds back into GeMeA 
 
 ## Upstream data source
 
-DDB parquet files live in `~/Documents/claude/gemea/data/`. Pass the parquet path as a CLI argument to BibNER-Werk scripts — do not hardcode paths or copy parquet files into this repo.
+DDB parquet files live in `/path/to/gemea/data/`. Pass the parquet path as a CLI argument to BibNER-Werk scripts — do not hardcode paths or copy parquet files into this repo.
 
 ## Sector and mediatype reference
 
