@@ -1,0 +1,897 @@
+{
+  "system": "xlmr",
+  "fold": 5,
+  "n_records": 39,
+  "results": [
+    {
+      "label": "TITLE",
+      "era": "pre-1700",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 7,
+      "fp": 6,
+      "fn": 3,
+      "precision": 0.5385,
+      "recall": 0.7,
+      "f1": 0.6087
+    },
+    {
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 0,
+      "fp": 5,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "label": "PERSON",
+      "era": "modern",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 1,
+      "fp": 2,
+      "fn": 6,
+      "precision": 0.3333,
+      "recall": 0.1429,
+      "f1": 0.2
+    },
+    {
+      "label": "TITLE",
+      "era": "modern",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 2,
+      "fp": 7,
+      "fn": 5,
+      "precision": 0.2222,
+      "recall": 0.2857,
+      "f1": 0.25
+    },
+    {
+      "label": "TITLE",
+      "era": "1700-1800",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 3,
+      "fp": 5,
+      "fn": 5,
+      "precision": 0.375,
+      "recall": 0.375,
+      "f1": 0.375
+    },
+    {
+      "label": "PERSON",
+      "era": "1700-1800",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 0,
+      "fp": 1,
+      "fn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "label": "OTHER_TITLE",
+      "era": "19th-c",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "label": "TITLE",
+      "era": "19th-c",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 4,
+      "fp": 2,
+      "fn": 3,
+      "precision": 0.6667,
+      "recall": 0.5714,
+      "f1": 0.6154
+    },
+    {
+      "label": "PERSON",
+      "era": "19th-c",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 0,
+      "fp": 3,
+      "fn": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "label": "OTHER_TITLE",
+      "era": "1700-1800",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5
+    },
+    {
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 2,
+      "fp": 5,
+      "fn": 3,
+      "precision": 0.2857,
+      "recall": 0.4,
+      "f1": 0.3333
+    },
+    {
+      "label": "TITLE",
+      "era": "unknown",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 1,
+      "fp": 3,
+      "fn": 4,
+      "precision": 0.25,
+      "recall": 0.2,
+      "f1": 0.2222
+    },
+    {
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 1,
+      "fp": 4,
+      "fn": 2,
+      "precision": 0.2,
+      "recall": 0.3333,
+      "f1": 0.25
+    },
+    {
+      "label": "PERSON",
+      "era": "pre-1700",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "label": "PERSON",
+      "era": "unknown",
+      "system": "xlmr",
+      "fold": 5,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  ],
+  "per_record": [
+    {
+      "doc_id": 8,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 11,
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 11,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 11,
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 11,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 11,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 11,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 11,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 11,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 16,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 16,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 16,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 26,
+      "label": "OTHER_TITLE",
+      "era": "19th-c",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 26,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 35,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 35,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 35,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 42,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 42,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 42,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 42,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 42,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 50,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 97,
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 97,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 97,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 119,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 119,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 119,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 119,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 119,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 119,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 121,
+      "label": "OTHER_TITLE",
+      "era": "1700-1800",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 121,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 136,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 141,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 141,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 141,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 141,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 141,
+      "label": "OTHER_TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 141,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 148,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 148,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 148,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 148,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 148,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 148,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 148,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 148,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 148,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 148,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 157,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 176,
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 176,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 182,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 184,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 197,
+      "label": "OTHER_TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 197,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 197,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 198,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 198,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 198,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 198,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 198,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 213,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 213,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 213,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 220,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 220,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 220,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 229,
+      "label": "OTHER_TITLE",
+      "era": "19th-c",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 229,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 229,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 229,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 229,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 247,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 267,
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 267,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 269,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 276,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 276,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 301,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 309,
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 309,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 310,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 310,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 312,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 312,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 312,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 312,
+      "label": "PERSON",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 317,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 317,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 317,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 333,
+      "label": "TITLE",
+      "era": "modern",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 333,
+      "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 340,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 340,
+      "label": "PERSON",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 340,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 344,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 351,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 351,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 351,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 351,
+      "label": "PERSON",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 353,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 353,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 353,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 353,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 353,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 353,
+      "label": "TITLE",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 353,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 367,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 374,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 374,
+      "label": "PERSON",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 374,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 374,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 374,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "fp"
+    },
+    {
+      "doc_id": 386,
+      "label": "OTHER_TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    },
+    {
+      "doc_id": 386,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "tp"
+    }
+  ]
+}
