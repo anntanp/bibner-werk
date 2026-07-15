@@ -3,19 +3,22 @@ SR-03 False-Positive Review — German bibliographic NER heuristic validation.
 Purpose: Read sr03_heuristic_validation_sample.csv, determine which heuristic field flags
          are false positives for each title, and write results back to the file.
          Combines automated regex rules with per-row manual overrides for edge cases.
-Usage: python scripts/sr03_fp_review.py
-Inputs: data/processed/sr03_heuristic_validation_sample.csv
+Usage: python scripts/sr03_fp_review.py --csv /path/to/gemea/data/processed/ner/sr03_heuristic_validation_sample.csv
+Inputs: --csv path to sr03_heuristic_validation_sample.csv (lives in gemea, not copied into this repo)
 Outputs: Same file, with fp_fields and notes columns populated.
 Dependencies: pandas
 Assumptions: CSV has 200 rows (excluding header); columns 1-17 as per SR-03 spec.
 """
 
+import argparse
 import re
 import pandas as pd
 
-CSV_PATH = "/Users/mta/Documents/claude/gemea/data/processed/ner/sr03_heuristic_validation_sample.csv"
+parser = argparse.ArgumentParser()
+parser.add_argument("--csv", required=True, help="Path to sr03_heuristic_validation_sample.csv")
+args = parser.parse_args()
 
-df = pd.read_csv(CSV_PATH, dtype=str, keep_default_na=False)
+df = pd.read_csv(args.csv, dtype=str, keep_default_na=False)
 df["fp_fields"] = ""
 df["notes"] = ""
 
@@ -682,8 +685,8 @@ for idx, row in df.iterrows():
 # Write back
 # ─────────────────────────────────────────────────────────────────────────────
 
-df.to_csv(CSV_PATH, index=False)
-print(f"Written {len(df)} rows to {CSV_PATH}")
+df.to_csv(args.csv, index=False)
+print(f"Written {len(df)} rows to {args.csv}")
 
 has_fp = (df["fp_fields"] != "").sum()
 print(f"\nRecords with at least one FP: {has_fp} / {len(df)}")

@@ -1,16 +1,21 @@
 """
 Validate FP review output in sr03_heuristic_validation_sample.csv.
 Purpose: Check row count, field name validity, and that fp_fields only flags columns set to 1.
-Usage: python scripts/validate_fp_review.py
-Inputs: data/processed/sr03_heuristic_validation_sample.csv
+Usage: python scripts/validate_fp_review.py --csv /path/to/gemea/data/processed/ner/sr03_heuristic_validation_sample.csv
+Inputs: --csv path to sr03_heuristic_validation_sample.csv (lives in gemea, not copied into this repo)
 Outputs: Printed summary to stdout.
 Dependencies: pandas
 Assumptions: CSV has been processed by sr03_fp_review.py.
 """
 
+import argparse
 import pandas as pd
 
-df = pd.read_csv("/Users/mta/Documents/claude/gemea/data/processed/ner/sr03_heuristic_validation_sample.csv", dtype=str, keep_default_na=False)
+parser = argparse.ArgumentParser()
+parser.add_argument("--csv", required=True, help="Path to sr03_heuristic_validation_sample.csv")
+args = parser.parse_args()
+
+df = pd.read_csv(args.csv, dtype=str, keep_default_na=False)
 
 total = len(df)
 fp_set = (df["fp_fields"] != "").sum()

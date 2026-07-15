@@ -6,7 +6,7 @@ notes/fiz/bibner-werk/adj-precedents.md §3.
 Usage:
     python3 sr08_lookup_record_provenance.py --doc-ids 6 227 \
         --export-dir data/annotation/doccano/export-20260623-1110 \
-        --parquet-glob "/Users/mta/Documents/claude/gemea/output/parquet/*_meta.parquet" \
+        --parquet-glob "/path/to/gemea/output/parquet/*_meta.parquet" \
         --silver-spans data/processed/silver_spans.jsonl \
         --output data/gold/sr08_record_provenance.csv
 

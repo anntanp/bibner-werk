@@ -149,6 +149,6 @@ The 2000–2024 bucket inverts the modern pattern: only 8.9% short, 62.2% medium
 
 - Wittmann, Reinhard. *Geschichte des deutschen Buchhandels.* 3rd ed. C.H. Beck, 2011. [p. 122 for Latin share data; pp. 70–82 for Thirty Years' War; pp. 90–105 for Leipzig ascendancy]
 - Jäger, Georg (ed.). *Geschichte des deutschen Buchhandels im 19. und 20. Jahrhundert.* Vol. 1. MVB, 2001. [cited for bibliographic field separation; specific pages not yet verified] ⚠ *requires literature verification*
-- Full literature notes: [notes/german-book-trade.md](https://github.com/anntanp/gemea/blob/main/notes/german-book-trade.md) ⚠ *requires literature verification*
-- Threshold decision record: [notes/ner/sr10_title-length-thresholds.md](https://github.com/anntanp/bibner-werk/blob/main/notes/ner/sr10_title-length-thresholds.md)
-- Corpus provenance: [notes/ner/sr10_de-titles-distribution.md](https://github.com/anntanp/bibner-werk/blob/main/notes/ner/sr10_de-titles-distribution.md)
+- Full literature notes: `notes/german-book-trade.md` in the companion GeMeA repository (link omitted for anonymous review) ⚠ *requires literature verification*
+- Threshold decision record: [notes/ner/sr10_title-length-thresholds.md](../notes/ner/sr10_title-length-thresholds.md)
+- Corpus provenance: [notes/ner/sr10_de-titles-distribution.md](../notes/ner/sr10_de-titles-distribution.md)

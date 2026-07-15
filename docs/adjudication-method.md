@@ -16,9 +16,9 @@ tags:
 
 ## 1. Objective
 
-Resolve three-way annotation disagreements in the round-1 export (frankp, gundi, maria; 395 docs — see [inter-annotator-agreement.md](inter-annotator-agreement.md) §1 for the underlying IAA scores) into a single `gold_reconciled.jsonl`. Automatic resolution is used for unambiguous agreement; every genuine conflict goes through PI-led, LLM-assisted adjudication.
+Resolve three-way annotation disagreements in the round-1 export (Annotator A, Annotator C, Annotator B; 395 docs — see [inter-annotator-agreement.md](inter-annotator-agreement.md) §1 for the underlying IAA scores) into a single `gold_reconciled.jsonl`. Automatic resolution is used for unambiguous agreement; every genuine conflict goes through PI-led, LLM-assisted adjudication.
 
-**PI** (Principal Investigator) — the project lead and sole adjudicator for this study; not one of the three annotators (frankp, gundi, maria), and distinct from the LLM, which only drafts a suggestion (§3).
+**PI** (Principal Investigator) — the project lead and sole adjudicator for this study; not one of the three annotators (Annotator A, Annotator C, Annotator B), and distinct from the LLM, which only drafts a suggestion (§3).
 
 - **Adjudicator**: PI, assisted by an LLM-drafted suggestion per conflict document — not auto-applied.
 - **Scope disagreement** (one annotator labels a chapter/section/article-level unit; the other two mark it `O`): resolved case-by-case, not by a blanket rule.

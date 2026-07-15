@@ -18,9 +18,9 @@
 #               sr10_analyse_title_lengths.py --word-tokens: short_max=3, medium_max=12),
 #               which is tokenizer-agnostic and comparable across the pkl/parquet/cc2llm
 #               corpus generations — the preferred metric for citing in the paper.
-# Usage:        python scripts/ner/sr10_era_length_summary_v2.py
-#               python scripts/ner/sr10_era_length_summary_v2.py --short-max 4 --medium-max 14 --tag legacy14
-#               python scripts/ner/sr10_era_length_summary_v2.py --word-tokens --tag words
+# Usage:        python scripts/ner/sr10_era_length_summary_v2.py --data /path/to/gemea/data/processed/de_titles_tokenized.parquet
+#               python scripts/ner/sr10_era_length_summary_v2.py --data ... --short-max 4 --medium-max 14 --tag legacy14
+#               python scripts/ner/sr10_era_length_summary_v2.py --data ... --word-tokens --tag words
 # Inputs:       gemea/data/processed/de_titles_tokenized.parquet (passed via --data;
 #               stays in gemea per bibner-werk conventions, not copied into this repo)
 # Outputs:      data/title-length/sr10_era_length_summary_v2_<tag>.csv
@@ -41,9 +41,6 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-DATA_PATH = Path(
-    "/Users/mta/Documents/claude/gemea/data/processed/de_titles_tokenized.parquet"
-)
 OUTPUT_DIR = ROOT / "data" / "title-length"
 
 WORD_SHORT_MAX = 3
@@ -139,7 +136,8 @@ def main(data_path: Path, output_path: Path, short_max: int, medium_max: int, wo
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data", type=Path, default=DATA_PATH)
+    parser.add_argument("--data", type=Path, required=True,
+                         help="Path to gemea's de_titles_tokenized.parquet (stays in gemea, not copied into this repo)")
     parser.add_argument("--word-tokens", action="store_true",
                          help="Use whitespace word count instead of BPE all_tokens")
     parser.add_argument("--short-max", type=int, default=None)

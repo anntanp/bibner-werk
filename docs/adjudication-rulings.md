@@ -21,7 +21,7 @@ Purpose and entry-writing workflow now live in `adjudication-plan.md` §2.5.1. S
 
 **Text**: "Ein Erbermli=||che vñ Erschröckliche newe || Zeittung/ von einẽ Fünff jerigen Kind || so im Stettlein Hohen Elbe/ vnter dem || Herrn Wilhelm Mirskowzky/ geboren || ist worden/ da Gott sein gerechtes Vr=||theil vber dises Kindt gesandt hat/ das || es vom Hellischen Fewer angezündet/|| ... der bœsen Welt zum ab=||schrecken/ vom Fluchen vnd || Füllerey.|| Jm Thon.|| Kompt her zu mir ... ||"
 
-**Resolution**: `TITLE[0:363]`, `OTHER_TITLE[366:382]` ("Jm Thon" + incipit — gundi's split).
+**Resolution**: `TITLE[0:363]`, `OTHER_TITLE[366:382]` ("Jm Thon" + incipit — Annotator C's split).
 
 ### 1.1 Contested token: "Jm Thon" → "Im Thon"
 
@@ -33,7 +33,7 @@ Archaic spelling for "Im Thon" ("in the tune [of]") — early-modern J/I orthogr
 
 **Text**: "Sainte-Pallaye, Jean Baptiste de LaCurne de: Das Ritterwesen des Mittelalters nach seiner politischen und militärischen Verfassung / Aus dem Französischen des Herrn de la Curne de Sainte-Palaye mit Anmerkungen, Zusätzen und Vorrede von Johann Ludwig Klüber. - Nürnberg : Grattenauer Bd. 3. - 1791"
 
-**Resolution**: pending — `PERSON[0:43]`, `TITLE[45:130]` agreed; `[236:256]` ("Johann Ludwig Klüber") disputed between `PERSON` (frankp/LLM) and `TRANSLATOR` (maria).
+**Resolution**: pending — `PERSON[0:43]`, `TITLE[45:130]` agreed; `[236:256]` ("Johann Ludwig Klüber") disputed between `PERSON` (Annotator A/LLM) and `TRANSLATOR` (Annotator B).
 
 ### 2.1 Contested token: "von Johann Ludwig Klüber" → PERSON or TRANSLATOR
 
@@ -49,9 +49,9 @@ Archaic spelling for "Im Thon" ("in the tune [of]") — early-modern J/I orthogr
 
 ### 3.1 Contested token: "Jm Thon" — citation vs. this record's own title
 
-Unlike Doc 6, this record has no separate title of its own — "Das dritte Lied." is a content-vacuous ordinal label (names nothing, same failure as "Ein ander Gesang.", §1.1), and "Wenn mein Stündlein vorhanden ist" (a real, specific hymn incipit) is not citing another cataloged work but *is* this record's own conventional identifier. So it gets `TITLE`, not `OTHER_TITLE`. Auto-resolved at tier 2 (majority: frankp + maria merged the full string into one `TITLE`) and never reached adjudication — this correction has not yet been applied to the sheet. Open precedent: `adjudication-precedents.md` §2.
+Unlike Doc 6, this record has no separate title of its own — "Das dritte Lied." is a content-vacuous ordinal label (names nothing, same failure as "Ein ander Gesang.", §1.1), and "Wenn mein Stündlein vorhanden ist" (a real, specific hymn incipit) is not citing another cataloged work but *is* this record's own conventional identifier. So it gets `TITLE`, not `OTHER_TITLE`. Auto-resolved at tier 2 (majority: Annotator A + Annotator B merged the full string into one `TITLE`) and never reached adjudication — this correction has not yet been applied to the sheet. Open precedent: `adjudication-precedents.md` §2.
 
-**⚠️ Data mismatch, unresolved (found 2026-07-08)**: `data/gold/gold_reconciled.jsonl`'s current label for doc 116 is `OTHER_TITLE[0:15]` + `TITLE[26:59]` — this matches *none* of: frankp/maria's raw majority (`TITLE[0:59]`, one merged span), gundi's dissent (`TITLE[0:24]` + `OTHER_TITLE[26:60]`), or this entry's own stated correct resolution above (`O[0:16]` + `O[17:25]` + `TITLE[26:59]`, i.e. the prefix fully excluded, not labeled `OTHER_TITLE`). Some correction was applied to the shipped gold data, but not the one this entry argues for. Needs PI review to determine which label is actually correct before this is used for training/eval.
+**⚠️ Data mismatch, unresolved (found 2026-07-08)**: `data/gold/gold_reconciled.jsonl`'s current label for doc 116 is `OTHER_TITLE[0:15]` + `TITLE[26:59]` — this matches *none* of: Annotator A/Annotator B's raw majority (`TITLE[0:59]`, one merged span), Annotator C's dissent (`TITLE[0:24]` + `OTHER_TITLE[26:60]`), or this entry's own stated correct resolution above (`O[0:16]` + `O[17:25]` + `TITLE[26:59]`, i.e. the prefix fully excluded, not labeled `OTHER_TITLE`). Some correction was applied to the shipped gold data, but not the one this entry argues for. Needs PI review to determine which label is actually correct before this is used for training/eval.
 
 ## 4. MDBJSX3DFUNEEJ6MNAGSIVDOXV6IZ227
 
@@ -105,7 +105,7 @@ The test is independent existence outside this one printed item, not floweriness
 
 ### 7.1 Contested token: "Josua Redivivus..." — volume-specific subtitle, not a second TITLE
 
-Collection-plus-volume structure, same pattern as docs 17/81/118: `TITLE` is the overall multi-volume chronicle's own title ("Dreyfacher Schwedischer LorBeer Krantz und Triumphirende Sieges Krohne," celebrating Gustav II Adolf's campaigns generally); the bracketed compiler's note and the volume number "2," are excluded per the shelfmark/volume-number precedent (`adjudication-precedents.md` §2); "Josua Redivivus, Das ist, ... Ander Theil" is *this volume's own* subtitle (naming it the "Second Part," casting Gustav Adolf as a latter-day Joshua) plus the volume's specific content range (1630 through the Battle of Breitenfeld near Leipzig) — both genuinely volume-specific, not content-vacuous, so both get `OTHER_TITLE` rather than a second `TITLE`, matching how docs 81/118 keep one `TITLE` per record. maria's dissenting merge of the whole 691-character string into one `TITLE` breaks with this established pattern rather than extending it.
+Collection-plus-volume structure, same pattern as docs 17/81/118: `TITLE` is the overall multi-volume chronicle's own title ("Dreyfacher Schwedischer LorBeer Krantz und Triumphirende Sieges Krohne," celebrating Gustav II Adolf's campaigns generally); the bracketed compiler's note and the volume number "2," are excluded per the shelfmark/volume-number precedent (`adjudication-precedents.md` §2); "Josua Redivivus, Das ist, ... Ander Theil" is *this volume's own* subtitle (naming it the "Second Part," casting Gustav Adolf as a latter-day Joshua) plus the volume's specific content range (1630 through the Battle of Breitenfeld near Leipzig) — both genuinely volume-specific, not content-vacuous, so both get `OTHER_TITLE` rather than a second `TITLE`, matching how docs 81/118 keep one `TITLE` per record. Annotator B's dissenting merge of the whole 691-character string into one `TITLE` breaks with this established pattern rather than extending it.
 
 The specific citation — the psalm number and its quoted incipit, "31 Psalms/ In deine Hände befehle ich meinen Geist" — is a real, specific reference and gets `OTHER_TITLE`, merged as **one** span rather than split at the internal "/". This matches doc 6's precedent (§1.1), where a tune name and its incipit were merged into a single `OTHER_TITLE` span rather than kept separate: a citation reference (tune name, or here, a psalm number) and the text it points to (an incipit) function together as one performance/textual instruction, not two independently meaningful units.
 

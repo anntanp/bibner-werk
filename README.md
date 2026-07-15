@@ -15,20 +15,30 @@ Standard NER models fail on ISBD-formatted bibliographic catalog strings across 
 ## Setup
 
 ```bash
-cd /Users/mta/Documents/claude/bibner-werk
+cd bibner-werk
 python3 -m venv .venv
 source .venv/bin/activate
-pip install pandas pyarrow torch transformers gliner flair
+pip install -r requirements-train.txt
 ```
 
-Dedicated venv — does not share or depend on `gemea/.venv`, per the 2026-06-10 project split.
+`torch` is deliberately not pinned in `requirements-train.txt` — install it separately, matched to the server's CUDA driver (see the note at the top of that file for the A100 vs. V100S path).
+
+Dedicated venv — does not share or depend on the companion GeMeA project's venv, following an earlier project split.
 
 ## Datasets
 
 - `data/silver/silver_spans.jsonl`: 49,999 tier-1 + 2,384 tier-2 silver-labeled records (52,383 total)
 - `data/annotation/doccano/export-20260623-1110/`: 395-record gold set (per-annotator exports; adjudicated version at `data/annotation/doccano/adjucated-20260707-1557.jsonl`)
+- `data/gold/`, `data/iaa/`, `data/adjudication/`, `data/heuristics/`: git-tracked ground truth, IAA scores, and adjudication decisions (not reproducible from scripts alone)
+- `data/provenance/bibner-data-provenance.parquet`: individually un-ignored provenance record
+- `data/inputs.md`: input file inventory (paths, formats, provenance, schema)
+
+## Documentation
+
+- `docs/`: dataset summary, annotation guides (EN/DE), adjudication method and rulings, ISBD field-rating and other ADRs, inter-annotator agreement, GeMeA context
+- `scripts/README.md`: index of all scripts in `scripts/py/` and `scripts/sh/`
 
 ## Related
 
-- [GeMeA](https://github.com/anntanp/gemea) — German Memory Atlas KG; BibNER-Werk is GeMeA Phase 0 NER component
+- GeMeA — German Memory Atlas KG (companion repository, link omitted for anonymous review); BibNER-Werk is GeMeA Phase 0 NER component
 - JCDL 2026 paper: *BibNER-Werk: Bibliographic NER for Historical German Catalogs*
