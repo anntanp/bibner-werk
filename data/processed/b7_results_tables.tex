@@ -1,0 +1,47 @@
+\begin{table}
+  \caption{\texttt{TITLE} F1 by era: GLiNER-multi zero-shot, GLiNER-multi fine-tuned, and XLM-R-large fine-tuned (mean $\pm$ std across ten folds).}
+  \label{tab:title-per-era}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Era & Zero-shot & GLiNER-FT & XLM-R-FT & Gold spans \\
+    \midrule
+    Pre-1700 & 0.042 $\pm$ 0.0878 & 0.2908 $\pm$ 0.1447 & \textbf{0.3937} $\pm$ 0.1453 & 109 \\
+    1700--1800 & 0.0472 $\pm$ 0.0946 & 0.283 $\pm$ 0.1932 & \textbf{0.3334} $\pm$ 0.1584 & 68 \\
+    19th-c & 0.0571 $\pm$ 0.1143 & \textbf{0.6013} $\pm$ 0.2073 & 0.577 $\pm$ 0.1851 & 57 \\
+    Modern & 0.04 $\pm$ 0.08 & \textbf{0.5527} $\pm$ 0.1729 & 0.5264 $\pm$ 0.1527 & 77 \\
+    Unknown & 0.0 $\pm$ 0.0 & 0.0536 $\pm$ 0.1074 & \textbf{0.2015} $\pm$ 0.174 & 49 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption{\texttt{OTHER\_TITLE} F1 by era: GLiNER-multi zero-shot, GLiNER-multi fine-tuned, and XLM-R-large fine-tuned (mean $\pm$ std across ten folds).}
+  \label{tab:other-title-per-era}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Era & Zero-shot & GLiNER-FT & XLM-R-FT & Gold spans \\
+    \midrule
+    Pre-1700 & 0.0 $\pm$ 0.0 & 0.1421 $\pm$ 0.1496 & \textbf{0.318} $\pm$ 0.1889 & 75 \\
+    1700--1800 & 0.0 $\pm$ 0.0 & 0.1133 $\pm$ 0.174 & \textbf{0.2919} $\pm$ 0.2624 & 26 \\
+    19th-c & 0.0 $\pm$ 0.0 & 0.3067 $\pm$ 0.3492 & \textbf{0.3286} $\pm$ 0.3947 & 19 \\
+    Modern & 0.0 $\pm$ 0.0 & 0.4276 $\pm$ 0.3128 & \textbf{0.4684} $\pm$ 0.2252 & 38 \\
+    Unknown & 0.0 $\pm$ 0.0 & 0.0 $\pm$ 0.0 & \textbf{0.0872} $\pm$ 0.1399 & 18 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption{\texttt{PERSON} F1 by era: GLiNER-multi zero-shot, GLiNER-multi fine-tuned, and XLM-R-large fine-tuned (mean $\pm$ std across ten folds).}
+  \label{tab:person-per-era}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Era & Zero-shot & GLiNER-FT & XLM-R-FT & Gold spans \\
+    \midrule
+    Pre-1700 & \textbf{0.0646} $\pm$ 0.0922 & 0.0 $\pm$ 0.0 & 0.0 $\pm$ 0.0 & 14 \\
+    1700--1800 & \textbf{0.1896} $\pm$ 0.14 & 0.1 $\pm$ 0.2 & 0.0833 $\pm$ 0.1708 & 33 \\
+    19th-c & \textbf{0.4709} $\pm$ 0.235 & 0.0833 $\pm$ 0.1708 & 0.05 $\pm$ 0.15 & 25 \\
+    Modern & \textbf{0.5413} $\pm$ 0.2662 & 0.3039 $\pm$ 0.3229 & 0.2517 $\pm$ 0.2508 & 46 \\
+    Unknown & \textbf{0.0154} $\pm$ 0.0461 & 0.0 $\pm$ 0.0 & 0.0 $\pm$ 0.0 & 12 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

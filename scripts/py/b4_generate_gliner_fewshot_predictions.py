@@ -8,24 +8,39 @@
 #               string it was given, so returned entity labels are remapped to the bare
 #               TITLE/OTHER_TITLE/PERSON form before writing predictions (§4.2 -- do not skip
 #               this, it is silent if wrong).
-# Usage:        python3 scripts/py/b4_generate_gliner_fewshot_predictions.py --k-shot K
-#                   [--model STR] [--gold PATH] [--silver-spans PATH] [--examples-seed INT]
-#                   [--threshold FLOAT] [--output PATH] [--examples-output PATH]
+# Usage:        python3 scripts/py/b4_generate_gliner_fewshot_predictions.py --draw-only
+#                   [--examples-pool-output PATH] [--silver-spans PATH] [--examples-seed INT]
+#               -- writes the example pool only, for hand review/curation, no model/gold load.
+#
+#               python3 scripts/py/b4_generate_gliner_fewshot_predictions.py --k-shot K
+#                   [--examples-file PATH] [--model STR] [--gold PATH] [--silver-spans PATH]
+#                   [--examples-seed INT] [--threshold FLOAT] [--output PATH]
+#                   [--examples-output PATH]
 #               K must be one of 1, 3, 5 -- run once per value (see plan §5 for a loop example).
-# Inputs:       data/gold/gold_reconciled.jsonl, data/silver/silver_spans.jsonl
-# Outputs:      data/eval/predictions_gliner_fewshot_k{K}.jsonl
+#               --examples-file, if given, loads a (possibly hand-edited) pool written by
+#               --draw-only instead of drawing fresh from --silver-spans -- see
+#               B4-gliner-fewshot-eval.md §5 (2026-07-15: seed=42's auto-draw included tier-1
+#               silver noise, e.g. a PERSON example fused with an unrelated archival annotation;
+#               hand-curation added to fix this without re-deriving the whole script).
+# Inputs:       data/gold/gold_reconciled.jsonl, data/silver/silver_spans.jsonl,
+#                   or a hand-curated pool file (--examples-file) in the same schema
+#                   --draw-only writes: {"TITLE": [...], "OTHER_TITLE": [...], "PERSON": [...]}
+# Outputs:      --draw-only: data/eval/fewshot_examples_pool.json (pool for hand review)
+#               otherwise: data/eval/predictions_gliner_fewshot_k{K}.jsonl
 #                   ({"id": doc_id, "spans": [[start, end, bare_label], ...]})
-#               data/eval/fewshot_examples_k{K}.json (the actual drawn example strings, for the
-#                   paper's §5 few-shot description to cite verbatim)
+#               data/eval/fewshot_examples_k{K}.json (the examples actually used -- auto-drawn or
+#                   hand-curated -- for the paper's §5 few-shot description to cite verbatim)
 # Dependencies: gliner
 # Assumptions:  Labels TITLE/OTHER_TITLE/PERSON (ADR D-10, no pooling); no true k=0 pass (plan
 #               §4.1 -- 50-setup.tex's systems table treats zero-shot and few-shot as separate
 #               rows, not one ablation curve). Examples drawn once at n=5 from silver_tier == 1
 #               spans (length-filtered 3-80 chars, deduplicated, fixed seed) then nested down for
 #               k=1/k=3 (§4.3) -- isolates the effect of adding examples from the effect of which
-#               examples were chosen. threshold=0.5 not tuned (§4.4). Requires network access to
-#               HuggingFace Hub (or a local cache) to load --model; not runnable in a
-#               network-isolated sandbox -- see plan §6.
+#               examples were chosen; --examples-file preserves this nesting (first k of each
+#               label's list), just from a hand-edited source instead of a fresh draw.
+#               threshold=0.5 not tuned (§4.4). Requires network access to HuggingFace Hub (or a
+#               local cache) to load --model; not runnable in a network-isolated sandbox for
+#               anything except --draw-only -- see plan §6.
 from __future__ import annotations
 
 import argparse
@@ -100,6 +115,30 @@ def draw_examples(
     return {label: rng.sample(spans, min(n, len(spans))) for label, spans in candidates.items()}
 
 
+def load_examples_pool(path: Path, labels: list[str], k: int) -> dict[str, list[str]]:
+    """Load a (possibly hand-edited) example pool written by --draw-only, validating its schema.
+
+    Enforces the same contract draw_examples() produces: every label present, a list of strings,
+    at least k entries so the nesting build_label_descriptions() relies on doesn't index past the
+    end of a label's list.
+    """
+    with open(path, encoding="utf-8") as f:
+        raw: Any = json.load(f)
+    validated: dict[str, list[str]] = {}
+    for label in labels:
+        if label not in raw:
+            raise ValueError(f"Examples file {path} is missing label {label!r}")
+        examples_for_label = raw[label]
+        if not isinstance(examples_for_label, list) or not all(isinstance(e, str) for e in examples_for_label):
+            raise ValueError(f"Examples file {path}: {label!r} must be a list of strings")
+        if len(examples_for_label) < k:
+            raise ValueError(
+                f"Examples file {path}: {label!r} has only {len(examples_for_label)} examples, need {k}"
+            )
+        validated[label] = examples_for_label
+    return validated
+
+
 def build_label_descriptions(base: dict[str, str], examples: dict[str, list[str]], k: int) -> dict[str, str]:
     """Enrich each bare label's base description with its first k drawn example spans."""
     descriptions = {}
@@ -133,8 +172,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Generate GLiNER few-shot predictions on gold, for eval_ner_gold.py score."
     )
-    parser.add_argument("--k-shot", type=int, required=True, choices=[1, 3, 5],
-                        help="Number of few-shot examples per label appended to its description.")
+    parser.add_argument("--draw-only", action="store_true",
+                        help="Only draw and write the example pool for hand review; no model/gold load.")
+    parser.add_argument("--k-shot", type=int, default=None, choices=[1, 3, 5],
+                        help="Number of few-shot examples per label appended to its description. "
+                             "Required unless --draw-only.")
+    parser.add_argument("--examples-file", type=Path, default=None,
+                        help="Load a (possibly hand-edited) example pool from this path instead of "
+                             "drawing fresh from --silver-spans. Schema: {\"TITLE\": [...], ...}.")
     parser.add_argument("--model", type=str, default=DEFAULT_MODEL,
                         help="HuggingFace Hub model id or local checkpoint path.")
     parser.add_argument("--gold", type=Path, default=DEFAULT_GOLD)
@@ -146,17 +191,38 @@ def main() -> None:
                         help="Defaults to data/eval/predictions_gliner_fewshot_k{K}.jsonl")
     parser.add_argument("--examples-output", type=Path, default=None,
                         help="Defaults to data/eval/fewshot_examples_k{K}.json")
+    parser.add_argument("--examples-pool-output", type=Path, default=None,
+                        help="--draw-only only. Defaults to data/eval/fewshot_examples_pool.json")
     args = parser.parse_args()
+
+    if args.draw_only:
+        pool_output = args.examples_pool_output or ROOT / "data" / "eval" / "fewshot_examples_pool.json"
+        logging.info("Drawing up to %d-shot examples per label from %s (seed=%d)",
+                     MAX_EXAMPLES_DRAWN, args.silver_spans, args.examples_seed)
+        examples = draw_examples(args.silver_spans, args.examples_seed, LABELS)
+        pool_output.parent.mkdir(parents=True, exist_ok=True)
+        with open(pool_output, "w", encoding="utf-8") as f:
+            json.dump(examples, f, ensure_ascii=False, indent=2)
+        logging.info("Wrote example pool for hand review -> %s", pool_output)
+        logging.info("Edit it, then rerun with --examples-file %s --k-shot K", pool_output)
+        return
+
+    if args.k_shot is None:
+        parser.error("--k-shot is required unless --draw-only is set")
 
     output = args.output or ROOT / "data" / "eval" / f"predictions_gliner_fewshot_k{args.k_shot}.jsonl"
     examples_output = args.examples_output or ROOT / "data" / "eval" / f"fewshot_examples_k{args.k_shot}.json"
 
-    logging.info("Drawing up to %d-shot examples per label from %s (seed=%d)",
-                 MAX_EXAMPLES_DRAWN, args.silver_spans, args.examples_seed)
-    examples = draw_examples(args.silver_spans, args.examples_seed, LABELS)
-    for label, spans in examples.items():
-        if len(spans) < args.k_shot:
-            raise ValueError(f"Only {len(spans)} tier-1 examples available for {label}, need {args.k_shot}")
+    if args.examples_file:
+        logging.info("Loading hand-curated examples from %s", args.examples_file)
+        examples = load_examples_pool(args.examples_file, LABELS, args.k_shot)
+    else:
+        logging.info("Drawing up to %d-shot examples per label from %s (seed=%d)",
+                     MAX_EXAMPLES_DRAWN, args.silver_spans, args.examples_seed)
+        examples = draw_examples(args.silver_spans, args.examples_seed, LABELS)
+        for label, spans in examples.items():
+            if len(spans) < args.k_shot:
+                raise ValueError(f"Only {len(spans)} tier-1 examples available for {label}, need {args.k_shot}")
 
     examples_output.parent.mkdir(parents=True, exist_ok=True)
     with open(examples_output, "w", encoding="utf-8") as f:

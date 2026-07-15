@@ -1,22 +1,31 @@
 #!/usr/bin/env python3
 # Purpose:      B6 follow-up error analysis — test the hypothesis that PERSON's low
-#               gold-F1 (B6-gliner-eval.md, weighted F1 0.149) is concentrated on
-#               corporate-body/institutional responsible-agent spans, not individual
-#               person names. Motivated by silver's own construction: extract_spans()
-#               only ever tags a span PERSON when compute_resp_flags() classified it
-#               f_resp_person=1 -- an f_resp_org=1 classification (same SoR text, FLERT
-#               said organization) gets NO span at all, so silver's training signal
-#               never teaches the model "an institution name can fill this role." If
-#               gold's PERSON annotations include institutional agents (plausible --
-#               see person-to-agent-rename-plan.md's "der verantwortliche Agent"
-#               framing), this would show up as false negatives concentrated on
-#               org-shaped spans specifically.
-# Usage:        python3 scripts/py/b6_person_error_analysis.py
-#                   [--gold PATH] [--predictions-dir PATH] [--folds PATH]
-# Inputs:       data/gold/gold_reconciled.jsonl, data/eval/predictions_gliner_fold{0-9}.jsonl,
-#                   data/eval/folds_k10.json
-# Outputs:      data/processed/b6_person_error_analysis.csv (one row per gold/predicted
-#                   PERSON span: doc_id, era, outcome, span_text, looks_org)
+#               gold-F1 (B6-gliner-eval.md, weighted F1 0.149; B6-xlmr-eval.md, weighted
+#               F1 0.120) is concentrated on corporate-body/institutional
+#               responsible-agent spans, not individual person names. Motivated by
+#               silver's own construction: extract_spans() only ever tags a span PERSON
+#               when compute_resp_flags() classified it f_resp_person=1 -- an
+#               f_resp_org=1 classification (same SoR text, FLERT said organization)
+#               gets NO span at all, so silver's training signal never teaches the
+#               model "an institution name can fill this role." If gold's PERSON
+#               annotations include institutional agents (plausible -- see
+#               person-to-agent-rename-plan.md's "der verantwortliche Agent" framing),
+#               this would show up as false negatives concentrated on org-shaped spans
+#               specifically. --system (added 2026-07-15) parametrizes this across any
+#               fine-tuned system sharing the predictions_{system}_fold{f}.jsonl schema
+#               eval_ner_gold.py score consumes -- run once for gliner, once for xlmr,
+#               same silver/gold pipeline so a shared script beats duplicating this
+#               file for one filename difference.
+# Usage:        python3 scripts/py/b6_person_error_analysis.py [--system {gliner,xlmr}]
+#                   [--gold PATH] [--predictions-dir PATH] [--folds PATH] [--output PATH]
+# Inputs:       data/gold/gold_reconciled.jsonl,
+#                   data/eval/predictions_{system}_fold{0-9}.jsonl, data/eval/folds_k10.json
+# Outputs:      data/processed/b6_person_error_analysis.csv (--system gliner, the
+#                   original default, unchanged path for backward compatibility with
+#                   B6-gliner-eval.md's existing reference) or
+#                   data/processed/b6_person_error_analysis_{system}.csv otherwise
+#                   (one row per gold/predicted PERSON span: doc_id, era, outcome,
+#                   span_text, looks_org)
 # Dependencies: none (stdlib only)
 # Assumptions:  "looks_org" is a keyword heuristic (German institutional-noun list),
 #                   not a verified classification -- reported as suggestive evidence,
@@ -63,18 +72,27 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="B6 PERSON-label error analysis: person vs. org spans.")
+    parser.add_argument("--system", type=str, default="gliner",
+                        help="Matches predictions_{system}_fold{f}.jsonl's naming convention (default: gliner)")
     parser.add_argument("--gold", type=Path, default=DEFAULT_GOLD)
     parser.add_argument("--predictions-dir", type=Path, default=DEFAULT_PREDICTIONS_DIR)
     parser.add_argument("--folds", type=Path, default=DEFAULT_FOLDS)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--output", type=Path, default=None,
+                        help="Default: data/processed/b6_person_error_analysis.csv for --system gliner "
+                             "(unchanged, matches the original default), "
+                             "data/processed/b6_person_error_analysis_{system}.csv otherwise")
     args = parser.parse_args()
+    output = args.output or (
+        DEFAULT_OUTPUT if args.system == "gliner"
+        else ROOT / "data" / "processed" / f"b6_person_error_analysis_{args.system}.csv"
+    )
 
     gold_records = {rec["id"]: rec for rec in read_jsonl(args.gold)}
     folds = json.loads(args.folds.read_text())
 
     rows: list[dict[str, Any]] = []
     for fold_index in range(10):
-        pred_path = args.predictions_dir / f"predictions_gliner_fold{fold_index}.jsonl"
+        pred_path = args.predictions_dir / f"predictions_{args.system}_fold{fold_index}.jsonl"
         if not pred_path.is_file():
             continue
         predictions = {rec["id"]: rec["spans"] for rec in read_jsonl(pred_path)}
@@ -100,8 +118,8 @@ def main() -> None:
                     "span_text": span_text, "looks_org": looks_org(span_text),
                 })
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    with open(args.output, "w", encoding="utf-8", newline="") as f:
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with open(output, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["doc_id", "fold", "era", "outcome", "span_text", "looks_org"])
         writer.writeheader()
         writer.writerows(rows)
@@ -111,7 +129,7 @@ def main() -> None:
         org_count = sum(1 for r in subset if r["looks_org"])
         print(f"{outcome.upper()}: {len(subset)} spans, {org_count} ({org_count/len(subset)*100:.0f}%) look org-like" if subset else f"{outcome.upper()}: 0 spans")
 
-    print(f"\nWrote per-span detail -> {args.output}")
+    print(f"\nWrote per-span detail -> {output}")
     fn_org = [r for r in rows if r["outcome"] == "fn" and r["looks_org"]]
     if fn_org:
         print("\nExample org-like false negatives (missed gold PERSON spans):")
