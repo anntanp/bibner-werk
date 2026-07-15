@@ -1,0 +1,20 @@
+2026-07-10 10:20:17,914  INFO  Loading silver data from /home/ann/bibner-werk/data/silver/gliner_dataset_silver.jsonl
+2026-07-10 10:20:18,594  INFO  Leakage guard passed: 0 of 52383 silver records overlap with 394 gold obj_ids.
+2026-07-10 10:20:18,645  INFO  Dev split: era x silver_tier-stratified, 47144 train / 5239 dev.
+2026-07-10 10:20:18,658  INFO  Oversampled tier-2: 2146 tier-2 records x2 extra copies = 4292 added (pool: 47144 -> 51436).
+2026-07-10 10:20:18,659  INFO  --dry-run: truncated to 50 train / 10 dev records.
+2026-07-10 10:20:22,297  INFO  Loading base model urchade/gliner_multi-v2.1
+/home/ann/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 64726.91it/s]
+2026-07-10 10:20:22,486  INFO  Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+/home/ann/.local/lib/python3.10/site-packages/transformers/convert_slow_tokenizer.py:566: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+2026-07-10 10:20:30,085  INFO  model.config.max_neg_type_ratio = 1 (paper's ablation optimum: ~1)
+/home/ann/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+  0%|          | 0/5 [00:00<?, ?it/s]Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+ 20%|██        | 1/5 [00:00<00:03,  1.33it/s] 40%|████      | 2/5 [00:00<00:01,  2.33it/s] 60%|██████    | 3/5 [00:01<00:00,  3.06it/s] 80%|████████  | 4/5 [00:01<00:00,  2.91it/s]100%|██████████| 5/5 [00:01<00:00,  3.75it/s]Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+                                             100%|██████████| 5/5 [00:07<00:00,  3.75it/s]100%|██████████| 5/5 [00:07<00:00,  1.51s/it]
+2026-07-10 10:20:40,321  INFO  Saved checkpoint -> /home/ann/bibner-werk/models/gliner_fold0
+{'train_runtime': 7.5488, 'train_samples_per_second': 5.299, 'train_steps_per_second': 0.662, 'train_loss': 5.799954986572265, 'epoch': 0.71}

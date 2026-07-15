@@ -136,18 +136,6 @@
       "f1": 0.0
     },
     {
-      "label": "PERSON",
-      "era": "19th-c",
-      "system": "gliner_fewshot_k3",
-      "fold": 6,
-      "tp": 0,
-      "fp": 0,
-      "fn": 3,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    {
       "label": "OTHER_TITLE",
       "era": "19th-c",
       "system": "gliner_fewshot_k3",
@@ -155,6 +143,18 @@
       "tp": 0,
       "fp": 0,
       "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "label": "PERSON",
+      "era": "19th-c",
+      "system": "gliner_fewshot_k3",
+      "fold": 6,
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0
@@ -199,13 +199,13 @@
     },
     {
       "doc_id": 45,
-      "label": "PERSON",
+      "label": "TITLE",
       "era": "1700-1800",
       "outcome": "fn"
     },
     {
       "doc_id": 45,
-      "label": "TITLE",
+      "label": "PERSON",
       "era": "1700-1800",
       "outcome": "fn"
     },
@@ -247,13 +247,13 @@
     },
     {
       "doc_id": 78,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "modern",
       "outcome": "fn"
     },
     {
       "doc_id": 78,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "modern",
       "outcome": "fn"
     },
@@ -295,13 +295,13 @@
     },
     {
       "doc_id": 170,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "1700-1800",
       "outcome": "fn"
     },
     {
       "doc_id": 170,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "1700-1800",
       "outcome": "fn"
     },
@@ -325,31 +325,31 @@
     },
     {
       "doc_id": 188,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 188,
+      "label": "OTHER_TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 188,
       "label": "PERSON",
       "era": "19th-c",
       "outcome": "fn"
     },
     {
-      "doc_id": 188,
-      "label": "TITLE",
-      "era": "19th-c",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 188,
-      "label": "OTHER_TITLE",
-      "era": "19th-c",
-      "outcome": "fn"
-    },
-    {
       "doc_id": 194,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 194,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
@@ -361,12 +361,18 @@
     },
     {
       "doc_id": 232,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 232,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 235,
       "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
@@ -384,7 +390,7 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 235,
+      "doc_id": 238,
       "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
@@ -398,12 +404,6 @@
     {
       "doc_id": 238,
       "label": "TITLE",
-      "era": "pre-1700",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 238,
-      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
@@ -439,13 +439,13 @@
     },
     {
       "doc_id": 260,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "modern",
       "outcome": "fn"
     },
     {
       "doc_id": 260,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "modern",
       "outcome": "fn"
     },
@@ -457,12 +457,6 @@
     },
     {
       "doc_id": 308,
-      "label": "TRANSLATOR",
-      "era": "1700-1800",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 308,
       "label": "PERSON",
       "era": "1700-1800",
       "outcome": "fn"
@@ -470,6 +464,12 @@
     {
       "doc_id": 308,
       "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 308,
+      "label": "TRANSLATOR",
       "era": "1700-1800",
       "outcome": "fn"
     },

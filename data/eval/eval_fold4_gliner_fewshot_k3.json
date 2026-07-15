@@ -124,7 +124,7 @@
       "f1": 0.0
     },
     {
-      "label": "OTHER_TITLE",
+      "label": "PERSON",
       "era": "1700-1800",
       "system": "gliner_fewshot_k3",
       "fold": 4,
@@ -136,7 +136,7 @@
       "f1": 0.0
     },
     {
-      "label": "PERSON",
+      "label": "OTHER_TITLE",
       "era": "1700-1800",
       "system": "gliner_fewshot_k3",
       "fold": 4,
@@ -235,14 +235,20 @@
     },
     {
       "doc_id": 33,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 33,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 41,
+      "label": "TITLE",
+      "era": "modern",
       "outcome": "fn"
     },
     {
@@ -252,32 +258,26 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 41,
-      "label": "TITLE",
-      "era": "modern",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 53,
-      "label": "TITLE",
-      "era": "modern",
-      "outcome": "fn"
-    },
-    {
       "doc_id": 53,
       "label": "OTHER_TITLE",
       "era": "modern",
       "outcome": "fn"
     },
     {
-      "doc_id": 74,
+      "doc_id": 53,
       "label": "TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 74,
+      "label": "OTHER_TITLE",
       "era": "19th-c",
       "outcome": "fn"
     },
     {
       "doc_id": 74,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "19th-c",
       "outcome": "fn"
     },
@@ -301,13 +301,13 @@
     },
     {
       "doc_id": 99,
-      "label": "PERSON",
+      "label": "TITLE",
       "era": "unknown",
       "outcome": "fn"
     },
     {
       "doc_id": 99,
-      "label": "TITLE",
+      "label": "PERSON",
       "era": "unknown",
       "outcome": "fn"
     },
@@ -325,13 +325,13 @@
     },
     {
       "doc_id": 110,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 110,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
@@ -343,13 +343,13 @@
     },
     {
       "doc_id": 116,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 116,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
@@ -367,6 +367,12 @@
     },
     {
       "doc_id": 137,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 137,
       "label": "TITLE",
       "era": "1700-1800",
       "outcome": "fn"
@@ -378,9 +384,9 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 137,
+      "doc_id": 142,
       "label": "PERSON",
-      "era": "1700-1800",
+      "era": "unknown",
       "outcome": "fn"
     },
     {
@@ -390,9 +396,9 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 142,
-      "label": "PERSON",
-      "era": "unknown",
+      "doc_id": 144,
+      "label": "TITLE",
+      "era": "modern",
       "outcome": "fn"
     },
     {
@@ -402,20 +408,8 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 144,
-      "label": "TITLE",
-      "era": "modern",
-      "outcome": "fn"
-    },
-    {
       "doc_id": 163,
       "label": "OTHER_TITLE",
-      "era": "pre-1700",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 163,
-      "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
@@ -426,7 +420,7 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 226,
+      "doc_id": 163,
       "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
@@ -438,6 +432,12 @@
       "outcome": "fn"
     },
     {
+      "doc_id": 226,
+      "label": "TITLE",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
       "doc_id": 248,
       "label": "PARALLEL_TITLE",
       "era": "pre-1700",
@@ -445,25 +445,25 @@
     },
     {
       "doc_id": 248,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 248,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 282,
-      "label": "OTHER_TITLE",
+      "label": "PERSON",
       "era": "1700-1800",
       "outcome": "fn"
     },
     {
       "doc_id": 282,
-      "label": "PERSON",
+      "label": "OTHER_TITLE",
       "era": "1700-1800",
       "outcome": "fn"
     },
@@ -481,13 +481,13 @@
     },
     {
       "doc_id": 307,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "modern",
       "outcome": "fn"
     },
     {
       "doc_id": 307,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "modern",
       "outcome": "fn"
     },
@@ -529,12 +529,6 @@
     },
     {
       "doc_id": 366,
-      "label": "OTHER_TITLE",
-      "era": "unknown",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 366,
       "label": "TITLE",
       "era": "unknown",
       "outcome": "fn"
@@ -548,6 +542,12 @@
     {
       "doc_id": 366,
       "label": "PERSON",
+      "era": "unknown",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 366,
+      "label": "OTHER_TITLE",
       "era": "unknown",
       "outcome": "fn"
     },
@@ -571,13 +571,13 @@
     },
     {
       "doc_id": 377,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "unknown",
       "outcome": "fn"
     },
     {
       "doc_id": 377,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "unknown",
       "outcome": "fn"
     }

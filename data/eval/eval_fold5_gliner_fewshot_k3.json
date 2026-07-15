@@ -205,19 +205,19 @@
     },
     {
       "doc_id": 11,
-      "label": "PERSON",
-      "era": "modern",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 11,
-      "label": "PERSON",
-      "era": "modern",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 11,
       "label": "OTHER_TITLE",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 11,
+      "label": "PERSON",
+      "era": "modern",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 11,
+      "label": "PERSON",
       "era": "modern",
       "outcome": "fn"
     },
@@ -265,13 +265,13 @@
     },
     {
       "doc_id": 42,
-      "label": "TITLE",
+      "label": "PERSON",
       "era": "1700-1800",
       "outcome": "fn"
     },
     {
       "doc_id": 42,
-      "label": "PERSON",
+      "label": "TITLE",
       "era": "1700-1800",
       "outcome": "fn"
     },
@@ -295,25 +295,25 @@
     },
     {
       "doc_id": 119,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 119,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 119,
+      "label": "TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 119,
       "label": "PERSON",
-      "era": "19th-c",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 119,
-      "label": "TITLE",
-      "era": "19th-c",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 119,
-      "label": "TITLE",
-      "era": "19th-c",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 119,
-      "label": "TITLE",
       "era": "19th-c",
       "outcome": "fn"
     },
@@ -337,6 +337,18 @@
     },
     {
       "doc_id": 141,
+      "label": "TITLE",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 141,
+      "label": "PERSON",
+      "era": "1700-1800",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 141,
       "label": "PERSON",
       "era": "1700-1800",
       "outcome": "fn"
@@ -354,15 +366,9 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 141,
-      "label": "PERSON",
-      "era": "1700-1800",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 141,
+      "doc_id": 148,
       "label": "TITLE",
-      "era": "1700-1800",
+      "era": "modern",
       "outcome": "fn"
     },
     {
@@ -374,12 +380,6 @@
     {
       "doc_id": 148,
       "label": "PERSON",
-      "era": "modern",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 148,
-      "label": "TITLE",
       "era": "modern",
       "outcome": "fn"
     },
@@ -481,12 +481,6 @@
     },
     {
       "doc_id": 229,
-      "label": "PERSON",
-      "era": "19th-c",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 229,
       "label": "TITLE",
       "era": "19th-c",
       "outcome": "fn"
@@ -494,6 +488,12 @@
     {
       "doc_id": 229,
       "label": "OTHER_TITLE",
+      "era": "19th-c",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 229,
+      "label": "PERSON",
       "era": "19th-c",
       "outcome": "fn"
     },
@@ -547,13 +547,13 @@
     },
     {
       "doc_id": 317,
-      "label": "TITLE",
+      "label": "OTHER_TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
     {
       "doc_id": 317,
-      "label": "OTHER_TITLE",
+      "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
@@ -589,12 +589,6 @@
     },
     {
       "doc_id": 353,
-      "label": "OTHER_TITLE",
-      "era": "unknown",
-      "outcome": "fn"
-    },
-    {
-      "doc_id": 353,
       "label": "TITLE",
       "era": "unknown",
       "outcome": "fn"
@@ -612,14 +606,20 @@
       "outcome": "fn"
     },
     {
-      "doc_id": 374,
-      "label": "TITLE",
-      "era": "pre-1700",
+      "doc_id": 353,
+      "label": "OTHER_TITLE",
+      "era": "unknown",
       "outcome": "fn"
     },
     {
       "doc_id": 374,
       "label": "PERSON",
+      "era": "pre-1700",
+      "outcome": "fn"
+    },
+    {
+      "doc_id": 374,
+      "label": "TITLE",
       "era": "pre-1700",
       "outcome": "fn"
     },
