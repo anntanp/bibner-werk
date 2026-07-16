@@ -5,6 +5,7 @@ created: 2026-03-26
 updates:
   - 2026-06-25
   - 2026-07-06
+  - 2026-07-16
 in: bibner-werk
 tags: []
 ---
@@ -141,7 +142,7 @@ Targets are grounded in benchmark ceilings (OntoNotes WORK_OF_ART: 0.55–0.72; 
 
 **Decision:** Gold set allocation weights tier-0 at 79% (target), up from 45% (current). Tier-2 reduced to spot-check only (15 records). Pre-1700 and 1700–1800 oversampled within tier-0.
 
-**Why (SR-08):** Tier-0 is the hardest inference path (no ISBD signals), the most prevalent in corpus (92.4%), and the stratum where NER matters most. Tier-2 records inflate F1 without testing difficult cases. Pre-1700 tier-0 is the primary failure risk: author-before-title structure + historical orthography + dc:creator absent in 67%.
+**Why (SR-08):** Tier-0 is the hardest inference path (no ISBD signals), the most prevalent in corpus (92.4%), and the stratum where NER matters most. Tier-2 records inflate F1 without testing difficult cases. Pre-1700 tier-0 is the primary failure risk: author-before-title structure (annotation-observed pattern, not independently sourced — Gaskell 1972, *A New Introduction to Bibliography*, was checked against this specific claim and does not document an author-before-title ordering convention; see `paper/jcdl-2026/30-corpus.tex` CVVD history, `notes/fiz/bibner-werk/B12-corpus-cvvd-findings.md` F3) + historical orthography + dc:creator absent in 67%.
 
 **Notes:** [sr08_evaluation-design.md](sr08_evaluation-design.md) §8 · [sr08_gold-set-composition.md](sr08_gold-set-composition.md)
 
