@@ -2,13 +2,15 @@
 up: 
 related: 
 created: 2026-07-03
-updates: 2026-07-03
+updates:
+  - 2026-07-03
+  - 2026-10-05T18:42:44
 in: bibner-werk
 tags: []
 ---
 # BibNER-Werk — Dataset Summary
 
-Summarizes the source corpus, stratification, evaluation targets, and gold set sizing behind the BibNER-Werk NER dataset. Synthesized from [ner-bibliographic.md](../notes/ner/ner-bibliographic.md), [sr08_gold-set-composition.md](../notes/ner/sr08_gold-set-composition.md), [sr08_evaluation-design.md](../notes/ner/sr08_evaluation-design.md), `gemea/notes/project/reprocess-before-after.md`, and `notes/fiz/rms/rm057/rm057.tex`.
+Summarizes the source corpus, stratification, evaluation targets, and gold set sizing behind the BibNER-Werk NER dataset. Synthesized from [ner-bibliographic.md](../notes/ner/ner-bibliographic.md), [sr08_gold-set-composition.md](../notes/ner/sr08_gold-set-composition.md), [sr08_evaluation-design.md](../notes/ner/sr08_evaluation-design.md), internal run statistics, and `notes/fiz/rms/rm057/rm057.tex`.
 
 ---
 
@@ -36,7 +38,26 @@ The pkl shares a methodological ancestor with the earlier CC2LLM paper (*How to 
 | Median `all_tokens` | 8 | 15 | tokenizer granularity, not longer titles |
 | Reproducible | No (notebook) | Yes (scripted) | — |
 
-The ~1.1M records recovered in the parquet by dropping the `langid` filter are entirely `ger` (fasttext had misclassified them as non-German in the pkl generation). Latin (`lat`, 493,712 records, 5.4%), Low German (`nds`), and Middle High German (`gmh`) are present in the parquet but were absent from the pkl entirely. ISBD signal rates and silver-tier percentages are stable across both corpora (0.1% / 7.5% / 92.4% tier-2/1/0) — the heuristics are corpus-agnostic; only absolute counts scale. Full derivation: `gemea/notes/project/reprocess-before-after.md`.
+The ~1.1M records recovered in the parquet by dropping the `langid` filter are entirely `ger` (fasttext had misclassified them as non-German in the pkl generation). Latin (`lat`, 493,712 records, 5.4%), Low German (`nds`), and Middle High German (`gmh`) are present in the parquet but were absent from the pkl entirely. ISBD signal rates and silver-tier percentages are stable across both corpora (0.1% / 7.5% / 92.4% tier-2/1/0) — the heuristics are corpus-agnostic; only absolute counts scale.
+
+Language breakdown (parquet only):
+
+| Language | N | % |
+|---|---:|---:|
+| `ger` | 8,716,820 | 94.6% |
+| `lat` | 493,712 | 5.4% |
+| `nds` | 1,523 | <0.1% |
+| `gmh` | 1,284 | <0.1% |
+
+Silver tier counts:
+
+| Tier | pkl (4.48M) | % | parquet (9.21M) | % | Change |
+|---|---:|---:|---:|---:|---:|
+| Tier 2 (structural) | 4,613 | 0.10% | 7,105 | 0.08% | +2,492 |
+| Tier 1 (heuristic) | 335,569 | 7.49% | 689,453 | 7.48% | +353,884 |
+| Tier 0 (no labels) | 4,137,876 | 92.40% | 8,516,781 | 92.44% | +4,378,905 |
+
+Source: internal run statistics (corpus reprocessing, 2026-04-14).
 
 ---
 
@@ -92,3 +113,14 @@ PERSON targets apply only to pre-1700 and 1700–1800, where person names struct
 PERSON reliability was evaluated separately and found not to be the binding constraint: reaching ±5 pp CI on pre-1700 PERSON would require 3,713 records (not achievable), so PERSON F1 is reported with an explicit wide CI (±8–10 pp) rather than driving gold-set size. TITLE reliability at ±10 pp is the actual binding constraint; the 395-record set clears it in three of four dated strata and comes within 2 records in the fourth (19th-c). `sr08_evaluation-design.md`'s own decision record (§8) rounds this up to "meets the target… across all strata" — worth treating as materially, not literally, true.
 
 A later revision considered reallocating tier composition (boosting tier-0 from 45.1% → 78.5% of the set, since tier-0 is both the hardest and most prevalent inference path) but was deferred — it would have added an estimated 8–15 hours of re-annotation for a reporting-only benefit, since the existing 395-record set already meets the ±10 pp CI target. Decided 2026-03-30; documented as a limitation to report alongside F1, not a blocker.
+
+## 5. Known issues in the gold set
+
+This section lists errors found in the released gold set (`data/gold/gold_reconciled.jsonl`) after the paper's results were computed. They are recorded, not fixed: correcting them would change the gold set the published numbers were scored on.
+
+| Doc id | Record | Issue | Effect | Status |
+|---|---|---|---|---|
+| 46 | *Aus Meinem Leben, Dichtung und Wahrheit / von [Johann Wolfgang von] Goethe. - Erster Theil. - Tübingen, 1811 ; …* (DDB `IJMWJQJERSW3BXEYIHLDD6Z54WPWFHLX`, tier-2, 19th c.) | PERSON span is `Johann Wolfgang von] Goethe` (offsets 47–74): it excludes the opening `[` but keeps the closing `]`. The intended span is `[Johann Wolfgang von] Goethe` | Under exact span match, a clean prediction (`[Johann Wolfgang von] Goethe` or `Johann Wolfgang von Goethe`) is scored as a false positive plus a false negative on this record | Known, left as is (decision 2026-10-05); fix in a later gold-set release together with any other boundary slips |
+
+Found while preparing the JCDL 2026 slides (record used as the ISBD example; notes in `notes/fiz/bibner-werk/slides/ise-seminar-plan.md`).
+
